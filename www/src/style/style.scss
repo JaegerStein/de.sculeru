@@ -8,9 +8,54 @@ $px7: 128px;
 $px8: 256px;
 $px9: 512px;
 
-nav {
-  background-color: brown;
-  min-width: $px9;
-  box-shadow: 0 $px2 $px3 rgba(0 0 0 / .5);
+$header: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 
+$dsb: darkslateblue;
+
+* {
+  font-family: $header;
+  text-rendering: optimizeLegibility;
+  color: $dsb;
+}
+
+main {
+  background-color: ivory;
+  min-width: $px7 + $px8;
+  box-shadow: 0 $px3 $px5 rgba(0 0 0 / .5);
+
+
+  header {
+    padding: 1rem;
+
+    h1 {
+      font-size: 3rem;
+      line-height: 3rem;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      line-height: 1.5rem;
+    }
+
+    h1, h2 {
+      font-weight: lighter;
+    }
+  }
+
+  #categories {
+    justify-content: space-evenly;
+    align-items: center;
+
+    a {
+      padding: .25rem;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: lighter;
+
+      &.selected {
+        font-weight: normal;
+        border-bottom: $px1 solid $dsb;
+      }
+    }
+  }
 }
