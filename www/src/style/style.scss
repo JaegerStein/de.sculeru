@@ -18,6 +18,12 @@ $dsb: darkslateblue;
   color: $dsb;
 }
 
+body {
+  background-color: #977f73;
+  background-image: url('../asset/wood.jpg');
+  background-repeat: repeat;
+}
+
 main {
   background-color: ivory;
   min-width: $px7 + $px8;

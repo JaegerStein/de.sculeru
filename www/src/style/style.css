@@ -4,6 +4,12 @@
   color: darkslateblue;
 }
 
+body {
+  background-color: #977f73;
+  background-image: url("../asset/wood.jpg");
+  background-repeat: repeat;
+}
+
 main {
   background-color: ivory;
   min-width: 384px;
