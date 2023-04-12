@@ -2,18 +2,22 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   text-rendering: optimizeLegibility;
   color: darkslateblue;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #977f73;
-  background-image: url("../asset/wood.jpg");
+  background-image: url("../asset/texture/wood.jpg");
   background-repeat: repeat;
 }
 
 main {
   background-color: ivory;
+  background-image: url(../asset/texture/parchment.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   min-width: 384px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 16px 32px rgb(0, 0, 0);
 }
 main header {
   padding: 1rem;
@@ -21,27 +25,45 @@ main header {
 main header h1 {
   font-size: 3rem;
   line-height: 3rem;
-}
-main header h2 {
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-}
-main header h1, main header h2 {
   font-weight: lighter;
 }
 main #categories {
-  justify-content: space-evenly;
-  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 main #categories a {
   padding: 0.25rem;
   text-decoration: none;
   font-size: 1.2rem;
-  font-weight: lighter;
+  font-weight: normal;
 }
 main #categories a.selected {
-  font-weight: normal;
+  font-weight: bold;
   border-bottom: 2px solid darkslateblue;
+}
+main #categories a img {
+  height: 2rem;
+  width: 2rem;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.5rem;
+}
+
+#spacer {
+  min-width: 384px;
+}
+
+#river .entry {
+  padding: 1.5rem 2rem 3rem 2rem;
+  background-color: ivory;
+  background-image: url(../asset/texture/parchment.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 8px 32px rgb(0, 0, 0);
+}
+#river .entry hr {
+  margin: 1rem 0;
+  border: 1px solid darkslateblue;
 }
 
 /*# sourceMappingURL=style.css.map */
