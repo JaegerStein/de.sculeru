@@ -7,8 +7,8 @@ export function enableCategories(): void {
             event.preventDefault();
             links.forEach((other: HTMLElement): void => {
                 other.classList.remove('selected');
-            })
+            });
             link.classList.add('selected');
         }
-    })
+    });
 }
