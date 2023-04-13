@@ -71,6 +71,40 @@ main {
   }
 }
 
+#ham {
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  cursor: pointer;
+
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 9999;
+
+  border: none;
+  border-radius: 9999px;
+  background-color: ivory;
+
+  height: 3rem;
+  width: 3rem;
+
+  box-shadow: $px1 $px1 $px4 rgba(0 0 0 / .5);
+
+  &.rotate {
+    transform: rotate(90deg);
+  }
+
+  img {
+    width: 2rem;
+  }
+}
+
+main, #ham {
+  transition: transform .3s ease-out;
+}
+
 #spacer {
   min-width: $px7 + $px8;
 }
@@ -93,3 +127,56 @@ main {
   }
 }
 
+@media screen and (max-width: 1024px) {
+
+  #spacer {
+    display: none;
+  }
+
+  #river, main {
+    width: 100%;
+  }
+
+  #river {
+    padding: $px5;
+  }
+
+  main {
+    transform: translateX(-100%);
+
+    &.show {
+      transform: translateX(0);
+    }
+  }
+
+  #ham {
+    display: flex;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+
+  #river {
+    padding: $px4;
+  }
+
+  #ham {
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+
+}
+
+@media screen and (max-width: 512px) {
+
+  #river {
+    padding: $px3;
+  }
+
+  #ham {
+    left: 1rem;
+    bottom: 1rem;
+  }
+
+}

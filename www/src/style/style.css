@@ -49,6 +49,33 @@ main #categories a img {
   margin-right: 0.5rem;
 }
 
+#ham {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  z-index: 9999;
+  border: none;
+  border-radius: 9999px;
+  background-color: ivory;
+  height: 3rem;
+  width: 3rem;
+  box-shadow: 2px 2px 16px rgba(0, 0, 0, 0.5);
+}
+#ham.rotate {
+  transform: rotate(90deg);
+}
+#ham img {
+  width: 2rem;
+}
+
+main, #ham {
+  transition: transform 0.3s ease-out;
+}
+
 #spacer {
   min-width: 384px;
 }
@@ -64,6 +91,45 @@ main #categories a img {
 #river .entry hr {
   margin: 1rem 0;
   border: 1px solid darkslateblue;
+}
+
+@media screen and (max-width: 1024px) {
+  #spacer {
+    display: none;
+  }
+  #river, main {
+    width: 100%;
+  }
+  #river {
+    padding: 32px;
+  }
+  main {
+    transform: translateX(-100%);
+  }
+  main.show {
+    transform: translateX(0);
+  }
+  #ham {
+    display: flex;
+  }
+}
+@media screen and (max-width: 768px) {
+  #river {
+    padding: 16px;
+  }
+  #ham {
+    bottom: 1.5rem;
+    left: 1.5rem;
+  }
+}
+@media screen and (max-width: 512px) {
+  #river {
+    padding: 8px;
+  }
+  #ham {
+    left: 1rem;
+    bottom: 1rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

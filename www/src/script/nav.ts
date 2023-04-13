@@ -1,4 +1,4 @@
-import {selAll} from "./utils.js";
+import {el, sel, selAll} from "./utils.js";
 
 export function enableCategories(): void {
     const links: NodeListOf<HTMLElement> = selAll('#categories a');
@@ -11,4 +11,14 @@ export function enableCategories(): void {
             link.classList.add('selected');
         }
     });
+}
+
+export function enableToggleSidebar(): void {
+    const toggle: HTMLElement | null = el('ham');
+    const sidebar: HTMLElement | null = sel('main');
+    if (!toggle || !sidebar) return;
+    toggle.onclick = (): void => {
+        sidebar.classList.toggle('show');
+        toggle.classList.toggle('rotate');
+    }
 }
