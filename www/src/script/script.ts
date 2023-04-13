@@ -1,7 +1,8 @@
-import {enableCategories, enableToggleSidebar} from "./nav.js";
+import {enableCategories, enableSelection, enableToggleSidebar} from "./nav.js";
 
 function init(): void {
     enableCategories();
+    enableSelection();
     enableToggleSidebar();
 }
 

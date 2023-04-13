@@ -1,13 +1,28 @@
 import {el, sel, selAll} from "./utils.js";
 
+const removeSelected = (nodeList: NodeListOf<HTMLElement> | null) => {
+    nodeList?.forEach((node: HTMLElement): void => {
+        node.classList.remove('selected');
+    });
+}
+
 export function enableCategories(): void {
     const links: NodeListOf<HTMLElement> = selAll('#categories a');
     links.forEach((link: HTMLElement): void => {
         link.onclick = (event: MouseEvent): void => {
             event.preventDefault();
-            links.forEach((other: HTMLElement): void => {
-                other.classList.remove('selected');
-            });
+            removeSelected(links);
+            link.classList.add('selected');
+        }
+    });
+}
+
+export function enableSelection(): void {
+    const links: NodeListOf<HTMLElement> = selAll('#selection a');
+    links.forEach((link: HTMLElement): void => {
+        link.onclick = (event: MouseEvent): void => {
+            event.preventDefault();
+            removeSelected(links);
             link.classList.add('selected');
         }
     });

@@ -1,12 +1,25 @@
 import { el, sel, selAll } from "./utils.js";
+const removeSelected = (nodeList) => {
+    nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
+        node.classList.remove('selected');
+    });
+};
 export function enableCategories() {
     const links = selAll('#categories a');
     links.forEach((link) => {
         link.onclick = (event) => {
             event.preventDefault();
-            links.forEach((other) => {
-                other.classList.remove('selected');
-            });
+            removeSelected(links);
+            link.classList.add('selected');
+        };
+    });
+}
+export function enableSelection() {
+    const links = selAll('#selection a');
+    links.forEach((link) => {
+        link.onclick = (event) => {
+            event.preventDefault();
+            removeSelected(links);
             link.classList.add('selected');
         };
     });

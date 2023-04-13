@@ -69,6 +69,29 @@ main {
       }
     }
   }
+
+  #selection {
+    justify-content: space-evenly;
+    align-items: center;
+
+    border-top: 1px solid $dsb;
+
+    a {
+      font-size: 1.25rem;
+      background-color: $dsb;
+      color: ivory;
+      max-width: 50%;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+
+      &.selected {
+        background-color: rgba(0 0 0 / 0);
+        color: $dsb;
+        border-bottom: $px1 solid $dsb;
+      }
+    }
+  }
 }
 
 #ham {
