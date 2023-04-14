@@ -1,0 +1,1 @@
+Das Journal beinhaltet (hoffentlich) eine aktuelle Mitschrift eurer bisherigen Abenteuer und eine Übersicht laufender Quests.
