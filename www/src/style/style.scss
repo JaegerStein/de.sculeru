@@ -36,7 +36,7 @@ main {
 
 
   header {
-    padding: 1rem;
+    padding: .75rem .75rem 0 .75rem;
 
     h1 {
       font-size: 3rem;
@@ -48,6 +48,8 @@ main {
   #categories {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+
+    padding: .75rem;
 
     a {
       padding: .25rem;

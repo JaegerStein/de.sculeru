@@ -16,18 +16,6 @@ export function enableCategories(): void {
         }
     });
 }
-
-export function enableSelection(): void {
-    const links: NodeListOf<HTMLElement> = selAll('#selection a');
-    links.forEach((link: HTMLElement): void => {
-        link.onclick = (event: MouseEvent): void => {
-            event.preventDefault();
-            removeSelected(links);
-            link.classList.add('selected');
-        }
-    });
-}
-
 export function enableToggleSidebar(): void {
     const toggle: HTMLElement | null = el('ham');
     const sidebar: HTMLElement | null = sel('main');
