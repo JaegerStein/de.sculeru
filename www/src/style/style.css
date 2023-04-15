@@ -20,17 +20,19 @@ main {
   box-shadow: 0 16px 32px rgb(0, 0, 0);
 }
 main header {
-  padding: 0.75rem 0.75rem 0 0.75rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
 }
 main header h1 {
   font-size: 3rem;
   line-height: 3rem;
   font-weight: lighter;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px inset rgba(72, 61, 139, 0.3333333333);
 }
 main #categories {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  padding: 0.75rem;
+  padding: 0.5rem;
 }
 main #categories a {
   padding: 0.25rem;
@@ -49,24 +51,15 @@ main #categories a img {
   vertical-align: middle;
   margin-right: 0.5rem;
 }
-main #selection {
-  justify-content: space-evenly;
-  align-items: center;
-  border-top: 1px solid darkslateblue;
+main #links {
+  padding-left: 2rem;
+  padding-top: 0.5rem;
 }
-main #selection a {
-  font-size: 1.25rem;
-  background-color: darkslateblue;
-  color: ivory;
-  max-width: 50%;
-  text-align: center;
+main #links li {
+  list-style: none;
+}
+main #links a {
   text-decoration: none;
-  border: none;
-}
-main #selection a.selected {
-  background-color: rgba(0, 0, 0, 0);
-  color: darkslateblue;
-  border-bottom: 2px solid darkslateblue;
 }
 
 #ham {
