@@ -1,4 +1,4 @@
-import {el, sel, selAll} from "./utils.js";
+import {el, make, sel, selAll} from "./utils.js";
 import {EntryData} from "./Entry.js";
 
 const removeSelected = (nodeList: NodeListOf<HTMLElement> | null) => {
@@ -12,6 +12,32 @@ const kbMap = {
     journal: "journal",
     rules: "regeln",
     tools: "werkzeuge"
+}
+
+const enableLinks = (linkContainer: HTMLElement): void => {
+    linkContainer.querySelectorAll('a').forEach((a: HTMLAnchorElement) => {
+        a.onclick = (event: MouseEvent) => {
+            event.preventDefault();
+            const path: string | null = a.getAttribute('href');
+            if (!path) return;
+            fetch(path)
+                .then((response: Response) => response.text())
+                .then((text: string) => {
+                    const entryTitle: string = a.textContent ?? ">Missing Title<";
+                    const entryContent: string = text ?? ">Missing Text<";
+                    const entry: HTMLElement = make('div');
+                    entry.classList.add('entry');
+                    entry.innerHTML = `
+                        <h1>${entryTitle}</h1>
+                        <hr>
+                        <div class="entry-content">
+                            ${entryContent}
+                        </div>
+                    `;
+                    el('river')?.prepend(entry);
+                }).catch(error => console.log(`Error loading file ${a.getAttribute('href')}`, error));
+        }
+    });
 }
 
 const loadLinks = (kb: string): void => {
@@ -29,8 +55,9 @@ const loadLinks = (kb: string): void => {
                 return 0
             });
             linkContainer.innerHTML = sorted.map((entry: EntryData): string => {
-                return `<li><a href="./${fetchKB}/${entry.id}" onclick="event.preventDefault()">${entry.title}</a></li>`;
+                return `<li><a href="./${fetchKB}/${entry.id}">${entry.title}</a></li>`;
             }).join('');
+            enableLinks(linkContainer);
         }).catch(error => console.error(`Error loading indices for ${fetchKB}:`, error));
 }
 

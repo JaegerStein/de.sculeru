@@ -18,6 +18,9 @@ $parchment: url(../asset/texture/parchment.jpg);
   text-rendering: optimizeLegibility;
   color: $dsb;
   box-sizing: border-box;
+
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -129,6 +132,7 @@ main, #ham {
 }
 
 #river {
+  padding-bottom: $px7;
 
   .entry {
     padding: 1.5rem 2rem 3rem 2rem;

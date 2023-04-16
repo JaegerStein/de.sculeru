@@ -1,4 +1,4 @@
-import { el, sel, selAll } from "./utils.js";
+import { el, make, sel, selAll } from "./utils.js";
 const removeSelected = (nodeList) => {
     nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
         node.classList.remove('selected');
@@ -9,6 +9,33 @@ const kbMap = {
     journal: "journal",
     rules: "regeln",
     tools: "werkzeuge"
+};
+const enableLinks = (linkContainer) => {
+    linkContainer.querySelectorAll('a').forEach((a) => {
+        a.onclick = (event) => {
+            event.preventDefault();
+            const path = a.getAttribute('href');
+            if (!path)
+                return;
+            fetch(path)
+                .then((response) => response.text())
+                .then((text) => {
+                var _a, _b;
+                const entryTitle = (_a = a.textContent) !== null && _a !== void 0 ? _a : ">Missing Title<";
+                const entryContent = text !== null && text !== void 0 ? text : ">Missing Text<";
+                const entry = make('div');
+                entry.classList.add('entry');
+                entry.innerHTML = `
+                        <h1>${entryTitle}</h1>
+                        <hr>
+                        <div class="entry-content">
+                            ${entryContent}
+                        </div>
+                    `;
+                (_b = el('river')) === null || _b === void 0 ? void 0 : _b.prepend(entry);
+            }).catch(error => console.log(`Error loading file ${a.getAttribute('href')}`, error));
+        };
+    });
 };
 const loadLinks = (kb) => {
     const linkContainer = sel('#links');
@@ -28,8 +55,9 @@ const loadLinks = (kb) => {
             return 0;
         });
         linkContainer.innerHTML = sorted.map((entry) => {
-            return `<li><a href="./${fetchKB}/${entry.id}" onclick="event.preventDefault()">${entry.title}</a></li>`;
+            return `<li><a href="./${fetchKB}/${entry.id}">${entry.title}</a></li>`;
         }).join('');
+        enableLinks(linkContainer);
     }).catch(error => console.error(`Error loading indices for ${fetchKB}:`, error));
 };
 const runFirst = () => {
