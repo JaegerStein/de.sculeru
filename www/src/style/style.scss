@@ -58,6 +58,8 @@ main {
 
     padding: .5rem;
 
+    box-shadow: inset 0 0 8px rgba(0 0 0 / .25);
+
     a {
       padding: .25rem;
       text-decoration: none;
@@ -76,6 +78,32 @@ main {
         vertical-align: middle;
         margin-right: .5rem;
       }
+    }
+  }
+
+  #links-sorter {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(3, 1fr);
+
+    font-size: 1rem;
+    padding: .5rem 2rem 0;
+
+    .selected {
+      font-weight: bold;
+    }
+
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $px1;
+      box-shadow: 0 2px 4px rgba(0 0 0 / .5);
+    }
+
+    img {
+      height: 1rem;
+      margin-right: .5rem;
     }
   }
 
