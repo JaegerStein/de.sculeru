@@ -24,7 +24,14 @@ const enableLinks = (linkContainer: HTMLElement): void => {
                 .then((response: Response) => response.text())
                 .then((text: string) => {
                     const entryTitle: string = a.textContent ?? ">Missing Title<";
-                    const entryContent: string = text ?? ">Missing Text<";
+                    let entryContent: string = text ?? ">Missing Text<";
+
+                    // if the file contains a script, it is extracted
+                    const scriptReg: RegExp = /<script>([\s\S]*?)<\/script>/;
+                    const match: RegExpMatchArray | null = entryContent.match(scriptReg);
+                    const script: string | null = match ? match[1].trim() : null;
+                    if (script) entryContent = entryContent.replace(scriptReg, '').trim();
+
                     const entry: HTMLElement = make('div');
                     entry.classList.add('entry');
                     entry.innerHTML = `
@@ -35,6 +42,11 @@ const enableLinks = (linkContainer: HTMLElement): void => {
                         </div>
                     `;
                     el('river')?.prepend(entry);
+                    if (script) { // adds an executable script to the body if it exists
+                        const scriptElement: HTMLElement = make('script');
+                        scriptElement.innerHTML = script;
+                        document.body.appendChild(scriptElement);
+                    }
                 }).catch(error => console.log(`Error loading file ${a.getAttribute('href')}`, error));
         }
     });
@@ -75,6 +87,7 @@ export function enableCategories(): void {
             event.preventDefault();
             if (category.classList.contains('selected')) return;
             removeSelected(categories);
+            el('links')!.textContent = '';
             category.classList.add('selected');
 
             const kb: string = category.id.replace('link-', '');

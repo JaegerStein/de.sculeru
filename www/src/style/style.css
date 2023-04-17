@@ -110,6 +110,9 @@ main, #ham {
   margin: 1rem 0;
   border: 1px solid darkslateblue;
 }
+#river .entry p {
+  margin-bottom: 1rem;
+}
 
 @media screen and (max-width: 1024px) {
   #spacer {

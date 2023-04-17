@@ -22,7 +22,12 @@ const enableLinks = (linkContainer) => {
                 .then((text) => {
                 var _a, _b;
                 const entryTitle = (_a = a.textContent) !== null && _a !== void 0 ? _a : ">Missing Title<";
-                const entryContent = text !== null && text !== void 0 ? text : ">Missing Text<";
+                let entryContent = text !== null && text !== void 0 ? text : ">Missing Text<";
+                const scriptReg = /<script>([\s\S]*?)<\/script>/;
+                const match = entryContent.match(scriptReg);
+                const script = match ? match[1].trim() : null;
+                if (script)
+                    entryContent = entryContent.replace(scriptReg, '').trim();
                 const entry = make('div');
                 entry.classList.add('entry');
                 entry.innerHTML = `
@@ -33,6 +38,11 @@ const enableLinks = (linkContainer) => {
                         </div>
                     `;
                 (_b = el('river')) === null || _b === void 0 ? void 0 : _b.prepend(entry);
+                if (script) {
+                    const scriptElement = make('script');
+                    scriptElement.innerHTML = script;
+                    document.body.appendChild(scriptElement);
+                }
             }).catch(error => console.log(`Error loading file ${a.getAttribute('href')}`, error));
         };
     });
@@ -74,6 +84,7 @@ export function enableCategories() {
             if (category.classList.contains('selected'))
                 return;
             removeSelected(categories);
+            el('links').textContent = '';
             category.classList.add('selected');
             const kb = category.id.replace('link-', '');
             loadLinks(kb);
