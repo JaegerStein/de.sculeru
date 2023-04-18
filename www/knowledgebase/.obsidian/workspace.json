@@ -1,22 +1,18 @@
 {
   "main": {
-    "id": "dd53fd7a0bc8bd61",
+    "id": "fce5dbb48420aea6",
     "type": "split",
     "children": [
       {
-        "id": "8c1ddedb20db8ded",
+        "id": "33bd3848bc1ab320",
         "type": "tabs",
         "children": [
           {
-            "id": "0d9ea7e6bd7bda88",
+            "id": "895a7617cdbc7cf6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Regeln.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -25,15 +21,15 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "50bca7fac1fb16c8",
+    "id": "e07f5d525e09edaa",
     "type": "split",
     "children": [
       {
-        "id": "e1465d3806611cfd",
+        "id": "1544f48ab9bb4946",
         "type": "tabs",
         "children": [
           {
-            "id": "94c9eaa30ca29cb4",
+            "id": "c5e05df0cdfedc21",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -43,7 +39,7 @@
             }
           },
           {
-            "id": "1a41670ba52b981c",
+            "id": "bc46588fddeb06cf",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -58,7 +54,7 @@
             }
           },
           {
-            "id": "9c8976869ac7c359",
+            "id": "ec39c0f299de1293",
             "type": "leaf",
             "state": {
               "type": "starred",
@@ -72,20 +68,20 @@
     "width": 300
   },
   "right": {
-    "id": "056c26e1122d9141",
+    "id": "45b4f5648646facb",
     "type": "split",
     "children": [
       {
-        "id": "30ec40ae981e2df3",
+        "id": "7c1accc47f70f39c",
         "type": "tabs",
         "children": [
           {
-            "id": "57f5ee03c9cd7826",
+            "id": "79cfacd6e96721c1",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regeln.md",
+                "file": "Journal/Questübersicht.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -97,19 +93,19 @@
             }
           },
           {
-            "id": "baf4ed3d96d6cce6",
+            "id": "6f7c32de5e2b9225",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regeln.md",
+                "file": "Journal/Questübersicht.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
             }
           },
           {
-            "id": "dfebf8a6c42c75f9",
+            "id": "8270e16c6fa4b8b4",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -120,12 +116,12 @@
             }
           },
           {
-            "id": "7ff3b664d9e18218",
+            "id": "650fc6f7e1ec6ebe",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regeln.md"
+                "file": "Journal/Questübersicht.canvas"
               }
             }
           }
@@ -146,8 +142,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "0d9ea7e6bd7bda88",
+  "active": "c5e05df0cdfedc21",
   "lastOpenFiles": [
-    "Regeln.md"
+    "Journal/Questübersicht.canvas",
+    "Journal",
+    "Legende",
+    "Regeln"
   ]
 }

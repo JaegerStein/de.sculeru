@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"9a16490a24862644","x":-125,"y":-30,"width":250,"height":60,"color":"1","type":"text","text":"Test Karte"},
+		{"id":"2b7166489847e908","x":-320,"y":-180,"width":250,"height":60,"color":"2","type":"text","text":"Andere Test Karte"}
+	],
+	"edges":[
+		{"id":"3d24b0375bdda1b7","fromNode":"9a16490a24862644","fromSide":"top","toNode":"2b7166489847e908","toSide":"bottom"}
+	]
+}
