@@ -11,8 +11,15 @@
             "id": "895a7617cdbc7cf6",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "canvas",
+              "state": {
+                "file": "Journal/Questübersicht.canvas",
+                "viewState": {
+                  "x": 70.92086931618691,
+                  "y": -195.7387704934437,
+                  "zoom": -1.301112492599834
+                }
+              }
             }
           }
         ]
@@ -142,8 +149,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c5e05df0cdfedc21",
+  "active": "895a7617cdbc7cf6",
   "lastOpenFiles": [
+    "Journal/Canvas Test.html~",
+    "Journal/Canvas Test.html",
     "Journal/Questübersicht.canvas",
     "Journal",
     "Legende",
