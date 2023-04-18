@@ -3,7 +3,7 @@ import json
 from datetime import datetime
 
 base_path = './www/'
-kbs = ['knowledgebase/Journal', 'knowledgebase/Legende', 'knowledgebase/Regeln', 'tools']
+kbs = ['kb/Journal', 'kb/Legende', 'kb/Regeln', 'tools']
 
 for kb in kbs:
     index = []
