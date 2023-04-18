@@ -1,3 +1,5 @@
+import {DIV, H, HR, IMG} from "./utils.js";
+
 export interface EntryData {
     id: string,
     title: string,
@@ -5,7 +7,11 @@ export interface EntryData {
     last_readable: string
 }
 
-export type EntryType = 'markdown' | 'html';
+export enum EntryType {
+    MD = 'markdown',
+    HTML = 'html',
+    OTHER = 'other'
+}
 
 export class Entry {
 
@@ -23,17 +29,47 @@ export class Entry {
 
     private formatContent(content: string): string {
         const formatObsidian = (md: string): string => {
-            return md;
+            // @ts-ignore: this definitely works
+            let mark: string = marked.parse(md);
+            // simply remove obsidian links for now
+            mark = mark.replace(/\[\[|]]/g, '');
+            console.log(mark.includes('[['));
+            return mark;
         }
 
         const formatHTML = (html: string): string => {
             return html;
         }
 
-        return this.entryType === 'markdown' ? formatObsidian(content) : formatHTML(content);
+        if (this.entryType === EntryType.MD) return formatObsidian(content);
+        else if (this.entryType === EntryType.HTML) return formatHTML(content);
+        else return content;
     }
 
     private formatTime(time: number): string {
         return time.toString();
+    }
+
+    public toHTML(): HTMLElement {
+        const entry: HTMLElement = DIV()
+        entry.classList.add('entry')
+
+        const entryHeader: HTMLElement = DIV();
+        entryHeader.classList.add('entry-header', 'flex-row', 'jc-between', 'ai-center', 'full-width');
+        const heading: HTMLElement = H(1);
+        heading.textContent = this.title;
+        const closeIcon: HTMLElement = IMG('./src/asset/icon/x.svg');
+        closeIcon.classList.add('pointer');
+        closeIcon.setAttribute('alt', "Eintrag schließen");
+        closeIcon.onclick = (): void => entry.remove();
+        entryHeader.append(heading, closeIcon);
+
+        const hr: HTMLElement = HR();
+        const entryContent: HTMLElement = DIV();
+        entryContent.classList.add('entry-content')
+        entryContent.innerHTML = this.content;
+
+        entry.append(entryHeader, hr, entryContent);
+        return entry;
     }
 }

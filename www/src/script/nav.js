@@ -1,4 +1,5 @@
 import { el, make, sel, selAll } from "./utils.js";
+import { Entry, EntryType } from "./Entry.js";
 const removeSelected = (nodeList) => {
     nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
         node.classList.remove('selected');
@@ -28,16 +29,8 @@ const enableLinks = (linkContainer) => {
                 const script = match ? match[1].trim() : null;
                 if (script)
                     entryContent = entryContent.replace(scriptReg, '').trim();
-                const entry = make('div');
-                entry.classList.add('entry');
-                entry.innerHTML = `
-                        <h1>${entryTitle}</h1>
-                        <hr>
-                        <div class="entry-content">
-                            ${entryContent}
-                        </div>
-                    `;
-                (_b = el('river')) === null || _b === void 0 ? void 0 : _b.prepend(entry);
+                const entry = new Entry(entryTitle, entryTitle.replace('/', '-').replace(' ', '_'), EntryType.MD, entryContent);
+                (_b = el('river')) === null || _b === void 0 ? void 0 : _b.prepend(entry.toHTML());
                 if (script) {
                     const scriptElement = make('script');
                     scriptElement.innerHTML = script;

@@ -1,5 +1,5 @@
 import {el, make, sel, selAll} from "./utils.js";
-import {EntryData} from "./Entry.js";
+import {Entry, EntryData, EntryType} from "./Entry.js";
 
 const removeSelected = (nodeList: NodeListOf<HTMLElement> | null) => {
     nodeList?.forEach((node: HTMLElement): void => {
@@ -32,16 +32,21 @@ const enableLinks = (linkContainer: HTMLElement): void => {
                     const script: string | null = match ? match[1].trim() : null;
                     if (script) entryContent = entryContent.replace(scriptReg, '').trim();
 
-                    const entry: HTMLElement = make('div');
-                    entry.classList.add('entry');
-                    entry.innerHTML = `
-                        <h1>${entryTitle}</h1>
-                        <hr>
-                        <div class="entry-content">
-                            ${entryContent}
-                        </div>
-                    `;
-                    el('river')?.prepend(entry);
+                    const entry: Entry = new Entry(
+                        entryTitle,
+                        entryTitle.replace('/', '-').replace(' ', '_'),
+                        EntryType.MD, // pretend all entries are markdown for now
+                        entryContent);
+                    // const entry: HTMLElement = make('div');
+                    // entry.classList.add('entry');
+                    // entry.innerHTML = `
+                    //     <h1>${entryTitle}</h1>
+                    //     <hr>
+                    //     <div class="entry-content">
+                    //         ${entryContent}
+                    //     </div>
+                    // `;
+                    el('river')?.prepend(entry.toHTML());
                     if (script) { // adds an executable script to the body if it exists
                         const scriptElement: HTMLElement = make('script');
                         scriptElement.innerHTML = script;
