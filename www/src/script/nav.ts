@@ -1,5 +1,6 @@
 import {el, make, sel, selAll} from "./utils.js";
 import {Entry, EntryData, EntryType} from "./Entry.js";
+import Session from "./Session.js";
 
 const removeSelected = (nodeList: NodeListOf<HTMLElement> | null) => {
     nodeList?.forEach((node: HTMLElement): void => {
@@ -86,7 +87,23 @@ const runFirst = (): void => {
 
 export function enableCategories(): void {
     const categories: NodeListOf<HTMLElement> = selAll('#categories a');
-
+    const initialSelection: string | null = Session.category;
+    switch (initialSelection) {
+        case 'lore':
+            el('link-lore')?.classList.add('selected');
+            break;
+        case 'rules':
+            el('link-rules')?.classList.add('selected');
+            break;
+        case 'journal':
+            el('link-journal')?.classList.add('selected');
+            break;
+        case 'tools':
+            el('link-tools')?.classList.add('selected');
+            break;
+        default:
+            break;
+    }
     categories.forEach((category: HTMLElement): void => {
         category.onclick = (event: MouseEvent): void => {
             event.preventDefault();
@@ -94,6 +111,25 @@ export function enableCategories(): void {
             removeSelected(categories);
             el('links')!.textContent = '';
             category.classList.add('selected');
+
+            const cat: string = category.id.replace('link-', '');
+            switch (cat) {
+                case 'lore':
+                    Session.selectLore();
+                    break;
+                case 'rules':
+                    Session.selectRules();
+                    break;
+                case 'journal':
+                    Session.selectJournal();
+                    break;
+                case 'tools':
+                    Session.selectTools();
+                    break;
+                default:
+                    Session.unselectCategory();
+                    break;
+            }
 
             const kb: string = category.id.replace('link-', '');
             loadLinks(kb);

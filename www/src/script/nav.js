@@ -1,5 +1,6 @@
 import { el, make, sel, selAll } from "./utils.js";
 import { Entry, EntryType } from "./Entry.js";
+import Session from "./Session.js";
 const removeSelected = (nodeList) => {
     nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
         node.classList.remove('selected');
@@ -70,7 +71,25 @@ const runFirst = () => {
         loadLinks(kb);
 };
 export function enableCategories() {
+    var _a, _b, _c, _d;
     const categories = selAll('#categories a');
+    const initialSelection = Session.category;
+    switch (initialSelection) {
+        case 'lore':
+            (_a = el('link-lore')) === null || _a === void 0 ? void 0 : _a.classList.add('selected');
+            break;
+        case 'rules':
+            (_b = el('link-rules')) === null || _b === void 0 ? void 0 : _b.classList.add('selected');
+            break;
+        case 'journal':
+            (_c = el('link-journal')) === null || _c === void 0 ? void 0 : _c.classList.add('selected');
+            break;
+        case 'tools':
+            (_d = el('link-tools')) === null || _d === void 0 ? void 0 : _d.classList.add('selected');
+            break;
+        default:
+            break;
+    }
     categories.forEach((category) => {
         category.onclick = (event) => {
             event.preventDefault();
@@ -79,6 +98,24 @@ export function enableCategories() {
             removeSelected(categories);
             el('links').textContent = '';
             category.classList.add('selected');
+            const cat = category.id.replace('link-', '');
+            switch (cat) {
+                case 'lore':
+                    Session.selectLore();
+                    break;
+                case 'rules':
+                    Session.selectRules();
+                    break;
+                case 'journal':
+                    Session.selectJournal();
+                    break;
+                case 'tools':
+                    Session.selectTools();
+                    break;
+                default:
+                    Session.unselectCategory();
+                    break;
+            }
             const kb = category.id.replace('link-', '');
             loadLinks(kb);
         };
