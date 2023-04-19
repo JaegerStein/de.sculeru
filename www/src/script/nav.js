@@ -6,10 +6,10 @@ const removeSelected = (nodeList) => {
     });
 };
 const kbMap = {
-    lore: "legende",
-    journal: "journal",
-    rules: "regeln",
-    tools: "werkzeuge"
+    lore: "kb/Legende",
+    journal: "kb/Journal",
+    rules: "kb/Regeln",
+    tools: "tools"
 };
 const enableLinks = (linkContainer) => {
     linkContainer.querySelectorAll('a').forEach((a) => {

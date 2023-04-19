@@ -8,10 +8,10 @@ const removeSelected = (nodeList: NodeListOf<HTMLElement> | null) => {
 }
 
 const kbMap = {
-    lore: "legende",
-    journal: "journal",
-    rules: "regeln",
-    tools: "werkzeuge"
+    lore: "kb/Legende",
+    journal: "kb/Journal",
+    rules: "kb/Regeln",
+    tools: "tools"
 }
 
 const enableLinks = (linkContainer: HTMLElement): void => {
