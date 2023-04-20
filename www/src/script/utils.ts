@@ -3,6 +3,11 @@ const sel = (selector: string): HTMLElement | null => document.querySelector(sel
 const selAll = (selector: string): NodeListOf<HTMLElement> => document.querySelectorAll(selector);
 const make = (tag: string): HTMLElement => document.createElement(tag);
 
+const A = (path: string): HTMLElement => {
+    const a = make('a');
+    a.setAttribute('href', path);
+    return a;
+}
 const DIV = (): HTMLElement => make('div');
 const H = (level: 1 | 2 | 3 | 4 | 5 | 6): HTMLElement => make(`h${level}`);
 const HR = (): HTMLElement => make('hr')
@@ -14,4 +19,4 @@ const IMG = (src: string): HTMLElement => {
 const SECTION = (): HTMLElement => make('section');
 
 export {el, sel, selAll, make};
-export {DIV, H, HR, IMG, SECTION};
+export {A, DIV, H, HR, IMG, SECTION};

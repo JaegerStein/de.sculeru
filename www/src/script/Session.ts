@@ -1,12 +1,12 @@
 import {KB_Category} from "./types.js";
+import InternalLink from "./InternalLink.js";
 
 const CATEGORY = 'category';
 
 export default abstract class Session {
 
     private static _category: KB_Category | null = null; // saves the currently selected category
-    private static _kbIndex: Map<KB_Category, string> = new Map<KB_Category, string>();
-
+    private static _linkStorage: Map<string, InternalLink> = new Map<string, HTMLElement>()
     /**
      * Returns the currently selected category
      *
@@ -14,8 +14,6 @@ export default abstract class Session {
      * @returns {(string | null)}The selected category of the knowledgebase as a string, or null if none is selected
      */
     public static get category(): string | null { return this._category; }
-    public static get categoryIndices(): Map<KB_Category, string> { return Session._kbIndex }
-    public static categoryIndex(category: KB_Category): string | undefined { return Session._kbIndex.get(category); }
 
     private static selectCategory(category: KB_Category | null): void {
         if (category) {

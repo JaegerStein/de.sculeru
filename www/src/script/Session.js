@@ -2,8 +2,6 @@ import { KB_Category } from "./types.js";
 const CATEGORY = 'category';
 export default class Session {
     static get category() { return this._category; }
-    static get categoryIndices() { return Session._kbIndex; }
-    static categoryIndex(category) { return Session._kbIndex.get(category); }
     static selectCategory(category) {
         if (category) {
             localStorage.setItem(CATEGORY, category);
@@ -44,5 +42,5 @@ export default class Session {
     }
 }
 Session._category = null;
-Session._kbIndex = new Map();
+Session._linkStorage = new Map();
 //# sourceMappingURL=Session.js.map
