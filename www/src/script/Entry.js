@@ -1,4 +1,4 @@
-import { DIV, H, HR, IMG } from "./utils.js";
+import { DIV, H, HR, IMG, SECTION } from "./utils.js";
 import { markdownToHTML } from "./obsidian.js";
 export var EntryType;
 (function (EntryType) {
@@ -30,7 +30,7 @@ export class Entry {
         return time.toString();
     }
     toHTML() {
-        const entry = DIV();
+        const entry = SECTION();
         entry.classList.add('entry');
         const entryHeader = DIV();
         entryHeader.classList.add('entry-header', 'flex-row', 'jc-between', 'ai-center', 'full-width');

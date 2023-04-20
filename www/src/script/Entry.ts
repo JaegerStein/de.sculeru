@@ -1,4 +1,4 @@
-import {DIV, H, HR, IMG} from "./utils.js";
+import {DIV, H, HR, IMG, SECTION} from "./utils.js";
 import {markdownToHTML} from "./obsidian.js";
 
 export interface EntryData {
@@ -44,7 +44,7 @@ export class Entry {
     }
 
     public toHTML(): HTMLElement {
-        const entry: HTMLElement = DIV()
+        const entry: HTMLElement = SECTION()
         entry.classList.add('entry')
 
         const entryHeader: HTMLElement = DIV();

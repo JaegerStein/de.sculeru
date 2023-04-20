@@ -11,6 +11,7 @@ const IMG = (src: string): HTMLElement => {
     img.setAttribute('src', src);
     return img;
 }
+const SECTION = (): HTMLElement => make('section');
 
 export {el, sel, selAll, make};
-export {DIV, H, IMG, HR};
+export {DIV, H, HR, IMG, SECTION};
