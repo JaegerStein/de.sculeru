@@ -1,4 +1,5 @@
 import { DIV, H, HR, IMG } from "./utils.js";
+import { markdownToHTML } from "./obsidian.js";
 export var EntryType;
 (function (EntryType) {
     EntryType["MD"] = "markdown";
@@ -14,12 +15,7 @@ export class Entry {
         this.timestamp = last ? this.formatTime(last) : null;
     }
     formatContent(content) {
-        const formatObsidian = (md) => {
-            let mark = marked.parse(md);
-            mark = mark.replace(/\[\[|]]/g, '');
-            console.log(mark.includes('[['));
-            return mark;
-        };
+        const formatObsidian = (md) => markdownToHTML(md);
         const formatHTML = (html) => {
             return html;
         };

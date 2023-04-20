@@ -1,4 +1,5 @@
 import {DIV, H, HR, IMG} from "./utils.js";
+import {markdownToHTML} from "./obsidian.js";
 
 export interface EntryData {
     id: string,
@@ -28,15 +29,7 @@ export class Entry {
     }
 
     private formatContent(content: string): string {
-        const formatObsidian = (md: string): string => {
-            // @ts-ignore: this definitely works
-            let mark: string = marked.parse(md);
-            // simply remove obsidian links for now
-            mark = mark.replace(/\[\[|]]/g, '');
-            console.log(mark.includes('[['));
-            return mark;
-        }
-
+        const formatObsidian = (md: string): string => markdownToHTML(md);
         const formatHTML = (html: string): string => {
             return html;
         }

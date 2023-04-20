@@ -11,14 +11,11 @@
             "id": "e8bc66e679832a28",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Journal/Questkarte.canvas",
-                "viewState": {
-                  "x": -219.2925603616446,
-                  "y": 147.8536855079924,
-                  "zoom": -0.38763828696375596
-                }
+                "file": "Journal/Bekanntschaften/Peretin.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -100,7 +97,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Journal/Questkarte.canvas",
+                "file": "Journal/Bekanntschaften/Peretin.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -117,7 +114,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Journal/Questkarte.canvas",
+                "file": "Journal/Bekanntschaften/Peretin.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -140,7 +137,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Journal/Questkarte.canvas"
+                "file": "Journal/Bekanntschaften/Peretin.md"
               }
             }
           }
@@ -163,10 +160,10 @@
   },
   "active": "e8bc66e679832a28",
   "lastOpenFiles": [
-    "Journal/Bekanntschaften/Peretin.md",
-    "Journal/Questkarte.canvas",
-    "Journal/Bekanntschaften",
     "Journal/Questen/Besiegt den Nekromanten Peretin.md",
+    "Journal/Questkarte.canvas",
+    "Journal/Bekanntschaften/Peretin.md",
+    "Journal/Bekanntschaften",
     "Journal/Questen",
     "Journal/Canvas Test.html~",
     "Journal/Canvas Test.html",
