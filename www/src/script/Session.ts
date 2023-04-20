@@ -1,4 +1,4 @@
-enum Category {
+export enum Category {
     LORE = 'lore',
     RULES = 'rules',
     JOURNAL = 'journal',
@@ -9,9 +9,18 @@ const CATEGORY = 'category';
 
 export default abstract class Session {
 
-    private static _category: Category | null = null;
+    private static _category: Category | null = null; // saves the currently selected category
+    private static _kbIndex: Map<Category, string> = new Map<Category, string>();
 
+    /**
+     * Returns the currently selected category
+     *
+     * @static
+     * @returns {(string | null)}The selected category of the knowledgebase as a string, or null if none is selected
+     */
     public static get category(): string | null { return this._category; }
+    public static get categoryIndices(): Map<Category, string> { return Session._kbIndex }
+    public static categoryIndex(category: Category): string | undefined { return Session._kbIndex.get(category); }
 
     private static selectCategory(category: Category | null): void {
         if (category) {
