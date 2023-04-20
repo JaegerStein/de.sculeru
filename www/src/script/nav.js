@@ -1,6 +1,7 @@
 import { el, make, sel, selAll } from "./utils.js";
-import { Entry, EntryType } from "./Entry.js";
+import { Entry } from "./Entry.js";
 import Session from "./Session.js";
+import { KB_EntryType } from "./types.js";
 const removeSelected = (nodeList) => {
     nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
         node.classList.remove('selected');
@@ -30,7 +31,7 @@ const enableLinks = (linkContainer) => {
                 const script = match ? match[1].trim() : null;
                 if (script)
                     entryContent = entryContent.replace(scriptReg, '').trim();
-                const entry = new Entry(entryTitle, entryTitle.replace('/', '-').replace(' ', '_'), EntryType.MD, entryContent);
+                const entry = new Entry(entryTitle, entryTitle.replace('/', '-').replace(' ', '_'), KB_EntryType.MD, entryContent);
                 (_b = el('river')) === null || _b === void 0 ? void 0 : _b.prepend(entry.toHTML());
                 if (script) {
                     const scriptElement = make('script');

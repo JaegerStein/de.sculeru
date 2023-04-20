@@ -1,10 +1,4 @@
-export var Category;
-(function (Category) {
-    Category["LORE"] = "lore";
-    Category["RULES"] = "rules";
-    Category["JOURNAL"] = "journal";
-    Category["TOOLS"] = "tools";
-})(Category || (Category = {}));
+import { KB_Category } from "./types.js";
 const CATEGORY = 'category';
 export default class Session {
     static get category() { return this._category; }
@@ -20,10 +14,10 @@ export default class Session {
             Session._category = null;
         }
     }
-    static selectLore() { Session.selectCategory(Category.LORE); }
-    static selectRules() { Session.selectCategory(Category.RULES); }
-    static selectJournal() { Session.selectCategory(Category.JOURNAL); }
-    static selectTools() { Session.selectCategory(Category.TOOLS); }
+    static selectLore() { Session.selectCategory(KB_Category.LORE); }
+    static selectRules() { Session.selectCategory(KB_Category.RULES); }
+    static selectJournal() { Session.selectCategory(KB_Category.JOURNAL); }
+    static selectTools() { Session.selectCategory(KB_Category.TOOLS); }
     static unselectCategory() { Session.selectCategory(null); }
     static active() {
         Session.activeCategory();
@@ -31,16 +25,16 @@ export default class Session {
     static activeCategory() {
         const category = localStorage.getItem(CATEGORY);
         switch (category) {
-            case Category.LORE:
+            case KB_Category.LORE:
                 Session.selectLore();
                 break;
-            case Category.RULES:
+            case KB_Category.RULES:
                 Session.selectRules();
                 break;
-            case Category.JOURNAL:
+            case KB_Category.JOURNAL:
                 Session.selectJournal();
                 break;
-            case Category.TOOLS:
+            case KB_Category.TOOLS:
                 Session.selectTools();
                 break;
             default:

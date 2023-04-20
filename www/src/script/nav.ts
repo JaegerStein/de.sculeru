@@ -1,6 +1,7 @@
 import {el, make, sel, selAll} from "./utils.js";
-import {Entry, EntryData, EntryType} from "./Entry.js";
+import {Entry} from "./Entry.js";
 import Session from "./Session.js";
+import {KB_Entry, KB_EntryType} from "./types.js";
 
 const removeSelected = (nodeList: NodeListOf<HTMLElement> | null) => {
     nodeList?.forEach((node: HTMLElement): void => {
@@ -36,7 +37,7 @@ const enableLinks = (linkContainer: HTMLElement): void => {
                     const entry: Entry = new Entry(
                         entryTitle,
                         entryTitle.replace('/', '-').replace(' ', '_'),
-                        EntryType.MD, // pretend all entries are markdown for now
+                        KB_EntryType.MD, // pretend all entries are markdown for now
                         entryContent);
                     // const entry: HTMLElement = make('div');
                     // entry.classList.add('entry');
@@ -64,15 +65,15 @@ const loadLinks = (kb: string): void => {
     const fetchKB: string = kbMap[kb as keyof typeof kbMap];
     fetch(`./${fetchKB}/index.json`)
         .then((response: Response) => response.json())
-        .then((index: EntryData[]): void => {
-            const sorted: EntryData[] = index.sort((a: EntryData, b: EntryData): number => {
+        .then((index: KB_Entry[]): void => {
+            const sorted: KB_Entry[] = index.sort((a: KB_Entry, b: KB_Entry): number => {
                 const titleA: string = a.title.toLowerCase();
                 const titleB: string = b.title.toLowerCase();
                 if (titleA < titleB) return -1;
                 if (titleA > titleB) return 1;
                 return 0
             });
-            linkContainer.innerHTML = sorted.map((entry: EntryData): string => {
+            linkContainer.innerHTML = sorted.map((entry: KB_Entry): string => {
                 return `<li><a href="./${fetchKB}/${entry.id}">${entry.title}</a></li>`;
             }).join('');
             enableLinks(linkContainer);

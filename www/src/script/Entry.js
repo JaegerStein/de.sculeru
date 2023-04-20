@@ -1,11 +1,6 @@
 import { DIV, H, HR, IMG, SECTION } from "./utils.js";
 import { markdownToHTML } from "./obsidian.js";
-export var EntryType;
-(function (EntryType) {
-    EntryType["MD"] = "markdown";
-    EntryType["HTML"] = "html";
-    EntryType["OTHER"] = "other";
-})(EntryType || (EntryType = {}));
+import { KB_EntryType } from "./types.js";
 export class Entry {
     constructor(title, id, entryType, content, last) {
         this.title = title;
@@ -19,9 +14,9 @@ export class Entry {
         const formatHTML = (html) => {
             return html;
         };
-        if (this.entryType === EntryType.MD)
+        if (this.entryType === KB_EntryType.MD)
             return formatObsidian(content);
-        else if (this.entryType === EntryType.HTML)
+        else if (this.entryType === KB_EntryType.HTML)
             return formatHTML(content);
         else
             return content;

@@ -1,18 +1,6 @@
 import {DIV, H, HR, IMG, SECTION} from "./utils.js";
 import {markdownToHTML} from "./obsidian.js";
-
-export interface EntryData {
-    id: string,
-    title: string,
-    last: number,
-    last_readable: string
-}
-
-export enum EntryType {
-    MD = 'markdown',
-    HTML = 'html',
-    OTHER = 'other'
-}
+import {KB_EntryType} from "./types.js";
 
 export class Entry {
 
@@ -21,7 +9,7 @@ export class Entry {
 
     public constructor(public readonly title: string,
                        public readonly id: string,
-                       private readonly entryType: EntryType,
+                       private readonly entryType: KB_EntryType,
                        content: string,
                        last?: number) {
         this.content = this.formatContent(content);
@@ -34,8 +22,8 @@ export class Entry {
             return html;
         }
 
-        if (this.entryType === EntryType.MD) return formatObsidian(content);
-        else if (this.entryType === EntryType.HTML) return formatHTML(content);
+        if (this.entryType === KB_EntryType.MD) return formatObsidian(content);
+        else if (this.entryType === KB_EntryType.HTML) return formatHTML(content);
         else return content;
     }
 

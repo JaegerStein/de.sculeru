@@ -1,16 +1,11 @@
-export enum Category {
-    LORE = 'lore',
-    RULES = 'rules',
-    JOURNAL = 'journal',
-    TOOLS = 'tools'
-}
+import {KB_Category} from "./types.js";
 
 const CATEGORY = 'category';
 
 export default abstract class Session {
 
-    private static _category: Category | null = null; // saves the currently selected category
-    private static _kbIndex: Map<Category, string> = new Map<Category, string>();
+    private static _category: KB_Category | null = null; // saves the currently selected category
+    private static _kbIndex: Map<KB_Category, string> = new Map<KB_Category, string>();
 
     /**
      * Returns the currently selected category
@@ -19,10 +14,10 @@ export default abstract class Session {
      * @returns {(string | null)}The selected category of the knowledgebase as a string, or null if none is selected
      */
     public static get category(): string | null { return this._category; }
-    public static get categoryIndices(): Map<Category, string> { return Session._kbIndex }
-    public static categoryIndex(category: Category): string | undefined { return Session._kbIndex.get(category); }
+    public static get categoryIndices(): Map<KB_Category, string> { return Session._kbIndex }
+    public static categoryIndex(category: KB_Category): string | undefined { return Session._kbIndex.get(category); }
 
-    private static selectCategory(category: Category | null): void {
+    private static selectCategory(category: KB_Category | null): void {
         if (category) {
             localStorage.setItem(CATEGORY, category);
             Session._category = category;
@@ -31,10 +26,10 @@ export default abstract class Session {
             Session._category = null;
         }
     }
-    public static selectLore(): void { Session.selectCategory(Category.LORE); }
-    public static selectRules(): void { Session.selectCategory(Category.RULES); }
-    public static selectJournal(): void { Session.selectCategory(Category.JOURNAL); }
-    public static selectTools(): void { Session.selectCategory(Category.TOOLS); }
+    public static selectLore(): void { Session.selectCategory(KB_Category.LORE); }
+    public static selectRules(): void { Session.selectCategory(KB_Category.RULES); }
+    public static selectJournal(): void { Session.selectCategory(KB_Category.JOURNAL); }
+    public static selectTools(): void { Session.selectCategory(KB_Category.TOOLS); }
     public static unselectCategory(): void { Session.selectCategory(null); }
 
     /**
@@ -47,16 +42,16 @@ export default abstract class Session {
     private static activeCategory(): void {
         const category: string | null = localStorage.getItem(CATEGORY);
         switch (category) {
-            case Category.LORE:
+            case KB_Category.LORE:
                 Session.selectLore();
                 break;
-            case Category.RULES:
+            case KB_Category.RULES:
                 Session.selectRules();
                 break;
-            case Category.JOURNAL:
+            case KB_Category.JOURNAL:
                 Session.selectJournal();
                 break;
-            case Category.TOOLS:
+            case KB_Category.TOOLS:
                 Session.selectTools();
                 break;
             default:
