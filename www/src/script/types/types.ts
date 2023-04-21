@@ -12,7 +12,7 @@ interface KB_Entry {
     last_readable: string
 }
 
-type KB_Index = [KB_Entry];
+type KB_Index = KB_Entry[];
 
 enum KB_EntryType {
     MD = 'markdown',

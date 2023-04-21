@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Journal/Bekanntschaften/Peretin.md",
+                "file": "Legende/Legende.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4b79d7d1d63f7216",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Legende/Legende.md",
                 "mode": "source",
                 "source": false
               }
@@ -31,7 +43,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -97,7 +110,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Journal/Bekanntschaften/Peretin.md",
+                "file": "Legende/Legende.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -114,7 +127,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Journal/Bekanntschaften/Peretin.md",
+                "file": "Legende/Legende.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -137,7 +150,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Journal/Bekanntschaften/Peretin.md"
+                "file": "Legende/Legende.md"
               }
             }
           }
@@ -158,11 +171,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "e8bc66e679832a28",
+  "active": "4b79d7d1d63f7216",
   "lastOpenFiles": [
+    "Legende/Geografie/Geografie.md",
+    "Legende/Legende.md",
+    "Journal/Bekanntschaften/Peretin.md",
+    "Legende/Geografie",
     "Journal/Questen/Besiegt den Nekromanten Peretin.md",
     "Journal/Questkarte.canvas",
-    "Journal/Bekanntschaften/Peretin.md",
     "Journal/Bekanntschaften",
     "Journal/Questen",
     "Journal/Canvas Test.html~",

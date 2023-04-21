@@ -1,4 +1,4 @@
-import {KB_Category, KB_Entry} from "./types.js";
+import {KB_Category, KB_Entry} from "../types/types.js";
 
 async function loadInternalURL(url: string): Promise<string> {
     const response: Response = await fetch(url);

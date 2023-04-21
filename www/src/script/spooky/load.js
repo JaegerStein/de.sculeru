@@ -1,4 +1,4 @@
-import { KB_Category } from "./types.js";
+import { KB_Category } from "../types/types.js";
 async function loadInternalURL(url) {
     const response = await fetch(url);
     if (!response.ok)
