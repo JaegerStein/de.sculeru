@@ -26,7 +26,7 @@ export class Entry {
     }
     toHTML() {
         const entry = SECTION();
-        entry.classList.add('entry');
+        entry.classList.add(`entry`);
         const entryHeader = DIV();
         entryHeader.classList.add('entry-header', 'flex-row', 'jc-between', 'ai-center', 'full-width');
         const heading = H(1);

@@ -1,6 +1,6 @@
 import {DIV, H, HR, IMG, SECTION} from "./utils.js";
 import {markdownToHTML} from "./obsidian.js";
-import {KB_EntryType} from "./types.js";
+import {KB_Category, KB_EntryType} from "./types.js";
 
 export class Entry {
 
@@ -32,8 +32,8 @@ export class Entry {
     }
 
     public toHTML(): HTMLElement {
-        const entry: HTMLElement = SECTION()
-        entry.classList.add('entry')
+        const entry: HTMLElement = SECTION();
+        entry.classList.add(`entry`);
 
         const entryHeader: HTMLElement = DIV();
         entryHeader.classList.add('entry-header', 'flex-row', 'jc-between', 'ai-center', 'full-width');

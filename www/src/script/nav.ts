@@ -39,15 +39,6 @@ const enableLinks = (linkContainer: HTMLElement): void => {
                         entryTitle.replace('/', '-').replace(' ', '_'),
                         KB_EntryType.MD, // pretend all entries are markdown for now
                         entryContent);
-                    // const entry: HTMLElement = make('div');
-                    // entry.classList.add('entry');
-                    // entry.innerHTML = `
-                    //     <h1>${entryTitle}</h1>
-                    //     <hr>
-                    //     <div class="entry-content">
-                    //         ${entryContent}
-                    //     </div>
-                    // `;
                     el('river')?.prepend(entry.toHTML());
                     if (script) { // adds an executable script to the body if it exists
                         const scriptElement: HTMLElement = make('script');
