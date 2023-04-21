@@ -23,4 +23,5 @@ function categoryToPath(category) {
             return './tools/';
     }
 }
+export { loadInternalURL, loadIndex };
 //# sourceMappingURL=loader.js.map

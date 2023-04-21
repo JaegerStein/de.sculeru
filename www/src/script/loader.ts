@@ -24,3 +24,5 @@ function categoryToPath(category: KB_Category): string {
             return './tools/';
     }
 }
+
+export {loadInternalURL, loadIndex}
