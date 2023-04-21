@@ -1,7 +1,7 @@
 import { el, make, sel, selAll } from "./utils.js";
-import { Entry } from "./types/Entry";
+import { Entry } from "./types/Entry.js";
 import Session from "./Session.js";
-import { KB_EntryType } from "./types/types";
+import { KB_EntryType } from "./types/types.js";
 const removeSelected = (nodeList) => {
     nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
         node.classList.remove('selected');

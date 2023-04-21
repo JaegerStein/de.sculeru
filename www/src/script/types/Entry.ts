@@ -1,5 +1,5 @@
-import {DIV, H, HR, IMG, SECTION} from "./utils.js";
-import {markdownToHTML} from "./obsidian.js";
+import {DIV, H, HR, IMG, SECTION} from "../utils.js";
+import {markdownToHTML} from "../obsidian.js";
 import {KB_Category, KB_EntryType} from "./types.js";
 
 export class Entry {

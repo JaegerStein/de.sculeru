@@ -19,6 +19,6 @@ for kb in kbs:
                 last_readable = datetime.fromtimestamp(last).strftime('%Y-%m-%d %H:%M:%S')
                 entry = {'id': rel_path, 'title': title, 'last': last, 'last_readable': last_readable}
                 index.append(entry)
-    index_file = os.path.join(kb_path, 'index.json')
+    index_file = os.path.join(kb_path, 'kb_index.json')
     with open(index_file, 'w') as f:
         json.dump(index, f)

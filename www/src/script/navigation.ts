@@ -1,7 +1,7 @@
 import {el, make, sel, selAll} from "./utils.js";
-import {Entry} from "./types/Entry";
+import {Entry} from "./types/Entry.js";
 import Session from "./Session.js";
-import {KB_Entry, KB_EntryType} from "./types/types";
+import {KB_Entry, KB_EntryType} from "./types/types.js";
 
 const removeSelected = (nodeList: NodeListOf<HTMLElement> | null) => {
     nodeList?.forEach((node: HTMLElement): void => {
