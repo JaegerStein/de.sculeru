@@ -1,5 +1,5 @@
-import { A } from "./utils.js";
-import { KB_Category } from "./types.js";
+import { A } from "../utils";
+import { KB_Category } from "./types";
 export default class InternalLink {
     constructor(text, relpath, category) {
         this.text = text;

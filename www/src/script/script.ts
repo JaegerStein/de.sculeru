@@ -1,10 +1,10 @@
-import {enableCategories, enableToggleSidebar} from "./nav.js";
+import {enableCategories, enableToggleSidebar} from "./navigation.js";
 import Session from "./Session.js";
 
 function init(): void {
     Session.active();
-    enableCategories();
-    enableToggleSidebar();
+    // enableCategories();
+    // enableToggleSidebar();
 }
 
 window.onload = init;

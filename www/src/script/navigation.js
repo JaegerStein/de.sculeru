@@ -1,7 +1,7 @@
 import { el, make, sel, selAll } from "./utils.js";
-import { Entry } from "./Entry.js";
+import { Entry } from "./types/Entry";
 import Session from "./Session.js";
-import { KB_EntryType } from "./types.js";
+import { KB_EntryType } from "./types/types";
 const removeSelected = (nodeList) => {
     nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
         node.classList.remove('selected');
@@ -133,4 +133,4 @@ export function enableToggleSidebar() {
         toggle.classList.toggle('rotate');
     };
 }
-//# sourceMappingURL=nav.js.map
+//# sourceMappingURL=navigation.js.map

@@ -1,6 +1,5 @@
-import {KB_Category, KB_Entry} from "./types.js";
-import InternalLink from "./InternalLink.js";
-import {Entry} from "./Entry";
+import {KB_Category, KB_Entry} from "./types/types.js";
+import {Entry} from "./types/Entry.js";
 
 const CATEGORY = 'category';
 const store: Storage = localStorage;
