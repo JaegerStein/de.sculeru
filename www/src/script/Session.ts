@@ -1,4 +1,4 @@
-import {KB_Category} from "./types.js";
+import {KB_Category, KB_Entry} from "./types.js";
 import InternalLink from "./InternalLink.js";
 import {Entry} from "./Entry";
 
@@ -8,11 +8,15 @@ const store: Storage = localStorage;
 export default abstract class Session {
 
     private static _category: KB_Category | null = null; // saves the currently selected category
-    private static _openEntries: Map<InternalLink, Entry> = new Map<InternalLink, Entry>();
+    private static _entries: Map<string, KB_Entry> = new Map<string, KB_Entry>();
+    private static _openEntries: Map<string, Entry> = new Map<string, Entry>();
 
     public static get category(): string | null { return this._category; }
-    public static get openEntriesMap(): Map<InternalLink, Entry> { return Session._openEntries; }
+    public static get openEntriesMap(): Map<string, Entry> { return Session._openEntries; }
     public static get openEntriesList(): Array<Entry> { return Array.from(Session._openEntries.values()); }
+    public static getEntry(title: string): KB_Entry | undefined { return Session._entries.get(title); }
+    public static getOpenEntry(title: string): Entry | undefined { return Session._openEntries.get(title); }
+    public static isOpen(title: string): boolean { return Session._openEntries.has(title); }
 
     private static selectCategory(category: KB_Category | null): void {
         if (category) {

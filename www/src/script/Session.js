@@ -5,6 +5,9 @@ export default class Session {
     static get category() { return this._category; }
     static get openEntriesMap() { return Session._openEntries; }
     static get openEntriesList() { return Array.from(Session._openEntries.values()); }
+    static getEntry(title) { return Session._entries.get(title); }
+    static getOpenEntry(title) { return Session._openEntries.get(title); }
+    static isOpen(title) { return Session._openEntries.has(title); }
     static selectCategory(category) {
         if (category) {
             store.setItem(CATEGORY, category);
@@ -45,5 +48,6 @@ export default class Session {
     }
 }
 Session._category = null;
+Session._entries = new Map();
 Session._openEntries = new Map();
 //# sourceMappingURL=Session.js.map

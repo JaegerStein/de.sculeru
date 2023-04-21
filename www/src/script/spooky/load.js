@@ -24,4 +24,4 @@ function categoryToPath(category) {
     }
 }
 export { loadInternalURL, loadIndex };
-//# sourceMappingURL=loader.js.map
+//# sourceMappingURL=load.js.map
