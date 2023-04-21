@@ -1,14 +1,17 @@
 import { KB_Category } from "./types.js";
 const CATEGORY = 'category';
+const store = localStorage;
 export default class Session {
     static get category() { return this._category; }
+    static get openEntriesMap() { return Session._openEntries; }
+    static get openEntriesList() { return Array.from(Session._openEntries.values()); }
     static selectCategory(category) {
         if (category) {
-            localStorage.setItem(CATEGORY, category);
+            store.setItem(CATEGORY, category);
             Session._category = category;
         }
         else {
-            localStorage.removeItem(CATEGORY);
+            store.removeItem(CATEGORY);
             Session._category = null;
         }
     }
@@ -21,7 +24,7 @@ export default class Session {
         Session.activeCategory();
     }
     static activeCategory() {
-        const category = localStorage.getItem(CATEGORY);
+        const category = store.getItem(CATEGORY);
         switch (category) {
             case KB_Category.LORE:
                 Session.selectLore();
@@ -42,5 +45,5 @@ export default class Session {
     }
 }
 Session._category = null;
-Session._linkStorage = new Map();
+Session._openEntries = new Map();
 //# sourceMappingURL=Session.js.map
