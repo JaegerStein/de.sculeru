@@ -1,7 +1,7 @@
 enum KB_Category {
     LORE = 'lore',
-    RULES = 'rules',
     JOURNAL = 'journal',
+    RULES = 'rules',
     TOOLS = 'tools'
 }
 

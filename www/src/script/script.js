@@ -8,8 +8,8 @@ function init() {
         index.forEach((entry) => {
             Session.addEntry(entry);
         });
+        enableNavigation();
     });
-    enableNavigation();
 }
 window.onload = init;
 //# sourceMappingURL=script.js.map

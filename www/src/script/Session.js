@@ -8,9 +8,9 @@ export default class Session {
     }
     static addEntry(entry) {
         var _a;
-        const { id: id, category: category } = entry;
-        Session._entries.set(id, entry);
-        (_a = Session._categoryIndex.get(category)) === null || _a === void 0 ? void 0 : _a.push(id);
+        const { title: title, category: category } = entry;
+        Session._entries.set(title, entry);
+        (_a = Session._categoryIndex.get(category)) === null || _a === void 0 ? void 0 : _a.push(title);
     }
     static get entriesList() { return Array.from(Session._entries.values()); }
     static get openEntriesMap() { return Session._openEntries; }

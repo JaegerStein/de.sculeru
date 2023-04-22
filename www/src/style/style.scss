@@ -68,6 +68,10 @@ main {
       &.selected {
         font-weight: bold;
         border-bottom: $px1 solid $dsb;
+
+        img {
+          filter: drop-shadow(2px 2px 1px rgba($dsb, .5));
+        }
       }
 
       img {
@@ -81,7 +85,7 @@ main {
   }
 
   #links-sorter {
-    display: grid;
+    //display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(3, 1fr);
 

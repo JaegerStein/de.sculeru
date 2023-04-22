@@ -11,9 +11,9 @@ function init(): void {
         index.forEach((entry: KB_Entry): void => {
             Session.addEntry(entry);
         });
-    });
 
-    enableNavigation();
+        enableNavigation();
+    });
 }
 
 window.onload = init;

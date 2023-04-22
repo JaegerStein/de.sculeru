@@ -15,7 +15,8 @@ const IMG = (src) => {
     img.setAttribute('src', src);
     return img;
 };
+const LI = () => make('li');
 const SECTION = () => make('section');
 export { el, sel, selAll, make };
-export { A, DIV, H, HR, IMG, SECTION };
+export { A, DIV, H, HR, IMG, LI, SECTION };
 //# sourceMappingURL=utils.js.map

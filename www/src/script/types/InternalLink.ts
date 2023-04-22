@@ -40,33 +40,9 @@ export default class InternalLink {
      * @returns This link as an HTMLElement
      */
     public toHTML(): HTMLElement {
-        const link: HTMLElement = A(this.fullLink());
+        const link: HTMLElement = A('./' + this.relpath);
         link.classList.add('internal-link');
         link.textContent = this.text;
         return link;
-    }
-
-    /**
-     * Resolves the full URL of the link for use in the application
-     * @returns A string representation of the full link URL
-     * @private
-     */
-    private fullLink = (): string => {
-        let link = './';
-        switch (this.category) {
-            case KB_Category.JOURNAL:
-                link += 'kb/Journal/';
-                break
-            case KB_Category.LORE:
-                link += 'kb/Legende/';
-                break
-            case KB_Category.RULES:
-                link += 'kb/Regeln/';
-                break;
-            case KB_Category.TOOLS:
-                link += 'tools/';
-                break;
-        }
-        return link + this.relpath;
     }
 }

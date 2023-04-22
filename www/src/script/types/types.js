@@ -1,8 +1,8 @@
 var KB_Category;
 (function (KB_Category) {
     KB_Category["LORE"] = "lore";
-    KB_Category["RULES"] = "rules";
     KB_Category["JOURNAL"] = "journal";
+    KB_Category["RULES"] = "rules";
     KB_Category["TOOLS"] = "tools";
 })(KB_Category || (KB_Category = {}));
 var KB_EntryType;

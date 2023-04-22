@@ -46,6 +46,9 @@ main #categories a.selected {
   font-weight: bold;
   border-bottom: 2px solid rgb(72, 61, 139);
 }
+main #categories a.selected img {
+  filter: drop-shadow(2px 2px 1px rgba(72, 61, 139, 0.5));
+}
 main #categories a img {
   height: 2rem;
   width: 2rem;
@@ -54,7 +57,6 @@ main #categories a img {
   margin-right: 0.5rem;
 }
 main #links-sorter {
-  display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(3, 1fr);
   font-size: 1rem;

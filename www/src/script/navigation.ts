@@ -1,4 +1,4 @@
-import {el, make, sel, selAll} from "./utils.js";
+import {el, LI, make, sel, selAll} from "./utils.js";
 import {Entry} from "./types/Entry.js";
 import Session from "./Session.js";
 import {KB_Category, KB_Entry, KB_EntryType} from "./types/types.js";
@@ -53,31 +53,19 @@ const enableLinks = (linkContainer: HTMLElement): void => {
 function loadLinks(kb: KB_Category): void {
     const l: HTMLElement | null = links();
     if (!l) return;
+    l.innerHTML = '';
 
-    Session.getCategoryIndex(kb).forEach((entryKey: string): void => {
-        const kbEntry: KB_Entry | null = Session.getEntry(entryKey);
-        console.log(kbEntry);
-        if (!kbEntry) return;
-        const internalLink: InternalLink = InternalLink.fromKBEntry(kbEntry);
-        console.log(internalLink);
-    });
-
-    const fetchKB: string = kbMap[kb as keyof typeof kbMap];
-    fetch(`./${fetchKB}/index.json`)
-        .then((response: Response) => response.json())
-        .then((index: KB_Entry[]): void => {
-            const sorted: KB_Entry[] = index.sort((a: KB_Entry, b: KB_Entry): number => {
-                const titleA: string = a.title.toLowerCase();
-                const titleB: string = b.title.toLowerCase();
-                if (titleA < titleB) return -1;
-                if (titleA > titleB) return 1;
-                return 0
-            });
-            l.innerHTML = sorted.map((entry: KB_Entry): string => {
-                return `<li><a href="./${fetchKB}/${entry.id}">${entry.title}</a></li>`;
-            }).join('');
-            enableLinks(l);
-        }).catch(error => console.error(`Error loading indices for ${fetchKB}:`, error));
+    //hopefully sorted alphabetically
+    Session.getCategoryIndex(kb)
+        .sort((a: string, b: string): number => a.localeCompare(b))
+        .forEach((entryKey: string): void => {
+            const kbEntry: KB_Entry | null = Session.getEntry(entryKey);
+            if (!kbEntry) return;
+            const internalLink: InternalLink = InternalLink.fromKBEntry(kbEntry);
+            const li: HTMLElement = LI();
+            li.append(internalLink.toHTML());
+            l.append(li);
+        });
 }
 
 

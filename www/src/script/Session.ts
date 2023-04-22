@@ -27,9 +27,9 @@ export default abstract class Session {
     }
 
     public static addEntry(entry: KB_Entry): void {
-        const {id: id, category: category} = entry;
-        Session._entries.set(id, entry);
-        Session._categoryIndex.get(category as KB_Category)?.push(id);
+        const {title: title, category: category} = entry;
+        Session._entries.set(title, entry);
+        Session._categoryIndex.get(category as KB_Category)?.push(title);
     }
 
     public static get entriesList(): KB_Entry[] { return Array.from(Session._entries.values())}

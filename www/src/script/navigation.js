@@ -1,4 +1,4 @@
-import { el, make, sel, selAll } from "./utils.js";
+import { el, LI, make, sel, selAll } from "./utils.js";
 import { Entry } from "./types/Entry.js";
 import Session from "./Session.js";
 import { KB_Category, KB_EntryType } from "./types/types.js";
@@ -46,32 +46,18 @@ function loadLinks(kb) {
     const l = links();
     if (!l)
         return;
-    Session.getCategoryIndex(kb).forEach((entryKey) => {
+    l.innerHTML = '';
+    Session.getCategoryIndex(kb)
+        .sort((a, b) => a.localeCompare(b))
+        .forEach((entryKey) => {
         const kbEntry = Session.getEntry(entryKey);
-        console.log(kbEntry);
         if (!kbEntry)
             return;
         const internalLink = InternalLink.fromKBEntry(kbEntry);
-        console.log(internalLink);
+        const li = LI();
+        li.append(internalLink.toHTML());
+        l.append(li);
     });
-    const fetchKB = kbMap[kb];
-    fetch(`./${fetchKB}/index.json`)
-        .then((response) => response.json())
-        .then((index) => {
-        const sorted = index.sort((a, b) => {
-            const titleA = a.title.toLowerCase();
-            const titleB = b.title.toLowerCase();
-            if (titleA < titleB)
-                return -1;
-            if (titleA > titleB)
-                return 1;
-            return 0;
-        });
-        l.innerHTML = sorted.map((entry) => {
-            return `<li><a href="./${fetchKB}/${entry.id}">${entry.title}</a></li>`;
-        }).join('');
-        enableLinks(l);
-    }).catch(error => console.error(`Error loading indices for ${fetchKB}:`, error));
 }
 const resetSelection = () => categories.forEach((node) => node.classList.remove('selected'));
 const select = (el) => el.classList.add(SELECTED);
