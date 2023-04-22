@@ -14,6 +14,11 @@ $dsb: darkslateblue;
 $dsb: rgb(72, 61, 139);
 $parchment: url(../asset/texture/parchment.jpg);
 
+@font-face {
+  font-family: "Angie";
+  src: url("../fonts/Angie Small Caps.ttf");
+}
+
 * {
   font-family: $header;
   text-rendering: optimizeLegibility;
@@ -28,6 +33,10 @@ body {
   background-color: #977f73;
   background-image: url('../asset/texture/wood.jpg');
   background-repeat: repeat;
+}
+
+h1, h2, h3 {
+  font-family: 'Angie', fantasy, serif;
 }
 
 main {
@@ -58,19 +67,21 @@ main {
     grid-template-rows: repeat(2, 1fr);
 
     padding: .5rem;
-    
+
     a {
       padding: .25rem;
       text-decoration: none;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: normal;
+
+      font-family: 'Angie', fantasy, serif;
 
       &.selected {
         font-weight: bold;
         border-bottom: $px1 solid $dsb;
 
         img {
-          filter: drop-shadow(2px 2px 1px rgba($dsb, .5));
+          filter: drop-shadow(2px 2px 1px rgba($dsb, .25));
         }
       }
 
