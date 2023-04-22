@@ -1,7 +1,7 @@
 import { el, make, sel, selAll } from "./utils.js";
 import { Entry } from "./types/Entry.js";
 import Session from "./Session.js";
-import { KB_EntryType } from "./types/types.js";
+import { KB_Category, KB_EntryType } from "./types/types.js";
 const removeSelected = (nodeList) => {
     nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
         node.classList.remove('selected');
@@ -65,32 +65,11 @@ const loadLinks = (kb) => {
         enableLinks(linkContainer);
     }).catch(error => console.error(`Error loading indices for ${fetchKB}:`, error));
 };
-const runFirst = () => {
-    const active = sel('#categories .selected');
-    const kb = active === null || active === void 0 ? void 0 : active.id.replace('link-', '');
-    if (kb)
-        loadLinks(kb);
-};
 export function enableCategories() {
-    var _a, _b, _c, _d;
+    const select = (cat) => { var _a; return (_a = el(`link-${cat}`)) === null || _a === void 0 ? void 0 : _a.classList.add('selected'); };
     const categories = selAll('#categories a');
     const initialSelection = Session.category;
-    switch (initialSelection) {
-        case 'lore':
-            (_a = el('link-lore')) === null || _a === void 0 ? void 0 : _a.classList.add('selected');
-            break;
-        case 'rules':
-            (_b = el('link-rules')) === null || _b === void 0 ? void 0 : _b.classList.add('selected');
-            break;
-        case 'journal':
-            (_c = el('link-journal')) === null || _c === void 0 ? void 0 : _c.classList.add('selected');
-            break;
-        case 'tools':
-            (_d = el('link-tools')) === null || _d === void 0 ? void 0 : _d.classList.add('selected');
-            break;
-        default:
-            break;
-    }
+    select(initialSelection);
     categories.forEach((category) => {
         category.onclick = (event) => {
             event.preventDefault();
@@ -100,28 +79,41 @@ export function enableCategories() {
             el('links').textContent = '';
             category.classList.add('selected');
             const cat = category.id.replace('link-', '');
-            switch (cat) {
-                case 'lore':
-                    Session.selectLore();
-                    break;
-                case 'rules':
-                    Session.selectRules();
-                    break;
-                case 'journal':
-                    Session.selectJournal();
-                    break;
-                case 'tools':
-                    Session.selectTools();
-                    break;
-                default:
-                    Session.unselectCategory();
-                    break;
-            }
+            loadCategory(cat);
             const kb = category.id.replace('link-', '');
             loadLinks(kb);
         };
     });
     runFirst();
+}
+function loadCategory(category) {
+    const s = Session;
+    switchCat(category, s.selectLore, s.selectJournal, s.selectRules, s.selectTools, s.unselectCategory);
+}
+function switchCat(c, l, j, r, t, d) {
+    switch (c) {
+        case KB_Category.LORE:
+            l();
+            return;
+        case KB_Category.JOURNAL:
+            j();
+            return;
+        case KB_Category.RULES:
+            r();
+            return;
+        case KB_Category.TOOLS:
+            t();
+            return;
+        default:
+            d === null || d === void 0 ? void 0 : d();
+            return;
+    }
+}
+function runFirst() {
+    const active = sel('#categories .selected');
+    const kb = active === null || active === void 0 ? void 0 : active.id.replace('link-', '');
+    if (kb)
+        loadLinks(kb);
 }
 export function enableToggleSidebar() {
     const toggle = el('ham');

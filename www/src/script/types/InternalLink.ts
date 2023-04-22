@@ -1,4 +1,4 @@
-import {A} from "./utils.js";
+import {A} from "../utils.js";
 import {KB_Category} from "./types.js";
 
 /** Represents an internal link to a knowledge base entry */

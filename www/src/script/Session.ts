@@ -8,7 +8,7 @@ export default abstract class Session {
 
     // saves the currently selected category
     private static _category: KB_Category | null = null;
-    public static get category(): string | null { return this._category; }
+    public static get category(): KB_Category | null { return this._category; }
 
     // contains all registered entries in the knowledge base, aka the index
     private static _entries: Map<string, KB_Entry> = new Map<string, KB_Entry>();
@@ -29,7 +29,6 @@ export default abstract class Session {
     }
 
     public static get entriesList(): KB_Entry[] { return Array.from(Session._entries.values())}
-
 
 
     public static get openEntriesMap(): Map<string, Entry> { return Session._openEntries; }
