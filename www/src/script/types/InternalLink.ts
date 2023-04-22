@@ -1,5 +1,5 @@
 import {A} from "../utils.js";
-import {KB_Category} from "./types.js";
+import {KB_Category, KB_Entry} from "./types.js";
 
 /** Represents an internal link to a knowledge base entry */
 export default class InternalLink {
@@ -13,6 +13,10 @@ export default class InternalLink {
     public constructor(private readonly text: string,
                        private readonly relpath: string,
                        private readonly category: KB_Category) {}
+
+    public static fromKBEntry(entry: KB_Entry): InternalLink {
+        return new InternalLink(entry.title, entry.id, entry.category as KB_Category);
+    }
 
     /**
      * Returns a string representation of this InternalLink instance.

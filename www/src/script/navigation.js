@@ -2,17 +2,17 @@ import { el, make, sel, selAll } from "./utils.js";
 import { Entry } from "./types/Entry.js";
 import Session from "./Session.js";
 import { KB_Category, KB_EntryType } from "./types/types.js";
-const removeSelected = (nodeList) => {
-    nodeList === null || nodeList === void 0 ? void 0 : nodeList.forEach((node) => {
-        node.classList.remove('selected');
-    });
-};
+import { SELECTED } from "./common.js";
+import InternalLink from "./types/InternalLink.js";
 const kbMap = {
     lore: "kb/Legende",
     journal: "kb/Journal",
     rules: "kb/Regeln",
     tools: "tools"
 };
+const categories = [];
+const catPrefix = 'link-';
+const links = () => el('links');
 const enableLinks = (linkContainer) => {
     linkContainer.querySelectorAll('a').forEach((a) => {
         a.onclick = (event) => {
@@ -42,10 +42,18 @@ const enableLinks = (linkContainer) => {
         };
     });
 };
-const loadLinks = (kb) => {
-    const linkContainer = sel('#links');
-    if (!linkContainer)
+function loadLinks(kb) {
+    const l = links();
+    if (!l)
         return;
+    Session.getCategoryIndex(kb).forEach((entryKey) => {
+        const kbEntry = Session.getEntry(entryKey);
+        console.log(kbEntry);
+        if (!kbEntry)
+            return;
+        const internalLink = InternalLink.fromKBEntry(kbEntry);
+        console.log(internalLink);
+    });
     const fetchKB = kbMap[kb];
     fetch(`./${fetchKB}/index.json`)
         .then((response) => response.json())
@@ -59,37 +67,15 @@ const loadLinks = (kb) => {
                 return 1;
             return 0;
         });
-        linkContainer.innerHTML = sorted.map((entry) => {
+        l.innerHTML = sorted.map((entry) => {
             return `<li><a href="./${fetchKB}/${entry.id}">${entry.title}</a></li>`;
         }).join('');
-        enableLinks(linkContainer);
+        enableLinks(l);
     }).catch(error => console.error(`Error loading indices for ${fetchKB}:`, error));
-};
-export function enableCategories() {
-    const select = (cat) => { var _a; return (_a = el(`link-${cat}`)) === null || _a === void 0 ? void 0 : _a.classList.add('selected'); };
-    const categories = selAll('#categories a');
-    const initialSelection = Session.category;
-    select(initialSelection);
-    categories.forEach((category) => {
-        category.onclick = (event) => {
-            event.preventDefault();
-            if (category.classList.contains('selected'))
-                return;
-            removeSelected(categories);
-            el('links').textContent = '';
-            category.classList.add('selected');
-            const cat = category.id.replace('link-', '');
-            loadCategory(cat);
-            const kb = category.id.replace('link-', '');
-            loadLinks(kb);
-        };
-    });
-    runFirst();
 }
-function loadCategory(category) {
-    const s = Session;
-    switchCat(category, s.selectLore, s.selectJournal, s.selectRules, s.selectTools, s.unselectCategory);
-}
+const resetSelection = () => categories.forEach((node) => node.classList.remove('selected'));
+const select = (el) => el.classList.add(SELECTED);
+const kbFromCat = (cat) => cat.id.replace(catPrefix, '');
 function switchCat(c, l, j, r, t, d) {
     switch (c) {
         case KB_Category.LORE:
@@ -109,13 +95,29 @@ function switchCat(c, l, j, r, t, d) {
             return;
     }
 }
-function runFirst() {
-    const active = sel('#categories .selected');
-    const kb = active === null || active === void 0 ? void 0 : active.id.replace('link-', '');
-    if (kb)
-        loadLinks(kb);
+function loadCategory(category) {
+    const s = Session;
+    switchCat(category, s.selectLore, s.selectJournal, s.selectRules, s.selectTools, s.unselectCategory);
+    loadLinks(category);
 }
-export function enableToggleSidebar() {
+function handleCategoryClick(cat) {
+    cat.onclick = (event) => {
+        event.preventDefault();
+        if (cat.classList.contains(SELECTED))
+            return;
+        resetSelection();
+        select(cat);
+        loadCategory(kbFromCat(cat));
+    };
+}
+function enableCategories() {
+    var _a;
+    categories.length = 0;
+    categories.push(...selAll('#categories a'));
+    (_a = el(`link-${Session.category}`)) === null || _a === void 0 ? void 0 : _a.classList.add(SELECTED);
+    categories.forEach((category) => handleCategoryClick(category));
+}
+function enableToggleSidebar() {
     const toggle = el('ham');
     const sidebar = sel('main');
     if (!toggle || !sidebar)
@@ -125,4 +127,15 @@ export function enableToggleSidebar() {
         toggle.classList.toggle('rotate');
     };
 }
+function runFirst() {
+    const active = sel('#categories .selected');
+    if (active)
+        loadLinks(kbFromCat(active));
+}
+function enableNavigation() {
+    enableCategories();
+    enableToggleSidebar();
+    runFirst();
+}
+export { enableNavigation };
 //# sourceMappingURL=navigation.js.map

@@ -22,6 +22,10 @@ export default abstract class Session {
         [KB_Category.TOOLS, []]
     ]);
 
+    public static getCategoryIndex(category: KB_Category): string[] {
+        return Session._categoryIndex.get(category) || [];
+    }
+
     public static addEntry(entry: KB_Entry): void {
         const {id: id, category: category} = entry;
         Session._entries.set(id, entry);
@@ -33,7 +37,7 @@ export default abstract class Session {
 
     public static get openEntriesMap(): Map<string, Entry> { return Session._openEntries; }
     public static get openEntriesList(): Array<Entry> { return Array.from(Session._openEntries.values()); }
-    public static getEntry(title: string): KB_Entry | undefined { return Session._entries.get(title); }
+    public static getEntry(title: string): KB_Entry | null { return Session._entries.get(title) || null; }
     public static getOpenEntry(title: string): Entry | undefined { return Session._openEntries.get(title); }
     public static isOpen(title: string): boolean { return Session._openEntries.has(title); }
 

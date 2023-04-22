@@ -24,6 +24,9 @@ export default class InternalLink {
             return link + this.relpath;
         };
     }
+    static fromKBEntry(entry) {
+        return new InternalLink(entry.title, entry.id, entry.category);
+    }
     toString() {
         return `InternalLink(text: "${this.text}", relpath: "${this.relpath}", category: "${this.category}")`;
     }

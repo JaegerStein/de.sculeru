@@ -3,6 +3,9 @@ const CATEGORY = 'category';
 const store = localStorage;
 export default class Session {
     static get category() { return this._category; }
+    static getCategoryIndex(category) {
+        return Session._categoryIndex.get(category) || [];
+    }
     static addEntry(entry) {
         var _a;
         const { id: id, category: category } = entry;
@@ -12,7 +15,7 @@ export default class Session {
     static get entriesList() { return Array.from(Session._entries.values()); }
     static get openEntriesMap() { return Session._openEntries; }
     static get openEntriesList() { return Array.from(Session._openEntries.values()); }
-    static getEntry(title) { return Session._entries.get(title); }
+    static getEntry(title) { return Session._entries.get(title) || null; }
     static getOpenEntry(title) { return Session._openEntries.get(title); }
     static isOpen(title) { return Session._openEntries.has(title); }
     static selectCategory(category) {
