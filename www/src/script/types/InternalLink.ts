@@ -7,12 +7,14 @@ export default class InternalLink {
     /**
      * Creates a new InternalLink instance
      * @param text - The text content of the link element.
+     * @param identifier - The key string of the corresponding entry, usually same as text
      * @param relpath - The relative path to the entry in its category.
      * @param category - The knowledge base category.
      */
-    public constructor(private readonly text: string,
+    public constructor(public text: string,
                        private readonly relpath: string,
-                       private readonly category: KB_Category) {}
+                       private readonly category: KB_Category,
+                       private readonly identifier: string = text) {}
 
     public static fromKBEntry(entry: KB_Entry): InternalLink {
         return new InternalLink(entry.title, entry.id, entry.category as KB_Category);
@@ -43,6 +45,7 @@ export default class InternalLink {
         const link: HTMLElement = A('./' + this.relpath);
         link.classList.add('internal-link');
         link.textContent = this.text;
+        link.setAttribute('data-entry', this.identifier)
         return link;
     }
 }

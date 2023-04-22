@@ -1,3 +1,7 @@
+import Session from "./Session.js";
+import InternalLink from "./types/InternalLink.js";
+import {el} from "./utils";
+
 /**
  * Converts a string of Markdown text into HTML using the marked.js library
  * @param md The obsidian Markdown string
@@ -14,28 +18,24 @@ function markdownToHTML(md: string): string {
  * @returns The given text with obsidian links formatted as HTML links
  */
 function formatObsidianLinks(text: string): string {
-    const linkRegex = /\[\[(.+?)]]/g;
-    const linkWithTitleRegex = /\[\[(.+?)\|(.+?)]]/g;
+    let formatted = text;
 
-    function linkToPath(link: string): string {
-        const trimmedLink: string = link.trim();
-        const pipeIndex: number = trimmedLink.indexOf('|');
-
-        const filename: string = pipeIndex > -1 ? trimmedLink.substring(0, pipeIndex) : trimmedLink;
-        return `${filename}.md`;
+    const regex = /\[\[([\w\s]+)\|?([\w\s]*)]]/g;
+    let match = regex.exec(text);
+    while (match) {
+        const link = match[1];
+        const content = match[2] || link;
+        const kbEntry = Session.getEntry(link);
+        let replace: string;
+        if (kbEntry) {
+            const internalLink = InternalLink.fromKBEntry(kbEntry);
+            internalLink.text = content;
+            replace = internalLink.toHTML().outerHTML;
+        } else replace = content;
+        formatted = formatted.replace(match[0], replace);
+        match = regex.exec(text);
     }
-
-    const formattedText: string = text.replace(linkWithTitleRegex,
-        (match: string, link: string, title: string): string => {
-            const path = linkToPath(link);
-            return `<a href="./${path}">${title}</a>`
-        });
-
-    return formattedText.replace(linkRegex, (match: string, link: string): string => {
-        const path = linkToPath(link);
-        return `<a href="./${path}">${link}</a>`;
-    });
-
+    return formatted;
 }
 
 export {markdownToHTML};

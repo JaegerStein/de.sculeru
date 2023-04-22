@@ -4,6 +4,7 @@ import Session from "./Session.js";
 import {KB_Category, KB_Entry, KB_EntryType} from "./types/types.js";
 import {SELECTED} from "./common.js";
 import InternalLink from "./types/InternalLink.js";
+import {registerLink} from "./links.js";
 
 const kbMap = {
     lore: "kb/Legende",
@@ -50,25 +51,6 @@ const enableLinks = (linkContainer: HTMLElement): void => {
     });
 }
 
-function loadLinks(kb: KB_Category): void {
-    const l: HTMLElement | null = links();
-    if (!l) return;
-    l.innerHTML = '';
-
-    //hopefully sorted alphabetically
-    Session.getCategoryIndex(kb)
-        .sort((a: string, b: string): number => a.localeCompare(b))
-        .forEach((entryKey: string): void => {
-            const kbEntry: KB_Entry | null = Session.getEntry(entryKey);
-            if (!kbEntry) return;
-            const internalLink: InternalLink = InternalLink.fromKBEntry(kbEntry);
-            const li: HTMLElement = LI();
-            li.append(internalLink.toHTML());
-            l.append(li);
-        });
-}
-
-
 const resetSelection = () => categories.forEach((node: HTMLElement): void => node.classList.remove('selected'));
 const select = (el: HTMLElement) => el.classList.add(SELECTED);
 const kbFromCat = (cat: HTMLElement): KB_Category => cat.id.replace(catPrefix, '') as KB_Category;
@@ -83,6 +65,25 @@ function switchCat(c: KB_Category,
         case KB_Category.TOOLS: t(); return;
         default: d?.(); return;
     } //@formatter:on
+}
+
+function loadLinks(kb: KB_Category): void {
+    const l: HTMLElement | null = links();
+    if (!l) return;
+    l.innerHTML = '';
+
+    Session.getCategoryIndex(kb)
+        .sort((a: string, b: string): number => a.localeCompare(b))
+        .forEach((entryKey: string): void => {
+            const kbEntry: KB_Entry | null = Session.getEntry(entryKey);
+            if (!kbEntry) return;
+            const internalLink: InternalLink = InternalLink.fromKBEntry(kbEntry);
+            const li: HTMLElement = LI();
+            const a: HTMLElement = internalLink.toHTML();
+            registerLink(a);
+            li.append(a);
+            l.append(li);
+        });
 }
 
 function loadCategory(category: KB_Category): void {

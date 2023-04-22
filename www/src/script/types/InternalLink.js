@@ -1,9 +1,10 @@
 import { A } from "../utils.js";
 export default class InternalLink {
-    constructor(text, relpath, category) {
+    constructor(text, relpath, category, identifier = text) {
         this.text = text;
         this.relpath = relpath;
         this.category = category;
+        this.identifier = identifier;
     }
     static fromKBEntry(entry) {
         return new InternalLink(entry.title, entry.id, entry.category);
@@ -18,6 +19,7 @@ export default class InternalLink {
         const link = A('./' + this.relpath);
         link.classList.add('internal-link');
         link.textContent = this.text;
+        link.setAttribute('data-entry', this.identifier);
         return link;
     }
 }

@@ -4,6 +4,7 @@ import Session from "./Session.js";
 import { KB_Category, KB_EntryType } from "./types/types.js";
 import { SELECTED } from "./common.js";
 import InternalLink from "./types/InternalLink.js";
+import { registerLink } from "./links.js";
 const kbMap = {
     lore: "kb/Legende",
     journal: "kb/Journal",
@@ -42,23 +43,6 @@ const enableLinks = (linkContainer) => {
         };
     });
 };
-function loadLinks(kb) {
-    const l = links();
-    if (!l)
-        return;
-    l.innerHTML = '';
-    Session.getCategoryIndex(kb)
-        .sort((a, b) => a.localeCompare(b))
-        .forEach((entryKey) => {
-        const kbEntry = Session.getEntry(entryKey);
-        if (!kbEntry)
-            return;
-        const internalLink = InternalLink.fromKBEntry(kbEntry);
-        const li = LI();
-        li.append(internalLink.toHTML());
-        l.append(li);
-    });
-}
 const resetSelection = () => categories.forEach((node) => node.classList.remove('selected'));
 const select = (el) => el.classList.add(SELECTED);
 const kbFromCat = (cat) => cat.id.replace(catPrefix, '');
@@ -80,6 +64,25 @@ function switchCat(c, l, j, r, t, d) {
             d === null || d === void 0 ? void 0 : d();
             return;
     }
+}
+function loadLinks(kb) {
+    const l = links();
+    if (!l)
+        return;
+    l.innerHTML = '';
+    Session.getCategoryIndex(kb)
+        .sort((a, b) => a.localeCompare(b))
+        .forEach((entryKey) => {
+        const kbEntry = Session.getEntry(entryKey);
+        if (!kbEntry)
+            return;
+        const internalLink = InternalLink.fromKBEntry(kbEntry);
+        const li = LI();
+        const a = internalLink.toHTML();
+        registerLink(a);
+        li.append(a);
+        l.append(li);
+    });
 }
 function loadCategory(category) {
     const s = Session;
