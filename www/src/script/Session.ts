@@ -1,4 +1,4 @@
-import {KB_Category, KB_Entry, KB_Index} from "./types/types.js";
+import {KB_Category, KB_Entry} from "./types/types.js";
 import {Entry} from "./types/Entry.js";
 
 const CATEGORY = 'category';
@@ -6,37 +6,32 @@ const store: Storage = localStorage;
 
 export default abstract class Session {
 
-    private static _category: KB_Category | null = null; // saves the currently selected category
-    private static _entries: Map<string, KB_Entry> = new Map<string, KB_Entry>();
-    private static _openEntries: Map<string, Entry> = new Map<string, Entry>();
-
-    private static _loreIndex: KB_Index | null = null;
-    public static get lore(): KB_Index | null { return Session._loreIndex; }
-    public static updateLoreIndex(index: KB_Index): void {
-        Session._loreIndex = index;
-        store.setItem('lore', JSON.stringify(index));
-    }
-    private static _journalIndex: KB_Index | null = null;
-    private static _rulesIndex: KB_Index | null = null;
-    private static _toolsIndex: KB_Index | null = null;
-
-    public static getIndex(category: KB_Category): KB_Index | null {
-        switch (category) {
-            case KB_Category.LORE:
-                return Session._loreIndex;
-            case KB_Category.JOURNAL:
-                return Session._journalIndex;
-            case KB_Category.RULES:
-                return Session._rulesIndex;
-            case KB_Category.TOOLS:
-                return Session._toolsIndex;
-            default:
-                return null;
-        }
-    }
-
-
+    // saves the currently selected category
+    private static _category: KB_Category | null = null;
     public static get category(): string | null { return this._category; }
+
+    // contains all registered entries in the knowledge base, aka the index
+    private static _entries: Map<string, KB_Entry> = new Map<string, KB_Entry>();
+    // contains entries currently opened in the river
+    private static _openEntries: Map<string, Entry> = new Map<string, Entry>();
+    // contains entry
+    private static _categoryIndex: Map<KB_Category, string[]> = new Map([
+        [KB_Category.LORE, []],
+        [KB_Category.JOURNAL, []],
+        [KB_Category.RULES, []],
+        [KB_Category.TOOLS, []]
+    ]);
+
+    public static addEntry(entry: KB_Entry): void {
+        const {id: id, category: category} = entry;
+        Session._entries.set(id, entry);
+        Session._categoryIndex.get(category as KB_Category)?.push(id);
+    }
+
+    public static get entriesList(): KB_Entry[] { return Array.from(Session._entries.values())}
+
+
+
     public static get openEntriesMap(): Map<string, Entry> { return Session._openEntries; }
     public static get openEntriesList(): Array<Entry> { return Array.from(Session._openEntries.values()); }
     public static getEntry(title: string): KB_Entry | undefined { return Session._entries.get(title); }

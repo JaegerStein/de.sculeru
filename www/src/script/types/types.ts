@@ -9,7 +9,7 @@ interface KB_Entry {
     id: string,
     title: string,
     last: number,
-    last_readable: string
+    category: string
 }
 
 type KB_Index = KB_Entry[];

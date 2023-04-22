@@ -2,26 +2,14 @@ import { KB_Category } from "./types/types.js";
 const CATEGORY = 'category';
 const store = localStorage;
 export default class Session {
-    static get lore() { return Session._loreIndex; }
-    static updateLoreIndex(index) {
-        Session._loreIndex = index;
-        store.setItem('lore', JSON.stringify(index));
-    }
-    static getIndex(category) {
-        switch (category) {
-            case KB_Category.LORE:
-                return Session._loreIndex;
-            case KB_Category.JOURNAL:
-                return Session._journalIndex;
-            case KB_Category.RULES:
-                return Session._rulesIndex;
-            case KB_Category.TOOLS:
-                return Session._toolsIndex;
-            default:
-                return null;
-        }
-    }
     static get category() { return this._category; }
+    static addEntry(entry) {
+        var _a;
+        const { id: id, category: category } = entry;
+        Session._entries.set(id, entry);
+        (_a = Session._categoryIndex.get(category)) === null || _a === void 0 ? void 0 : _a.push(id);
+    }
+    static get entriesList() { return Array.from(Session._entries.values()); }
     static get openEntriesMap() { return Session._openEntries; }
     static get openEntriesList() { return Array.from(Session._openEntries.values()); }
     static getEntry(title) { return Session._entries.get(title); }
@@ -69,8 +57,10 @@ export default class Session {
 Session._category = null;
 Session._entries = new Map();
 Session._openEntries = new Map();
-Session._loreIndex = null;
-Session._journalIndex = null;
-Session._rulesIndex = null;
-Session._toolsIndex = null;
+Session._categoryIndex = new Map([
+    [KB_Category.LORE, []],
+    [KB_Category.JOURNAL, []],
+    [KB_Category.RULES, []],
+    [KB_Category.TOOLS, []]
+]);
 //# sourceMappingURL=Session.js.map
