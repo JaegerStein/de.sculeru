@@ -2,9 +2,10 @@ const el = (id) => document.getElementById(id);
 const sel = (selector) => document.querySelector(selector);
 const selAll = (selector) => document.querySelectorAll(selector);
 const make = (tag) => document.createElement(tag);
-const A = (path) => {
+const A = (path, textContent) => {
     const a = make('a');
-    a.setAttribute('href', path);
+    a.href = path;
+    a.textContent = textContent || "";
     return a;
 };
 const DIV = () => make('div');

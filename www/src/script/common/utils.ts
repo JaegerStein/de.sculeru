@@ -3,9 +3,10 @@ const sel = (selector: string): HTMLElement | null => document.querySelector(sel
 const selAll = (selector: string): NodeListOf<HTMLElement> => document.querySelectorAll(selector);
 const make = (tag: string): HTMLElement => document.createElement(tag);
 
-const A = (path: string): HTMLElement => {
-    const a = make('a');
-    a.setAttribute('href', path);
+const A = (path: string, textContent?: string): HTMLAnchorElement => {
+    const a: HTMLAnchorElement = make('a') as HTMLAnchorElement;
+    a.href = path;
+    a.textContent = textContent || "";
     return a;
 }
 const DIV = (): HTMLElement => make('div');

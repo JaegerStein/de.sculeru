@@ -1,13 +1,21 @@
 import { loadInternalURL } from "./spooky/load.js";
 import Session from "./Session.js";
 import { KB_EntryType } from "./types/types.js";
-import { el, make } from "./common/utils.js";
+import { A, el, make } from "./common/utils.js";
 import { Entry } from "./types/Entry.js";
 function extractScript(entryContent) {
     const scriptReg = /<script>([\s\S]*?)<\/script>/;
     const match = entryContent.match(scriptReg);
     const script = match ? match[1].trim() : null;
     return [entryContent.replace(scriptReg, '').trim(), script];
+}
+function linkFromTitle(title, textContent) {
+    const kbEntry = Session.getEntry(title);
+    if (!kbEntry)
+        throw new Error(`Could not resolve identifier "${title}"; no associated entry was found.`);
+    const a = A(kbEntry.id, textContent || title);
+    a.classList.add('internal-link');
+    return a;
 }
 function registerLink(a) {
     a.onclick = (event) => {
@@ -34,5 +42,5 @@ function registerLink(a) {
         });
     };
 }
-export { registerLink };
+export { registerLink, linkFromTitle };
 //# sourceMappingURL=links.js.map
