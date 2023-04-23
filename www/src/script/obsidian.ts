@@ -1,6 +1,6 @@
 import Session from "./Session.js";
 import InternalLink from "./types/InternalLink.js";
-import {el} from "./utils";
+import {el} from "./common/utils";
 
 /**
  * Converts a string of Markdown text into HTML using the marked.js library

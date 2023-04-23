@@ -1,56 +1,13 @@
-import {el, LI, make, sel, selAll} from "./utils.js";
-import {Entry} from "./types/Entry.js";
+import {el, LI, sel, selAll} from "./common/utils.js";
 import Session from "./Session.js";
-import {KB_Category, KB_Entry, KB_EntryType} from "./types/types.js";
-import {SELECTED} from "./common.js";
+import {KB_Category, KB_Entry} from "./types/types.js";
+import {SELECTED} from "./common/common.js";
 import InternalLink from "./types/InternalLink.js";
 import {registerLink} from "./links.js";
-
-const kbMap = {
-    lore: "kb/Legende",
-    journal: "kb/Journal",
-    rules: "kb/Regeln",
-    tools: "tools"
-}
 
 const categories: HTMLElement[] = [];
 const catPrefix = 'link-';
 const links = (): HTMLElement | null => el('links')
-
-const enableLinks = (linkContainer: HTMLElement): void => {
-    linkContainer.querySelectorAll('a').forEach((a: HTMLAnchorElement) => {
-        a.onclick = (event: MouseEvent) => {
-            event.preventDefault();
-            const path: string | null = a.getAttribute('href');
-            if (!path) return;
-            fetch(path)
-                .then((response: Response) => response.text())
-                .then((text: string) => {
-                    const entryTitle: string = a.textContent ?? ">Missing Title<";
-                    let entryContent: string = text ?? ">Missing Text<";
-
-                    // if the file contains a script, it is extracted
-                    const scriptReg: RegExp = /<script>([\s\S]*?)<\/script>/;
-                    const match: RegExpMatchArray | null = entryContent.match(scriptReg);
-                    const script: string | null = match ? match[1].trim() : null;
-                    if (script) entryContent = entryContent.replace(scriptReg, '').trim();
-
-                    const entry: Entry = new Entry(
-                        entryTitle,
-                        entryTitle.replace('/', '-').replace(' ', '_'),
-                        KB_EntryType.MD, // pretend all entries are markdown for now
-                        entryContent);
-                    el('river')?.prepend(entry.toHTML());
-                    if (script) { // adds an executable script to the body if it exists
-                        const scriptElement: HTMLElement = make('script');
-                        scriptElement.innerHTML = script;
-                        document.body.appendChild(scriptElement);
-                    }
-                }).catch(error => console.log(`Error loading file ${a.getAttribute('href')}`, error));
-        }
-    });
-}
-
 const resetSelection = () => categories.forEach((node: HTMLElement): void => node.classList.remove('selected'));
 const select = (el: HTMLElement) => el.classList.add(SELECTED);
 const kbFromCat = (cat: HTMLElement): KB_Category => cat.id.replace(catPrefix, '') as KB_Category;

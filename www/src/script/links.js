@@ -1,7 +1,7 @@
 import { loadInternalURL } from "./spooky/load.js";
 import Session from "./Session.js";
 import { KB_EntryType } from "./types/types.js";
-import { el, make } from "./utils.js";
+import { el, make } from "./common/utils.js";
 import { Entry } from "./types/Entry.js";
 function extractScript(entryContent) {
     const scriptReg = /<script>([\s\S]*?)<\/script>/;
