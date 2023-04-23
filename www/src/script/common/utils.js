@@ -8,7 +8,11 @@ const A = (path) => {
     return a;
 };
 const DIV = () => make('div');
-const H = (level) => make(`h${level}`);
+const H = (level, textContent) => {
+    const h = make(`h${level}`);
+    h.textContent = textContent || "";
+    return h;
+};
 const HR = () => make('hr');
 const IMG = (src) => {
     const img = make('img');
@@ -16,7 +20,12 @@ const IMG = (src) => {
     return img;
 };
 const LI = () => make('li');
+const P = (textContent) => {
+    const p = make('p');
+    p.textContent = textContent || "";
+    return p;
+};
 const SECTION = () => make('section');
 export { el, sel, selAll, make };
-export { A, DIV, H, HR, IMG, LI, SECTION };
+export { A, DIV, H, HR, IMG, LI, P, SECTION };
 //# sourceMappingURL=utils.js.map

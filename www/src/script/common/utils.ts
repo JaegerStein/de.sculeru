@@ -9,7 +9,11 @@ const A = (path: string): HTMLElement => {
     return a;
 }
 const DIV = (): HTMLElement => make('div');
-const H = (level: 1 | 2 | 3 | 4 | 5 | 6): HTMLElement => make(`h${level}`);
+const H = (level: 1 | 2 | 3 | 4 | 5 | 6, textContent?: string): HTMLElement => {
+    const h: HTMLElement = make(`h${level}`);
+    h.textContent = textContent || "";
+    return h;
+}
 const HR = (): HTMLElement => make('hr')
 const IMG = (src: string): HTMLElement => {
     const img: HTMLElement = make('img');
@@ -17,7 +21,12 @@ const IMG = (src: string): HTMLElement => {
     return img;
 }
 const LI = (): HTMLElement => make('li');
+const P = (textContent?: string): HTMLElement => {
+    const p = make('p');
+    p.textContent = textContent || "";
+    return p;
+}
 const SECTION = (): HTMLElement => make('section');
 
 export {el, sel, selAll, make};
-export {A, DIV, H, HR, IMG, LI, SECTION};
+export {A, DIV, H, HR, IMG, LI, P, SECTION};
