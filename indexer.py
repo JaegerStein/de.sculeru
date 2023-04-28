@@ -22,6 +22,6 @@ for kb in kbs:
                 entry = {'id': uid, 'title': title, 'last': last, 'category': kb2cat[kb]}
                 index.append(entry)
 
-index_file = os.path.join(base_path, 'kb_index.json')
+index_file = os.path.join(base_path, 'index.json')
 with open(index_file, 'w') as f:
     json.dump(index, f)

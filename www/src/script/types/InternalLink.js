@@ -1,4 +1,4 @@
-import { A } from "../common/utils";
+import { A } from "../common/utils.js";
 export default class InternalLink {
     constructor(text, relpath, category, identifier = text) {
         this.text = text;

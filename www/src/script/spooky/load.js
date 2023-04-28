@@ -1,4 +1,4 @@
-const INDEX_PATH = './kb_index.json';
+import { KB_INDEX_PATH } from "../common/common.js";
 async function loadInternalURL(url) {
     const response = await fetch(url);
     if (!response.ok)
@@ -6,14 +6,14 @@ async function loadInternalURL(url) {
     return await response.text();
 }
 async function loadIndex() {
-    const response = await fetch(INDEX_PATH);
+    const response = await fetch(KB_INDEX_PATH);
     if (!response.ok)
         throw new Error(`Failed to load knowledge base index`);
     return await response.json();
 }
 async function lastIndexModified() {
     try {
-        const response = await fetch(INDEX_PATH, { method: 'HEAD' });
+        const response = await fetch(KB_INDEX_PATH, { method: 'HEAD' });
         if (response.ok) {
             const lm = response.headers.get('Last-Modified');
             if (!lm)

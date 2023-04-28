@@ -185,9 +185,16 @@ main, #ham {
 
     box-shadow: 0 $px3 $px5 rgba(0 0 0 / 1);
 
-    .entry-header img {
-      width: 2rem;
-      height: 2rem;
+    .entry-header {
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      img {
+        width: 2rem;
+        height: 2rem;
+      }
     }
 
     hr {
@@ -202,10 +209,18 @@ main, #ham {
         border: 1px solid rgba($dsb, .5);
         box-shadow: 0 $px3 $px4 rgba(0 0 0 / .5);
       }
-    }
 
-    p {
-      margin-bottom: 1rem;
+      p {
+        margin-bottom: 1rem;
+      }
+
+      li {
+        margin-left: 2rem;
+      }
+
+      .float-right {
+        float: right;
+      }
     }
   }
 }

@@ -1,4 +1,4 @@
-import { DIV, H, HR, IMG, SECTION } from "../common/utils";
+import { DIV, H, HR, IMG, SECTION } from "../common/utils.js";
 import { markdownToHTML } from "../obsidian.js";
 import { KB_EntryType } from "./types.js";
 export class Entry {
