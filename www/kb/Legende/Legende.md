@@ -1,15 +1,4 @@
-In der Legende findet ihr Wissenswertes über die [[Geschichte]], [[Geografie]] und [[Mythologie]] der [[Siebenlande]] und deren Bewohner. Diese Informationen sind (vermutlich) nicht für eurer Abenetuer relevant, geben aber tiefere Einblicke in diese Welt.
+In der Legende findet ihr Wissenswertes über die [[Geschichte]], [[Geografie]] und [[Mythologie]] der [[Siebenlande]] und deren Bewohner. Diese Informationen sind (vermutlich) nicht für eurer Abenetuer relevant, geben aber tiefere Einblicke in diese Welt. Die Legende wird periodisch mit zuletzt gesammeltem Wissen aktualisiert, wenn ich nicht zu faul dafür bin.
 
-# Dies ist eine Überschrift
-
-## Dies ist eine kleinere Überschrift
-
-### Diese ist noch kleiner
-
-#DiesIstEinTag
-
----
-
-|Table|Head|
-|---|---|
-|something|stuff|
+Reiche der Siebenlande:
+- [[Malravien]]
