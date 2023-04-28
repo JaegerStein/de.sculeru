@@ -221,6 +221,10 @@ main, #ham {
       .float-right {
         float: right;
       }
+
+      img {
+        border-radius: $px5;
+      }
     }
   }
 }

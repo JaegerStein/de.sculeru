@@ -35,11 +35,14 @@
             "id": "7eefb59aefcdadf8",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "canvas",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
-                "mode": "source",
-                "source": false
+                "file": "Journal/Questkarte.canvas",
+                "viewState": {
+                  "x": -290,
+                  "y": 133,
+                  "zoom": -1.8812582835787803
+                }
               }
             }
           },
@@ -122,7 +125,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+                "file": "Journal/Questkarte.canvas",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -139,7 +142,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+                "file": "Journal/Questkarte.canvas",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -162,7 +165,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md"
+                "file": "Journal/Questkarte.canvas"
               }
             }
           }
@@ -183,10 +186,10 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c5e05df0cdfedc21",
+  "active": "7eefb59aefcdadf8",
   "lastOpenFiles": [
-    "Legende/Legende.md",
     "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+    "Legende/Legende.md",
     "!attachments/malravien.jpg",
     "Regeln/Kompetenz.md",
     "!attachments/geografie/reiche/herzogtuemer",

@@ -164,6 +164,9 @@ main, #ham {
 #river .entry .entry-content .float-right {
   float: right;
 }
+#river .entry .entry-content img {
+  border-radius: 32px;
+}
 
 @media screen and (max-width: 1024px) {
   #spacer {
