@@ -9,7 +9,8 @@ interface KB_Entry {
     id: string,
     title: string,
     last: number,
-    category: string
+    category: string,
+    type: KB_EntryType
 }
 
 type KB_Index = KB_Entry[];
@@ -17,6 +18,7 @@ type KB_Index = KB_Entry[];
 enum KB_EntryType {
     MD = 'markdown',
     HTML = 'html',
+    CANVAS = 'canvas',
     OTHER = 'other'
 }
 

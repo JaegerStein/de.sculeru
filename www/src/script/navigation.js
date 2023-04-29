@@ -2,7 +2,7 @@ import { el, LI, sel, selAll } from "./common/utils.js";
 import Session from "./Session.js";
 import { KB_Category } from "./types/types.js";
 import { SELECTED } from "./common/common.js";
-import InternalLink from "./types/InternalLink.js";
+import Link from "./types/Link.js";
 import { registerLink } from "./links.js";
 const categories = [];
 const catPrefix = 'link-';
@@ -40,7 +40,7 @@ function loadLinks(kb) {
         const kbEntry = Session.getEntry(entryKey);
         if (!kbEntry)
             return;
-        const internalLink = InternalLink.fromKBEntry(kbEntry);
+        const internalLink = Link.fromKBEntry(kbEntry);
         const li = LI();
         const a = internalLink.toHTML();
         registerLink(a);

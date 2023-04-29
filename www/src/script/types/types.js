@@ -9,6 +9,7 @@ var KB_EntryType;
 (function (KB_EntryType) {
     KB_EntryType["MD"] = "markdown";
     KB_EntryType["HTML"] = "html";
+    KB_EntryType["CANVAS"] = "canvas";
     KB_EntryType["OTHER"] = "other";
 })(KB_EntryType || (KB_EntryType = {}));
 export { KB_Category, KB_EntryType };

@@ -1,6 +1,6 @@
 import Session from "./Session.js";
-import InternalLink from "./types/InternalLink.js";
-import {KB_Entry} from "./types/types";
+import Link from "./types/Link.js";
+import {KB_Entry} from "./types/types.js";
 
 /**
  * Converts a string of Markdown text into HTML using the marked.js library
@@ -44,7 +44,7 @@ function formatObsidianLinks(text: string): string {
         const kbEntry: KB_Entry | null = Session.getEntry(link);
         let replace: string;
         if (kbEntry) {
-            const internalLink: InternalLink = InternalLink.fromKBEntry(kbEntry);
+            const internalLink: Link = Link.fromKBEntry(kbEntry);
             internalLink.text = content;
             replace = internalLink.toHTML().outerHTML;
         } else replace = content;

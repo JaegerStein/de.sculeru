@@ -1,5 +1,5 @@
 import Session from "./Session.js";
-import InternalLink from "./types/InternalLink.js";
+import Link from "./types/Link.js";
 function markdownToHTML(md) {
     return formatObsidianLinks(marked.parse(md));
 }
@@ -22,7 +22,7 @@ function formatObsidianLinks(text) {
         const kbEntry = Session.getEntry(link);
         let replace;
         if (kbEntry) {
-            const internalLink = InternalLink.fromKBEntry(kbEntry);
+            const internalLink = Link.fromKBEntry(kbEntry);
             internalLink.text = content;
             replace = internalLink.toHTML().outerHTML;
         }

@@ -3,6 +3,7 @@ import Session from "./Session.js";
 import { KB_EntryType } from "./types/types.js";
 import { A, el, make } from "./common/utils.js";
 import { Entry } from "./types/Entry.js";
+import { EXTERNAL_LINK } from "./common/common.js";
 function extractScript(entryContent) {
     const scriptReg = /<script>([\s\S]*?)<\/script>/;
     const match = entryContent.match(scriptReg);
@@ -19,6 +20,8 @@ function linkFromTitle(title, textContent) {
 }
 function registerLink(a) {
     a.onclick = (event) => {
+        if (a.classList.contains(EXTERNAL_LINK))
+            return;
         event.preventDefault();
         const path = a.getAttribute('href');
         if (!path)

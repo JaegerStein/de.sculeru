@@ -2,7 +2,7 @@ import {el, LI, sel, selAll} from "./common/utils.js";
 import Session from "./Session.js";
 import {KB_Category, KB_Entry} from "./types/types.js";
 import {SELECTED} from "./common/common.js";
-import InternalLink from "./types/InternalLink.js";
+import Link from "./types/Link.js";
 import {registerLink} from "./links.js";
 
 const categories: HTMLElement[] = [];
@@ -36,7 +36,7 @@ function loadLinks(kb: KB_Category): void {
         .forEach((entryKey: string): void => {
             const kbEntry: KB_Entry | null = Session.getEntry(entryKey);
             if (!kbEntry) return;
-            const internalLink: InternalLink = InternalLink.fromKBEntry(kbEntry);
+            const internalLink: Link = Link.fromKBEntry(kbEntry);
             const li: HTMLElement = LI();
             const a: HTMLElement = internalLink.toHTML();
             registerLink(a);
