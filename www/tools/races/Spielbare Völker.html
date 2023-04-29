@@ -1,0 +1,1535 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Übersicht Verfügbarer Völker</title>
+
+    <style>
+        
+        @font-face {
+            font-family: "Angie";
+            src: url("fonts/Angie Small Caps.ttf");
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        }
+
+        body {
+            background-color: beige;
+
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            gap: 1rem;
+            padding: 1rem;
+            padding-top: 3.5rem;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: 1rem;
+            background-image: url("images/other/parchment.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 2.5rem;
+            box-shadow: 0 4px 8px rgba(0 0 0 / .5);
+            overflow-y: hidden;
+            overflow-x: auto;
+            padding: 0 1rem;
+            box-sizing: border-box;
+        }
+
+        nav a {
+            font-size: 1.25rem;
+            font-family: "Angie", serif;
+            text-decoration: none;
+        }
+
+        .entry {
+            padding: 1rem;
+            border-radius: 1rem;
+            box-sizing: border-box;
+            box-shadow: 4px 4px 16px rgba(0 0 0 / .25);
+
+            /* background-color: ivory; */
+            background-image: url("images/other/parchment.jpg");
+            background-size: cover;
+            width: 30%;
+        }
+
+        .entry h1,
+        .entry h2,
+        .entry h3 {
+            font-family: "Angie", serif;
+        }
+
+        .entry .smaller {
+            font-family: "Angie", serif;
+            font-size: 1.25rem;
+            font-style: italic;
+        }
+
+        .entry h1 {
+            display: inline-block;
+            font-size: 3rem;
+            line-height: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .entry img {
+            width: 50%;
+            float: right;
+            margin: 0 0 1rem 1rem;
+            border-radius: 1rem;
+            box-shadow: -4px 4px 8px rgba(0 0 0 / .5);
+        }
+
+        .entry .crop {
+            display: none;
+        }
+
+        .entry h2 {
+            font-size: 1.8rem;
+            margin-bottom: .5rem;
+        }
+
+        .entry h3 {
+            font-size: 1.4rem;
+            margin-bottom: .25rem;
+        }
+
+        .entry p {
+            margin-bottom: 1rem;
+            text-align: justify;
+            text-align-last: none;
+            hyphens: auto !important;
+        }
+
+        .entry p,
+        .entry ul {
+            font-size: 1rem;
+        }
+
+        .entry b {
+            font-weight: bolder;
+            font-size: 1.05rem;
+        }
+
+        .entry .traits table {
+            border-collapse: collapse;
+        }
+
+        .entry .traits .border {
+            padding: 2px;
+            border: 1px dotted rgba(0 0 0 / .25);
+        }
+
+        .entry hr {
+            margin: .5rem 0;
+            box-shadow: 0 4px 8px rgba(0 0 0 / .5);
+
+            border: 1px solid rgba(0 0 0 / .25);
+        }
+
+        .entry ul {
+            list-style-type: none;
+            padding-bottom: 1rem;
+        }
+
+        .attributes {
+            margin: 1rem 0;
+        }
+
+        .attributes table {
+            table-layout: fixed;
+            border-collapse: collapse;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 4rem;
+        }
+
+        .attributes thead {
+            font-weight: bold;
+        }
+
+        .attributes th,
+        .attributes td {
+            padding: 8px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        .attributes td {
+            background-color: rgba(0 0 0 / .05);
+            background: linear-gradient(0deg, rgba(0 0 0 / .05) 0%, rgba(0 0 0 / .01) 25%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .sta {
+            background-color: rgba(255 0 0 / .2);
+            background: linear-gradient(180deg, rgba(255 0 0 / .2) 0%, rgba(255 0 0 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .ath {
+            background-color: rgba(255 128 0 / .2);
+            background: linear-gradient(180deg, rgba(255 128 0 / .2) 0%, rgba(255 128 0 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .ges {
+            background-color: rgba(255 255 0 / .2);
+            background: linear-gradient(180deg, rgba(255 255 0 / .2) 0%, rgba(255 255 0 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .kon {
+            background-color: rgba(0 255 0 / .2);
+            background: linear-gradient(180deg, rgba(0 255 0 / .2) 0%, rgba(0 255 0 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .wah {
+            background-color: rgba(0 255 128 / .2);
+            background: linear-gradient(180deg, rgba(0 255 128 / .2) 0%, rgba(0 255 128 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .int {
+            background-color: rgba(0 255 255 / .2);
+            background: linear-gradient(180deg, rgba(0 255 255 / .2) 0%, rgba(0 255 255 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .wei {
+            background-color: rgba(0 128 255 / .2);
+            background: linear-gradient(180deg, rgba(0 128 255 / .2) 0%, rgba(0 128 255 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .cha {
+            background-color: rgba(255 0 255 / .2);
+            background: linear-gradient(180deg, rgba(255 0 255 / .2) 0%, rgba(255 0 255 / .1) 50%, rgba(0 0 0 / 0) 100%);
+        }
+
+        .tool {
+            display: inline-block;
+            text-decoration: 1.5px dotted underline;
+        }
+
+        .tooltip {
+            position: fixed;
+
+            background-color: rgba(128, 128, 128, 0.25);
+            background-image: url("images/other/parchment.jpg");
+            background-size: cover;
+            box-shadow: 0 0 1rem rgba(0 0 0 / .5);
+
+            text-align: center;
+            padding: .5rem;
+            border-radius: 1rem;
+
+            max-width: 22.5%;
+
+            z-index: 1;
+        }
+
+        .additional {
+            display: inline-block;
+            margin: .5rem 0;
+        }
+
+        .entry .languages {
+            margin-bottom: 1rem;
+        }
+
+        @media screen and (max-width: 1600px) {
+            .entry {
+                width: 45%;
+            }
+
+            .tooltip {
+                max-width: 33.75%;
+            }
+        }
+
+        @media screen and (max-width: 960px) {
+            .entry {
+                width: 100%;
+            }
+
+            .tooltip {
+                max-width: 75%;
+            }
+        }
+
+        @media screen and (max-width: 608px) {
+            .entry img {
+                width: 100%;
+                float: none;
+                margin: 1rem 0;
+                display: none;
+            }
+
+            .entry .crop {
+                display: block !important;
+            }
+
+            .attributes table {
+                table-layout: fixed;
+                border-collapse: collapse;
+                width: 100%;
+                overflow: hidden;
+                border-radius: 1rem;
+            }
+
+            .attributes thead {
+                font-weight: bold;
+            }
+
+            .attributes th,
+            .attributes td {
+                font-size: .9rem;
+                padding: 4px;
+                text-align: center;
+                vertical-align: middle;
+            }
+
+        }
+    </style>
+
+    <script type="text/javascript">
+        // GENERAL
+        const make = (tag) => document.createElement(tag);
+        const get = (id) => document.getElementById(id);
+        const query = (selector) => document.querySelector(selector);
+        const queryAll = (selector) => document.querySelectorAll(selector);
+        // END GENERAL
+
+        //---AUTO GENERATE---
+
+        const cell = (text, cl) => {
+            const cell = make("th");
+            cell.innerText = text;
+            if (cl) cell.className = cl;
+            return cell;
+        }
+
+        const cellB = (text, cl) => {
+            const cell = make("td");
+            cell.innerText = text;
+            if (cl) cell.className = cl;
+            return cell;
+        }
+
+        const tool = (tool, content) => `<span class="tool ${tool}">${content}</span>`;
+
+        //------ATTRIBUTES TABLES------
+        function createAttributeTable(data) {
+            const table = make("table");
+
+            const headerRow = make("tr");
+            headerRow.appendChild(cell("STÄ", 'sta'));
+            headerRow.appendChild(cell("ATH", 'ath'));
+            headerRow.appendChild(cell("GES", 'ges'));
+            headerRow.appendChild(cell("KON", 'kon'));
+            headerRow.appendChild(cell("WAH", 'wah'));
+            headerRow.appendChild(cell("INT", 'int'));
+            headerRow.appendChild(cell("WEI", 'wei'));
+            headerRow.appendChild(cell("CHA", 'cha'));
+
+            const thead = make("thead");
+            thead.appendChild(headerRow);
+            table.appendChild(thead);
+
+
+            const dataRow = make("tr");
+            const tbody = make("tbody");
+            for (const value in data) {
+                const val = make("td");
+                val.innerText = data[value];
+                dataRow.appendChild(val);
+            }
+            tbody.appendChild(dataRow);
+            table.appendChild(tbody);
+
+
+            return table;
+        }
+        //------END ATTRIBUTES TABLES------
+
+        //------TRAITS LISTS------
+        function createTraitsList(age, health, height, speed, common) {
+            const list = make("ul");
+
+            const ageToolOpen = '<span class="tool adult">';
+            const ageToolClose = '</span>';
+
+            const ageItem = make("li");
+            const expected = "<b>Lebenserwartung</b>"
+            const agetext = "<nobr>" + age[0] + "</nobr>";
+            const mature = "<nobr>(" + tool('adult', age[1]) + ")</nobr>";
+            ageItem.innerHTML = expected + " " + agetext + " " + mature;
+
+            const healthItem = make("li");
+            const healthlabel = "<b>Basisausdauer</b> " + health;
+            healthItem.innerHTML = healthlabel;
+
+            const heightItem = make("li");
+            const heightlabel = "<b>Größe</b>";
+            const heighttext = "<nobr>" + height[0] + " Fuß</nobr>"; // Add tooltip;
+            let sizecat = height[1];
+            switch (sizecat) {
+                case "Mittel":
+                    sizecat = tool('medium', sizecat);
+                    break;
+                case "Klein":
+                    sizecat = tool('small', sizecat);
+                    break;
+                case "Groß":
+                    sizecat = tool('large', sizecat);
+                    break;
+                default:
+                    break;
+            }
+
+            heightItem.innerHTML = heightlabel + " " + heighttext + ", " + sizecat;
+
+            const speedItem = make("li");
+            const speedlabel = "<b>Bewegungsrate</b>";
+            const speedtext = "<nobr>" + speed + " Fuß</nobr>";
+            speedItem.innerHTML = speedlabel + " " + speedtext;
+
+            list.appendChild(ageItem);
+            list.appendChild(healthItem);
+            list.appendChild(heightItem);
+            list.appendChild(speedItem);
+
+            if (common) {
+                const commonItem = make("li");
+                let commonlabel = "<b>Eigenschaften </b>";
+                let first = true;
+                common.forEach(element => {
+                    let trait = element;
+                    switch (trait) {
+                        case "Beidhändigkeit":
+                            trait = tool('bihand', trait);
+                            break;
+                        case "Dunkelsicht":
+                            trait = tool('dark', trait);
+                            break;
+                        case "Überlegene Dunkelsicht":
+                            trait = tool('superdark', trait);
+                            break;
+                        case "Immunität":
+                            trait = tool('immune', trait);
+                            break;
+                        case "Raubtiersinne":
+                            trait = tool('predator', trait);
+                            break;
+                        case "Stählerner Magen":
+                            trait = tool('stomach', trait);
+                            break;
+                        case "Ziegenhufe":
+                            trait = tool('hooves', trait);
+                            break;
+                        case "Bedrohlich":
+                            trait = tool('threat', trait);
+                            break;
+                        case "Giftresistenz":
+                            trait = tool('poison', trait);
+                            break;
+                        default:
+                            break;
+                    }
+                    commonlabel += (first ? "" : ", ") + trait;
+                    first = false;
+                });
+                commonItem.innerHTML = commonlabel;
+
+                list.appendChild(make('br'));
+                list.appendChild(commonItem);
+            }
+
+            return list;
+        }
+        //------END TRAITS LISTS------
+
+        function buildAuto() {
+            const attributeContainers = queryAll('.attributes');
+            for (const container of attributeContainers) {
+                const data = container.getAttribute('data-values').split(',');
+                const table = createAttributeTable(data);
+                container.appendChild(table);
+            }
+
+            const traitContainers = queryAll('.traits');
+            for (const container of traitContainers) {
+                const age = container.getAttribute('data-age').split(',');
+                const health = container.getAttribute('data-health');
+                const height = container.getAttribute('data-height').split(',');
+                const speed = container.getAttribute('data-speed');
+                const common = container.getAttribute('data-common')?.split(',');
+                const list = createTraitsList(age, health, height, speed, common);
+                container.appendChild(list);
+            }
+
+            // presume text may containt whitespaces, always take first element
+            const languageTool = (text) => {
+                let lang = text.split(' ')[0];
+                switch (lang) {
+                    case "Dreys":
+                        lang = tool('dreys', lang);
+                        text = text.replace("Dreys", lang);
+                        break;
+                    case "Grozak":
+                        lang = tool('grozak', lang);
+                        text = text.replace("Grozak", lang);
+                        break;
+                    case "Fremdsprache":
+                        lang = tool('foreign', lang);
+                        text = text.replace("Fremdsprache", lang);
+                        break;
+                    case "Gobsch":
+                        lang = tool('gobsch', lang);
+                        text = text.replace("Gobsch", lang);
+                        break;
+                    case "Weswam-Gnomisch":
+                        lang = tool('weswam', lang);
+                        text = text.replace("Weswam-Gnomisch", lang);
+                        break;
+                    default:
+                        break;
+                }
+                return text;
+            }
+
+            const languageContainer = queryAll('.languages');
+            for (const container of languageContainer) {
+                const languages = container.getAttribute('data-lang').split(',');
+                let langText = "<b>Sprachen</b> ";
+                let first = true;
+                languages.forEach(text => {
+                    text = text.replace(/\+/g, " zum Preis von 1 Fähigkeitspunkt");
+                    text = languageTool(text);
+                    langText += (first ? "" : ", ") + text;
+                    first = false;
+                });
+                container.innerHTML = langText;
+            }
+        }
+        //---END AUTO GENERATE---
+
+        //---LISTENERS---
+        const tooltips = {
+            //common
+            "comp": "Wenn du bei einer Aktivität, in der du kompetent bist, eine 1 würfelst, kannst du den Wurf einmalig wiederholen. Das zweite Ergebnis zählt.",
+            "adult": "Das durchschnittliche Alter der physiologischen, psychologischen, und kulturellen Reife. Angehörige dieses Volkes werden ab diesem Alter als Erwachsene betrachtet. Je nach Kultur wird dabei mehr Wert auf die körperliche oder geistige Entwicklung gelegt.",
+            "zwkon": "Aufgrund ihrer Größenkategorie haben Zwerge eine natürliche Basisausdauer von 20; da sie aber standardmäßig eine Konstitution von 11 besitzen, steigt die Basisausdauer durch diese Eigenschaft auf 21. Daraus ergibt sich eine tatsächliche Ausdauer von ⌊ 21 + 1 * 0.1 * 21 ⌋ = 23 für einen Durchschnittszwerg.<br>Bei einer Konsitution von 20 beträgt die Basisausdauer 30, die tatsächliche Ausdauer ⌊ 30 + 10 * 0.1 * 30 ⌋ = 60",
+            "deat": "Ein riesiger Dryadenwald im Zentrum des Kontinents.",
+            "killed": "Du wirst getötet, wenn du durch einen einzigen Angriff Schaden in Höhe deiner Gesamtausdauer erhältst, oder deine verbleibende Ausdauer auf oder unter den negativen Wert deiner Gesamtausdauer sinkt.",
+            "reaction": "Du kannst eine einzige Bewegung, Aktion, <b>oder</b> Bonusaktion durchführen. Abgesehen von einigen Ausnahmen müssen spezifische Reaktionen zuvor im eigenen Zug vorbereitet werden und ersetzen damit die eigentliche Aktion dieses Zuges.",
+            "faunhead": "Bei ungeradem Schaden ist der größere Anteil Schmetterschaden.",
+            "demon": "Ein Halbdämon kann eines, mehrere, alle, oder keines dieser Merkmale aufweisen: Hörner oder Geweih, verfärbte Haut, dämonischer Schwanz, leuchtende und verfärbte Augen, scharfe Klauen, spitze Zähne, schuppige Haut oder gleich ganze Schuppenplatten, teilweise oder vollständige Haarlosigkeit, Hufe, Flügel.",
+            "speci": "<i>Artgenossen</i> ist hierbei ein recht fragwürdiger Begriff, da Halbdämonen von verschiedensten Völkern abstammen können und außer den physischen Merkmalen keine wirklichen Gemeinsamkeiten haben.",
+            "poison": "Du hast bei Rettungswürfen gegen Vergiftung Vorteil und erhälst eine natürliche +4 Resistenz gegen Giftattacken.",
+            "polymorph": "Deine Verwandlung ist keine bloße Illusion oder magische Hülle, in die du dich kleidest, sondern findet tatsächlich statt. Dein Kröper wird zu dem der Kreatur, in die du dich verwandlest und muss nicht aktiv aufrecht erhalten werden. Hierbei ist zu bedenken, dass eine Verwandlung in ein Wesen (oder ein Objekt) mit unzureichendem Verstand eine Rückverwandlung unmöglich macht. Den Körper eines Tieres anzunehmen ist gleichbedeutend mit dem Freitod, da so die Vernunft des Polymorphen ausgelöscht wird.",
+            "eon": "Ein willkürlicher Zeitraum, der über einschneidende und weitreichende, historische Ereignisse definiert ist, anstelle einer festgelegten Zeitspanne. Zeitalter dauern in der Regeln mehrere Jahrhunderte an, aber selten mehr als tausend Jahre.",
+            "mino": "Bei ungeradem Schaden macht der größere Anteil Stichschaden aus. Deine Sprintaktion reicht im Normalfall 8 Felder weit, jede erfolgreiche Kollision kostet aber 2 Felder; du kannst im optimalen Fall also 4 Menschen oder 8 Gnome rammen.",
+            "ominous-pact": "Die Eigenschaft <b>Schutz der Herde</b> wird bei Verschwiegenen Minotauren durch eine andere ersetzt: Du hast einen permanenten +1 Bonus auf Angriffe gegen Menschen. Dieser steigt um +1 für jeden von dir im Kampf getöteten Menschen, für die Dauer dieses Kampfes. Die Änderung tritt nur in Kraft, wenn du dem Spielleiter mitteilst, dass du diesen geheimen Tooltip gefunden hast :)",
+            //sizes
+            "large": "Deine Basisausdauer beträgt 30. Du hast einen Bonus von +4 auf Stärkewürfe. Du hast einen Malus von -4 aufs Ausweichen, Verstecken und Schleichen. Du belegst außerdem eine 10x10-Fuß-Fläche auf dem Schlachtfeld.",
+            "medium": "Deine Größenkategoie hat keine speziellen Auswirkungen.",
+            "small": "Deine Basisausdauer beträgt bloß 15. Du hast einen Malus von -4 auf Stärkewürfe. Du hast einen Bonus von +4 aufs Ausweichen, Verstecken und Schleichen.",
+            //traits
+            "bihand": "Du bist nicht nur in der Lage, beide Hände gleich gut zu gebrauchen, sondern hast auch eine ausgeprägte Hand-Auge-Koordination, die es dir erlaubt, sie gleichzeitig für unterschiedliche Aufgaben effektiv einzusetzen, auch im Kampf.",
+            "dark": "Du kannst bei schwachem Dämmerlicht im Umkreis von 60 Fuß sehen, als wäre es hell. Du kannst bei Dunkelheit so sehen, als herrsche Dämmerlicht. In Dämmerlicht wie Dunkelheit kannst du keine Farben erkennen, nur Grautöne.",
+            "superdark": "Deine Dunkelsicht hat eine Reichweite von 120 Fuß, verhält sich aber ansonsten wie normale Dunkelsicht.",
+            "immune": "Du bist enorm resistent gegen Gifte, Krankheiten und ähnliches, und erhältst einen +10 Bonus auf Konstitutions-Rettungswürfe dagegen. Im Kampf hast du +8 Resistenzt gegen Giftschaden.<br>Versucht man dich mit herkömmlichen Heilmitteln zu behandeln, die nicht spezifisch für dein Volk gedacht oder magisch sind, erhält dieser Heilungsversuch einen <i>Malus</i> von -10.",
+            "predator": "Du kannst frisches Blut auf bis zu 2 Meilen (5km) Entfernung wahrnehmen und dessen ungefähre Richtung bestimmen.",
+            "stomach": "Gifte, die du einnimmst, können dir nichts anhaben. Du kannst dich problemlos von rohem, völlig verrittetem, oder anderweitig ungenießbarem Essen ernähren.",
+            "hooves": "Du hast einen Vorteil beim Kletter, solande die Oberfläche nicht völlig glatt ist und die Steigung noch unter 90° liegt. Unwegsames Gelände verlangsamt dich nicht, doch Morast, Schlamm und ähnliches halbieren deine Bewegungsrate.",
+            "threat": "Statt deines Charismawertes kannst du zum Einschüchtern Stärke verwenden.",
+            //languages
+            "dreys": "Die gemeinschaftliche Sprache der Waldvölker, die von den meisten Bewohnern des Dëat Gláddan gesprochen wird. Anderswo im Kontinent sucht man meist vergebens nach jemandem, der Dreys beherrscht.",
+            "grozak": "Die Sprache der Bewohner des Orkreiches Oschotk, die sich aus der Muttersprache des vorherrschenden Stammes und einiger Lehnwörter zugezogener Völker und Orkstämme zusammensetzt.",
+            "foreign": "Ein  Sammelbegriff für verschiedene, weitgehend unbekannte Sprachen aus den Ländern jenseits der Gebirge.",
+            "gobsch": "Gobsch ist weniger eine Sprache, als viel mehr eine Aneinanderreihung groteskter Laute, mit denen Goblins sich scheinbar verständigen können.",
+            "weswam": "Eine Plansprache, die von Gnomen aus einer Mischung menschlicher Lehnwörter, zwergischer Überlieferungen und uralter, gnomischer Texte entwickelt wird."
+        }
+
+        function buildTooltips() {
+
+            //---HELPER FUNCTIONS---
+            const findToolText = (tool) => {
+                let toolText = null;
+                tool.classList.forEach(c => {
+                    if (c in tooltips) {
+                        if (toolText) console.error(`Error: Tooltip element ${tool} has multiple matching classes: ${toolText} and ${c}`);
+                        else toolText = tooltips[c];
+                    }
+                });
+                return toolText;
+            }
+
+            const styleToolTip = (tooltip, event) => {
+                const rect = tooltip.getBoundingClientRect();
+                let top = event.clientY - rect.height - 24;
+                let left = event.clientX - rect.width / 2;
+                const { innerWidth: vw, innerHeight: vh } = window;
+
+                if (left < 0) left = 0;
+                else if (left + rect.width > vw) left = vw - rect.width;
+                if (top < 0) top = event.clientY + 24;
+
+                tooltip.style.top = top + 'px';
+                tooltip.style.left = left + 'px';
+            }
+            //---END HELPER FUNCTIONS---
+
+            // finds all elements that can have tooltips
+            const tools = queryAll('.tool');
+
+            tools.forEach(tool => {
+                const toolText = findToolText(tool);
+                if (!toolText) {
+                    console.error(`Error: Tooltip element ${tool} has no matching classes`);
+                    return;
+                };
+
+                tool.onmouseenter = (event) => {
+                    const tooltip = make('div');
+                    tooltip.classList.add('tooltip');
+                    tooltip.innerHTML = toolText;
+                    document.body.appendChild(tooltip);
+
+                    styleToolTip(tooltip, event);
+                }
+
+                tool.onmouseleave = () => {
+                    const tooltip = query('.tooltip');
+                    tooltip.remove();
+                }
+            });
+        }
+        //---END LISTENERS---
+
+        window.onload = () => {
+            buildAuto();
+            buildTooltips();
+        }
+    </script>
+</head>
+
+<body>
+    <nav>
+        <a href="#human">Mensch</a>
+        <a href="#elf">Elfe</a>
+        <a href="#dwarf">Zwerg</a>
+        <a href="#gnome">Gnom</a>
+        <a href="#kenku">Kenku</a>
+        <a href="#tiefling">Halbdämon</a>
+        <a href="#mime">Mime</a>
+        <a href="#minotaur">Minotaure</a>
+    </nav>
+
+    <!-- MENSCH -->
+    <div class="entry" id="human">
+        <h1>Mensch</h1>
+        <img src="images/voelker/human.jpg" alt="Mensch" loading="lazy">
+        <img src="images/voelker/human-crop.jpg" alt="Mensch" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="60 Jahre,16 Jahre" data-health="20" data-height="5 bis 6,Mittel" data-speed="30">
+        </div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Die Menschen zählen zu den jüngsten Völker der Siebenlande, dennoch konnten sie sich innerhalb kürzester Zeit
+            zur vorherrschenden Macht des Kontinents aufschwingen. Obwohl ältere Völker sie gelegentlich als simpel und
+            unkultiviert abtun, sind Menschen äußerst anpassungs- und widerstandsfähig. Es gibt keine Umgebung, die sie
+            sich nicht zu Untertan machen können. Menschen sind ständig bestrebt, ihren Einfluss auszubreiten und
+            zählen Diplomatie wie Kriegsführung gleichermaßen zu ihrem Repertoir. Sie werden auch als das <i>Beständige
+                Volk</i> bezeichnet.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,10,10,10,10,10,10,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Menschliche Vielfalt</h3>
+        <p>Du darfst bei der Charaktererstellung den Wert <b>dreier</b> beliebiger Attribute um +1 steigern. Zusätzlich
+            darfst
+            du eine beliebige Fähigkeit um +2 steigern und erlangst <span class="tool comp">Kompetenz</span> in dieser
+            Fähigkeit. Außerdem kannst du
+            ein zusätzliches Talent wählen.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Siebenländer</h3>
+        <p>Siebenländer sind die Bewohner derjenigen sieben Nationen, die dem Kontinent seinen gemeinsprachlichen Namen
+            verschaffen. Dazu gehören die Königreiche Ausperlend, Ennelend, Kaukand, Padrinal, Tarvenien, die Bennetei,
+            sowie die Republik Merin.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Niedermarker</h3>
+        <p>Malravier - oder Niedermarker, wie sie in der Gemeinsprache genannt werden - sind die Bewohner des
+            Großherzogtums Malravien, einer Grenzmark von Padrinal. Aufgrund ihrer gesonderten Lage besitzen sie eine
+            eigene Kultur und Sprache; Malravier sind stolz auf ihre Nationalidentität und zählen sich selbst nicht zu
+            den Siebenlanden.</p>
+        <div class="languages" data-lang="Malravisch,Gemeinsprache"></div>
+        <h3>Südländer</h3>
+        <p>Die Migranten des Kontinents jenseits des Südmeeres stammen überwiegend aus dem Zauberreich Mesra, seltener
+            sogar aus den unerforschten Weiten hinter den Kona-Bergen. Viele sind Händler, die ihre Verbindungen zu den
+            hochkulturellen Südreichen spielen lassen, um Siebenländern billigen Tand zu überhöhten preisen anzubieten;
+            andere sind Söldner, die sich leichte Münze in vergleichsweise gefahrlosen Landen verdingen wollen; und
+            wenige sind einfach nur schaulustige Abenteurer, die sich von der rückständigen Kultur der nördlichen Reiche
+            selbst ein Bild machen wollen.</p>
+        <div class="languages" data-lang="Mesrisch,Gemeinsprache"></div>
+        <h3>Satdit</h3>
+        <p>Die Bewohner der Insel Satdial mögen den Mesrern kulturell viel ähnlicher sein als den Siebenländern,
+            unterhalten aber gute Beziheungen mit beiden. Zwischen dieser Republik und dem Festland besteht seit jeher
+            schon reger Handel; ein reisender Satdit ist auf dem Kontinent nicht schwer zu finden.</p>
+        <div class="languages" data-lang="Satdit,Gemeinsprache"></div>
+        <h3>Fremdländer</h3>
+        <p>Alle jene Zuwanderer, die aus den unbekannten Landen weit jenseits der schützenden Berge der Siebenlande
+            stammen, werden gemeinhin als Fremdländer bezeichnet.</p>
+        <div class="languages" data-lang="Fremdsprache,Gemeinsprache"></div>
+    </div>
+    <!---------->
+
+
+
+    <!-- ELFE -->
+    <div class="entry" id="elf">
+        <h1>Elfe<br><span class="smaller">Elbe</span></h1>
+        <img src="images/voelker/elf.jpg" alt="Elfe" loading="lazy">
+        <img src="images/voelker/elf-crop.jpg" alt="Elfe" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="Unsterblich,100 Jahre" data-health="20" data-height="6 bis 6½,Mittel"
+            data-speed="30" data-common="Überlegene Dunkelsicht,Immunität,Beidhändigkeit"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Die unsterblichen Elfen zählen zu den ältesten Völkern der Siebenlande und werden aufgrund ihres Alters von
+            vielen als weise und edel angesehen. Ihre Schönheit ist legendär und ihre Kunstfertigkeit gilt als
+            unübertroffen. Mit dieser gefühlten
+            Überlegenheit geht aber auch ein gewisses Maß an Arroganz einher. Viele Elfen meiden den Kontakt zu
+            sterblichen Völkern, um nicht Generation für Generation Zeugen der Vergänglichkeit ihrer Freunde werden zu
+            müssen. Man nennt sie auch das <i>Überdauernde Volk</i>.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,10,11,10,11,10,11,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Elfische Trance</h3>
+        <p>Statt zu schlafen kannst du in einem tranceartigen Zustand meditieren und in nur 4 Stunden den gleichen Grad
+            an Erholung erhalten, für den die meisten Völker 8 Stunden Schlaf benötigen. Deine <i>Lange Rast</i> dauert
+            nur halb so lange wie normalerweise.</p>
+        <h3>Elfische Erhabenheit</h3>
+        <p>Du kannst während der Charaktererstellung zwei beliebige Attribute um +1 erhöhen. Zusätzlich kannst du 6
+            Charakterpunkte für Fähigkeiten, Waffenkunde, oder Magie ausgeben.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Hochelfe</h3>
+        <p>Die Hochelfen von Llésindur haben sich für ein zurückgezogenes Leben in den Wäldern ihrer Vorfahren
+            entschieden, dem einzigen Elfenreich der Siebenlande, das tatsächliche Grenzen besitzt. Viele genießen bloß
+            die Ruhe und Abgeschiedenheit ihres Heimatlandes, doch nicht wenige Hochelfen hegen <i>radikalere</i>
+            Ansichten gegenüber dem Verkehr mit sterblichen Völkern, allen voran den Menschen.</p>
+        <div class="languages" data-lang="Elfisch,Gemeinsprache"></div>
+        <h3>Freie Elfe</h3>
+        <p>Besonders junge Elfen zieht es noch in die weite Welt hinaus. Sei es aus freien Stücken oder den Umständen
+            ihrer Geburt geschuldet, Freie Elfen bereisen die Siebenlande, wo sie unter Menschen, Zwergen und Gnomen
+            leben. Viele suchen nach einem Sinn im Leben, andere lockt bloß das Abenteuer, und manche kennen schlicht
+            kein anderes Leben, das erstrebenswert wäre. Häufig verdingen sie sich als Künstler, Poeten und
+            Schausteller; nicht selten kann man Elfen auch als Berater, Heiler und Zauberer zu Hofe finden.</p>
+        <div class="languages" data-lang="Gemeinsprache,Elfisch+"></div>
+        <h3>Waldelfe</h3>
+        <p>Die gemeinhin als Waldelfen bezeichneten Bewohner des <span class="tool deat">Dëat Gláddan</span> sind noch
+            einsiedlerischer und fremdenfeindlicher als ihre Verwandten in Llésindur. Anders als bei den Hochelfen
+            entspringt dieser Rückzug von der Gemeinschaft der Siebenlande aber nicht zwangsläufig arroganter
+            Überheblichkeit, sondern findet seinen Ursprung in den historischen Konflikten zwischen den ältesten Völkern
+            und den menschlichen Eroberern, als diese erstmals den Kontinent besiedelten. Heutzutage führen
+            Gláddan-Elfen zusammen mit Faunen, Dryaden und anderen Waldvölkern ein friedfertiges Leben; nur wenige sehen
+            einen Sinn darin, die schützende Heimat zu verlassen und sich unter die Menschen zu begeben.</p>
+        <div class="languages" data-lang="<span class='tool dreys'>Dreys</span>,Gemeinsprache,Elfisch+"></div>
+        <h3>Fremdländische Elfe</h3>
+        <p>Elfen aus der Fremde stammen von jenseits der schützenden Gebirge der Siebenlande und sind auf der Suche nach
+            Gemeinschaft, Abenteuer, Erkenntnis, oder einer letzten Ruhestätte.</p>
+        <div class="languages" data-lang="Elfisch,Fremdsprache,Gemeinsprache"></div>
+    </div>
+    <!--------------->
+
+
+
+    <!-- ZWERG -->
+    <div class="entry" id="dwarf">
+        <h1>Zwerg</h1>
+        <img src="images/voelker/dwarf.jpg" alt="Zwerg" loading="lazy">
+        <img src="images/voelker/dwarf-crop.jpg" alt="Zwerg" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="600 Jahre,50 Jahre" data-health="20" data-height="4 bis 5,Mittel" data-speed="25"
+            data-common="Dunkelsicht,Giftresistenz"></div>
+        <hr>
+        <h2>Beschreibung</h2>
+        <p>Für die Zwerge der Siebenlande stehen Gemeinschaft und Solidarität an erster Stelle. Obwohl sie ebenso für
+            ihre herzliche Gastfreundschaft bekannt sind, haben sie den zweifelhaften Ruf, aufbrausend, jähzornig und
+            mitunter rachsüchtig zu sein. Zwerge sind unerschütterlich in ihren Grundsätzen - spitze Zungen mögen ihnen
+            sogar eine renitente Starrsinnigkeit nachsagen. Sie sind robust, unnachgiebig, und Freunde von starkem Bier
+            und scharfem Essen. Zwerge werden auch als das <i>Trotzige Volk</i> bezeichnet.</p>
+        <hr>
+
+        <div class="attributes" data-values="11,10,10,11,10,10,11,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Zwergische Kampfausbildung</h3>
+        <p>Du bist <span class="tool comp">kompetent</span> im Umgang mit Kriegshämmern und -äxten. Gilt nicht für Freie
+            Zwerge</p>
+        <h3>Zwergischer Trotz</h3>
+        <p>Deine Basisausdauer steigt oder sinkt um den Wert deines Konstitutionsmodifikators.<span
+                class="tool zwkon"><sup>(?)</sup></span></p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Stammeszwerg</h3>
+        <p>Die Stammeszwerge sind stolz und traditionsbewusst; sie glauben an ihre Pflicht, die Siebenlande vor
+            jeglichen, äußeren Gefahren zu schützen, ganz so, wie es ihr Gott Carras vorgesehen hat. Zu diesem Zweck
+            bewohnen die drei Stämme das Westliche, Nördliche und Östliche Gebirge des Kontinents, in deren Engpässen
+            sie unüberwindbare Bollwerke errichtet haben. Stammeszwerge sind berühmt für ihre unvergleichliche
+            Architektur und Schmiedekunst, mit denen sich kaum ein anderes Volk messen kann.</p>
+        <p>Die Gesellschaft der Stämme ist über ihre Sippen definiert, die sich durch einen engen Zusammenhalt und eine
+            feste Familienstruktur auszeichnen. Hierarchien sind von Familie zu Familie unterschiedlich geregelt, doch
+            zumeist ist der älteste Zwerg auch Oberhaupt einer Sippe.</p>
+        <div class="languages" data-lang="Zwergisch,Gemeinsprache"></div>
+        <h3>Freier Zwerg</h3>
+        <p>Freie Zwerge sind solche, die entweder außerhalb einer Sippe geboren wurden, oder sich längst von ihrem
+            ursprünglichen Stamm gelöst haben und ihr Leben nun unter den Menschen führen. In den Siebenlanden sind
+            solche Zwerge besonders als Handwerker und Baumeister gefragt. In den meisten Städten lassen sich zwergische
+            Schmiede finden, die nur selten Tage ohne Auftrag erleben.</p>
+        <div class="languages" data-lang="Gemeinsprache,Zwergisch+"></div>
+        <h3>Apostat</h3>
+        <p>Die Apostaten lehnten die Aufgabe ihres Gottes ab und zogen sich in das Gebirge an der Südküste des
+            Kontinents zurück. Stammeszwerge stehen ihnen feindselig gegenüber und sehen sie als Häretiker an, die ihre
+            Pflicht verraten haben, aber
+            die Apostaten selbst wollen bloß in Ruhe gelassen werden. Offensichtlich nennen sie sich auch nicht selbst
+            Apostaten - sie sind die Zwerge des Süd-Stamms.
+        <p>Mit den Reichen der Menschen unterhalten sie
+            desweilen recht gute Beziehungen; besonders mit der Republik Merin floriert der Handel; man kann sogar von
+            einer Symbiose sprechen. Südstämmige sind zudem die einzigen Zwerge, die sich freiwillig aufs offene Meer
+            trauen.</p>
+        <div class="languages" data-lang="Zwergisch,Gemeinsprache"></div>
+    </div>
+    <!---------->
+
+
+
+    <!-- GNOM -->
+    <div class="entry" id="gnome">
+        <h1>Gnom<br><span class="smaller">Halbling</span></h1>
+        <img src="images/voelker/gnome.jpg" alt="Gnom" loading="lazy">
+        <img src="images/voelker/gnome-crop.jpg" alt="Gnom" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="250 Jahre,35 Jahre" data-health="15" data-height="3 bis 4,Klein" data-speed="30">
+        </div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Die Halblinge scheinen ein Volk voller Widersprüche zu sein; Fremden gegenüber zeigen sie sich oft unnahbar
+            und argwöhnisch, Freunden und Familientmitgliedern hingegen begegnen sie mit einer Herzlichkeit und
+            Loyalität, die ihresgleichen suchen. Das Vertrauen eines Gnoms zu gewinnen wirkt wie ein schier
+            unüberwindliche Aufgabe, doch winkt als Belohnung eine lebenslange Freundschaft.</p>
+        <p>Halblinge sind berühmt für ihren Fleiß und Produktivität, legen aber ebenso viel Wert auf Müßiggang; für sie
+            ist die Arbeit nur ein Mittel zum Zweck, nicht das Ziel ihres Lebens. Kunst und Kreeativität zählen ebenso
+            zu ihren Talenten wie das praktische Handwerk.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,10,11,10,10,11,10,11"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Flink</h3>
+        <p>Du kannst dich durch Felder von Kreaturen hindurchbewegen, die mindestens eine Kategorie größer sind als du.
+            Gegner müssen einen <i>SG10 + dein GES-Modifikator</i> Reaktionswurf bestehen, um einen Gelegenheitsangriff
+            gegen dich führen zu können.</p>
+        <h3>Natürlicher Feilscher</h3>
+        <p>Du hast bei Kreaturen, die dir neutral oder wohlgesonnen sind, einen Vorteil bei Diplomatie- und
+            Täuschungswürfen.</p>
+        <h3>Halblingsglück</h3>
+        <p>Wenn du auf einen Wurf Vorteil hast, kannst du dich stattdessen dazu entscheiden, den umgekehrten Wert des
+            Ergebnisses zu nehmen; eine 9 wird zu einer 11, eine 15 zu einer 5, eine 1 zu einer 19, etc.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Freier Gnom</h3>
+        <p>Gnome besitzen kein Reich in den Siebenlanden, das sie ihr Eigen nennen könnten. Als die menschlichen
+            Eroberer erstmals den Kontientn betraten, hatten sie diesen nur wenig entgegenzusetzen. Seither lebt die
+            Mehrheit der Halblinge unter den Menschen und teilt deren Gebräuche und Traditionen; von ihrer eigenen
+            Kultur ist nur wenig übriggeblieben.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Weswam-Gnom</h3>
+        <p>Nicht alle Gnome finden sich mit einm Leben im Schatten der Menschen ab. Einige wenige Mutige haben das
+            aussichtlose Unterfangen begonnen, eine eigenständige Nation für sich und ihre Artgenossen zu gründen. Sie
+            sind stets auf der Suche nach antiken Überlieferungen ihrer verlorenen Kultur und Sprache, bemüht, die
+            Erinnerung an ihre Vergangenheit am Leben zu erhalten. Das Wort "Weswam" stammt aus einem uralten,
+            gnomischen Gedicht und bedeutet sinngemäß "darum geht es", oder auch nur "Zweck"; es wurde zum Leitspruch
+            der Bewegung.</p>
+        <div class="languages" data-lang="Gemeinsprache,Weswam-Gnomisch+"></div>
+        <h3>Zwergengnom</h3>
+        <p>Viele Halblinge suchten nach dem Verlust ihrer Heimat bei den Zwergen Zuflucht, unter denen sie nun schon
+            über Generationen hinweg leben. Solche Gnome sind kulturell ihren Gastgebern inzwischen viel ähnlicher als
+            den Geschwistern im Flachland; tatsächlich haben sie sich so gut in die Gesellschaft der Trotzigen
+            integriert, dass man sie wahrhaftig zum Volk der Zwerge zählen kann.</p>
+        <div class="languages" data-lang="Zwergisch,Gemeinsprache"></div>
+    </div>
+    <!----------->
+
+
+
+    <!-- KENKU -->
+    <div class="entry" id="kenku">
+        <h1>Kenku</h1>
+        <img src="images/voelker/kenku.jpg" alt="Kenku" loading="lazy">
+        <img src="images/voelker/kenku-crop.jpg" alt="Kenku" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="45 Jahre,12 Jahre" data-health="15" data-height="3 bis 4,Klein" data-speed="30"
+            data-common="Dunkelsicht,Stählerner Magen"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Die Kenku sind wohl eines der merkwürdigsten Völker der Siebenlande. Von ihrem namenlosen Schöpfergott als
+            Strafe für ein längst vergessenes Verbrechen der Flügel beraubt, bereisen diese Rabenwesen rast- und planlos
+            als Vagabunden die Lande. Zeit ihrer Existenz haben sie sich in keinster Weise um die eigene
+            Geschichtsschreibung oder den Erhalt von Bräuchen gekümmert. Ihre Vergangenheit ist überwiegend unbekannt
+            und nur bruchstückhaft von anderen
+            Völkern dokumentiert. Von einer gemeinsamen Kultur
+            kann bei den Kenku keine Rede sein.</p>
+        <p>Sie sind sonderbar redselige Einzelgänger und tun sich lieber mit Wesen anderer Völker zusammen, als mit
+            ihren Artgenossen. Ihr Sinn für Gut und Böse ergibt sich gänzlich aus einer Furcht vor Strafe, nicht der
+            Empathie; Kenku sind kategorisch Soziopathen. Wie solch ein Volk überhaupt existieren kann, ist wohl nur auf
+            den kranken Scherz eines wahnsinnigen Schöpfers zurückzuführen.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,11,11,9,10,10,11,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Leichtfüßig</h3>
+        <p>Du erhälts beim Schleichen einen +2 Bonus auf Heimlichkeit.</p>
+        <h3>Spitze Finger</h3>
+        <p>Du verfügst über außergewöhnliche Feinmotorik; Du erhältst <span class="tool comp">Kompetenz</span> auf alle
+            Fingerfertigkeits- und
+            Gaukeleiwürfe.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Freier Kenku</h3>
+        <p>Die große Mehrheit der Kenku fristet zumeist ein Dasein als einfache Tagelöhner unter den Menschen, doch
+            haben sie sich nicht gänzlich unbegründet einen Ruf
+            als Räuber und Diebe erarbeitet, die von der ehrlichen Gesellschaft gemieden werden. Einzelne Rabenwesen
+            findet man in jeder größeren Stadt, in der es Beute zu holen gibt, nur selten finden sie sich in Gruppen
+            zusammen.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Rachgieriger Kenku</h3>
+        <p>Die Anhänger der Vergelterschar sind religiöse Fanatiker, die sich der Vernichtung des eigenen Gottes
+            verschrieben haben. Die Vergelter sind auch die einzigen Kenku, die sich freiwillig zusammentun und ein
+            gemeinsames Ziel anstreben, und sei es nur die Rache am eigenen Schöpfer. Sie stellen somit die
+            einzige erkennbare Kulturbewegung innerhalb des Volkes der Kenku dar.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+    </div>
+    <!---------->
+
+
+
+    <!-- Halbdämon -->
+    <div class="entry" id="tiefling">
+        <h1 style="letter-spacing: -.05rem;">Halbdämon<br><span class="smaller">Aënetnei, Tiefling</span></h1>
+        <img src="images/voelker/tiefling.jpg" alt="Halbdämon" loading="lazy">
+        <img src="images/voelker/tiefling-crop.jpg" alt="Halbdämon" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="* + 100%,*" data-health="* + 10%" data-height="*,*" data-speed="*"
+            data-common="*,Überlegene Dunkelsicht,Giftresistenz">
+        </div>
+        <p>* Die Merkmale eines Halbdämons sind abhängig von denen des Volkes seiner Eltern.</p>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>In sehr seltenen Fällen kann ein Kind mit <span class="tool demon">physischen Merkmalen</span> geboren
+            werden, die nicht zu seinem Volk passen und von manchen als Zeichen dämonischer Abstammung gedeutet werden.
+            Vor allem die Menschen begegnen dieser vermeintlichen Dämonenbrut oft mit abergläubischem Misstrauen. Nicht
+            alle jedoch lehnen solche Wesen ab; unter den Zwergen zum Beispiel wird ein Halbdämon einfach nur als ein
+            gewöhnlicher Zwerg angesehen, dem zufällig Hörner gewachsen sind.</p>
+        <p>Ob diese Veränderungen tatsächlich dämonischem Blute zu verdanken sind, oder doch einen völlig anderen
+            Ursprung haben, ist und bleibt ungeklärt. Klar ist jedoch, dass diese Merkmale häufig mit einer längeren
+            Lebensdauer, besserer Gesundheit, und geschärften Sinnen einher gehen. </p>
+        <hr>
+
+        <div class="attributes" data-values="*,*,*,*,*+1,*,*,*+1"></div>
+        <p>* Attribute sind abhängig vom Volk der Eltern.</p>
+        <h2>Volkseigenschaften</h2>
+        <h3>Dämonische Abstammung</h3>
+        <p>Vorausgesetzt, du besitzt erkennbare Merkmale eines Halbdämons, hast du gegen die meisten Menschen Vorteil
+            beim Einschüchtern, aber Nachteil bei Diplomatiewürfen.</p>
+        <h3>Raue Haut</h3>
+        <p>Deine Haut ist rau und schuppig, und bietet einen gewissen Schutz gegen Angriffe. Du hast eine natürliche
+            0|1|1 Rüstung. Diese Eigenschaft ist optional und setzt voraus, dass dein Halbdämon ein sichtbar veränderte
+            Haut besitzt.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Ausgestoßener</h3>
+        <p>Menschliche Halbdämonen werden häufig von ihren Eltern verstoßen und landen - wenn sie glück haben - im
+            Waisenhaus. Bestenfalls nimmt sich ihnen eine Enklave der Ausgestoßenen an, eine verschworene Gemeinschaft
+            von Halbdämonen, die sich zum Schutz vor Übergriffen und zur gegenseitigen Unterstützung zusammengetan
+            haben. Diese Enklaven leben oft in gesonderten Stadtvierteln oder gründen gleich eigene Dörfer abseits
+            menschlicher Ansiedelungen, wo sie aufgrund der sozialen Distanz eigene Gebräuche und Kulturen entwickeln.
+            Von Gruppe zu Gruppe unterscheiden diese sich stark, jedoch herrscht zwischen allen Ausgestoßenen ein
+            gewisses Maß an Verbundenheit und Solidarität.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Untergetauchter</h3>
+        <p>Ob sie nun das Glück hatten, unter Zwergen geboren zu werden, oder ihre physischen Veränderung so unauffällig
+            sind, dass sie sich effektiv unter den Menschen verbergen können, Untergetauchte leben ein vergleichsweise
+            normales Leben, unbehaftet von den Stigmen, die ihren <span class="tool speci">Artgenossen</span> anhaften.
+            Sie genießen die Vorteile ihrer Veränderungen, ohne selbst von den Nachteilen betroffen zu sein - zumindest
+            solange, bis ihr Geheimnis dramatisch aufgedeckt wird. Viele sind gezwungen, ein Doppelleben zu führen;
+            ständig müssen sie auf der Hut vor neugierigen Blicken und Fragen sein, die ihre wahre Identität enthüllen
+            könnten.</p>
+        <div class="languages" data-lang="Gemeinsprache,Optionale Zweitsprache"></div>
+        <h3>Berufener</h3>
+        <p>Was von den Menschen als die Male eines Dämons gedeutet werden, gilt unter den Elfen Llésindurs als die
+            Ausbildung tierischer Aspekte. Halbdämonen seien keine Kinder der Höllen, sondern Auserwählte der Götter,
+            die mit dem Schutz der Natur und der Tierewelt betraut wurden. Besonders die Hochelfen verehren die
+            <b>Aënetnei</b> (<i>Berufene</i>) mit tiefer Ehrfurcht. Berufene sind zumeist elfische "Halbdämonen" aus
+            Llésindur, die nur selten den Schutz ihrer Heimat verlassen, um die feindseligen Siebenlande zu bereisen.
+        </p>
+        <div class="languages" data-lang="Elfisch,Gemeinsprache"></div>
+    </div>
+    <!----------->
+
+
+
+    <!-- MIME -->
+    <div class="entry" id="mime">
+        <h1>Mime<br><span class="smaller">Formwandler</span></h1>
+        <img src="images/voelker/mime.jpg" alt="Mime" loading="lazy">
+        <img src="images/voelker/mime-crop.jpg" alt="Mime" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="Unsterblich,*" data-health="*" data-height="*,*" data-speed="*" data-common="*">
+        </div>
+        <p>* Die meisten Merkmale des Formwandlers sind abhängig von der imitierten Kreatur.</p>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Die Formwandler sind ein mysteriöses Volk ohne eigene Gestalt oder Kultur. Statt dessen haben sie die
+            natürliche Fähigkeit, ihre Körper nach Belieben zu verändern und die Form anderer Wesen anzunehmen. Dabei
+            übernehmen sie die grundlegenden, körperlichen Schwächen wie Stärken des imitierten Volkes, ohne aber deren
+            Verstand zu kopieren. Mimen leben üblicherweise unter jenem Volke, als wäre es das eigene. Sie eigenen
+            sich dessen Lebensweise und Bräuche an, und integrieren sich vollständig in die Geselllschaft, welche sie
+            als die ihre auserwählten.</p>
+        <p>Die Verwandlung eines Formwandlers ist perfekt und kann nur von anderen Wandlern, mächtiger Magie,
+            Gedankenlesern, oder durch den Tod aufgedeckt werden, wenn ihre Körper Form verlieren und zu einer grauen
+            Masse zerfließen.</p>
+        <hr>
+
+        <div class="attributes" data-values="*,*,*,*,*,10,10,11"></div>
+        <p>*Körperliche Attribute sind abhängig von der imitierten Kreatur.</p>
+        <h2>Volkseigenschaften</h2>
+        <h3>Wandelbar</h3>
+        <p>Du kannst als <span class="tool polymorph">wahrer Polymorph</span> deine Gestalt nach belieben in die eines
+            anderen Volkes ändern und übernimmst dabei die Merkmale und körperlichen Attribute (mit * markiert) des
+            imitierten Individuums. Dabei übernimmst du nur dessen Merkmalseigenschaften, keine Volkseigenschaften oder
+            Talente.<br>Du must das Vorbild deiner Verwandlung sehen oder vor kurzem noch gesehen haben, um dich darin
+            verwandeln zu können. Du kannst dich nur einmal pro Langer Rast verwandeln; wenn du dabei die
+            Größenkategorie änderst, musst du zwei zusätzliche Rasten pro Kategorieänderung einlegen. Bei
+            gleichbleibender Größe dauert die Verwandlung 10 Minuten, die Verwandlung zur nächst größeren oder kleineren
+            dauert 1 Stunde, bei zwei Kategoriestufen unterschied 6 Stunden, etc.<br>Die Verwandlung von ausschließlich
+            dem Kopf dauert 1 Minute, ist aber nur bei gleichem Volk möglich.</p>
+        <h3>Rekonstitution</h3>
+        <p>Beim Tod zerfließt dein Körper und sammelt sich am Boden als graue, zähflüssige Masse. Wenn nach einem Tag
+            noch mehr als die Hälfte der Masse an einem Stück zusammenhängt, kannst du dich in deine letzte Form
+            zurückverwandeln. Die Größe der Masse selbst ist hierbei winzig, dementsprechend lange dauert die
+            Verwandlung in einen größeren Körper.</p>
+        <h3>Perfekte Stimme</h3>
+        <p>Du kannst deine Verwandlung nutzen, um die Stimme jeder Person perfekt zu imitieren, solange du sie noch vor
+            kurzem hast Sprechen hören. Die Verwandlung der Stimmbänder dauert nur 6 Sekunden/1 Runde.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Bekennender Mime</h3>
+        <p>Manche Formwandler fühlen sich moralisch dazu verpflichtet, sich offen als solche zu erkennen zu geben, und
+            sei es nur, damit sie nicht länger die Last der Geheimhaltung tragen müssen. Für viele Mimen kann es
+            befreiend wirken, ihre wahre Natur zuzugeben, doch birgt diese Offenheit auch gefahren; nicht jederorts sind
+            sie gern gesehen, hegen doch manche Leute die paranoide Befürchtung, Mimen könnten sich als ihre Bekannten
+            ausgeben und ihre Gesellschaft unterwandern. Andere Parteien streben danach, die Fähigkeiten der
+            Gestaltwandler auszunutzen, um sie auf eben
+            solche Weise als Spione einzusetzen, wie es von vielen beschriehen wird.</p>
+        <div class="languages" data-lang="Gemeinsprache,Volkseigene Sprache+"></div>
+        <h3>Verborgener Mime</h3>
+        <p>Die meisten Wandler entscheiden sich für ein Leben der Geheimhaltung und relativer Sicherheit. Sie leben
+            unter den Menschen, Elfen und Zwergen, als wären sie gewöhnliche Angehörige des Volkes und vermeiden es
+            tunlichst, ihre Tarnung zu gefährden. Üblicherweise behalten sie einen einzigen Körper für die Dauer seiner
+            Lebensspanne bei und verwandeln sich nur in seltenen Fällen.</p>
+        <div class="languages" data-lang="Gemeinsprache,Volkseigene Sprache+"></div>
+    </div>
+    <!----------------->
+
+
+
+    <!--- Minotaure --->
+    <div class="entry" id="minotaur">
+        <h1>Minotaure</h1>
+        <img src="images/voelker/minotaur.jpg" alt="Minotaure" loading="lazy">
+        <img src="images/voelker/minotaur-crop.jpg" alt="Minotaure" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="60 Jahre,14 Jahre" data-health="30" data-height="8 bis 9½,Groß" data-speed="40"
+            data-common="Bedrohlich"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Die Minotauren waren einst heimisch in den Siebenlanden, wurden aber durch die ersten Menschen mutmaßlich
+            ausgerottet. Anders als die meisten Völker verbargen die Stierwesen sich nicht in Wäldern und Bergen
+            oder arrangierten sich mit den Neuankömmlingen, wie es die Elfen und Zwerge taten, sondern zogen gegen die
+            fremdländischen Invasoren in die Schlacht. Angetrieben vom Verlust ihrer Heimat und Herden kämpften sie ohne
+            Rücksicht auf Verluste, welche sich mit der Zeit immer mehr häuften. Auch die Aufgabe war nun keine Option
+            mehr, wurden sie doch von den Menschen als nichts weiter als Monster angesehen und bis zur Auslöschung
+            gejagt.</p>
+        <p>Über mehrere <span class="tool eon">Zeitalter</span> hinweg wurde kein Minotaure in den Siebenlanden
+            gesichtet; in den vergangenen zwei Jahrhunderten jedoch tauchten sie vereinzelt erneut im
+            Kontinent auf, die einstigen Animositäten längst von den Menschen vergessen. Nun leben und arbeiten sie
+            unter den anderen Völkern, als sei ihre Vergangenheit nie geschehen. Auch wenn sie den Zusammenhalt einer
+            Herde bevorzugen, bleibt ihnen aufgrund ihrer geringen Zahl oft nichts anderes übrig, als sich als
+            Einzelgänger durchzuschlagen.</p>
+        <hr>
+
+        <div class="attributes" data-values="11,11,10,10,10,10,11,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Pflanzenfresser</h3>
+        <p>Du kannst dich nicht von Fleisch ernähren, um deinen Hunger zu stillen.</p>
+        <h3>Unaufhaltsamer Ansturm</h3>
+        <p>Sobald du mindestens 10 Fuß zurückgelegt hast, kannst du deine Sprintaktion als unbewaffneten Angriff nutzen,
+            der zu gleichen Teilen Schmetter- und Stichschaden verursacht; dies hebt die verbleibende, reguläre
+            Bewegungsreichweite auf. Sprinte in einer geraden Linie durch Feinde hindurch, die mindestens eine
+            Größenkategorie kleiner sind als du. Wirf für jede Kollision einen neuen Stärkeangriff; ein geglückter
+            Angriff kostet ein zusätzliches Feld Reichweite und wirft den getroffenen Gegner 1 Feld nach Hinten und zur
+            Seite - ein gescheiterter Angriff stoppt deine Aktion. Gegner, die mindestens 2 Kategorie kleiner sind,
+            werden 2 Felder weit geworfen und kosten keine zusätzliche Bewegungsreichweite. Gegner der gleichen Größe
+            können nicht umgerannt werden und stoppen den Angriff, können dadurch aber immer noch Schaden nehmen.<span
+                class="tool mino"><sup>(?)</sup></span></p>
+        <h3>Schutz der Herde</h3>
+        <p>Du erhältsts einen +1 Bonus auf Angriffswürfe gegen einen Feind, in dessen Nahkampfreichweite sich mindestens
+            ein Verbündeter befindet. Hat einer dieser Verbündeten gleich oder weniger als die Hälfte seiner Ausdauer,
+            steigt dieser Bonus auf +2.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Fremdländischer Minotaure</h3>
+        <p>Die meisten Minotauren, die sich heute in den Siebenlanden finden lassen, sind in kleinen Gruppen aus den
+            jenseitigen Landen zugezogen, nachdem die Zwerge sich endlich dazu herabließen, sie einzulassen. Zwar ist
+            jede Herde ein eigenständiger Stamm mit einzigartigen Sitten und Gebräuchen, jedoch eint sie das Bedürfnis
+            nach Zusammenhalt; Minotauren bleiben nur ungern allein.</p>
+        <div class="languages" data-lang="Fremdsprache,Gemeinsprache"></div>
+        <h3>Verschwiegener Minotaure</h3>
+        <p>Forscht man genauer nach, wird man feststellen, dass nicht alle Minotauren aus den Fremden Landen zu stammen
+            scheinen. Selten trifft man einzelgängerische Exemplare dieses Volkes an, die nicht über ihre Herkunft
+            sprechen wollen und zu keiner Herde gehören. Woher sie kommen, ist ein Rätsel; manch einer munkelt, dass es
+            sich um die Nachkommen derjenigen handelt, die einst der Auslöschung durch die Menschen entgehen konnten und
+            sich seither in den Siebenlanden versteckt hielten. Aber das sind nur haltlose Spekulationen<span
+                class="tool ominous-pact">...</span></p>
+        <div class="languages" data-lang="Gemeinsprache,Zwergisch+"></div>
+    </div>
+    <!---------->
+
+
+
+    <!-- ALBE -->
+    <div class="entry" id="drow">
+        <h1>Albe<br><span class="smaller">Dunkelelfe</span></h1>
+        <img src="images/voelker/drow2.jpg" alt="Albe" loading="lazy">
+        <img src="images/voelker/drow2-crop.jpg" alt="Albe" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="Unsterblich,100 Jahre" data-health="20" data-height="5½ bis 6,Mittel"
+            data-speed="30" data-common="Überlegene Dunkelsicht,Immunität"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Elfen in böse.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,10,11,10,11,10,10,11"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Verbündeter der Schatten</h3>
+        <p>Du bewegst dich durch Dämmerlicht, als würdest du durch Finsternis wandeln. Andere Kreaturen können dich
+            schlechter erkennen und haben auf sichtbarsierte Wahrnehmungswürfe einen Malus von -10; bei tatsächlicher
+            Dunkelheit bist du effektiv unsichtbar und kannst nur noch von Wesen mit <span
+                class="tool dark">Dunkelsicht</span> gesehen werden.</p>
+        <h3>Blutiges Erbe</h3>
+        <p>Bei Kreaturen, deren Weisheit kleiner oder gleich deinem Charismawert ist, kannst du beim Einschüchtern mit
+            Vorteil werfen.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Valur-Albe</h3>
+        <p>Alben, die aus Dsôn Valur stammen und diese Tatsache nicht verbergen. Sie haben sich aus verschiedenen
+            Gründen von ihrer Heimat abgewandt und leben nun unter den Menschen der Siebenlande.</p>
+        <div class="languages" data-lang="Albisch,Gemeinsprache"></div>
+        <h3>Intrigierende Albe</h3>
+        <p>Stammen auch aus Dsôn Valur, sind aber Spione, welche zur Stärkung Dsôns die Politik des Landes unterwandern,
+            oder aber eigene, finstere Ziele verfolgen.</p>
+        <div class="languages" data-lang="Albisch,Gemeinsprache"></div>
+        <h3>Freie Albe</h3>
+        <p>Alben, die unter den Menschen aufgewachsen sind, und nicht zwangsläufig hinterhältige Ziele im Namen Dsôn
+            Valurs verfolgen. Das Misstrauen bleibt dennoch.</p>
+        <div class="languages" data-lang="Gemeinsprache,Albisch+"></div>
+    </div>
+    <!--------->
+
+
+
+    <!-- ORK -->
+    <div class="entry" id="orc">
+        <h1>Ork</h1>
+        <img src="images/voelker/orc.jpg" alt="Ork" loading="lazy">
+        <img src="images/voelker/orc-crop.jpg" alt="Ork" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="60 Jahre,14 Jahre" data-health="20" data-height="6 bis 7,Mittel" data-speed="30"
+            data-common="Bedrohlich"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Als Ork dürfte man es schwer haben in den Siebenlanden, weil sie groß und furchteinflößend sind.</p>
+        <hr>
+
+        <div class="attributes" data-values="12,11,10,11,10,9,10,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Orkischer Blutdurst</h3>
+        <p>Sofern du dich nicht bereits in Nahkampfreichweite zu einem Gegner befindest, kannst du bei Bedarf deinen
+            Sprint als Bonusaktion ausführen, musst dich aber auf direktem Weg zum nächstgelegenen, bekannten Gegner
+            bewegen.</p>
+        <h3>Unaufhaltsam</h3>
+        <p>Solltest du besiegt, aber nicht gleich <span class="tool killed">getötet</span> werden, kannst du einmalig
+            <b>pro Kampf</b> du mit 1 Ausdauerpunkt weiterkämpfen. In diesem Fall kannst du sofort eine beliebige <span
+                class="tool reaction">Reaktion</span> ausführen.
+        </p>
+        <h3>Brutaler Kampf</h3>
+        <p>Jedes Mal, wenn du im Nahkampf eine 20 wirfst, darfst du ein weiteres Mal angreifen.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Oschotk-Ork</h3>
+        <p>Orks, die aus dem Orkreich Oschotk weit im Westen der Siebenlande stammen und selbige nun bereisen, aus
+            welchen Gründen auch immer. Ist vermutlich relevant zu erwähnen, dass Oschotk-Orks effektiv als illegale
+            Besatzer angesehen werden und zumindest im Königreich Kaukand gejagt werden.</p>
+        <div class="languages" data-lang="Grozak,Gemeinsprache"></div>
+        <h3>Streifender Ork</h3>
+        <p>Orks, die einer umherziehenden Horde außerhalb der Siebenlande angehörten. Betrat entweder als Gefangener der
+            Zwerge den Kontinent, oder wurde reingelassen, weil er "Bitte, bitte!" gesagt hat.</p>
+        <div class="languages" data-lang="Fremdsprache,Gemeinsprache"></div>
+    </div>
+    <!------------>
+
+
+
+    <!-- GOBLIN -->
+    <div class="entry" id="goblin">
+        <h1>Goblin</h1>
+        <img src="images/voelker/goblin.jpg" alt="Goblin" loading="lazy">
+        <img src="images/voelker/goblin-crop.jpg" alt="Goblin" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="40 Jahre,10 Jahre" data-health="15" data-height="3 bis 4,Klein" data-speed="30">
+        </div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Goblins sind klein und toll.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,10,11,11,10,9,10,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Soziale Raserei</h3>
+        <p>Im Kampf erhälst du +1 Bonus auf Nahkampfangriffe für jeden Verbündeten, der mindestens die Hälfte seiner
+            Leben verloren hat, und +4 Bonus für jeden gefallenen Verbündeten.</p>
+        <h3>Sprunghafte Bewegung</h3>
+        <p>Solange du dich von der Nahkampfreichweite eines Gegners direkt in die eines anderen begibts, oder der Gegner
+            von mindestens einem Verbündeten flankiert wird, riskierst du keine Gelgenheitsangriffe.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Assimilierter Goblin</h3>
+        <p>Ein Goblin, der aus welchen Gründen auch immer unter den Menschen aufwuchs. Vermutlich als Haustier.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Gezähmter Goblin</h3>
+        <p>Ein Goblin, der zuvor als Teil einer wildgewordenen Meute das Land bereiste und Unruhe stiftete, aus
+            unterschiedlichen Gründen aber gezwungen war, sich zu benehmen.</p>
+        <div class="languages" data-lang="Gobsch,Gemeinsprache"></div>
+        <h3>Oschotk-Goblin</h3>
+        <p>Goblins, die den Orks von Oschotk als Fußvolk dienen.</p>
+        <div class="languages" data-lang="Grozak,Gemeinsprache"></div>
+    </div>
+    <!------------>
+
+
+
+    <!-- KOBOLD -->
+    <div class="entry" id="kobold">
+        <h1>Kobold</h1>
+        <img src="images/voelker/kobold.jpg" alt="Kobold" loading="lazy">
+        <img src="images/voelker/kobold-crop.jpg" alt="Kobold" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="30 Jahre,6 Jahre" data-health="15" data-height="2½ bis 3½,Klein" data-speed="30"
+            data-common="Dunkelsicht"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Kobolde sind klein, toll und (größen)wahnsinnig.</p>
+        <hr>
+
+        <div class="attributes" data-values="9,11,11,10,11,10,10,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Rudeltaktiken</h3>
+        <p>Du kannst jeden Gegner im Nahkampf mit Vorteil angreifen, als würdest du ihn flankieren, solange sich
+            mindestens eein Verbündeter in dessen Kampfreichweite befindet.</p>
+        <h3>Fragwürdiges Erbe</h3>
+        <p>Du hast eine +4 Resistenz gegen Feuer und eine natürliche 0|1|1 Rüstung.</p>
+        <h3>Losstürmen</h3>
+        <p>Solange du sprintest und dabei deine Bewegungsreichweite voll ausnutzt, kannst du nicht von
+            Gelegenheitsangriffen getorffen werden, außer ein Gegner bereitet sich explizit als <span
+                class="tool reaction">Reaktion</span> darauf vor.</p>
+        <h3>Fluchtinstinkt</h3>
+        <p>Immer, wenn deine Ausdauer unter die Hälfte fällt, oder ein Verbündeter besiegt wird, gerätst du in Panik und
+            fliehst auf direktem Weg aus dem Kampf. Du musst einen Willeskraft-Rettungswurf bestehen, um dich wieder zu
+            sammeln.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Freier Kobold</h3>
+        <p>Kobolde, die unter den Menschen leben.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Getreuer Kobold</h3>
+        <p>Kobolde, die glauben, sie seien die Nachfahren von Drachen. Es sei ihre Pflicht, den feuerspeienden Bestien
+            zu dienen und sind immer auf der Suche nach einem, dem sie sich unterwerfen können.</p>
+        <div class="languages" data-lang="Drakonisch,Gemeinsprache"></div>
+    </div>
+    <!---------->
+
+
+
+    <!-- FAUN -->
+    <div class="entry" id="faun">
+        <h1>Faun<br><span class="smaller">Satyr</span></h1>
+        <img src="images/voelker/faun.jpg" alt="Faun" loading="lazy">
+        <img src="images/voelker/faun-crop.jpg" alt="Faun" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="60 Jahre,20 Jahre" data-health="15" data-height="5½ bis 6½,Mittel" data-speed="35"
+            data-common="Ziegenhufe">
+        </div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Faune sind toll.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,10,11,10,10,10,10,12"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Künstlerische Begabung</h3>
+        <p>Wähle bei der Charaktererstellung jeweils eine Fähigkeit aus den Kategorien <i>Auftreten</i> und
+            <i>Instrumente</i>. Du startest mit einem +2 Bonus und <span class="tool comp">Kompetenz</span> in beiden
+            Fähigkeiten.
+        </p>
+        <h3>Rammbock</h3>
+        <p>Sofern du deine gewöhnliche Bewegungsreichweite ausgenutzt hast, kannst du deine Hörner für einen
+            Stärkeangriff während deiner Sprintaktion nutzen; dieser gilt als unbewaffneter Angriff, kann dir bei einem
+            Scheitern also Schaden zufügen.<br>Addiere +1 auf deinen Stärke-Wurf für jedes während dem Sprint
+            zurückgelegte Feld. Wenn du Schaden verursachst wirfst du den Gegner 1 Feld zurück und er musst einen
+            <i>SG10-Athletikwurf</i> bestehen, um auf den Beinen zu bleiben. Verursachst du mindestens 10 Schaden wird
+            der Gegner 2 Felder zurückgeworfen und der SG beträgt 15.<br>Die Hälfte des verursachten Schadens ist
+            hierbei Schmetterre-, die andere Stichschaden.<span class="tool faunhead"><sup>(?)</sup></span>
+        </p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Gláddan-Satyr</h3>
+        <p>Faune aus dem Gláddan-Wald.</p>
+        <div class="languages" data-lang="Dreys,Gemeinsprache,Elfisch+"></div>
+        <h3>Freier Faun</h3>
+        <p>Fauen, die unter den Menschen leben.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+    </div>
+    <!-------------->
+
+
+
+    <!-- LLEKAMPA -->
+    <div class="entry" id="goatman">
+        <h1 style="letter-spacing: -.05rem;">Llekampa</h1>
+        <img src="images/voelker/goatman.jpg" alt="Llekampa" loading="lazy">
+        <img src="images/voelker/goatman-crop.jpg" alt="Llekampa" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="120 Jahre,25 Jahre" data-health="15" data-height="3 bis 4,Klein" data-speed="25"
+            data-common="Ziegenhufe"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Llekampen sind toll.</p>
+        <hr>
+
+        <div class="attributes" data-values="10,10,11,10,10,11,11,9"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Olfaktorisches Wunder</h3>
+        <p>Du verströmst einen für intelligente Wesen ungewöhnlich starken Geruch; Kreaturen in einem 30 Fuß Radius um
+            dich herum haben Vorteil bei geruchsbasierten Wahrnehmungswürfen.</p>
+        <h3>Sicheren Fußes</h3>
+        <p>Du hast Vorteil bei Rettungswürfen, die dich vorm Stürzen bewahren.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Gláddan-Llekampa</h3>
+        <p>Llekampa aus dem Gláddan-Wald.</p>
+        <div class="languages" data-lang="Dreys,Gemeinsprache,Elfisch+"></div>
+        <h3>Freier Llekampa</h3>
+        <p>Llekampa, die unter den Menschen leben.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+    </div>
+    <!----------->
+
+
+
+    <!-- GNOLL -->
+    <div class="entry" id="gnoll">
+        <h1>Gnoll</h1>
+        <img src="images/voelker/gnoll.jpg" alt="Gnoll" loading="lazy">
+        <img src="images/voelker/gnoll-crop.jpg" alt="Gnoll" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="50 Jahre,10 Jahre" data-health="20" data-height="6 bis 7,Mittel" data-speed="40"
+            data-common="Dunkelsicht,Stählerner Magen,Bedrohlich,Raubtiersinne"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Gnolle sind toll.</p>
+        <hr>
+
+        <div class="attributes" data-values="11,11,10,10,12,10,10,8"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Fährtensucher</h3>
+        <p>Dein Gehör ist ausgeprägt, deine Augen sind geschärft und dein Geruchsinn untrüglich; du startest mit einem
+            +2 Bonus und <span class="tool comp">Kompetenz</span> in Spurensuche. Eine Fährte, deren Geruch du einmal
+            aufgenommen hast, kannst du nicht wieder verlieren, solange sie nicht von einem Gewässer, Magie, oder etwas
+            vergleichbarem unterbrochen wird.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Oschotk-Gnoll</h3>
+        <p>Gnolle, die zusammen mit den Ork von Oschotk leben und kämpfen.</p>
+        <div class="languages" data-lang="Grozak,Gemeinsprache"></div>
+        <h3>Freier Gnoll</h3>
+        <p>Gnolle, die versuchen, von den Menschen als mehr als nur bloße Monster angesehen zu werden.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+    </div>
+    <!----------->
+
+
+
+    <!-- RIESE -->
+    <div class="entry" id="giant">
+        <h1>Riese</h1>
+        <img src="images/voelker/giant.jpg" alt="Riese" loading="lazy">
+        <img src="images/voelker/giant-crop.jpg" alt="Riese" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="300 Jahre,40 Jahre" data-health="30" data-height="10 bis 12,Groß" data-speed="40">
+        </div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Riesen sind groß und toll.</p>
+        <hr>
+
+        <div class="attributes" data-values="12,10,9,12,10,10,10,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Kultureller Pazifismus</h3>
+        <p>Als Riese verabscheust du unnötige Gewalt und vermeidest Kämpfe soweit möglich; du kannst nicht angreifen,
+            bis du oder ein Verbündeter Schaden genommen hat.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Freier Riese</h3>
+        <p>Ein Riese der sich gedacht hat, es wäre ne gute Idee, unter den Menschen zu leben.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Hügelriese</h3>
+        <p>Ein Riese, der die meiste Zeit seines Lebens einsiedlerisch und weit weg von den Menschen gelebt hat.
+            Entweder völlig alleine, bei den Orks von Oschotk, oder im Gláddan-Wald.</p>
+        <div class="languages" data-lang="Gemeinsprache,Dreys+,Grozak+"></div>
+        <h3>Zwergenriese</h3>
+        <p>Ein Riese, der zusammen mit den Zwergen in den Bergen lebt.</p>
+        <div class="languages" data-lang="Zwergisch,Gemeinsprache"></div>
+    </div>
+    <!----------->
+
+
+
+    <!-- OWLIN -->
+    <div class="entry" id="owlin">
+        <h1>Yespest</h1>
+        <img src="images/voelker/owlin.jpg" alt="Yespest" loading="lazy">
+        <img src="images/voelker/owlin-crop.jpg" alt="Yespest" class="crop" loading="lazy">
+        <hr>
+
+        <h2>Merkmale</h2>
+        <div class="traits" data-age="1000 Jahre,200 Jahre" data-health="20" data-height="4½ bis 6½,Mittel"
+            data-speed="30" data-common="Überlegene Dunkelsicht"></div>
+        <hr>
+
+        <h2>Beschreibung</h2>
+        <p>Yespesten (gesp. Je-pescht) sind toll.</p>
+        <hr>
+
+        <div class="attributes" data-values="9,10,10,9,12,10,12,10"></div>
+        <h2>Volkseigenschaften</h2>
+        <h3>Stille Federn</h3>
+        <p>Du kannst fliegen. Deine Bewegungsrate im Flug ist die doppelte deiner normalen Rate. Dein Flug ist lautlos.
+            Außerdem bist du <span class="tool comp">kompetent</span> bei Heimlichkeitswürfen.</p>
+        <hr>
+
+        <h2>Varianten</h2>
+        <h3>Freier Yespest</h3>
+        <p>Eulenmann bei Menschen.</p>
+        <div class="languages" data-lang="Gemeinsprache"></div>
+        <h3>Gláddan-Yespest</h3>
+        <p>Eulenmann im Wald.</p>
+        <div class="languages" data-lang="Dreys,Gemeinsprache,Elfisch+"></div>
+    </div>
+    <!--------------->
+</body>
+
+</html>

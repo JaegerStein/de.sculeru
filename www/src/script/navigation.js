@@ -30,10 +30,10 @@ function switchCat(c, l, j, r, t, d) {
     }
 }
 function loadLinks(kb) {
-    const l = links();
-    if (!l)
+    const linkList = links();
+    if (!linkList)
         return;
-    l.innerHTML = '';
+    linkList.innerHTML = '';
     Session.getCategoryIndex(kb)
         .sort((a, b) => a.localeCompare(b))
         .forEach((entryKey) => {
@@ -45,7 +45,7 @@ function loadLinks(kb) {
         const a = internalLink.toHTML();
         registerLink(a);
         li.append(a);
-        l.append(li);
+        linkList.append(li);
     });
 }
 function loadCategory(category) {

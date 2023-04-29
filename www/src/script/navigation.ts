@@ -25,11 +25,13 @@ function switchCat(c: KB_Category,
 }
 
 function loadLinks(kb: KB_Category): void {
-    const l: HTMLElement | null = links();
-    if (!l) return;
-    l.innerHTML = '';
+    const linkList: HTMLElement | null = links();
+    if (!linkList) return;
+    linkList.innerHTML = '';
 
     Session.getCategoryIndex(kb)
+        // sorts the collected links alphabetically
+        // expand for recency and directory
         .sort((a: string, b: string): number => a.localeCompare(b))
         .forEach((entryKey: string): void => {
             const kbEntry: KB_Entry | null = Session.getEntry(entryKey);
@@ -39,7 +41,7 @@ function loadLinks(kb: KB_Category): void {
             const a: HTMLElement = internalLink.toHTML();
             registerLink(a);
             li.append(a);
-            l.append(li);
+            linkList.append(li);
         });
 }
 

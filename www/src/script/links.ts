@@ -6,7 +6,6 @@ import {Entry} from "./types/Entry.js";
 
 
 function extractScript(entryContent: string): [string, string | null] {
-// if the file contains a script, it is extracted
     const scriptReg: RegExp = /<script>([\s\S]*?)<\/script>/;
     const match: RegExpMatchArray | null = entryContent.match(scriptReg);
     const script: string | null = match ? match[1].trim() : null;
