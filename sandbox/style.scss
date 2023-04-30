@@ -1,0 +1,39 @@
+* {
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: beige;
+}
+
+#base {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+
+  #left-spacer {
+    box-shadow: .5rem 0 1rem rgba(0 0 0 / .05);
+  }
+
+  #river-container {
+    padding-top: 2rem;
+
+    #river {
+      width: 75ch;
+    }
+  }
+}
+
+#left-overlay, #right-overlay {
+  z-index: 9999;
+  padding-top: 1rem;
+}
+
+#left-overlay {
+  padding-left: 1rem;
+}
+
+#right-overlay {
+  padding-right: 1rem;
+}

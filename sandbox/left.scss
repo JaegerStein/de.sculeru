@@ -1,0 +1,36 @@
+#left-overlay {
+
+  header {
+    h1 {
+
+      font-size: 2.75rem;
+      line-height: 2rem;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+    }
+  }
+
+  hr {
+    margin: .5rem 1rem .5rem 0;
+    border: 1px solid rgba(0 0 0 / .1)
+  }
+
+  nav {
+    #nav-categories {
+      padding-right: 1rem;
+
+      #nav-categories-container {
+        grid-template-columns: repeat(4, 1fr);
+
+        img {
+          width: 1rem;
+          height: 1rem;
+          text-align: center;
+        }
+      }
+
+    }
+  }
+}

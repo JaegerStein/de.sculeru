@@ -1,0 +1,43 @@
+.entry {
+  position: relative;
+
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+
+  box-shadow: 0 .5rem 1rem rgba(0 0 0 / .05);
+
+  .entry-header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+    }
+
+    .entry-close {
+      width: 2.5rem;
+      height: 2.5rem;
+    }
+  }
+
+
+  hr {
+    margin: 1rem 0;
+    border: 1px solid rgba(0 0 0 / .1);
+  }
+
+  .entry-content {
+    p {
+      margin-bottom: 1rem;
+    }
+
+    hr {
+      margin: .5rem 1rem;
+      border: 1px solid rgba(0 0 0 / .1);
+    }
+  }
+}
