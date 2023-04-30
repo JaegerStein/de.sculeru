@@ -1,8 +1,23 @@
 .entry {
   position: relative;
-  margin-bottom: 4rem;
+  width: 75ch;
+  margin: 0 auto 4rem;
   padding-bottom: 2rem;
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+}
+.entry:has(iframe) {
+  width: 90%;
+  height: auto;
+}
+.entry:has(iframe) .entry-header, .entry:has(iframe) hr {
+  margin: 0 auto;
+  width: 75ch;
+}
+.entry:has(iframe) hr {
+  margin: 1rem auto;
+}
+.entry:has(iframe) .entry-content {
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .entry .entry-header {
   width: 100%;
@@ -29,6 +44,11 @@
 .entry .entry-content hr {
   margin: 0.5rem 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.entry .entry-content iframe {
+  width: 100%;
+  border: none;
+  aspect-ratio: 1;
 }
 
 /*# sourceMappingURL=entry.css.map */

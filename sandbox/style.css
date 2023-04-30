@@ -23,7 +23,7 @@ h1, h2 {
   padding-top: 2rem;
 }
 #base #river-container #river {
-  width: 75ch;
+  width: 100%;
 }
 #left-overlay, #right-overlay {
   z-index: 9999;

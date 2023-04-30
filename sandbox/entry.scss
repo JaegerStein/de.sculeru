@@ -1,10 +1,30 @@
 .entry {
   position: relative;
 
-  margin-bottom: 4rem;
+  width: 75ch;
+
+  margin: 0 auto 4rem;
   padding-bottom: 2rem;
 
-  box-shadow: 0 .5rem 1rem rgba(0 0 0 / .05);
+  box-shadow: 0 1rem 1rem -1rem rgba(0 0 0 / .1);
+
+  &:has(iframe) {
+    width: 90%;
+    height: auto;
+
+    .entry-header, hr {
+      margin: 0 auto;
+      width: 75ch;
+    }
+
+    hr {
+        margin: 1rem auto;
+    }
+
+    .entry-content {
+      border: 1px solid rgba(0 0 0 / .1);
+    }
+  }
 
   .entry-header {
     width: 100%;
@@ -38,6 +58,12 @@
     hr {
       margin: .5rem 1rem;
       border: 1px solid rgba(0 0 0 / .1);
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+      aspect-ratio: 1;
     }
   }
 }
