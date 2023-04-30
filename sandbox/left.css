@@ -14,11 +14,33 @@
 }
 #left-overlay nav #nav-categories #nav-categories-container {
   grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
 }
-#left-overlay nav #nav-categories #nav-categories-container img {
-  width: 1rem;
-  height: 1rem;
+#left-overlay nav #nav-categories #nav-categories-container svg {
+  width: 3rem;
+  height: 3rem;
+}
+#left-overlay nav #nav-categories #nav-categories-container svg, #left-overlay nav #nav-categories #nav-categories-container svg path {
+  transition: all 0.25s ease;
+}
+#left-overlay nav #nav-categories #nav-categories-container svg:hover, #left-overlay nav #nav-categories #nav-categories-container svg.selected {
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+#left-overlay nav #nav-categories #nav-categories-container svg:hover path.stroke-fill, #left-overlay nav #nav-categories #nav-categories-container svg.selected path.stroke-fill {
+  stroke: ivory;
+}
+#left-overlay nav #nav-categories #nav-categories-container svg:hover path:not(.stroke-fill), #left-overlay nav #nav-categories #nav-categories-container svg.selected path:not(.stroke-fill) {
+  fill: ivory;
+}
+#left-overlay nav #nav-categories #nav-categories-label {
+  margin-top: 0.5rem;
+  padding-right: 1rem;
   text-align: center;
+  font-size: 2rem;
+  font-weight: lighter;
+  line-height: 2rem;
+  letter-spacing: -0.1rem;
 }
 
 /*# sourceMappingURL=left.css.map */

@@ -1,11 +1,15 @@
 * {
   text-rendering: optimizeLegibility;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
 }
 
 body {
   background-color: beige;
+}
+
+h1, h2 {
+  font-weight: 300;
 }
 
 #base {
@@ -21,7 +25,6 @@ body {
 #base #river-container #river {
   width: 75ch;
 }
-
 #left-overlay, #right-overlay {
   z-index: 9999;
   padding-top: 1rem;
