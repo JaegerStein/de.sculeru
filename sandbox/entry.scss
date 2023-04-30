@@ -39,5 +39,11 @@
       margin: .5rem 1rem;
       border: 1px solid rgba(0 0 0 / .1);
     }
+
+    iframe {
+      width: 100%;
+      border: none;
+      aspect-ratio: 1;
+    }
   }
 }
