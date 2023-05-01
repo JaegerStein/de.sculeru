@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {el} from "./utils";
 
+const left: HTMLElement = el('left')!;
+const center: HTMLElement = el('river')!;
+const right: HTMLElement = el('right')!;
+
 const root = ReactDOM.createRoot(
   el('root')!
 );
