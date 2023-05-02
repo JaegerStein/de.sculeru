@@ -1,5 +1,5 @@
 import React from 'react';
-import {CLOSE_ICON_SVG} from "../common";
+import {CLOSE_ICON_SVG} from "../utils/common";
 
 const ENTRY_CLASSNAME = 'entry';
 const ENTRY_HEADER_CLASSNAME = 'entry-header';

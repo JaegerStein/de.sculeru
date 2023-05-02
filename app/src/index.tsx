@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
+import './assets/styles/style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {el} from "./utils";
+import {el} from "./utils/utils";
 
 const left: HTMLElement = el('left')!;
 const center: HTMLElement = el('river')!;
