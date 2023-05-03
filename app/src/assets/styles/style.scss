@@ -1,21 +1,14 @@
 @import "fonts.scss";
+@import "common.scss";
 
-// widths
-$line: 70ch;
-
-// colors
-$tardis: #003865;
-$blue: #005498;
-$violet: #650038;
-$green: #386500;
-
-$burgundy: #7c2529;
-$gold: #f0b323;
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+
+  font-family: $base-font;
+  color: $tardis;
 }
 
 body {
@@ -23,7 +16,6 @@ body {
 }
 
 h1, h2 {
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-weight: normal;
 }
 
@@ -50,6 +42,7 @@ h1, h2 {
 #base {
   grid-template-columns: 1fr 3fr 1fr;
   min-height: 100vh;
+  padding-top: 2rem;
 
   #center-root-container {
     #center-root {
@@ -62,36 +55,6 @@ h1, h2 {
   padding-top: 1rem;
   min-width: 256px;
   z-index: 10;
-}
-
-#left-overlay {
-  padding-left: 1rem;
-  box-shadow: .5rem 0 1rem rgba(0 0 0 / .05);
-
-  header {
-    margin-right: 1rem;
-    color: $tardis;
-
-    h1, h2 {
-      font-weight: lighter;
-    }
-
-    h1 {
-      font-size: 3rem;
-      line-height: 2.5rem;
-      letter-spacing: -.2rem;
-    }
-
-    h2 {
-      font-weight: normal;
-      font-size: 1.12rem;
-    }
-  }
-
-  hr {
-    margin: .5rem 1rem .5rem 0;
-    border: 1px solid rgba(0 0 0 / .1);
-  }
 }
 
 #right-overlay {

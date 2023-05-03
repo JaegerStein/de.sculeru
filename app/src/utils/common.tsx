@@ -1,7 +1,21 @@
-const CLOSE_ICON_SVG =
-    <svg className="entry-close pointer" viewBox="0 0 128 128" width="128" height="128">
-        <line x1="28" y1="100" x2="100" y2="28" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-        <line x1="28" y1="28" x2="100" y2="100" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-    </svg>;
+import React from "react";
+import {ReactComponent as X} from "../assets/images/x.svg";
+import {ReactComponent as Lore} from "../assets/images/lore.svg";
+import {ReactComponent as Journal} from "../assets/images/journal.svg";
+import {ReactComponent as Rules} from "../assets/images/rules.svg";
+import {ReactComponent as Tools} from "../assets/images/tools.svg";
 
-export {CLOSE_ICON_SVG}
+const SELECTED = 'selected';
+const LORE = 'lore';
+const JOURNAL = 'journal';
+const RULES = 'rules';
+const TOOLS = 'tools';
+export {SELECTED, LORE, JOURNAL, RULES, TOOLS}
+
+const CloseIcon: React.FC = () => <X/>
+const LoreIcon: React.FC = () => <Lore/>
+const JournalIcon: React.FC = () => <Journal/>
+const RulesIcon: React.FC = () => <Rules/>
+const ToolsIcon: React.FC = () => <Tools/>
+
+export {CloseIcon, LoreIcon, JournalIcon, RulesIcon, ToolsIcon}

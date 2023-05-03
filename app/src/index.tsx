@@ -1,6 +1,7 @@
 import React from 'react';
 import {createRoot} from 'react-dom/client';
 import './assets/styles/style.css';
+import './assets/styles/left.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {el} from "./utils/utils";

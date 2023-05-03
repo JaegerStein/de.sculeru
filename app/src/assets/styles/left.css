@@ -1,0 +1,49 @@
+#left-overlay {
+  padding-left: 1rem;
+  box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.05);
+}
+#left-overlay header {
+  margin-right: 1rem;
+  color: #003865;
+}
+#left-overlay header h1, #left-overlay header h2 {
+  font-weight: lighter;
+}
+#left-overlay header h1 {
+  font-size: 3rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.2rem;
+}
+#left-overlay header h2 {
+  font-weight: normal;
+  font-size: 1.12rem;
+}
+#left-overlay hr {
+  margin: 0.5rem 1rem 0.5rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#left-overlay nav #categories {
+  padding-right: 1rem;
+  margin-bottom: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+}
+#left-overlay nav #categories svg {
+  width: 3rem;
+  height: 3rem;
+}
+#left-overlay nav #categories svg, #left-overlay nav #categories svg path {
+  transition: all 0.25s ease;
+}
+#left-overlay nav #categories svg:hover, #left-overlay nav #categories svg.selected {
+  cursor: pointer;
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+#left-overlay nav #categories svg:hover path.stroke-fill, #left-overlay nav #categories svg.selected path.stroke-fill {
+  stroke: ivory;
+}
+#left-overlay nav #categories svg:hover path:not(.stroke-fill), #left-overlay nav #categories svg.selected path:not(.stroke-fill) {
+  fill: ivory;
+}
+
+/*# sourceMappingURL=left.css.map */
