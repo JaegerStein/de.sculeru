@@ -12,7 +12,7 @@ const Left: React.FC = () => {
                 icon.classList.add('selected');
             }
         })
-    });
+    }, []);
 
     return (
         <div id={CATEGORIES_ID} className={CATEGORIES_CLASSNAME}>
