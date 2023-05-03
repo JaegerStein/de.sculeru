@@ -5,8 +5,8 @@ import './assets/styles/left.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {el} from "./utils/utils";
-import Left from "./components/Left";
-import Right from "./components/Right";
+import Left from "./Left";
+import Right from "./Right";
 
 const left: HTMLElement = el('left-root')!;
 const center: HTMLElement = el('center-root')!;

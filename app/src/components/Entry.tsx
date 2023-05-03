@@ -1,8 +1,9 @@
 import React from 'react';
 import {CloseIcon} from "../utils/common";
+import '../assets/styles/entry.css';
 
-const ENTRY_CLASSNAME = 'entry';
-const ENTRY_HEADER_CLASSNAME = 'entry-header';
+const ENTRY_CLASSNAME = 'entry relative';
+const ENTRY_HEADER_CLASSNAME = 'entry-header flex-row jc-between ai-center';
 const ENTRY_CONTENT_CLASSNAME = 'entry-content';
 
 interface EntryProps {

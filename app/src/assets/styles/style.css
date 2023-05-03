@@ -45,10 +45,6 @@ h1, h2 {
   min-height: 100vh;
   padding-top: 2rem;
 }
-#base #center-root-container #center-root {
-  width: 70ch;
-}
-
 .overlay {
   padding-top: 1rem;
   min-width: 256px;

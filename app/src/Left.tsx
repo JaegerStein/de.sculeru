@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {JournalIcon, LoreIcon, RulesIcon, ToolsIcon} from '../utils/common';
+import {JournalIcon, LoreIcon, RulesIcon, ToolsIcon} from './utils/common';
 
 const CATEGORIES_ID = 'categories';
 const CATEGORIES_CLASSNAME = 'full-width grid';

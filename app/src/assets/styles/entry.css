@@ -1,0 +1,39 @@
+.entry {
+  width: 70ch;
+  margin: 0 auto 4rem;
+  padding-bottom: 2rem;
+  box-shadow: 0 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
+}
+.entry .entry-header {
+  width: 100%;
+}
+.entry .entry-header h1 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.entry .entry-header .entry-close {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.entry .entry-header .entry-close, .entry .entry-header .entry-close * {
+  transition: all 0.125s ease-in-out;
+}
+.entry .entry-header .entry-close:hover {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+.entry .entry-header .entry-close:hover line {
+  stroke: ivory;
+}
+.entry hr {
+  margin: 1rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+.entry .entry-content p {
+  margin-bottom: 1rem;
+}
+.entry .entry-content hr {
+  margin: 0.5rem 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/*# sourceMappingURL=entry.css.map */
