@@ -29,8 +29,11 @@
 
 <noscript>You need to enable JavaScript to run this app.</noscript>
 
+<div id="background-image" class="z10"></div>
+<div id="background-color" class="z20"></div>
+
 <!-- Main content -->
-<div id="base" class="full-width grid">
+<div id="base" class="full-width grid z30">
     <!-- Base layer of the app -->
     <div id="left-spacer" class="base-spacer"></div>
 
@@ -46,7 +49,7 @@
 </div>
 
 <!-- Left Side Navigation -->
-<div id="left-overlay" class="overlay fixed top-left viewport-height w-15">
+<div id="left-overlay" class="overlay fixed top-left viewport-height w-15 z40">
     <header>
         <h1>Siebenlande</h1>
         <h2>Das Heim des Questentiers</h2>
@@ -62,7 +65,8 @@
 </div>
 
 <!-- Right Side Navigation -->
-<div id="right-overlay" class="overlay fixed top-right viewport-height w-15">
+<div id="right-overlay" class="overlay fixed top-right viewport-height w-15 z40">
+    <div id="right-top-spacer"></div>
     <div id="right-root">
         <!-- React root right -->
     </div>

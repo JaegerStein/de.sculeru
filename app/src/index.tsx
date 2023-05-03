@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {createRoot} from 'react-dom/client';
 import './assets/styles/style.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
@@ -13,9 +13,9 @@ const right: HTMLElement = el('right-root')!;
 
 const strict = (component: React.ReactElement): React.ReactElement => <React.StrictMode>{component}</React.StrictMode>
 
-ReactDOM.render(strict(<Left/>), left);
-ReactDOM.render(strict(<App/>), center);
-ReactDOM.render(strict(<Right/>), right);
+createRoot(left).render(strict(<Left/>));
+createRoot(center).render(strict(<App/>));
+createRoot(right).render(strict(<Right/>));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

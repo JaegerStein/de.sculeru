@@ -19,23 +19,38 @@ h1, h2 {
   font-weight: normal;
 }
 
-.pref-line-break {
-  display: inline-block;
+#background-image, #background-color {
+  position: fixed;
+  top: -200px;
+  left: -200px;
+  width: calc(100vw + 400px);
+  height: calc(100vh + 400px);
+}
+
+#background-image {
+  background-image: url("../images/parchment.jpg");
+  background-repeat: repeat;
+  opacity: 0.125;
+  z-index: -10;
+}
+
+#background-color {
+  z-index: -5;
+  background: linear-gradient(180deg, rgba(209, 188, 138, 0.25) 0%, rgba(255, 255, 255, 0.125) 100%);
 }
 
 #base {
   grid-template-columns: 1fr 3fr 1fr;
   min-height: 100vh;
-  border: 2px solid pink;
 }
 #base #center-root-container #center-root {
   width: 70ch;
 }
 
 .overlay {
-  z-index: 1;
   padding-top: 1rem;
   min-width: 256px;
+  z-index: 10;
 }
 
 #left-overlay {
@@ -65,6 +80,11 @@ h1, h2 {
 
 #right-overlay {
   box-shadow: inset 0.5rem 0 1rem rgba(0, 0, 0, 0.05);
+}
+#right-overlay #right-top-spacer {
+  width: 100%;
+  aspect-ratio: 2/1;
+  outline: 2px dotted pink;
 }
 
 /*# sourceMappingURL=style.css.map */
