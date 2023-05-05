@@ -16,7 +16,14 @@ enum Category {
     TOOLS = 'tools'
 }
 
-export {SELECTED, CATEGORY, CATEGORIES, Category}
+const CategoryTitleMap: Map<Category, string> = new Map<Category, string>([
+    [Category.LORE, 'Legende'],
+    [Category.JOURNAL, 'Journal'],
+    [Category.RULES, 'Regeln'],
+    [Category.TOOLS, 'Werkzeuge']
+]);
+
+export {SELECTED, CATEGORY, CATEGORIES, Category, CategoryTitleMap}
 
 const CloseIcon: React.FC = () => <X/>
 const LoreIcon: React.FC = () => <Lore id={Category.LORE} className={CATEGORY}/>

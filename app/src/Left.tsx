@@ -1,13 +1,26 @@
 import React, {useEffect} from 'react';
-import {CATEGORIES, Category, HTMLElementList, JournalIcon, LoreIcon, RulesIcon, ToolsIcon} from './common/common';
+import {
+    CATEGORIES,
+    Category, CategoryTitleMap,
+    HTMLElementList,
+    JournalIcon,
+    LoreIcon,
+    RulesIcon,
+    ToolsIcon
+} from './common/common';
 import Session from "./common/Session";
 import {el, selAll} from "./common/utils";
 
-const CATEGORIES_ID = CATEGORIES;
 const CATEGORIES_CLASSNAME = 'full-width grid';
+const LEFT_LINKS_CONTAINER = 'left-links-container';
+const LEFT_LINKS = 'left-links';
 
-const select = (icon: HTMLElement): void => {
-    Session.category = icon.id as Category;
+type SetState = React.Dispatch<React.SetStateAction<string>>;
+
+const select = (icon: HTMLElement, setState: SetState): void => {
+    const id: Category = icon.id as Category;
+    Session.category = id;
+    setState(CategoryTitleMap.get(id)!);
     icon.classList.add('selected');
 }
 
@@ -20,30 +33,40 @@ const deselect = (icons: HTMLElementList): void => {
     icons.forEach(icon => icon.classList.remove('selected'));
 }
 
-const registerCategories = (icons: HTMLElementList): void => {
+const registerCategories = (icons: HTMLElementList, setState: SetState): void => {
     icons.forEach(icon => {
         icon.onclick = () => {
             deselect(icons);
-            select(icon);
+            select(icon, setState);
         }
     });
 }
 
 const Left: React.FC = () => {
+    const [title, setTitle]: [string, SetState] = React.useState<string>('');
+
     useEffect(() => {
         const icons: HTMLElementList = selAll('.category');
         const category: Category | null = Session.category;
-        if (category) select(el(category)!);
-        registerCategories(icons);
+        if (category) select(el(category)!, setTitle);
+        registerCategories(icons, setTitle);
     }, []);
 
     return (
-        <div id={CATEGORIES_ID} className={CATEGORIES_CLASSNAME}>
-            <LoreIcon/>
-            <JournalIcon/>
-            <RulesIcon/>
-            <ToolsIcon/>
-        </div>
+        <>
+            <div id={CATEGORIES} className={CATEGORIES_CLASSNAME}>
+                <LoreIcon/>
+                <JournalIcon/>
+                <RulesIcon/>
+                <ToolsIcon/>
+            </div>
+            <div id={LEFT_LINKS_CONTAINER}>
+                <h3>{title}</h3>
+                <ul id={LEFT_LINKS}>
+
+                </ul>
+            </div>
+        </>
     );
 }
 
