@@ -31,6 +31,13 @@
 #left-overlay nav #categories svg {
   width: 3rem;
   height: 3rem;
+  filter: drop-shadow(0 0 4px rgba(255, 255, 240, 0.5));
+}
+#left-overlay nav #categories svg path.stroke-fill {
+  stroke: #003865;
+}
+#left-overlay nav #categories svg path:not(.stroke-fill) {
+  fill: #003865;
 }
 #left-overlay nav #categories svg, #left-overlay nav #categories svg path {
   transition: all 0.25s ease;

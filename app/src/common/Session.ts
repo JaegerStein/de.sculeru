@@ -7,7 +7,7 @@ export default abstract class Session {
     /* CATEGORIES */
     private static _category: Category | null = null;
     public static get category(): Category | null { return this._category; }
-    private static set category(category: Category | null) {
+    public static set category(category: Category | null) {
         Session._category = category;
         if (category) store.setItem(CATEGORY, category);
         else store.removeItem('category');

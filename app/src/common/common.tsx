@@ -19,9 +19,12 @@ enum Category {
 export {SELECTED, CATEGORY, CATEGORIES, Category}
 
 const CloseIcon: React.FC = () => <X/>
-const LoreIcon: React.FC = () => <Lore/>
-const JournalIcon: React.FC = () => <Journal/>
-const RulesIcon: React.FC = () => <Rules/>
-const ToolsIcon: React.FC = () => <Tools/>
+const LoreIcon: React.FC = () => <Lore id={Category.LORE} className={CATEGORY}/>
+const JournalIcon: React.FC = () => <Journal id={Category.JOURNAL} className={CATEGORY}/>
+const RulesIcon: React.FC = () => <Rules id={Category.RULES} className={CATEGORY}/>
+const ToolsIcon: React.FC = () => <Tools id={Category.TOOLS} className={CATEGORY}/>
 
 export {CloseIcon, LoreIcon, JournalIcon, RulesIcon, ToolsIcon}
+
+type HTMLElementList = NodeListOf<HTMLElement>;
+export type {HTMLElementList}
