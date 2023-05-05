@@ -15,13 +15,13 @@ const right: HTMLElement = el('right-root')!;
 
 const strict = (component: React.ReactElement): React.ReactElement => <React.StrictMode>{component}</React.StrictMode>
 
-Session.active();
-
-createRoot(left).render(strict(<Left/>));
-createRoot(center).render(strict(<App/>));
-createRoot(right).render(strict(<Right/>));
+Session.active().then(() => {
+    createRoot(left).render(strict(<Left/>));
+    createRoot(center).render(strict(<App/>));
+    createRoot(right).render(strict(<Right/>));
+});
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// reportWebVitals();

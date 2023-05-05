@@ -28,6 +28,6 @@ for kb_path, category in kbs.items():
             entry = {'id': uid, 'title': title, 'last': last, 'category': category, 'type': file_type}
             index.append(entry)
 
-index_file = os.path.join(base_path, 'index.json')
+index_file = os.path.join(base_path, 'public/index.json')
 with open(index_file, 'w') as f:
     json.dump(index, f)

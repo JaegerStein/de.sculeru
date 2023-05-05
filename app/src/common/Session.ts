@@ -13,17 +13,24 @@ export default abstract class Session {
         else store.removeItem('category');
     }
 
-    public static lore(): void { Session.category = Category.LORE; }
-    public static journal(): void { Session.category = Category.JOURNAL; }
-    public static rules(): void { Session.category = Category.RULES; }
-    public static tools(): void { Session.category = Category.TOOLS; }
-
     private static activeCategory(): void { Session.category = store.getItem(CATEGORY) as Category | null; }
+
+    /* INDEX */
+    private static _index: Map<string, string[]> = new Map();
+
+    private static async loadIndex(): Promise<void> {
+        await fetch('index.json').then(response => response.json()).then(index => {
+            fetch(index[0].id).then(response => response.text()).then(text => {
+                console.log(text);
+            });
+        });
+    }
 
     /**
      * Initializes the session from the local storage at startup.
      */
-    public static active(): void {
+    public static async active(): Promise<void> {
+        await Session.loadIndex();
         Session.activeCategory();
     }
 }
