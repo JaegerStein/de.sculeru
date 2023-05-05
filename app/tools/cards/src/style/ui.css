@@ -1,0 +1,133 @@
+#ui {
+    min-width: calc(128px + var(--dw));
+    width: calc(128px + var(--dw));
+    max-width: calc(128px + var(--dw));
+    min-height: calc(128px + var(--dh));
+    height: calc(128px + var(--dh));
+    max-height: calc(128px + var(--dh));
+
+    border-radius: calc(1 * var(--br));
+    box-shadow: 0 0 32px rgba(0, 0, 0, 0.25);
+
+    background-color: var(--dark);
+}
+
+#ui span {
+    color: var(--orange);
+
+    font-family: Consolas, sans-serif;
+    font-weight: bold;
+    font-size: 1.35rem;
+
+    text-shadow: 0 0 2px rgba(0, 0, 0, 1), 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+#type-icons {
+    top: calc((1 / 2) * var(--br));
+    right: 64px; /*this is wack, ignore, it works*/
+
+    height: var(--br);
+
+    width: 0;
+    opacity: 0;
+
+    transition: width 0.5s, opacity 0.25s;
+}
+
+#type-icons.expand {
+    width: calc((1 / 2) * var(--dw));
+    opacity: 100%;
+
+    transition: width 0.5s, opacity 0.75s;
+}
+
+#type-icons img {
+    height: 90%;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
+#side {
+    width: var(--br);
+    height: var(--dh);
+
+    margin: auto 0;
+
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    border-right: var(--ui);
+}
+
+#bottom {
+    height: var(--br);
+    width: var(--dw);
+
+    margin: 0 auto;
+
+    right: 0;
+    left: 0;
+    bottom: 0;
+
+    border-bottom: var(--ui);
+}
+
+#side, #bottom {
+    line-height: var(--br);
+
+    box-sizing: border-box;
+
+    text-align: center;
+}
+
+#rotate {
+    min-width: var(--dh);
+    min-height: var(--br);
+
+    transform: rotate(90deg);
+}
+
+#download {
+    left: calc((1 / 3) * var(--br));
+    bottom: calc((1 / 3) * var(--br));
+}
+
+#dl {
+    height: calc(1.5 * var(--br));
+    width: calc(1.5 * var(--br));
+
+    border-radius: var(--br);
+    border: none;
+    background: none;
+
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
+#dl:hover {
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.5), inset -1px -1px 2px rgba(200, 200, 200, 0.5);
+}
+
+#dl path {
+    fill: var(--orange);
+}
+
+#switch {
+    left: calc((1 / 2) * var(--br));
+    top: calc(50% - ((1 / 2) * (1.5 * var(--br))));
+}
+
+#switch-button {
+    height: calc(1.5 * var(--br));
+    width: calc(1 * var(--br));
+
+    border-radius: var(--br);
+    border: none;
+    background: none;
+
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1)) drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
+#switch-button img {
+    width: inherit;
+    height: auto;
+}

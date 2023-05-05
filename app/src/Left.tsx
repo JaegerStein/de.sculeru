@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
-import {JournalIcon, LoreIcon, RulesIcon, ToolsIcon} from './utils/common';
+import {CATEGORIES, JournalIcon, LoreIcon, RulesIcon, ToolsIcon} from './common/common';
 
-const CATEGORIES_ID = 'categories';
+const CATEGORIES_ID = CATEGORIES;
 const CATEGORIES_CLASSNAME = 'full-width grid';
 const Left: React.FC = () => {
     useEffect(() => {

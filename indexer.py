@@ -1,7 +1,7 @@
 import os
 import json
 
-base_path = './www/'
+base_path = './app/'
 kbs = {'kb/Legende/': 'lore', 'kb/Journal/': 'journal', 'kb/Regeln/': 'rules', 'tools/': 'tools'}
 
 index = []

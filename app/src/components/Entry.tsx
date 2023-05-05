@@ -1,5 +1,5 @@
 import React from 'react';
-import {CloseIcon} from "../utils/common";
+import {CloseIcon} from ".././common/common";
 import '../assets/styles/entry.css';
 
 const ENTRY_CLASSNAME = 'entry relative';
