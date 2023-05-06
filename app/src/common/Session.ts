@@ -1,5 +1,6 @@
 import {CATEGORY, Category} from "./common";
 import {loadJSON} from "./utils";
+import {IndexEntry} from "./types";
 
 const store: Storage = localStorage;
 
@@ -20,8 +21,10 @@ export default abstract class Session {
     private static _index: Map<string, string[]> = new Map();
 
     private static async loadIndex(): Promise<void> {
-        const index = await loadJSON('index.json');
-        console.log(index);
+        const index: IndexEntry[] = await loadJSON('index.json');
+        index.forEach((entry: IndexEntry) => {
+            console.log(entry);
+        });
     }
 
     /**

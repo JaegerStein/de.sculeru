@@ -23,6 +23,3 @@ export {SELECTED, CATEGORY, CATEGORIES, Category, CategoryTitleMap}
 
 const CloseIcon: React.FC = () => <X/>
 export {CloseIcon}
-
-type HTMLElementList = NodeListOf<HTMLElement>;
-export type {HTMLElementList}
