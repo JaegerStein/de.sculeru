@@ -35,14 +35,11 @@
             "id": "7eefb59aefcdadf8",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "markdown",
               "state": {
-                "file": "Journal/Questkarte.canvas",
-                "viewState": {
-                  "x": -290,
-                  "y": 133,
-                  "zoom": -1.8812582835787803
-                }
+                "file": "Legende/askjfajsfjgasfjsafjksaf.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -104,6 +101,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "bb7dad0bb261307b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -125,7 +130,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Journal/Questkarte.canvas",
+                "file": "Legende/askjfajsfjgasfjsafjksaf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -142,7 +147,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Journal/Questkarte.canvas",
+                "file": "Legende/askjfajsfjgasfjsafjksaf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -165,7 +170,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Journal/Questkarte.canvas"
+                "file": "Legende/askjfajsfjgasfjsafjksaf.md"
               }
             }
           }
@@ -188,6 +193,30 @@
   },
   "active": "7eefb59aefcdadf8",
   "lastOpenFiles": [
+    "Legende/896785asrfghasf.md",
+    "Legende/askjfajsfjgasfjsafjksaf.md",
+    "Legende/ln,mb,mb,b,b.md",
+    "Legende/kjkllkhlkkllklkkllkklkllklklk.md",
+    "Legende/asjkfaskjgfkj.md",
+    "Legende/lsaizkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.md",
+    "Legende/lansajjksaj.md",
+    "Legende/lkkjlkhlkl.md",
+    "Legende/nkllkklj.md",
+    "Legende/alskhlkh.md",
+    "Legende/aslhalsjlk.md",
+    "Legende/askljgfklasgfkjlgasf.md",
+    "Legende/aslkjgaslkjgflkasgkfjlg.md",
+    "Legende/laksjfkasgf.md",
+    "Legende/KHASGFLK.md",
+    "Legende/ASGFGASLKFGSAKLHFSAKHG.md",
+    "Legende/Ladabaradarava.md",
+    "Legende/Mehr und länger.md",
+    "Legende/Lalala.md",
+    "Legende/Ein Eintrag mit unnötig langem Titel, hurra!.md",
+    "Legende/Bäh.md",
+    "Legende/Bah.md",
+    "Legende/Test Artikel.md",
+    "Journal/Questkarte.canvas",
     "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
     "Legende/Legende.md",
     "!attachments/malravien.jpg",
@@ -199,11 +228,7 @@
     "Legende/Geografie/Reiche/Herzogtümer",
     "Legende/Geografie/Reiche",
     "Legende/Geografie",
-    "Legende/Geografie/Geografie.md",
-    "Journal/Bekanntschaften/Peretin.md",
     "Legende/Geografie",
-    "Journal/Questen/Besiegt den Nekromanten Peretin.md",
-    "Journal/Questkarte.canvas",
     "Journal/Bekanntschaften",
     "Journal/Questen"
   ]

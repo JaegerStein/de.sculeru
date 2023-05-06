@@ -1,22 +1,18 @@
 #left-overlay {
   padding-left: 1rem;
   box-shadow: 0.5rem 0 1rem rgba(0, 0, 0, 0.05);
+  max-height: 100vh;
 }
 #left-overlay header {
   margin-right: 1rem;
   color: #003865;
-}
-#left-overlay header h1, #left-overlay header h2 {
-  font-weight: lighter;
+  height: 3rem;
 }
 #left-overlay header h1 {
+  font-weight: lighter;
   font-size: 3rem;
-  line-height: 2.5rem;
+  line-height: 3rem;
   letter-spacing: -0.2rem;
-}
-#left-overlay header h2 {
-  font-weight: normal;
-  font-size: 1.12rem;
 }
 #left-overlay hr {
   margin: 0.5rem 1rem 0.5rem 0;
@@ -24,7 +20,7 @@
 }
 #left-overlay nav #categories {
   padding-right: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   grid-template-columns: repeat(4, 1fr);
   justify-items: center;
 }
@@ -54,6 +50,32 @@
 }
 #left-overlay nav #left-links-container h3 {
   font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+#left-overlay nav #left-links-container ul {
+  padding-left: 1rem;
+  list-style-type: none;
+  padding-top: 0.5rem;
+  overflow-y: auto;
+  height: calc(100vh - 10.5rem);
+  padding-bottom: 2rem;
+}
+#left-overlay nav #left-links-container ul li {
+  line-height: 1rem;
+  margin-bottom: 0.5rem;
+}
+#left-overlay nav #left-links-container ul li a {
+  font-size: 1rem;
+  transition: all 0.125s ease;
+  text-decoration: none;
+  color: #652D00;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+#left-overlay nav #left-links-container ul li a:hover {
+  color: ivory;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
 /*# sourceMappingURL=left.css.map */

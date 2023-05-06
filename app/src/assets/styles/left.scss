@@ -3,24 +3,19 @@
 #left-overlay {
   padding-left: 1rem;
   box-shadow: .5rem 0 1rem rgba(0 0 0 / .05);
+  max-height: 100vh;
 
   header {
     margin-right: 1rem;
     color: $tardis;
 
-    h1, h2 {
-      font-weight: lighter;
-    }
+    height: 3rem;
 
     h1 {
+      font-weight: lighter;
       font-size: 3rem;
-      line-height: 2.5rem;
+      line-height: 3rem;
       letter-spacing: -.2rem;
-    }
-
-    h2 {
-      font-weight: normal;
-      font-size: 1.12rem;
     }
   }
 
@@ -32,7 +27,7 @@
   nav {
     #categories {
       padding-right: 1rem;
-      margin-bottom: 1rem;
+      margin-bottom: .5rem;
 
       grid-template-columns: repeat(4, 1fr);
       justify-items: center;
@@ -69,6 +64,38 @@
 
       h3 {
         font-weight: normal;
+        font-size: 1.5rem;
+        line-height: 2rem;
+      }
+
+      ul {
+        padding-left: 1rem;
+        list-style-type: none;
+        padding-top: .5rem;
+        overflow-y: auto;
+        height: calc(100vh - 10.5rem); // don't touch
+
+        li {
+          line-height: 1rem;
+
+          a {
+            font-size: 1rem;
+            transition: all .125s ease;
+            text-decoration: none;
+            color: $brown;
+            overflow-wrap: break-word;
+            hyphens: auto;
+
+            &:hover {
+              color: ivory;
+              text-shadow: 1px 1px 2px rgba(0 0 0 / .8);
+            }
+          }
+
+          margin-bottom: .5rem;
+        }
+
+        padding-bottom: 2rem;
       }
     }
   }

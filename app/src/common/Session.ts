@@ -29,7 +29,7 @@ export default abstract class Session {
         console.log(Session.lore);
     }
 
-    private static filterEntries(category: Category): IndexEntry[] {
+    public static filterEntries(category: Category): IndexEntry[] {
         const entries: IndexEntry[] = [];
         for (const entry of Session._index.values())
             if (entry.category === category) entries.push(entry);

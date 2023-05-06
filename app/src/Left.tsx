@@ -6,19 +6,26 @@ import {ReactComponent as LoreIcon} from "./assets/images/lore.svg";
 import {ReactComponent as JournalIcon} from "./assets/images/journal.svg";
 import {ReactComponent as RulesIcon} from "./assets/images/rules.svg";
 import {ReactComponent as ToolsIcon} from "./assets/images/tools.svg";
-import {HTMLElementList} from "./common/types";
+import {HTMLElementList, IndexEntry} from "./common/types";
+import Link, {LinkProperties} from "./components/Link";
 
 
 const CATEGORIES_CLASSNAME = 'full-width grid';
 const LEFT_LINKS_CONTAINER = 'left-links-container';
 const LEFT_LINKS = 'left-links';
 
-type SetState = React.Dispatch<React.SetStateAction<string>>;
+type SetTitle = React.Dispatch<React.SetStateAction<string>>;
+type SetLinks = React.Dispatch<React.SetStateAction<LinkProperties[]>>;
 
-const select = (icon: HTMLElement, setState: SetState): void => {
+const select = (icon: HTMLElement, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
     const id: Category = icon.id as Category;
+    setLinks(Session.filterEntries(id).map(entry => ({
+        href: entry.title,
+        category: id,
+        children: entry.title
+    })));
     Session.category = id;
-    setState(CategoryTitleMap.get(id)!);
+    setTitle(CategoryTitleMap.get(id)!);
     icon.classList.add('selected');
 }
 
@@ -31,23 +38,24 @@ const deselect = (icons: HTMLElementList): void => {
     icons.forEach(icon => icon.classList.remove('selected'));
 }
 
-const registerCategories = (icons: HTMLElementList, setState: SetState): void => {
+const registerCategories = (icons: HTMLElementList, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
     icons.forEach(icon => {
         icon.onclick = () => {
             deselect(icons);
-            select(icon, setState);
+            select(icon, [setTitle, setLinks]);
         }
     });
 }
 
 const Left: React.FC = () => {
-    const [title, setTitle]: [string, SetState] = React.useState<string>('');
+    const [title, setTitle]: [string, SetTitle] = React.useState<string>('');
+    const [links, setLinks]: [LinkProperties[], SetLinks] = React.useState<LinkProperties[]>([]);
 
     useEffect(() => {
         const icons: HTMLElementList = selAll('.category');
         const category: Category | null = Session.category;
-        if (category) select(el(category)!, setTitle);
-        registerCategories(icons, setTitle);
+        if (category) select(el(category)!, [setTitle, setLinks]);
+        registerCategories(icons, [setTitle, setLinks]);
     }, []);
 
     return (
@@ -61,7 +69,11 @@ const Left: React.FC = () => {
             <div id={LEFT_LINKS_CONTAINER}>
                 <h3>{title}</h3>
                 <ul id={LEFT_LINKS}>
-
+                    {links.map((link: LinkProperties) => (
+                        <li key={link.href}>
+                            <Link {...link} />
+                        </li>
+                    ))}
                 </ul>
             </div>
         </>

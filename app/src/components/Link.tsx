@@ -13,3 +13,4 @@ const Link: React.FC<LinkProperties> = (properties: LinkProperties) =>
     </a>
 
 export default Link;
+export type {LinkProperties};

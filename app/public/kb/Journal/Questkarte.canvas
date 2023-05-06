@@ -1,124 +1,20 @@
 {
-  "nodes": [
-    {
-      "type": "text",
-      "text": "# ?",
-      "id": "c8709f08f5704f45",
-      "x": 320,
-      "y": -101,
-      "width": 60,
-      "height": 60,
-      "color": "2"
-    },
-    {
-      "id": "dea3f468124ad842",
-      "x": -1000,
-      "y": -41,
-      "width": 260,
-      "height": 126,
-      "color": "3",
-      "type": "text",
-      "text": "# Wo ist Peretin jetzt?"
-    },
-    {
-      "id": "63a155ee706799c0",
-      "x": -620,
-      "y": -172,
-      "width": 300,
-      "height": 143,
-      "color": "6",
-      "type": "text",
-      "text": "# Peretin ist in die Niedermark geflohen"
-    },
-    {
-      "id": "d53b42f321b98580",
-      "x": -158,
-      "y": -214,
-      "width": 318,
-      "height": 143,
-      "type": "file",
-      "file": "Journal/Questen/Besiegt den Nekromanten Peretin.md"
-    },
-    {
-      "id": "1fbdfaf23c2cdc25",
-      "x": 150,
-      "y": 160,
-      "width": 270,
-      "height": 160,
-      "color": "3",
-      "type": "text",
-      "text": "# Warum wurde Peretin Nekromant?"
-    },
-    {
-      "id": "832d43eccbb06c26",
-      "x": -319,
-      "y": 85,
-      "width": 260,
-      "height": 140,
-      "color": "3",
-      "type": "text",
-      "text": "# Wie wurde Peretin Nekromant?"
-    },
-    {
-      "id": "152cd496dd45cf2a",
-      "x": -59,
-      "y": 420,
-      "width": 60,
-      "height": 60,
-      "color": "2",
-      "type": "text",
-      "text": "# ?"
-    }
-  ],
-  "edges": [
-    {
-      "id": "0a3b53d112207a7d",
-      "fromNode": "d53b42f321b98580",
-      "fromSide": "bottom",
-      "toNode": "832d43eccbb06c26",
-      "toSide": "top"
-    },
-    {
-      "id": "c5bc0a465985cb50",
-      "fromNode": "d53b42f321b98580",
-      "fromSide": "bottom",
-      "toNode": "1fbdfaf23c2cdc25",
-      "toSide": "top"
-    },
-    {
-      "id": "7d51e2126e4e3e97",
-      "fromNode": "832d43eccbb06c26",
-      "fromSide": "bottom",
-      "toNode": "152cd496dd45cf2a",
-      "toSide": "left"
-    },
-    {
-      "id": "e2bbaebda75f9ea8",
-      "fromNode": "152cd496dd45cf2a",
-      "fromSide": "right",
-      "toNode": "1fbdfaf23c2cdc25",
-      "toSide": "bottom"
-    },
-    {
-      "id": "9152d4cf6ce7da1d",
-      "fromNode": "d53b42f321b98580",
-      "fromSide": "left",
-      "toNode": "63a155ee706799c0",
-      "toSide": "right"
-    },
-    {
-      "id": "a3f23c86986253fc",
-      "fromNode": "63a155ee706799c0",
-      "fromSide": "left",
-      "toNode": "dea3f468124ad842",
-      "toSide": "right"
-    },
-    {
-      "id": "8ba573e385b8765a",
-      "fromNode": "d53b42f321b98580",
-      "fromSide": "right",
-      "toNode": "c8709f08f5704f45",
-      "toSide": "left"
-    }
-  ]
+	"nodes":[
+		{"type":"text","text":"# ?","id":"c8709f08f5704f45","x":320,"y":-101,"width":60,"height":60,"color":"2"},
+		{"id":"dea3f468124ad842","x":-1000,"y":-41,"width":260,"height":126,"color":"3","type":"text","text":"# Wo ist Peretin jetzt?"},
+		{"id":"63a155ee706799c0","x":-620,"y":-172,"width":300,"height":143,"color":"6","type":"text","text":"# Peretin ist in die Niedermark geflohen"},
+		{"id":"d53b42f321b98580","x":-158,"y":-214,"width":318,"height":143,"type":"file","file":"Journal/Questen/Besiegt den Nekromanten Peretin.md"},
+		{"id":"1fbdfaf23c2cdc25","x":150,"y":160,"width":270,"height":160,"color":"3","type":"text","text":"# Warum wurde Peretin Nekromant?"},
+		{"id":"832d43eccbb06c26","x":-319,"y":85,"width":260,"height":140,"color":"3","type":"text","text":"# Wie wurde Peretin Nekromant?"},
+		{"id":"152cd496dd45cf2a","x":-59,"y":420,"width":60,"height":60,"color":"2","type":"text","text":"# ?"}
+	],
+	"edges":[
+		{"id":"0a3b53d112207a7d","fromNode":"d53b42f321b98580","fromSide":"bottom","toNode":"832d43eccbb06c26","toSide":"top"},
+		{"id":"c5bc0a465985cb50","fromNode":"d53b42f321b98580","fromSide":"bottom","toNode":"1fbdfaf23c2cdc25","toSide":"top"},
+		{"id":"7d51e2126e4e3e97","fromNode":"832d43eccbb06c26","fromSide":"bottom","toNode":"152cd496dd45cf2a","toSide":"left"},
+		{"id":"e2bbaebda75f9ea8","fromNode":"152cd496dd45cf2a","fromSide":"right","toNode":"1fbdfaf23c2cdc25","toSide":"bottom"},
+		{"id":"9152d4cf6ce7da1d","fromNode":"d53b42f321b98580","fromSide":"left","toNode":"63a155ee706799c0","toSide":"right"},
+		{"id":"a3f23c86986253fc","fromNode":"63a155ee706799c0","fromSide":"left","toNode":"dea3f468124ad842","toSide":"right"},
+		{"id":"8ba573e385b8765a","fromNode":"d53b42f321b98580","fromSide":"right","toNode":"c8709f08f5704f45","toSide":"left"}
+	]
 }
