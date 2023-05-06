@@ -23,8 +23,6 @@ const App: React.FC = () => {
     openEntries = entries;
     setOpenEntries = setEntries;
 
-    return (
-        <>{entries}</>
-    );
+    return <>{entries}</>;
 }
 export default App;
