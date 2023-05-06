@@ -1,1 +1,79 @@
-[{"id": "kb/Legende/Legende.md", "title": "Legende", "last": 1682706929, "category": "lore", "type": "markdown"}, {"id": "kb/Legende/Geografie/Reiche/Herzogt\u00fcmer/Malravien.md", "title": "Malravien", "last": 1682708776, "category": "lore", "type": "markdown"}, {"id": "kb/Journal/Journal.md", "title": "Journal", "last": 1681488081, "category": "journal", "type": "markdown"}, {"id": "kb/Journal/Questkarte.canvas", "title": "Questkarte", "last": 1682784272, "category": "journal", "type": "canvas"}, {"id": "kb/Journal/Questkarte.html", "title": "Questkarte", "last": 1682869597, "category": "journal", "type": "html"}, {"id": "kb/Journal/Bekanntschaften/Peretin.md", "title": "Peretin", "last": 1681991025, "category": "journal", "type": "markdown"}, {"id": "kb/Journal/Questen/Besiegt den Nekromanten Peretin.md", "title": "Besiegt den Nekromanten Peretin", "last": 1681907101, "category": "journal", "type": "markdown"}, {"id": "kb/Regeln/Kompetenz.md", "title": "Kompetenz", "last": 1682706317, "category": "rules", "type": "markdown"}, {"id": "kb/Regeln/Regeln.md", "title": "Regeln", "last": 1681487849, "category": "rules", "type": "markdown"}, {"id": "tools/cards/Kartengenerator.html", "title": "Kartengenerator", "last": 1669138282, "category": "tools", "type": "html"}, {"id": "tools/races/Spielbare V\u00f6lker.html", "title": "Spielbare V\u00f6lker", "last": 1683296223, "category": "tools", "type": "html"}]
+[
+  {
+    "id": "kb/Legende/Legende.md",
+    "title": "Legende",
+    "last": 1682706929,
+    "category": "lore",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Legende/Geografie/Reiche/Herzogt\u00fcmer/Malravien.md",
+    "title": "Malravien",
+    "last": 1682708776,
+    "category": "lore",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Journal/Journal.md",
+    "title": "Journal",
+    "last": 1681488081,
+    "category": "journal",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Journal/Questkarte.canvas",
+    "title": "Questkarte",
+    "last": 1682784272,
+    "category": "journal",
+    "type": "canvas"
+  },
+  {
+    "id": "kb/Journal/Questkarte.html",
+    "title": "Questkarte",
+    "last": 1682869597,
+    "category": "journal",
+    "type": "html"
+  },
+  {
+    "id": "kb/Journal/Bekanntschaften/Peretin.md",
+    "title": "Peretin",
+    "last": 1681991025,
+    "category": "journal",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Journal/Questen/Besiegt den Nekromanten Peretin.md",
+    "title": "Besiegt den Nekromanten Peretin",
+    "last": 1681907101,
+    "category": "journal",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Kompetenz.md",
+    "title": "Kompetenz",
+    "last": 1682706317,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Regeln.md",
+    "title": "Regeln",
+    "last": 1681487849,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "tools/cards/Kartengenerator.html",
+    "title": "Kartengenerator",
+    "last": 1669138282,
+    "category": "tools",
+    "type": "html"
+  },
+  {
+    "id": "tools/races/Spielbare V\u00f6lker.html",
+    "title": "Spielbare V\u00f6lker",
+    "last": 1683296223,
+    "category": "tools",
+    "type": "html"
+  }
+]
