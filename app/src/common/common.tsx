@@ -1,5 +1,5 @@
 import React from "react";
-import {ReactComponent as X} from "../assets/images/x.svg";
+
 
 const SELECTED = 'selected';
 const CATEGORY = 'category';
@@ -20,6 +20,3 @@ const CategoryTitleMap: Map<Category, string> = new Map<Category, string>([
 ]);
 
 export {SELECTED, CATEGORY, CATEGORIES, Category, CategoryTitleMap}
-
-const CloseIcon: React.FC = () => <X/>
-export {CloseIcon}

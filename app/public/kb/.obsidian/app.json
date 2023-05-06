@@ -1,3 +1,6 @@
 {
-  "attachmentFolderPath": "!attachments"
+  "attachmentFolderPath": "!attachments",
+  "spellcheck": true,
+  "promptDelete": false,
+  "alwaysUpdateLinks": true
 }

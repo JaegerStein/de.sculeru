@@ -1,16 +1,13 @@
 import React from 'react';
 import Entry from "./components/Entry";
-import Session from "./common/Session";
-import {loadText} from "./common/utils";
 
 type SetEntries = React.Dispatch<React.SetStateAction<JSX.Element[]>>;
 type Entries = JSX.Element[];
 
-export const open = async (shorthand: string): Promise<void> => {
-    const indexEntry = Session.entry(shorthand);
-    if (!indexEntry) return;
-    const text = await loadText(indexEntry.id);
-    const entry = <Entry title={indexEntry.title}>{text}</Entry>;
+export const open = (shorthand: string): void => {
+    const entry = <Entry title={shorthand} onRemove={() => {
+        setOpenEntries(openEntries.filter(e => e.key !== entry.key));
+    }} key={shorthand}/>;
     setOpenEntries([entry, ...openEntries]);
 }
 

@@ -10,7 +10,7 @@ type LinkProperties = {
 
 const openEntry = (event: React.MouseEvent, shorthand: string): void => {
     event.preventDefault();
-    open(shorthand).then();
+    open(shorthand);
 }
 
 const Link: React.FC<LinkProperties> = (properties: LinkProperties) =>

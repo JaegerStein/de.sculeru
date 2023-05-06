@@ -1,0 +1,1 @@
+Unter **Fähigkeiten** werden die alltäglichen und weniger üblichen Befähigungen eines Charakters verstanden. Diese geben Boni in Höhe der Fähigkeitsstufe auf entsprechende Würfe.
