@@ -52,5 +52,8 @@
 #left-overlay nav #categories svg:hover path:not(.stroke-fill), #left-overlay nav #categories svg.selected path:not(.stroke-fill) {
   fill: ivory;
 }
+#left-overlay nav #left-links-container h3 {
+  font-weight: normal;
+}
 
 /*# sourceMappingURL=left.css.map */
