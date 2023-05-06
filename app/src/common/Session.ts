@@ -26,7 +26,6 @@ export default abstract class Session {
         const index: IndexEntry[] = await loadJSON('index.json');
         for (const entry of index) Session._index.set(entry.title, entry);
         store.setItem(INDEX, JSON.stringify(index));
-        console.log(Session.lore);
     }
 
     public static filterEntries(category: Category): IndexEntry[] {
@@ -51,6 +50,10 @@ export default abstract class Session {
 
     public static get tools(): IndexEntry[] {
         return Session.filterEntries(Category.TOOLS);
+    }
+
+    public static entry(title: string): IndexEntry | null {
+        return Session._index.get(title) || null
     }
 
     /**

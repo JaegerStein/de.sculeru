@@ -6,7 +6,7 @@ import {ReactComponent as LoreIcon} from "./assets/images/lore.svg";
 import {ReactComponent as JournalIcon} from "./assets/images/journal.svg";
 import {ReactComponent as RulesIcon} from "./assets/images/rules.svg";
 import {ReactComponent as ToolsIcon} from "./assets/images/tools.svg";
-import {HTMLElementList, IndexEntry} from "./common/types";
+import {HTMLElementList} from "./common/types";
 import Link, {LinkProperties} from "./components/Link";
 
 
