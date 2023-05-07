@@ -28,7 +28,8 @@ function resolveEmbeddedImage(text: string): string {
 function formatObsidianLinks(text: string): string {
     let formatted: string = text;
 
-    const regex = /\[\[([\w\s]+)\|?([\w\s]*)]]/g;
+    const regex = /\[\[([a-zA-ZäöüÄÖÜß\s]+)\|?([a-zA-ZäöüÄÖÜß\s]*)]]/g;
+
     let match: RegExpExecArray | null = regex.exec(text);
     while (match) {
         const link: string = match[1];

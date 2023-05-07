@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Journal/Eintrag mit Ä im Titel.md",
+                "file": "Legende/Legende.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Journal/Eintrag mit Ä im Titel.md",
+                "file": "Legende/Legende.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Journal/Eintrag mit Ä im Titel.md",
+                "file": "Legende/Legende.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Journal/Eintrag mit Ä im Titel.md"
+                "file": "Legende/Legende.md"
               }
             }
           }
@@ -156,9 +156,11 @@
   },
   "active": "24c2ffa6a6400c7e",
   "lastOpenFiles": [
+    "Legende/Geografie/Geografie.md",
+    "Legende/Legende.md",
+    "Journal/Eintrag mit Ä im Titel.md",
     "Journal/Journal.md",
     "Journal/äüÖßßë$%.md",
-    "Journal/Eintrag mit Ä im Titel.md",
     "Regeln/Charakter/Zauber.md",
     "Regeln/Charakter",
     "Regeln/Kampf",
@@ -182,8 +184,6 @@
     "Regeln/Rast.md",
     "Regeln/Charakter/Ausdauer.md",
     "Regeln/Charakter/Fähigkeiten.md",
-    "2023-05-06.md",
-    "Regeln/Kampf/Resistenzen.md",
     "Journal/Questkarte.canvas",
     "!attachments/malravien.jpg",
     "!attachments/geografie/reiche/herzogtuemer",
