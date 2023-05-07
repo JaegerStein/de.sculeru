@@ -1,6 +1,7 @@
 import {Category} from "../common/common";
 import React from "react";
 import {open} from "../App";
+import Session from "../common/Session";
 
 type LinkProperties = {
     href: string

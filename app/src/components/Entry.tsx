@@ -37,12 +37,6 @@ const Entry: React.FC<EntryProperties> = (properties: EntryProperties) => {
         });
     }, []);
 
-    const handleClick = (event: MouseEvent) => {
-        event.preventDefault();
-        console.log(event.target);
-        // Do something with the linkTitle
-    };
-
     return (
         <div className={ENTRY_CLASSNAME} id={entryId}>
             <div className={ENTRY_HEADER_CLASSNAME}>

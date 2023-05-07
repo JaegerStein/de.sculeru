@@ -1,14 +1,20 @@
 import React from 'react';
 import Entry from "./components/Entry";
+import Session from "./common/Session";
 
 type SetEntries = React.Dispatch<React.SetStateAction<JSX.Element[]>>;
 type Entries = JSX.Element[];
 
 export const open = (shorthand: string): void => {
-    const entry = <Entry title={shorthand} onRemove={() => {
-        setOpenEntries(openEntries.filter(e => e.key !== entry.key));
-    }} key={shorthand}/>;
+    if (Session.isOpen(shorthand)) return;
+    const entry = <Entry title={shorthand} onRemove={
+        () => {
+            setOpenEntries(openEntries.filter(e => e.key !== entry.key));
+            Session.closeEntry(shorthand);
+        }
+    } key={shorthand}/>;
     setOpenEntries([entry, ...openEntries]);
+    Session.openEntry(shorthand);
 }
 
 let setOpenEntries: SetEntries;

@@ -19,7 +19,7 @@ type SetLinks = React.Dispatch<React.SetStateAction<LinkProperties[]>>;
 
 const select = (icon: HTMLElement, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
     const id: Category = icon.id as Category;
-    setLinks(Session.filterEntries(id).map(entry => ({
+    setLinks(Session.entries(id).map(entry => ({
         href: entry.title,
         category: id,
         children: entry.title

@@ -4,6 +4,7 @@ import {IndexEntry} from "./types";
 
 const store: Storage = localStorage;
 const INDEX = 'index';
+const OPEN_ENTRIES = 'openEntries';
 
 export default abstract class Session {
 
@@ -28,7 +29,7 @@ export default abstract class Session {
         store.setItem(INDEX, JSON.stringify(index));
     }
 
-    public static filterEntries(category: Category): IndexEntry[] {
+    public static entries(category: Category): IndexEntry[] {
         const entries: IndexEntry[] = [];
         for (const entry of Session._index.values())
             if (entry.category === category) entries.push(entry);
@@ -36,24 +37,33 @@ export default abstract class Session {
         return entries;
     }
 
-    public static get lore(): IndexEntry[] {
-        return Session.filterEntries(Category.LORE);
-    }
-
-    public static get journal(): IndexEntry[] {
-        return Session.filterEntries(Category.JOURNAL);
-    }
-
-    public static get rules(): IndexEntry[] {
-        return Session.filterEntries(Category.RULES);
-    }
-
-    public static get tools(): IndexEntry[] {
-        return Session.filterEntries(Category.TOOLS);
-    }
-
     public static entry(title: string): IndexEntry | null {
         return Session._index.get(title) || null
+    }
+
+    /* OPEN ENTRIES */
+    private static _openEntries: Set<string> = new Set();
+
+    public static openEntry(title: string): void {
+        Session._openEntries.add(title);
+        store.setItem(OPEN_ENTRIES, JSON.stringify(Session._openEntries));
+    }
+
+    public static closeEntry(title: string): void {
+        if (Session._openEntries.has(title)) Session._openEntries.delete(title);
+        store.setItem(OPEN_ENTRIES, JSON.stringify(Session._openEntries));
+    }
+
+    public static get openEntries(): string[] {
+        return Array.from<string>(Session._openEntries);
+    }
+
+    public static isOpen(title: string): boolean {
+        return Session._openEntries.has(title);
+    }
+
+    private static loadOpenEntries(): void {
+        // fix
     }
 
     /**
@@ -61,6 +71,7 @@ export default abstract class Session {
      */
     public static async active(): Promise<void> {
         await Session.loadIndex();
+        Session.loadOpenEntries();
         Session.activeCategory();
     }
 }
