@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Regeln/Charakter/Zauber.md",
+                "file": "Journal/Eintrag mit Ä im Titel.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regeln/Charakter/Zauber.md",
+                "file": "Journal/Eintrag mit Ä im Titel.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regeln/Charakter/Zauber.md",
+                "file": "Journal/Eintrag mit Ä im Titel.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regeln/Charakter/Zauber.md"
+                "file": "Journal/Eintrag mit Ä im Titel.md"
               }
             }
           }
@@ -154,12 +154,15 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c5e05df0cdfedc21",
+  "active": "24c2ffa6a6400c7e",
   "lastOpenFiles": [
+    "Journal/Journal.md",
+    "Journal/äüÖßßë$%.md",
+    "Journal/Eintrag mit Ä im Titel.md",
+    "Regeln/Charakter/Zauber.md",
     "Regeln/Charakter",
     "Regeln/Kampf",
     "Regeln/Kampf/Schadensarten.md",
-    "Regeln/Charakter/Zauber.md",
     "Regeln/Kampf/Rüstung.md",
     "Regeln/Kampf/Verletzungen.md",
     "Regeln/Kampf/Schadensdurchdringung.md",
@@ -181,8 +184,6 @@
     "Regeln/Charakter/Fähigkeiten.md",
     "2023-05-06.md",
     "Regeln/Kampf/Resistenzen.md",
-    "Journal/Journal.md",
-    "Legende/Legende.md",
     "Journal/Questkarte.canvas",
     "!attachments/malravien.jpg",
     "!attachments/geografie/reiche/herzogtuemer",
@@ -192,7 +193,6 @@
     "Legende/Geografie/Reiche/Herzogtümer",
     "Legende/Geografie/Reiche",
     "Legende/Geografie",
-    "Legende/Geografie",
-    "Journal/Bekanntschaften"
+    "Legende/Geografie"
   ]
 }
