@@ -41,5 +41,11 @@
 .entry .entry-content ul li {
   margin-left: 1rem;
 }
+.entry .entry-content .float-right {
+  float: right;
+}
+.entry .entry-content .br4 img {
+  border-radius: 16px;
+}
 
 /*# sourceMappingURL=entry.css.map */
