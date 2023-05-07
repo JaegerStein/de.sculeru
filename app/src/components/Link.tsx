@@ -14,7 +14,7 @@ const openEntry = (event: React.MouseEvent, shorthand: string): void => {
 }
 
 const Link: React.FC<LinkProperties> = (properties: LinkProperties) =>
-    <a href={properties.href} className={properties.category + "-link"}
+    <a href={properties.href} className={properties.category + "-link left-link"}
        onClick={(event: React.MouseEvent) => openEntry(event, properties.href)}>
         {properties.children}
     </a>

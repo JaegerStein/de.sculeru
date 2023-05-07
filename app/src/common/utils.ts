@@ -1,8 +1,27 @@
 const el = (id: string): HTMLElement | null => document.getElementById(id);
 const sel = (query: string): HTMLElement | null => document.querySelector(query);
 const selAll = (query: string): NodeListOf<HTMLElement> => document.querySelectorAll(query);
+const make = (tag: string): HTMLElement => document.createElement(tag);
 
-export {el, sel, selAll}
+export {el, sel, selAll, make}
+
+interface AnchorOptions {
+    href?: string;
+    target?: string;
+    text?: string;
+}
+
+const A = (options?: AnchorOptions): HTMLAnchorElement => {
+    const a = make('a') as HTMLAnchorElement;
+    if (options) {
+        a.href = options.href || '#';
+        a.target = options.target || '_blank';
+        a.text = options.text || 'Someone forgot to give this link some text...';
+    }
+    return a;
+}
+
+export {A}
 
 async function load(url: string): Promise<Response> {
     const response: Response = await fetch(url);

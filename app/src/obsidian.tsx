@@ -1,14 +1,9 @@
 import {marked} from "marked";
 import Session from "./common/Session";
 import {IndexEntry} from "./common/types";
-import Link from "./components/Link";
-import {renderToString} from "react-dom/server";
+import {A} from "./common/utils";
 
-/**
- * Resolves embedded images in the given obsidian .md text
- * @param text - The text to resolve embedded images in
- * @returns The given text with embedded images resolved
- */
+
 function resolveEmbeddedImage(text: string): string {
     const regex = /!\[\[(.*?)]]/g;
     const regexWithWidth = /!\[\[(.*?)\|(.*?)]]/g;
@@ -27,7 +22,7 @@ function resolveEmbeddedImage(text: string): string {
 
 /**
  * Formats obsidian links in the given text into HTML-Links
- * @param text - The text to format
+ * @param text The text to format
  * @returns The given text with obsidian links formatted as HTML links
  */
 function formatObsidianLinks(text: string): string {
@@ -38,14 +33,13 @@ function formatObsidianLinks(text: string): string {
     while (match) {
         const link: string = match[1];
         const content: string = match[2] || link;
-        const kbEntry: IndexEntry | null = Session.entry(link);
+        const indexEntry: IndexEntry | null = Session.entry(link);
         let replace: string;
-        if (kbEntry) {
-            const link =
-                <Link href={kbEntry.title} category={kbEntry.category}>
-                    {content}
-                </Link>;
-            replace = renderToString(link);
+        if (indexEntry) {
+            const internalLink = A({href: indexEntry.title, text: content});
+            internalLink.text = content;
+            internalLink.className = indexEntry.category + '-link entry-link';
+            replace = internalLink.outerHTML;
         } else replace = content;
         formatted = formatted.replace(match[0], replace);
         match = regex.exec(text);

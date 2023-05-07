@@ -35,5 +35,11 @@
   margin: 0.5rem 1rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
+.entry .entry-content ul {
+  list-style-type: disc;
+}
+.entry .entry-content ul li {
+  margin-left: 1rem;
+}
 
 /*# sourceMappingURL=entry.css.map */
