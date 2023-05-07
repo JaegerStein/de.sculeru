@@ -6,6 +6,7 @@ import Session from "../common/Session";
 import parse from "html-react-parser";
 import markdownToHTML from "../obsidian";
 import {open} from "../App";
+import {wait} from "@testing-library/user-event/dist/utils";
 
 const ENTRY_CLASSNAME = 'entry relative';
 const ENTRY_HEADER_CLASSNAME = 'entry-header flex-row jc-between ai-center';
@@ -27,12 +28,22 @@ const Entry: React.FC<EntryProperties> = (properties: EntryProperties) => {
         else loadText(indexEntry.id).then((text: string) => {
             setChildren(parse(markdownToHTML(text)));
             el(entryId)?.querySelectorAll('a').forEach((link: HTMLAnchorElement) => {
-                console.log(link);
                 link.onclick = (event: MouseEvent) => {
                     event.preventDefault();
-                    console.log(link);
                     open(link.getAttribute('href') ?? '');
                 }
+            });
+
+            // Absolutely hideous, but it works, somehow
+            wait(50).then(() => {
+                const entry: HTMLElement | null = el(entryId);
+                let minHeight = 0;
+                entry?.querySelectorAll(`.${ENTRY_CONTENT_CLASSNAME} img`).forEach(image => {
+                    console.log(image.clientHeight);
+                    if (image.clientHeight > minHeight) minHeight = image.clientHeight;
+                });
+                entry?.querySelector(`.${ENTRY_CONTENT_CLASSNAME}`)
+                    ?.setAttribute('style', `min-height: ${minHeight}px`);
             });
         });
     }, []);
