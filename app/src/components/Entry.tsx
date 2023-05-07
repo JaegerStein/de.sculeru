@@ -5,6 +5,7 @@ import {loadText} from "../common/utils";
 import Session from "../common/Session";
 import {marked} from "marked";
 import parse from "html-react-parser";
+import markdownToHTML from "../obsidian";
 
 const ENTRY_CLASSNAME = 'entry relative';
 const ENTRY_HEADER_CLASSNAME = 'entry-header flex-row jc-between ai-center';
@@ -24,7 +25,7 @@ const Entry: React.FC<EntryProperties> = (properties: EntryProperties) => {
         const indexEntry = Session.entry(properties.title);
         if (!indexEntry) setChildren(<p>Dieser Eintrag konnte nicht geladen werden</p>)
         else loadText(indexEntry.id).then((text: string) => {
-            setChildren(parse(marked.parse(text)));
+            setChildren(parse(markdownToHTML(text)));
         });
     }, [properties.title]);
 
