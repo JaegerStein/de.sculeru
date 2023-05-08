@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Legende/Legende.md",
+                "file": "Regeln/Charakter/Kompetenz.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Legende/Legende.md",
+                "file": "Regeln/Charakter/Kompetenz.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Legende/Legende.md",
+                "file": "Regeln/Charakter/Kompetenz.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Legende/Legende.md"
+                "file": "Regeln/Charakter/Kompetenz.md"
               }
             }
           }
@@ -156,8 +156,8 @@
   },
   "active": "24c2ffa6a6400c7e",
   "lastOpenFiles": [
-    "Legende/Geografie/Geografie.md",
     "Legende/Legende.md",
+    "Legende/Geografie/Geografie.md",
     "Journal/Eintrag mit Ä im Titel.md",
     "Journal/Journal.md",
     "Journal/äüÖßßë$%.md",
