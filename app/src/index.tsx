@@ -15,7 +15,7 @@ const right: HTMLElement = el('right-root')!;
 const strict = (component: React.ReactElement): React.ReactElement => <React.StrictMode>{component}</React.StrictMode>
 
 Session.active().then(() => {
-    createRoot(left).render(strict(<Left/>));
-    createRoot(center).render(strict(<App/>));
-    createRoot(right).render(strict(<Right/>));
+    createRoot(left).render(<Left/>);
+    createRoot(center).render(<App/>);
+    createRoot(right).render(<Right/>);
 });

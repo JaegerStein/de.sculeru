@@ -27,26 +27,29 @@ const Entry: React.FC<EntryProperties> = (properties: EntryProperties) => {
         if (!indexEntry) setChildren(<p>Dieser Eintrag konnte nicht geladen werden</p>)
         else loadText(indexEntry.id).then((text: string) => {
             setChildren(parse(markdownToHTML(text)));
-            el(entryId)?.querySelectorAll('a').forEach((link: HTMLAnchorElement) => {
-                link.onclick = (event: MouseEvent) => {
-                    event.preventDefault();
-                    open(link.getAttribute('href') ?? '');
-                }
-            });
-
-            // Absolutely hideous, but it works, somehow
-            wait(50).then(() => {
-                const entry: HTMLElement | null = el(entryId);
-                let minHeight = 0;
-                entry?.querySelectorAll(`.${ENTRY_CONTENT_CLASSNAME} img`).forEach(image => {
-                    console.log(image.clientHeight);
-                    if (image.clientHeight > minHeight) minHeight = image.clientHeight;
-                });
-                entry?.querySelector(`.${ENTRY_CONTENT_CLASSNAME}`)
-                    ?.setAttribute('style', `min-height: ${minHeight}px`);
-            });
         });
     }, []);
+
+    React.useEffect(() => {
+        el(entryId)?.querySelectorAll('a').forEach((link: HTMLAnchorElement) => {
+            link.onclick = (event: MouseEvent) => {
+                event.preventDefault();
+                open(link.getAttribute('href') ?? '');
+            }
+        });
+
+        // absolutely hideous, but it works, somehow
+        // sets the min-height of the entry-content to the height of the largest image in it
+        wait(100).then(() => {
+            const entry: HTMLElement | null = el(entryId);
+            let minHeight = 0;
+            entry?.querySelectorAll(`.${ENTRY_CONTENT_CLASSNAME} img`).forEach(image => {
+                if (image.clientHeight > minHeight) minHeight = image.clientHeight;
+            });
+            entry?.querySelector(`.${ENTRY_CONTENT_CLASSNAME}`)
+                ?.setAttribute('style', `min-height: ${minHeight}px`);
+        });
+    }, [children]);
 
     return (
         <div className={ENTRY_CLASSNAME} id={entryId}>

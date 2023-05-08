@@ -7,7 +7,6 @@ interface IndexEntry {
     last: number,
     type: string,
 }
-
 export type {IndexEntry}
 
 type HTMLElementList = NodeListOf<HTMLElement>;

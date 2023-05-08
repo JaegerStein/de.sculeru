@@ -11,12 +11,8 @@
             "id": "24c2ffa6a6400c7e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Regeln/Charakter/Kompetenz.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regeln/Charakter/Kompetenz.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regeln/Charakter/Kompetenz.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Regeln/Charakter/Kompetenz.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -154,8 +146,9 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "24c2ffa6a6400c7e",
+  "active": "c5e05df0cdfedc21",
   "lastOpenFiles": [
+    "Regeln/Charakter/Kompetenz.md",
     "Legende/Legende.md",
     "Legende/Geografie/Geografie.md",
     "Journal/Eintrag mit Ä im Titel.md",
@@ -183,7 +176,6 @@
     "Regeln/Charakter/Attribute.md",
     "Regeln/Rast.md",
     "Regeln/Charakter/Ausdauer.md",
-    "Regeln/Charakter/Fähigkeiten.md",
     "Journal/Questkarte.canvas",
     "!attachments/malravien.jpg",
     "!attachments/geografie/reiche/herzogtuemer",
