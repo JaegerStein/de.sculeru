@@ -74,8 +74,11 @@ export default abstract class Session {
     }
 
     private static loadOpenEntries(): void {
-        const openEntries: string = store.getItem(OPEN_ENTRIES) || '[]';
-        (JSON.parse(openEntries) as string[]).forEach(title => Session.openEntry(title));
+        let openEntries: string = store.getItem(OPEN_ENTRIES) || '[]';
+        if (openEntries === '{}') store.setItem(OPEN_ENTRIES, '[]');
+        openEntries = store.getItem(OPEN_ENTRIES)!;
+        const e: string[] = JSON.parse(openEntries);
+        e.forEach(title => Session.openEntry(title));
     }
 
     /**
