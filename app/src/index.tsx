@@ -2,6 +2,7 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 import './assets/styles/style.css';
 import './assets/styles/left.css';
+import './assets/styles/right.css';
 import App from './App';
 import {el} from "./common/utils";
 import Left from "./Left";
@@ -12,7 +13,7 @@ const left: HTMLElement = el('left-root')!;
 const center: HTMLElement = el('center-root')!;
 const right: HTMLElement = el('right-root')!;
 
-const strict = (component: React.ReactElement): React.ReactElement => <React.StrictMode>{component}</React.StrictMode>
+// const strict = (component: React.ReactElement): React.ReactElement => <React.StrictMode>{component}</React.StrictMode>
 
 Session.active().then(() => {
     createRoot(left).render(<Left/>);

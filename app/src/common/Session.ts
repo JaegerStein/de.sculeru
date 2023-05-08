@@ -60,6 +60,11 @@ export default abstract class Session {
         store.setItem(OPEN_ENTRIES, Session.entriesJSON());
     }
 
+    public static closeAll(): void {
+        Session._openEntries = [];
+        store.setItem(OPEN_ENTRIES, '[]');
+    }
+
     public static get openEntries(): string[] {
         return Session._openEntries;
     }

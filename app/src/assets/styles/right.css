@@ -1,0 +1,39 @@
+#right-root button {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-weight: bold;
+  color: #003865;
+  height: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 0 1rem;
+  border: none;
+  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.25), -0.25rem -0.25rem 0.5rem rgba(255, 255, 255, 0.25);
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  line-height: 1.5rem;
+  text-align: center;
+  text-transform: capitalize;
+  transition: all 0.25s ease;
+}
+#right-root button:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.25);
+  color: ivory;
+}
+#right-root hr {
+  margin: 1rem 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+#right-root ol {
+  counter-reset: item;
+}
+#right-root li {
+  margin-left: 1rem;
+  display: block;
+}
+#right-root li:before {
+  content: counters(item, ".") " ";
+  counter-increment: item;
+}
+
+/*# sourceMappingURL=right.css.map */

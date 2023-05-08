@@ -40,24 +40,22 @@ h1, h2 { font-weight: normal; }
   padding-top: 2rem;
 
   #center-root-container {
-    #center-root {
-      //width: $line;
-    }
+    min-width: 512px;
   }
 }
 
 .overlay {
   padding-top: 1rem;
   min-width: 256px;
+  max-width: 512px;
   z-index: 10;
 }
 
 #right-overlay {
-  box-shadow: inset .5rem 0 1rem rgba(0 0 0 / .05);
 
   #right-top-spacer {
     width: 100%;
     aspect-ratio: 2 / 1;
-    outline: 2px dotted pink;
   }
+  padding-right: 1rem;
 }

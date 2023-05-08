@@ -16,6 +16,11 @@ export const open = (shorthand: string): void => {
     Session.openEntry(shorthand);
 }
 
+export const closeAll = (): void => {
+    setOpenEntries([]);
+    Session.closeAll();
+}
+
 const openLocally = (shorthand: string): void => {
     const entry = <Entry title={shorthand} onRemove={
         () => {
