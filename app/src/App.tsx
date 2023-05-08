@@ -26,11 +26,24 @@ const openLocally = (shorthand: string): void => {
     setOpenEntries([entry, ...openEntries]);
 }
 
+const initialEntries = (): Entries => {
+    const entries: Entries = [];
+    Session.openEntries.forEach(entry => {
+        entries.push(<Entry title={entry} onRemove={
+            () => {
+                setOpenEntries(openEntries.filter(e => e.key !== entry));
+                Session.closeEntry(entry);
+            }
+        } key={entry}/>);
+    });
+    return entries.reverse();
+}
+
 let setOpenEntries: SetEntries;
 let openEntries: Entries;
 
 const App: React.FC = () => {
-    const [entries, setEntries]: [Entries, SetEntries] = React.useState<Entries>([]);
+    const [entries, setEntries]: [Entries, SetEntries] = React.useState<Entries>(initialEntries());
 
     openEntries = entries;
     setOpenEntries = setEntries;

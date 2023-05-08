@@ -42,32 +42,35 @@ export default abstract class Session {
     }
 
     /* OPEN ENTRIES */
-    private static _openEntries: Set<string> = new Set();
+    private static _openEntries: string[] = [];
 
-    private static entriesJSON = () => JSON.stringify(Array.from(Session._openEntries));
+    private static entriesJSON = () => JSON.stringify(Session._openEntries);
 
     public static openEntry(title: string): void {
-        Session._openEntries.add(title);
+        if (Session._openEntries.includes(title)) return;
+        Session._openEntries.push(title);
         store.setItem(OPEN_ENTRIES, Session.entriesJSON());
     }
 
     public static closeEntry(title: string): void {
-        if (Session._openEntries.has(title)) Session._openEntries.delete(title);
+        const index: number = Session._openEntries.indexOf(title);
+        // remove item from index
+        if (index == -1) return;
+        Session._openEntries.splice(index, 1);
         store.setItem(OPEN_ENTRIES, Session.entriesJSON());
     }
 
     public static get openEntries(): string[] {
-        return Array.from<string>(Session._openEntries);
+        return Session._openEntries;
     }
 
     public static isOpen(title: string): boolean {
-        return Session._openEntries.has(title);
+        return Session._openEntries.includes(title);
     }
 
     private static loadOpenEntries(): void {
-        // I am too stupid to get this to work
         const openEntries: string = store.getItem(OPEN_ENTRIES) || '[]';
-        (JSON.parse(openEntries) as string[]).forEach(title => Session._openEntries.add(title));
+        (JSON.parse(openEntries) as string[]).forEach(title => Session.openEntry(title));
     }
 
     /**
@@ -75,7 +78,7 @@ export default abstract class Session {
      */
     public static async active(): Promise<void> {
         await Session.loadIndex();
-        // Session.loadOpenEntries();
+        Session.loadOpenEntries();
         Session.activeCategory();
     }
 }

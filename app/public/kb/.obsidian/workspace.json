@@ -11,8 +11,12 @@
             "id": "24c2ffa6a6400c7e",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Regeln/Charakter/Kompetenz.md",
+                "mode": "source",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Regeln/Charakter/Kompetenz.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Regeln/Charakter/Kompetenz.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Regeln/Charakter/Kompetenz.md"
+              }
             }
           }
         ]
@@ -146,14 +154,19 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c5e05df0cdfedc21",
+  "active": "24c2ffa6a6400c7e",
   "lastOpenFiles": [
-    "Regeln/Charakter/Kompetenz.md",
+    "Regeln/Charakter/Fähigkeiten.md",
     "Legende/Legende.md",
     "Legende/Geografie/Geografie.md",
+    "Regeln/Charakter/Ausdauer.md",
+    "Regeln/Charakter/Ausrüstung.md",
+    "Regeln/Charakter/Eigenschaften.md",
+    "Regeln/Charakter/Attribute.md",
+    "Journal/äüÖßßë$%.md",
+    "Regeln/Charakter/Kompetenz.md",
     "Journal/Eintrag mit Ä im Titel.md",
     "Journal/Journal.md",
-    "Journal/äüÖßßë$%.md",
     "Regeln/Charakter/Zauber.md",
     "Regeln/Charakter",
     "Regeln/Kampf",
@@ -164,8 +177,6 @@
     "Regeln/Maßeinheiten.md",
     "Regeln/Kampf/Fernkampf.md",
     "Regeln/Kampf/Nahkampf.md",
-    "Regeln/Charakter/Ausrüstung.md",
-    "Regeln/Charakter/Eigenschaften.md",
     "Regeln/Charakter/Talente.md",
     "Regeln/Rettungswürfe.md",
     "Regeln/Kampf/Hinterhältiger Angriff.md",
@@ -173,9 +184,6 @@
     "Regeln/Kampf/Kampf.md",
     "Regeln/Spielbare Völker.md",
     "Regeln/Kampf/Statuseffekte.md",
-    "Regeln/Charakter/Attribute.md",
-    "Regeln/Rast.md",
-    "Regeln/Charakter/Ausdauer.md",
     "Journal/Questkarte.canvas",
     "!attachments/malravien.jpg",
     "!attachments/geografie/reiche/herzogtuemer",
