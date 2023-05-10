@@ -34,16 +34,19 @@
   font-size: 1.75rem;
   line-height: 2rem;
   margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
 }
 .entry .entry-content h2 {
   font-size: 1.5rem;
   line-height: 1.75rem;
   margin-bottom: 0.5rem;
+  margin-top: 1rem;
 }
 .entry .entry-content h3 {
   font-size: 1.25rem;
   line-height: 1.5rem;
   margin-bottom: 0.25rem;
+  margin-top: 0.5rem;
 }
 .entry .entry-content p {
   margin-bottom: 1rem;
@@ -58,6 +61,14 @@
 }
 .entry .entry-content ul li {
   margin-left: 1rem;
+}
+.entry .entry-content table {
+  margin: 0 auto 1rem;
+  border-collapse: collapse;
+}
+.entry .entry-content table th, .entry .entry-content table td {
+  padding: 0.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }
 .entry .entry-content img {
   max-width: 100%;
