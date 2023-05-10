@@ -6,7 +6,6 @@ import Session from "../common/Session";
 import parse from "html-react-parser";
 import markdownToHTML from "../obsidian";
 import {open} from "../App";
-import {wait} from "@testing-library/user-event/dist/utils";
 
 const ENTRY_CLASSNAME = 'entry relative';
 const ENTRY_HEADER_CLASSNAME = 'entry-header flex-row jc-between ai-center';
