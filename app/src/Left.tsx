@@ -7,7 +7,7 @@ import {ReactComponent as JournalIcon} from "./assets/images/journal.svg";
 import {ReactComponent as RulesIcon} from "./assets/images/rules.svg";
 import {ReactComponent as ToolsIcon} from "./assets/images/tools.svg";
 import {HTMLElementList} from "./common/types";
-import Link, {LinkProperties} from "./components/Link";
+import Link, {LinkProps} from "./components/Link";
 
 
 const CATEGORIES_CLASSNAME = 'full-width grid';
@@ -15,7 +15,7 @@ const LEFT_LINKS_CONTAINER = 'left-links-container';
 const LEFT_LINKS = 'left-links';
 
 type SetTitle = React.Dispatch<React.SetStateAction<string>>;
-type SetLinks = React.Dispatch<React.SetStateAction<LinkProperties[]>>;
+type SetLinks = React.Dispatch<React.SetStateAction<LinkProps[]>>;
 
 const select = (icon: HTMLElement, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
     const id: Category = icon.id as Category;
@@ -49,7 +49,7 @@ const registerCategories = (icons: HTMLElementList, [setTitle, setLinks]: [SetTi
 
 const Left: React.FC = () => {
     const [title, setTitle]: [string, SetTitle] = React.useState<string>('');
-    const [links, setLinks]: [LinkProperties[], SetLinks] = React.useState<LinkProperties[]>([]);
+    const [links, setLinks]: [LinkProps[], SetLinks] = React.useState<LinkProps[]>([]);
 
     useEffect(() => {
         const icons: HTMLElementList = selAll('.category');
@@ -69,15 +69,12 @@ const Left: React.FC = () => {
             <div id={LEFT_LINKS_CONTAINER}>
                 <h3>{title}</h3>
                 <ul id={LEFT_LINKS}>
-                    {links.map((link: LinkProperties) => (
-                        <li key={link.href}>
-                            <Link {...link} />
-                        </li>
+                    {links.map((link: LinkProps) => (
+                        <li key={'li-link-' + link.href}><Link {...link}/></li>
                     ))}
                 </ul>
             </div>
         </>
     );
 }
-
 export default Left;

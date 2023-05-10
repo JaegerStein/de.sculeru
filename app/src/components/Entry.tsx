@@ -44,8 +44,7 @@ const enableImageEnlargement = (entryId: string): void => {
         image.onclick = () => {
             const imgURL: string | null = image.getAttribute('src');
             if (!imgURL) return;
-            const newWindow = window.open(imgURL, '_blank');
-            if (newWindow) newWindow.focus();
+            window.open(imgURL, '_blank')?.focus();
         }
     });
 }
