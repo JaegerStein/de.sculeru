@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ReactElement} from 'react';
 import Entry from "./components/Entry";
 import Session from "./common/Session";
 
@@ -21,13 +21,13 @@ export const closeAll = (): void => {
     Session.closeAll();
 }
 
+const close = (entry: ReactElement): void => {
+    setOpenEntries(openEntries.filter(e => e.key !== entry.key));
+    Session.closeEntry(entry.key as string);
+}
+
 const openLocally = (shorthand: string): void => {
-    const entry = <Entry title={shorthand} onRemove={
-        () => {
-            setOpenEntries(openEntries.filter(e => e.key !== entry.key));
-            Session.closeEntry(shorthand);
-        }
-    } key={shorthand}/>;
+    const entry = <Entry title={shorthand} onRemove={() => close(entry)} key={shorthand}/>;
     setOpenEntries([entry, ...openEntries]);
 }
 
