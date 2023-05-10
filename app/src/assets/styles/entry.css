@@ -59,6 +59,9 @@
 .entry .entry-content ul li {
   margin-left: 1rem;
 }
+.entry .entry-content img {
+  max-width: 100%;
+}
 .entry .entry-content .float-right {
   float: right;
 }
