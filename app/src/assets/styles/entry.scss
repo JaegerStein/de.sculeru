@@ -1,8 +1,8 @@
 @import "common.scss";
 
 .entry {
-
-  width: $line;
+  width: 100%;
+  max-width: $line;
   margin: 0 auto 8rem;
   padding-bottom: 2rem;
   box-shadow: 0 4rem 2rem -2rem rgba(0 0 0 / .1);
@@ -60,7 +60,10 @@
       margin-top: .5rem;
     }
 
-    p { margin-bottom: 1rem; }
+    p {
+      margin-bottom: 1rem;
+      word-wrap: break-word;
+    }
 
     hr {
       margin: .5rem 1rem;
@@ -90,6 +93,11 @@
       max-width: 100%;
       margin: .5rem;
       &:hover { cursor: zoom-in; }
+    }
+
+    a {
+      text-decoration: none;
+      color: $brown;
     }
 
     .float-right { float: right; }

@@ -74,8 +74,12 @@
   hyphens: auto;
 }
 #left-overlay nav #left-links-container ul li a:hover {
+  cursor: pointer;
   color: ivory;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+#left-overlay nav #left-links-container ul li a:hover.tools-link {
+  cursor: alias;
 }
 
 /*# sourceMappingURL=left.css.map */

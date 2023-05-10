@@ -6,16 +6,7 @@ const Right: React.FC = () => {
         <>
             <button type='button' onClick={closeAll}>Alle schließen</button>
             <hr/>
-            <ol>Hier kommt die Navigation für geöffnete Einträge hin.
-                <li>Wenn ich nicht zu faul dafür bin.
-                    <ol>
-                        <li>Subtext</li>
-                        <li>Stacked</li>
-                    </ol>
-                </li>
-                <li>Mal schauen</li>
-                <li>Work in Progress</li>
-            </ol>
+            <p>Hier kommt die Navigation für geöffnete Einträge hin, wenn ich nicht zu faul dafür bin.</p>
         </>
     );
 };

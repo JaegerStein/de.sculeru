@@ -1,5 +1,6 @@
 .entry {
-  width: 75ch;
+  width: 100%;
+  max-width: 75ch;
   margin: 0 auto 8rem;
   padding-bottom: 2rem;
   box-shadow: 0 4rem 2rem -2rem rgba(0, 0, 0, 0.1);
@@ -53,6 +54,7 @@
 }
 .entry .entry-content p {
   margin-bottom: 1rem;
+  word-wrap: break-word;
 }
 .entry .entry-content hr {
   margin: 0.5rem 1rem;
@@ -79,6 +81,10 @@
 }
 .entry .entry-content img:hover {
   cursor: zoom-in;
+}
+.entry .entry-content a {
+  text-decoration: none;
+  color: #652D00;
 }
 .entry .entry-content .float-right {
   float: right;
