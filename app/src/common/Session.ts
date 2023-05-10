@@ -75,7 +75,7 @@ export default abstract class Session {
 
     private static loadOpenEntries(): void {
         let openEntries: string = store.getItem(OPEN_ENTRIES) || '[]';
-        if (openEntries === '{}') store.setItem(OPEN_ENTRIES, '[]');
+        if (!store.getItem(OPEN_ENTRIES) || openEntries === '{}') store.setItem(OPEN_ENTRIES, '[]');
         openEntries = store.getItem(OPEN_ENTRIES)!;
         const e: string[] = JSON.parse(openEntries);
         e.forEach(title => Session.openEntry(title));
