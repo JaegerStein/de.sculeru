@@ -1,0 +1,9 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine on
+
+RewriteRule /index.html$ /
+
+RewriteCond %{http_host} ^sculeru.de [nc]
+RewriteRule ^(.*)$ https://www.sculeru.de/$1 [r=301,nc]
+
+RewriteRule ^voelker/?$ /tools/races/Spielbare%20V%C3%B6lker.html [L]
