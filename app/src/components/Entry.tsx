@@ -37,18 +37,6 @@ const Entry: React.FC<EntryProperties> = (properties: EntryProperties) => {
                 open(link.getAttribute('href') ?? '');
             }
         });
-
-        // absolutely hideous, but it works, somehow
-        // sets the min-height of the entry-content to the height of the largest image in it
-        wait(100).then(() => {
-            const entry: HTMLElement | null = el(entryId);
-            let minHeight = 0;
-            entry?.querySelectorAll(`.${ENTRY_CONTENT_CLASSNAME} img`).forEach(image => {
-                if (image.clientHeight > minHeight) minHeight = image.clientHeight;
-            });
-            entry?.querySelector(`.${ENTRY_CONTENT_CLASSNAME}`)
-                ?.setAttribute('style', `min-height: ${minHeight}px`);
-        });
     }, [children]);
 
     return (
