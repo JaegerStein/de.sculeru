@@ -12,7 +12,7 @@
     </style>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body class="kiwi">
+<body class="kiwi" style="background-color: beige">
 <canvas id="canvas" class="viewport"></canvas>
 
 <script>
@@ -67,7 +67,7 @@
 
             data.nodes.forEach(node => {
                 ctx.beginPath();
-                ctx.fillStyle = '#fff';
+                ctx.fillStyle = 'ivory';
                 ctx.fillRect(node.x, node.y, node.width, node.height);
 
                 nodePos[node.id] = {
@@ -189,7 +189,7 @@
     );
 
     // Ready, set, go
-    fetch('Questkarte.canvas').then(response => response.json()).then(d => {
+    fetch('./../../kb/Journal/Questkarte.canvas').then(response => response.json()).then(d => {
         data = d;
         draw();
     });

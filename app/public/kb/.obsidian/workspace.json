@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+                "file": "Regeln/Rettungswürfe.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+                "file": "Regeln/Rettungswürfe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+                "file": "Regeln/Rettungswürfe.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Legende/Geografie/Reiche/Herzogtümer/Malravien.md"
+                "file": "Regeln/Rettungswürfe.md"
               }
             }
           }
@@ -156,38 +156,38 @@
   },
   "active": "37493bd2a41e6a73",
   "lastOpenFiles": [
-    "Regeln/Allgemeine Begriffe.md",
-    "Regeln/Charakter/Zauber.md",
-    "Regeln/Kampf/Schadensarten.md",
-    "Regeln/Kampf/Resistenzen.md",
-    "!attachments/zauberstufen.bmp",
-    "Regeln/Charakter/Attribute.md",
-    "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
-    "Regeln/Kampf/Schadensart.md",
-    "Regeln/Charakter/Eigenschaften/Dunkelsicht.md",
-    "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
-    "Journal/äüÖßßë$%.md",
-    "Regeln/Charakter/Eigenschaften",
-    "Legende/Legende.md",
-    "Legende/Geografie/Geografie.md",
-    "Journal/Eintrag mit Ä im Titel.md",
-    "Journal/Journal.md",
-    "Regeln/Charakter",
-    "Regeln/Kampf",
-    "Regeln/Kampf/Rüstung.md",
-    "Regeln/Kampf/Verletzungen.md",
-    "Regeln/Kampf/Schadensdurchdringung.md",
+    "Regeln/Regeln.md",
+    "Regeln/Rast.md",
     "Regeln/Maßeinheiten.md",
-    "Regeln/Kampf/Fernkampf.md",
+    "Regeln/Allgemeine Begriffe.md",
+    "Regeln/Kampf/Schadensarten.md",
+    "Regeln/Kampf/Verletzungen.md",
+    "Regeln/Kampf/Statuseffekte.md",
+    "Regeln/Kampf/Schadensdurchdringung.md",
+    "Regeln/Kampf/Rüstung.md",
+    "Regeln/Kampf/Resistenzen.md",
     "Regeln/Kampf/Nahkampf.md",
-    "Regeln/Charakter/Ausrüstung.md",
-    "Regeln/Charakter/Talente.md",
-    "Regeln/Rettungswürfe.md",
+    "Regeln/Kampf/Kampf.md",
     "Regeln/Kampf/Hinterhältiger Angriff.md",
     "Regeln/Kampf/Flankieren.md",
-    "Regeln/Kampf/Kampf.md",
-    "Regeln/Spielbare Völker.md",
+    "Regeln/Kampf/Fernkampf.md",
+    "Regeln/Charakter/Zauber.md",
+    "Regeln/Charakter/Talente.md",
+    "Regeln/Charakter/Kompetenz.md",
+    "Regeln/Charakter/Fähigkeiten.md",
+    "Regeln/Charakter/Ausrüstung.md",
+    "Regeln/Charakter/Attribute.md",
+    "Regeln/Charakter/Ausdauer.md",
+    "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
     "Journal/Questkarte.canvas",
+    "Journal/Journal.md",
+    "Journal/Eintrag mit Ä im Titel.md",
+    "Journal/Questen/Besiegt den Nekromanten Peretin.md",
+    "!attachments/zauberstufen.bmp",
+    "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
+    "Regeln/Charakter/Eigenschaften",
+    "Regeln/Charakter",
+    "Regeln/Kampf",
     "!attachments/malravien.jpg",
     "!attachments/geografie/reiche/herzogtuemer",
     "!attachments/geografie/reiche",
