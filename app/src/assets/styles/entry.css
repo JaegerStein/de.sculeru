@@ -73,11 +73,12 @@
   padding: 0.25rem;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-.entry .entry-content span img {
-  outline: 4px solid pink;
-}
 .entry .entry-content img {
   max-width: 100%;
+  margin: 0.5rem;
+}
+.entry .entry-content img:hover {
+  cursor: zoom-in;
 }
 .entry .entry-content .float-right {
   float: right;

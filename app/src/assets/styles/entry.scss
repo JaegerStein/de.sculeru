@@ -37,8 +37,8 @@
   }
 
   .entry-content {
-
     overflow: auto;
+
     h1 {
       font-size: 1.75rem;
       line-height: 2rem;
@@ -86,11 +86,11 @@
       }
     }
 
-    span img{
-      outline: 4px solid pink;
+    img {
+      max-width: 100%;
+      margin: .5rem;
+      &:hover { cursor: zoom-in; }
     }
-
-    img { max-width: 100%; }
 
     .float-right { float: right; }
     .br4 img { border-radius: 16px; }
