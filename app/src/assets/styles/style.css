@@ -53,6 +53,7 @@ h1, h2 {
   padding: 0 1rem;
 }
 #base #center-root-container #center-root {
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -71,6 +72,17 @@ h1, h2 {
   aspect-ratio: 2/1;
 }
 
+#ham {
+  position: fixed;
+  width: 2.5rem;
+  height: 2.5rem;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
 @media screen and (max-width: 1024px) {
   #base {
     grid-template-columns: 1fr 3fr;
@@ -83,8 +95,35 @@ h1, h2 {
   #base {
     grid-template-columns: 1fr;
   }
-  #left-overlay, #right-overlay {
+  #left-spacer {
     display: none;
+  }
+  #left-overlay {
+    background-color: beige;
+    transform: translateX(-100%);
+    transition: transform 0.25s ease-in-out;
+  }
+  #left-overlay.open {
+    transform: translateX(0);
+  }
+  #left-overlay::before {
+    content: "";
+    background-image: url("../images/parchment.jpg");
+    background-repeat: repeat;
+    opacity: 0.125;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    pointer-events: none;
+  }
+  #ham {
+    display: block;
+    transition: transform 0.25s ease-in-out;
+  }
+  #ham.open {
+    transform: rotate(90deg);
   }
   #center-root-container {
     padding: 0;

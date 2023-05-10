@@ -47,6 +47,17 @@ const registerCategories = (icons: HTMLElementList, [setTitle, setLinks]: [SetTi
     });
 }
 
+const registerHamMenu = (): void => {
+    const ham: HTMLElement | null = el('ham');
+    if (!ham) return;
+    ham.onclick = () => {
+        const leftOverlay: HTMLElement | null = el('left-overlay');
+        if (!leftOverlay) return;
+        leftOverlay.classList.toggle('open');
+        ham.classList.toggle('open');
+    }
+}
+
 const Left: React.FC = () => {
     const [title, setTitle]: [string, SetTitle] = React.useState<string>('');
     const [links, setLinks]: [LinkProps[], SetLinks] = React.useState<LinkProps[]>([]);
@@ -56,6 +67,7 @@ const Left: React.FC = () => {
         const category: Category | null = Session.category;
         if (category) select(el(category)!, [setTitle, setLinks]);
         registerCategories(icons, [setTitle, setLinks]);
+        registerHamMenu();
     }, []);
 
     return (

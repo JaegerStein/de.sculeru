@@ -45,6 +45,7 @@ h1, h2 { font-weight: normal; }
     width: 100%;
     padding: 0 1rem;
     #center-root {
+      width: 100%;
       margin: 0 auto;
     }
   }
@@ -66,6 +67,17 @@ h1, h2 { font-weight: normal; }
   padding-right: 1rem;
 }
 
+#ham {
+  position: fixed;
+  width: 2.5rem;
+  height: 2.5rem;
+  bottom: 2.5rem;
+  left: 2.5rem;
+  display: none;
+  cursor: pointer;
+  z-index: 100;
+}
+
 @media screen and (max-width: 1024px) {
   #base {
     grid-template-columns: 1fr 3fr;
@@ -76,12 +88,41 @@ h1, h2 { font-weight: normal; }
 }
 
 @media screen and (max-width: 768px) {
-  #base {
-    grid-template-columns: 1fr;
+  #base { grid-template-columns: 1fr; }
+  #left-spacer { display: none; }
+
+  #left-overlay {
+    background-color: beige;
+    transform: translateX(-100%);
+    transition: transform .25s ease-in-out;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    &::before {
+      content: '';
+      background-image: url("../images/parchment.jpg");
+      background-repeat: repeat;
+      opacity: .125;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      pointer-events: none;
+    }
   }
-  #left-overlay, #right-overlay {
-    display: none;
+
+  #ham {
+    display: block;
+    transition: transform .25s ease-in-out;
+
+    &.open {
+        transform: rotate(90deg);
+    }
   }
+
   #center-root-container {
     padding: 0;
     max-width: 100vw;
