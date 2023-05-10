@@ -21,26 +21,25 @@ export const closeAll = (): void => {
     Session.closeAll();
 }
 
-const close = (entry: ReactElement): void => {
-    setOpenEntries(openEntries.filter(e => e.key !== entry.key));
-    Session.closeEntry(entry.key as string);
+const openLocally = (shorthand: string): void => {
+    const entry = makeEntry(shorthand);
+    setOpenEntries([entry, ...openEntries]);
 }
 
-const openLocally = (shorthand: string): void => {
-    const entry = <Entry title={shorthand} onRemove={() => close(entry)} key={shorthand}/>;
-    setOpenEntries([entry, ...openEntries]);
+const makeEntry = (title: string): ReactElement => {
+
+    const close = (entry: ReactElement): void => {
+        setOpenEntries(openEntries.filter(e => e.key !== entry.key));
+        Session.closeEntry(entry.key as string);
+    }
+
+    const entry = <Entry title={title} onRemove={() => close(entry)} key={title}/>
+    return entry;
 }
 
 const initialEntries = (): Entries => {
     const entries: Entries = [];
-    Session.openEntries.forEach(entry => {
-        entries.push(<Entry title={entry} onRemove={
-            () => {
-                setOpenEntries(openEntries.filter(e => e.key !== entry));
-                Session.closeEntry(entry);
-            }
-        } key={entry}/>);
-    });
+    Session.openEntries.forEach(title => entries.push(makeEntry(title)));
     return entries.reverse();
 }
 
