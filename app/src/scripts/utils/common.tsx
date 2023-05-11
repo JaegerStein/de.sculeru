@@ -1,6 +1,5 @@
 import React from "react";
 
-
 const SELECTED = 'selected';
 const CATEGORY = 'category';
 const CATEGORIES = 'categories';

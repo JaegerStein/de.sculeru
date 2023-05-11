@@ -11,12 +11,8 @@
             "id": "37493bd2a41e6a73",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Regeln/Rettungswürfe.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regeln/Rettungswürfe.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regeln/Rettungswürfe.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -132,9 +126,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Regeln/Rettungswürfe.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -154,35 +146,35 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "37493bd2a41e6a73",
+  "active": "c5e05df0cdfedc21",
   "lastOpenFiles": [
+    "Regeln/Allgemeine Begriffe.md",
+    "Regeln/Kampf/Schadensarten-WOTAN.md",
+    "Regeln/Kampf/Schadensarten.md",
+    "Regeln/Kampf/Resistenzen-WOTAN.md",
+    "Regeln/Kampf/Resistenzen.md",
+    "Regeln/Charakter/Zauber-WOTAN.md",
+    "Regeln/Charakter/Zauber.md",
+    "Regeln/Charakter/Kompetenz.md",
+    "Regeln/Charakter/Attribute-WOTAN.md",
+    "Regeln/Charakter/Attribute.md",
+    "Regeln/Charakter/Eigenschaften/Eigenschaften-WOTAN.md",
+    "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
+    "Legende/Legende.md",
+    "Legende/Geografie/Reiche/Herzogtümer/Malravien-WOTAN.md",
+    "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+    "Journal/Questen/Besiegt den Nekromanten Peretin.md",
+    "Journal/Journal-WOTAN.md",
+    "Journal/Journal.md",
+    "Regeln/Rettungswürfe.md",
     "Regeln/Regeln.md",
     "Regeln/Rast.md",
     "Regeln/Maßeinheiten.md",
-    "Regeln/Allgemeine Begriffe.md",
-    "Regeln/Kampf/Schadensarten.md",
     "Regeln/Kampf/Verletzungen.md",
     "Regeln/Kampf/Statuseffekte.md",
     "Regeln/Kampf/Schadensdurchdringung.md",
     "Regeln/Kampf/Rüstung.md",
-    "Regeln/Kampf/Resistenzen.md",
-    "Regeln/Kampf/Nahkampf.md",
-    "Regeln/Kampf/Kampf.md",
-    "Regeln/Kampf/Hinterhältiger Angriff.md",
-    "Regeln/Kampf/Flankieren.md",
-    "Regeln/Kampf/Fernkampf.md",
-    "Regeln/Charakter/Zauber.md",
-    "Regeln/Charakter/Talente.md",
-    "Regeln/Charakter/Kompetenz.md",
-    "Regeln/Charakter/Fähigkeiten.md",
-    "Regeln/Charakter/Ausrüstung.md",
-    "Regeln/Charakter/Attribute.md",
-    "Regeln/Charakter/Ausdauer.md",
-    "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
     "Journal/Questkarte.canvas",
-    "Journal/Journal.md",
-    "Journal/Eintrag mit Ä im Titel.md",
-    "Journal/Questen/Besiegt den Nekromanten Peretin.md",
     "!attachments/zauberstufen.bmp",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",

@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Angie";
-  src: url("../fonts/Angie Small Caps.ttf");
+  src: url("../assets/fonts/Angie Small Caps.ttf");
   font-weight: normal;
   font-style: normal;
 }
@@ -29,7 +29,7 @@ h1, h2 {
 }
 
 #background-image {
-  background-image: url("../images/parchment.jpg");
+  background-image: url("../assets/images/parchment.jpg");
   background-repeat: repeat;
   opacity: 0.125;
   z-index: -10;
@@ -108,7 +108,7 @@ h1, h2 {
   }
   #left-overlay::before {
     content: "";
-    background-image: url("../images/parchment.jpg");
+    background-image: url("../assets/images/parchment.jpg");
     background-repeat: repeat;
     opacity: 0.125;
     position: absolute;

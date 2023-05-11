@@ -1,12 +1,12 @@
 import React, {ReactElement} from 'react';
-import Entry from "./components/Entry";
-import Session from "./common/Session";
+import Entry from "../components/Entry";
+import Session from "../utils/Session";
 
 type SetEntries = React.Dispatch<React.SetStateAction<JSX.Element[]>>;
 type Entries = JSX.Element[];
 
 /**
- * Opens an entry in the center panel. This function is called from different components.
+ * Opens an entry in the center panel. This function is called from different scripts.components.
  * @param shorthand - The shorthand title of the entry to open
  * @export
  */

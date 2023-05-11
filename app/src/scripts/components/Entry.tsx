@@ -1,12 +1,12 @@
 import React, {Dispatch, ReactNode, SetStateAction, useEffect, useState} from 'react';
-import {ReactComponent as CloseIcon} from "../assets/images/x.svg";
-import '../assets/styles/entry.css';
-import {el, loadText} from "../common/utils";
-import Session from "../common/Session";
+import {ReactComponent as CloseIcon} from "../../assets/images/x.svg";
+import '../../styles/entry.css';
+import {el, loadText} from "../utils/utils";
+import Session from "../utils/Session";
 import parse from "html-react-parser";
-import markdownToHTML from "../obsidian";
-import {open} from "../App";
-import {IndexEntry} from "../common/types";
+import markdownToHTML from "../utils/obsidian";
+import {open} from "../app/App";
+import {IndexEntry} from "../utils/types";
 
 const ENTRY_CLASSNAME = 'entry relative';
 const ENTRY_HEADER_CLASSNAME = 'entry-header flex-row jc-between ai-center';
@@ -30,10 +30,14 @@ const enableEntryLinks = (entryId: string): void => {
     const entry: HTMLElement | null = el(entryId);
     if (!entry) return;
     entry.querySelectorAll('a').forEach((link: HTMLAnchorElement) => {
-        link.onclick = (event: MouseEvent) => {
+
+        const preventAndOpen = (event: MouseEvent) => {
             event.preventDefault();
             open(link.getAttribute('href') ?? '');
         }
+
+        link.onclick = preventAndOpen;
+        link.onauxclick = preventAndOpen; // TODO replace with routing
     });
 }
 

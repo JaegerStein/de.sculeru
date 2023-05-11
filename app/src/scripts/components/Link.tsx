@@ -1,14 +1,13 @@
-import {Category} from "../common/common";
+import {Category} from "../utils/common";
 import React, {ReactNode} from "react";
-import {open} from "../App";
-import Session from "../common/Session";
+import {open} from "../app/App";
+import Session from "../utils/Session";
 
-type LinkProps = {
+interface LinkProps  {
     href: string
     category: Category,
     children?: ReactNode
 }
-
 
 const Link: React.FC<LinkProps> = ({href, category, children}: LinkProps) => {
 
@@ -25,6 +24,7 @@ const Link: React.FC<LinkProps> = ({href, category, children}: LinkProps) => {
             href={href}
             className={category + "-link left-link"}
             onClick={openEntry}
+            onAuxClick={openEntry} // TODO rework with routing to allow for multiple tabs
             key={'link-' + href}
         >
             {children}

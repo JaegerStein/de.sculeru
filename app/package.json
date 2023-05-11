@@ -1,6 +1,6 @@
 {
-  "name": "Siebenlande",
-  "version": "0.1.0",
+  "name": "7lan.de",
+  "version": "23-05-11",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

@@ -1,7 +1,7 @@
 import {marked} from "marked";
-import Session from "./common/Session";
-import {IndexEntry} from "./common/types";
-import {A} from "./common/utils";
+import Session from "./Session";
+import {IndexEntry} from "./types";
+import {A} from "./utils";
 
 
 function resolveEmbeddedImage(text: string): string {
