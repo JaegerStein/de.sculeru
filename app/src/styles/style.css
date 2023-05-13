@@ -83,6 +83,10 @@ h1, h2 {
   z-index: 100;
 }
 
+#under-ham {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   #base {
     grid-template-columns: 1fr 3fr;
@@ -124,6 +128,17 @@ h1, h2 {
   }
   #ham.open {
     transform: rotate(90deg);
+  }
+  #under-ham {
+    display: block;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.25s ease-in-out;
+    pointer-events: none;
+  }
+  #under-ham.open {
+    opacity: 1;
+    pointer-events: all;
   }
   #center-root-container {
     padding: 0;

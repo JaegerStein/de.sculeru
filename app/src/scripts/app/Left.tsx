@@ -49,12 +49,21 @@ const registerCategories = (icons: HTMLElementList, [setTitle, setLinks]: [SetTi
 
 const registerHamMenu = (): void => {
     const ham: HTMLElement | null = el('ham');
-    if (!ham) return;
+    const underHam: HTMLElement | null = el('under-ham');
+    const leftOverlay: HTMLElement | null = el('left-overlay');
+    if (!ham || !underHam || !leftOverlay) return;
+
     ham.onclick = () => {
-        const leftOverlay: HTMLElement | null = el('left-overlay');
-        if (!leftOverlay) return;
         leftOverlay.classList.toggle('open');
+        underHam.classList.toggle('open');
         ham.classList.toggle('open');
+    }
+
+    underHam.onclick = () => {
+        if (!ham.classList.contains('open')) return;
+        leftOverlay.classList.remove('open');
+        underHam.classList.remove('open');
+        ham.classList.remove('open');
     }
 }
 

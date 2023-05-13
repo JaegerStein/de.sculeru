@@ -79,6 +79,10 @@ h1, h2 { font-weight: normal; }
   z-index: 100;
 }
 
+#under-ham {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   #base {
     grid-template-columns: 1fr 3fr;
@@ -120,7 +124,20 @@ h1, h2 { font-weight: normal; }
     transition: transform .25s ease-in-out;
 
     &.open {
-        transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+  }
+
+  #under-ham {
+    display: block;
+    opacity: 0;
+    background-color: rgba(0 0 0 / .5);
+    transition: opacity .25s ease-in-out;
+    pointer-events: none;
+
+    &.open {
+      opacity: 1;
+      pointer-events: all;
     }
   }
 
