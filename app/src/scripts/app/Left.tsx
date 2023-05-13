@@ -8,6 +8,7 @@ import {ReactComponent as RulesIcon} from "../../assets/images/rules.svg";
 import {ReactComponent as ToolsIcon} from "../../assets/images/tools.svg";
 import {HTMLElementList} from "../utils/types";
 import Link, {LinkProps} from "../components/Link";
+import '../../styles/left.css';
 
 
 const CATEGORIES_CLASSNAME = 'full-width grid';

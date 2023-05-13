@@ -3,8 +3,6 @@ import React from 'react';
 import {createRoot} from 'react-dom/client';
 /* STYLES */
 import './styles/style.css';
-import './styles/left.css';
-import './styles/right.css';
 /* APPLICATION */
 import App from './scripts/app/App';
 import Left from "./scripts/app/Left";

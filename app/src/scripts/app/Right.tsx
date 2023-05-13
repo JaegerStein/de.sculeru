@@ -1,5 +1,6 @@
 import React from 'react';
 import {closeAll} from "./App";
+import '../../styles/right.css';
 
 const Right: React.FC = () => {
     return (
