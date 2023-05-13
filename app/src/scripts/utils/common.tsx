@@ -7,6 +7,7 @@ const RIGHT_ROOT = 'right-root';
 export {LEFT_ROOT, CENTER_ROOT, RIGHT_ROOT}
 
 const SELECTED = 'selected';
+const OPEN = 'open';
 const CATEGORY = 'category';
 const CATEGORIES = 'categories';
 
@@ -24,4 +25,4 @@ const CategoryTitleMap: Map<Category, string> = new Map<Category, string>([
     [Category.TOOLS, 'Werkzeuge']
 ]);
 
-export {SELECTED, CATEGORY, CATEGORIES, Category, CategoryTitleMap}
+export {SELECTED, OPEN, CATEGORY, CATEGORIES, Category, CategoryTitleMap}

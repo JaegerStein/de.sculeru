@@ -1,5 +1,5 @@
-import React, {useEffect} from 'react';
-import {CATEGORIES, CATEGORY, Category, CategoryTitleMap} from '../utils/common';
+import React, {Dispatch, SetStateAction, useEffect} from 'react';
+import {CATEGORIES, CATEGORY, Category, CategoryTitleMap, OPEN, SELECTED} from '../utils/common';
 import Session from "../utils/Session";
 import {el, selAll} from "../utils/utils";
 import {ReactComponent as LoreIcon} from "../../assets/images/lore.svg";
@@ -15,8 +15,8 @@ const CATEGORIES_CLASSNAME = 'full-width grid';
 const LEFT_LINKS_CONTAINER = 'left-links-container';
 const LEFT_LINKS = 'left-links';
 
-type SetTitle = React.Dispatch<React.SetStateAction<string>>;
-type SetLinks = React.Dispatch<React.SetStateAction<LinkProps[]>>;
+type SetTitle = Dispatch<SetStateAction<string>>;
+type SetLinks = Dispatch<SetStateAction<LinkProps[]>>;
 
 const select = (icon: HTMLElement, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
     const id: Category = icon.id as Category;
@@ -27,7 +27,7 @@ const select = (icon: HTMLElement, [setTitle, setLinks]: [SetTitle, SetLinks]): 
     })));
     Session.category = id;
     setTitle(CategoryTitleMap.get(id)!);
-    icon.classList.add('selected');
+    icon.classList.add(SELECTED);
 }
 
 /**
@@ -36,7 +36,7 @@ const select = (icon: HTMLElement, [setTitle, setLinks]: [SetTitle, SetLinks]): 
  * @param icons - The list of category icons.
  */
 const deselect = (icons: HTMLElementList): void => {
-    icons.forEach(icon => icon.classList.remove('selected'));
+    icons.forEach((icon: HTMLElement) => icon.classList.remove(SELECTED));
 }
 
 const registerCategories = (icons: HTMLElementList, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
@@ -55,16 +55,16 @@ const registerHamMenu = (): void => {
     if (!ham || !underHam || !leftOverlay) return;
 
     ham.onclick = () => {
-        leftOverlay.classList.toggle('open');
-        underHam.classList.toggle('open');
-        ham.classList.toggle('open');
+        leftOverlay.classList.toggle(OPEN);
+        underHam.classList.toggle(OPEN);
+        ham.classList.toggle(OPEN);
     }
 
     underHam.onclick = () => {
-        if (!ham.classList.contains('open')) return;
-        leftOverlay.classList.remove('open');
-        underHam.classList.remove('open');
-        ham.classList.remove('open');
+        if (!ham.classList.contains(OPEN)) return;
+        leftOverlay.classList.remove(OPEN);
+        underHam.classList.remove(OPEN);
+        ham.classList.remove(OPEN);
     }
 }
 
@@ -73,7 +73,7 @@ const Left: React.FC = () => {
     const [links, setLinks]: [LinkProps[], SetLinks] = React.useState<LinkProps[]>([]);
 
     useEffect(() => {
-        const icons: HTMLElementList = selAll('.category');
+        const icons: HTMLElementList = selAll('.' + CATEGORY);
         const category: Category | null = Session.category;
         if (category) select(el(category)!, [setTitle, setLinks]);
         registerCategories(icons, [setTitle, setLinks]);
@@ -88,6 +88,7 @@ const Left: React.FC = () => {
                 <RulesIcon id={Category.RULES} className={CATEGORY}/>
                 <ToolsIcon id={Category.TOOLS} className={CATEGORY}/>
             </div>
+
             <div id={LEFT_LINKS_CONTAINER}>
                 <h3>{title}</h3>
                 <ul id={LEFT_LINKS}>
