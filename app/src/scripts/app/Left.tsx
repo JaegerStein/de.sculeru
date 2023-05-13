@@ -1,17 +1,12 @@
 import React, {Dispatch, SetStateAction, useEffect} from 'react';
-import {CATEGORIES, CATEGORY, Category, CategoryTitleMap, OPEN, SELECTED} from '../utils/common';
+import {CATEGORY, Category, CategoryTitleMap, OPEN, SELECTED} from '../utils/common';
 import Session from "../utils/Session";
 import {el, selAll} from "../utils/utils";
-import {ReactComponent as LoreIcon} from "../../assets/images/lore.svg";
-import {ReactComponent as JournalIcon} from "../../assets/images/journal.svg";
-import {ReactComponent as RulesIcon} from "../../assets/images/rules.svg";
-import {ReactComponent as ToolsIcon} from "../../assets/images/tools.svg";
 import {HTMLElementList} from "../utils/types";
 import Link, {LinkProps} from "../components/Link";
 import '../../styles/left.css';
+import Categories from "../components/Categories";
 
-
-const CATEGORIES_CLASSNAME = 'full-width grid';
 const LEFT_LINKS_CONTAINER = 'left-links-container';
 const LEFT_LINKS = 'left-links';
 
@@ -82,13 +77,7 @@ const Left: React.FC = () => {
 
     return (
         <>
-            <div id={CATEGORIES} className={CATEGORIES_CLASSNAME}>
-                <LoreIcon id={Category.LORE} className={CATEGORY}/>
-                <JournalIcon id={Category.JOURNAL} className={CATEGORY}/>
-                <RulesIcon id={Category.RULES} className={CATEGORY}/>
-                <ToolsIcon id={Category.TOOLS} className={CATEGORY}/>
-            </div>
-
+            <Categories/>
             <div id={LEFT_LINKS_CONTAINER}>
                 <h3>{title}</h3>
                 <ul id={LEFT_LINKS}>
