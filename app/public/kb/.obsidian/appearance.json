@@ -3,5 +3,9 @@
   "enabledCssSnippets": [
     "style"
   ],
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "theme": "moonstone",
+  "showViewHeader": true,
+  "nativeMenus": false,
+  "translucency": false
 }

@@ -4,15 +4,19 @@
     "type": "split",
     "children": [
       {
-        "id": "54d5dd2ed71ad757",
+        "id": "e1cfd9a4fb9cbc92",
         "type": "tabs",
         "children": [
           {
-            "id": "37493bd2a41e6a73",
+            "id": "8f9073879f581b28",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {}
+              "type": "markdown",
+              "state": {
+                "file": "Regeln/Charakter/Fähigkeit.md",
+                "mode": "preview",
+                "source": false
+              }
             }
           }
         ]
@@ -89,6 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "Regeln/Charakter/Fähigkeit.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -105,6 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "Regeln/Charakter/Fähigkeit.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +132,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "Regeln/Charakter/Fähigkeit.md"
+              }
             }
           }
         ]
@@ -146,8 +154,12 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "c5e05df0cdfedc21",
+  "active": "8f9073879f581b28",
   "lastOpenFiles": [
+    "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+    "Journal/Questkarte.canvas",
+    "Journal/Charaktere/Peretin.md",
+    "Journal/Questen/Fäulnis in Malravien.md",
     "Regeln/Allgemeine Begriffe.md",
     "Regeln/Kampf/Schadensarten-WOTAN.md",
     "Regeln/Kampf/Schadensarten.md",
@@ -162,8 +174,6 @@
     "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
     "Legende/Legende.md",
     "Legende/Geografie/Reiche/Herzogtümer/Malravien-WOTAN.md",
-    "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
-    "Journal/Questen/Besiegt den Nekromanten Peretin.md",
     "Journal/Journal-WOTAN.md",
     "Journal/Journal.md",
     "Regeln/Rettungswürfe.md",
@@ -172,9 +182,6 @@
     "Regeln/Maßeinheiten.md",
     "Regeln/Kampf/Verletzungen.md",
     "Regeln/Kampf/Statuseffekte.md",
-    "Regeln/Kampf/Schadensdurchdringung.md",
-    "Regeln/Kampf/Rüstung.md",
-    "Journal/Questkarte.canvas",
     "!attachments/zauberstufen.bmp",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",

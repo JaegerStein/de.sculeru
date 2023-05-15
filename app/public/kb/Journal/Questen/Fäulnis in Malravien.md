@@ -1,0 +1,7 @@
+*(Quests bekommen jetzt "coole" Titel wie in 'nem RPG-Questlog)*
+
+Euer Mäzen [[Graf Stevano]] hat euch aufgetragen, den Schwarzmagier [[Peretin]] zu jagen und zu besiegen. Als Belohnung versprachen er und der [[Phorials Tempel|Tempel des Phorials]] eine Belohnung von "[[Währung|100 Guldern]]", was ein beträchtliches Vermögen ist.
+
+Ihr seid Peretin bis jenseits der Zwergenfestung [[Hadorim]] in die [[Malravien|Niedermark]] gefolgt. Seine Fährte führte euch zu einem uralten Grabmal aus längst vergessenen Zeiten, in dem er und seine Anhänger Unterschlupf suchten.
+
+Ihr habt das Grabmal betreten, in dem sich euch untote Skelette und Nekromanten entgegenstellen.

@@ -1,1 +1,0 @@
-**Peretin** ist ein mutmaßlicher Nekromant, der von [[Graf Stevano]] gejagt wird.

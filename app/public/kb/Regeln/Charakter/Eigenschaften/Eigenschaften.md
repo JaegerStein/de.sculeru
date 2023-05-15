@@ -13,7 +13,7 @@
 
 # Übliche Eigenschaften
 ## Bedrohlich
-Statt deines [[Attribute#Charisma|Charismawertes]] kannst du zum [[Fähigkeiten#Einschüchtern|Einschüchtern]] [[Attribute#Stärke|Stärke]] verwenden. 
+Statt deines [[Attribute#Charisma|Charismawertes]] kannst du zum [[Fähigkeit#Einschüchtern|Einschüchtern]] [[Attribute#Stärke|Stärke]] verwenden. 
 ## Beidhändigkeit
 ## Dunkelsicht
 Du kannst in einem Umkreis von [[Maßeinheiten|60 Fuß]] bei [[Lichtstufen|schwachem Licht]] sehen, als ob Tageslicht herrscht, und bei Dunkelheit, als ob schwaches Licht herrscht. Hierbei kannst du keine Farben wahrnehmen, nur Grautöne. Bei echtem Tageslicht ist die Farbwahrnehmung natürlich nicht beeinträchtigt.

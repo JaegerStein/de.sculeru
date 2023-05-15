@@ -1,0 +1,1 @@
+**Peretin** ist ein mutmaßlicher Nekromant, der von [[Graf Stevano]] gejagt wird. Er soll einst ein [[Zauberer]] der Schule von [[Viasti]] gewesen sein, der nun der "Schwarzzauberei" bezichtigt wird. Auch die [[Kirche]] ist an seiner Unschädlichmachung interessiert.
