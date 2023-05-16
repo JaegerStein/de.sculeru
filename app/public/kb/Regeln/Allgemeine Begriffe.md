@@ -1,5 +1,5 @@
 ## Abbauend/Andauernd
-Abbauend oder Andauernd beschreibt eine Eigenschaft von magischen [[Resistenzen]] oder [[Rüstung|Rüstungen]].
+Abbauend oder Andauernd beschreibt eine Eigenschaft von magischen [[Resistenz]] oder [[Rüstung|Rüstungen]].
 
 -   Eine abbauende Resistenz, wie etwa Schmerzresistenz, sinkt mit jedem eingesteckten Treffer und fungiert somit wie ein zusätzlicher [[Ausdauer]] und muss mit Zaubern, Tränken oder [[Rast|Langer Rast]] wieder aufgefüllt werden.
 -   Andauernde Resistenzen fungieren ähnlich zu physischen Rüstungen und können jede Runde Schaden aufnehmen, ohne zu sinken.

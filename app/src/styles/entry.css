@@ -34,23 +34,26 @@
 .entry .entry-content {
   overflow: auto;
 }
+.entry .entry-content h1, .entry .entry-content h2, .entry .entry-content h3, .entry .entry-content h4, .entry .entry-content h5, .entry .entry-content h6 {
+  font-weight: normal;
+}
 .entry .entry-content h1 {
   font-size: 1.75rem;
   line-height: 2rem;
   margin-bottom: 0.75rem;
-  margin-top: 1.5rem;
+  margin-top: 1.75rem;
 }
 .entry .entry-content h2 {
   font-size: 1.5rem;
   line-height: 1.75rem;
   margin-bottom: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .entry .entry-content h3 {
   font-size: 1.25rem;
   line-height: 1.5rem;
   margin-bottom: 0.25rem;
-  margin-top: 0.5rem;
+  margin-top: 1.25rem;
 }
 .entry .entry-content p {
   margin-bottom: 1rem;
