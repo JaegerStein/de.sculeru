@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Charakterbogen</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<h1>Charakterbogen</h1>
+
+<div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter character name">
+</div>
+
+<div>
+    <label for="class">Class:</label>
+    <input type="text" id="class" placeholder="Enter character class">
+</div>
+
+<div>
+    <label for="level">Level:</label>
+    <input type="number" id="level" placeholder="Enter character level">
+</div>
+
+<div>
+    <label for="race">Race:</label>
+    <input type="text" id="race" placeholder="Enter character race">
+</div>
+
+<div>
+    <label for="hp">Hit Points:</label>
+    <input type="number" id="hp" placeholder="Enter character HP">
+</div>
+
+<button onclick="saveCharacter()">Save Character</button>
+<button onclick="loadCharacter()">Load Character</button>
+
+<script src="script.js"></script>
+</body>
+</html>
