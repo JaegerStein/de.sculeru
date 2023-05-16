@@ -6,36 +6,42 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<h1>Charakterbogen</h1>
 
-<div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" placeholder="Enter character name">
-</div>
+<main>
+    <aside>
+        <button onclick="saveCharacter()">Speichern</button>
+        <button onclick="loadCharacter()">Laden</button>
+    </aside>
 
-<div>
-    <label for="class">Class:</label>
-    <input type="text" id="class" placeholder="Enter character class">
-</div>
+    <header>
+        <h1>Charakterbogen</h1>
+    </header>
 
-<div>
-    <label for="level">Level:</label>
-    <input type="number" id="level" placeholder="Enter character level">
-</div>
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placeholder="Enter character name">
+    </div>
 
-<div>
-    <label for="race">Race:</label>
-    <input type="text" id="race" placeholder="Enter character race">
-</div>
+    <div>
+        <label for="class">Class:</label>
+        <input type="text" id="class" placeholder="Enter character class">
+    </div>
 
-<div>
-    <label for="hp">Hit Points:</label>
-    <input type="number" id="hp" placeholder="Enter character HP">
-</div>
+    <div>
+        <label for="level">Level:</label>
+        <input type="number" id="level" placeholder="Enter character level">
+    </div>
 
-<button onclick="saveCharacter()">Save Character</button>
-<button onclick="loadCharacter()">Load Character</button>
+    <div>
+        <label for="race">Race:</label>
+        <input type="text" id="race" placeholder="Enter character race">
+    </div>
 
+    <div>
+        <label for="hp">Hit Points:</label>
+        <input type="number" id="hp" placeholder="Enter character HP">
+    </div>
+</main>
 <script src="script.js"></script>
 </body>
 </html>

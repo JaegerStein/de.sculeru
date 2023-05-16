@@ -1,21 +1,66 @@
 body {
   font-family: Arial, sans-serif;
-  padding: 20px;
+  margin: 0;
+  padding: 0;
+  background: #dde1e7;
 }
 
-h1 {
-  text-align: center;
+main {
+  position: relative;
+  width: 75ch;
+  margin: 0 auto;
+
+
+  header {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  div {
+    margin-bottom: 10px;
+
+    label {
+      display: inline-block;
+      width: 100px;
+    }
+
+    input {
+      width: 200px;
+    }
+  }
+
+  aside {
+    position: absolute;
+    top: 12rem;
+    left: -12rem;
+    width: 10rem;
+
+    button {
+      box-sizing: border-box;
+      padding: .5rem;
+      font-size: 1.5rem;
+      font-weight: lighter;
+      width: 10rem;
+      margin-bottom: 1rem;
+      background: #dde1e7;
+      border: none;
+      border-radius: 1000px;
+
+      box-shadow: -5px -5px 9px rgba(255, 255, 255, 0.45), 5px 5px 9px rgba(94, 104, 121, 0.3);
+
+      transition: all .125s ease-in-out;
+
+      &:hover {
+        /* give the buttons a nice hover effect, making them brighter */
+        cursor: pointer;
+        box-shadow: -10px -10px 18px rgba(255, 255, 255, 0.45), 10px 10px 18px rgba(94, 104, 121, 0.3);
+
+      }
+    }
+
+  }
 }
 
-div {
-  margin-bottom: 10px;
-}
 
-label {
-  display: inline-block;
-  width: 100px;
-}
 
-input {
-  width: 200px;
-}
