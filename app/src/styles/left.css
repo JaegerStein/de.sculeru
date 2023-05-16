@@ -66,6 +66,7 @@
   margin-bottom: 0.5rem;
 }
 #left-overlay nav #left-links-container ul li a {
+  margin-left: 1rem;
   font-size: 1rem;
   transition: all 0.125s ease;
   text-decoration: none;

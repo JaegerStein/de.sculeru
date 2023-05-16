@@ -1,7 +1,7 @@
 import React, {Dispatch, SetStateAction, useEffect} from 'react';
 import {CATEGORY, Category, CategoryTitleMap, OPEN, SELECTED} from '../utils/common';
 import Session from "../utils/Session";
-import {el, selAll} from "../utils/utils";
+import {el, firstLetter, selAll} from "../utils/utils";
 import {HTMLElementList} from "../utils/types";
 import Link, {LinkProps} from "../components/Link";
 import '../../styles/left.css';
@@ -81,9 +81,17 @@ const Left: React.FC = () => {
             <div id={LEFT_LINKS_CONTAINER}>
                 <h3>{title}</h3>
                 <ul id={LEFT_LINKS}>
-                    {links.map((link: LinkProps) => (
-                        <li key={'li-link-' + link.href}><Link {...link}/></li>
-                    ))}
+                    {links.map((link: LinkProps, index: number) => {
+                        const current = firstLetter(link.href);
+                        const previous = index > 0 ? firstLetter(links[index - 1].href) : '';
+
+                        return (
+                            <>
+                                {current !== previous && <li className="li-alpha-sort">{current}</li>}
+                                <li key={'li-link-' + link.href}><Link {...link}/></li>
+                            </>
+                        );
+                    })}
                 </ul>
             </div>
         </>

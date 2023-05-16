@@ -30,3 +30,6 @@ const loadJSON = async (url: string): Promise<any> => await (await load(url)).js
 const loadText = async (url: string): Promise<string> => await (await load(url)).text();
 
 export {loadJSON, loadText}
+
+const firstLetter = (str: string): string => str.charAt(0).toUpperCase();
+export {firstLetter}
