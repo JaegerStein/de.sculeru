@@ -1,8 +1,7 @@
-import React, {Dispatch, FC, Fragment, SetStateAction, useEffect} from 'react';
-import {CATEGORY, Category, CategoryTitleMap, OPEN, SELECTED} from '../utils/common';
+import React, {Dispatch, Fragment, SetStateAction, useEffect} from 'react';
+import {Category, CategoryTitleMap, OPEN} from '../utils/common';
 import Session from "../utils/Session";
-import {el, firstLetter, selAll} from "../utils/utils";
-import {HTMLElementList} from "../utils/types";
+import {el, firstLetter} from "../utils/utils";
 import Link, {LinkProps} from "../components/Link";
 import '../../styles/left.css';
 import Categories from "../components/Categories";
