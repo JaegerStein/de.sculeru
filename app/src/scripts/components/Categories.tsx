@@ -32,15 +32,15 @@ const Categories: FunctionComponent<CategoryProps> = ({onClick}: CategoryProps) 
     }
 
     const className = (icon: Category): string => `${CATEGORY} ${selected === icon ? 'selected' : ''}`;
-    const icon = (Icon: ComponentType<any>, c: Category): ReactNode =>
+    const renderIcon = (Icon: ComponentType<any>, c: Category): ReactNode =>
         <Icon id={c} className={className(c)} onClick={() => handleClick(c)}/>;
 
     return (
         <div id={CATEGORIES} className={CATEGORIES_CLASSNAME}>
-            {icon(LoreIcon, LORE)}
-            {icon(JournalIcon, JOUR)}
-            {icon(RulesIcon, RULE)}
-            {icon(ToolsIcon, TOOL)}
+            {renderIcon(LoreIcon, LORE)}
+            {renderIcon(JournalIcon, JOUR)}
+            {renderIcon(RulesIcon, RULE)}
+            {renderIcon(ToolsIcon, TOOL)}
         </div>
     );
 }
