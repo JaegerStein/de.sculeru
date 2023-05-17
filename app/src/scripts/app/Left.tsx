@@ -1,4 +1,4 @@
-import React, {Dispatch, SetStateAction, useEffect} from 'react';
+import React, {Dispatch, FC, Fragment, SetStateAction, useEffect} from 'react';
 import {CATEGORY, Category, CategoryTitleMap, OPEN, SELECTED} from '../utils/common';
 import Session from "../utils/Session";
 import {el, firstLetter, selAll} from "../utils/utils";
@@ -9,39 +9,6 @@ import Categories from "../components/Categories";
 
 const LEFT_LINKS_CONTAINER = 'left-links-container';
 const LEFT_LINKS = 'left-links';
-
-type SetTitle = Dispatch<SetStateAction<string>>;
-type SetLinks = Dispatch<SetStateAction<LinkProps[]>>;
-
-const select = (icon: HTMLElement, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
-    const id: Category = icon.id as Category;
-    setLinks(Session.entries(id).map(entry => ({
-        href: entry.title,
-        category: id,
-        children: entry.title
-    })));
-    Session.category = id;
-    setTitle(CategoryTitleMap.get(id)!);
-    icon.classList.add(SELECTED);
-}
-
-/**
- * Iterates through all category icons and removes the selected class, even if only one has it. This is still faster
- * than retrieving the actually selected icon from the DOM and removing the class from it.
- * @param icons - The list of category icons.
- */
-const deselect = (icons: HTMLElementList): void => {
-    icons.forEach((icon: HTMLElement) => icon.classList.remove(SELECTED));
-}
-
-const registerCategories = (icons: HTMLElementList, [setTitle, setLinks]: [SetTitle, SetLinks]): void => {
-    icons.forEach(icon => {
-        icon.onclick = () => {
-            deselect(icons);
-            select(icon, [setTitle, setLinks]);
-        }
-    });
-}
 
 const registerHamMenu = (): void => {
     const ham: HTMLElement | null = el('ham');
@@ -63,33 +30,43 @@ const registerHamMenu = (): void => {
     }
 }
 
+type SetTitle = Dispatch<SetStateAction<string>>;
+type SetLinks = Dispatch<SetStateAction<LinkProps[]>>;
+
 const Left: React.FC = () => {
     const [title, setTitle]: [string, SetTitle] = React.useState<string>('');
     const [links, setLinks]: [LinkProps[], SetLinks] = React.useState<LinkProps[]>([]);
 
+    function loadCategoryLinks(icon: Category) {
+        setLinks(Session.entries(icon).map(entry => ({
+            href: entry.title,
+            category: icon,
+            children: entry.title
+        })));
+        setTitle(CategoryTitleMap.get(icon)!);
+    }
+
     useEffect(() => {
-        const icons: HTMLElementList = selAll('.' + CATEGORY);
-        const category: Category | null = Session.category;
-        if (category) select(el(category)!, [setTitle, setLinks]);
-        registerCategories(icons, [setTitle, setLinks]);
+        Session.category && loadCategoryLinks(Session.category);
         registerHamMenu();
     }, []);
 
     return (
         <>
-            <Categories/>
+            <Categories onClick={loadCategoryLinks}/>
             <div id={LEFT_LINKS_CONTAINER}>
                 <h3>{title}</h3>
                 <ul id={LEFT_LINKS}>
                     {links.map((link: LinkProps, index: number) => {
-                        const current = firstLetter(link.href);
-                        const previous = index > 0 ? firstLetter(links[index - 1].href) : '';
+                        const current: string = firstLetter(link.href);
+                        const previous: string = index > 0 ? firstLetter(links[index - 1].href) : '';
 
                         return (
-                            <>
-                                {current !== previous && <li className="li-alpha-sort">{current}</li>}
+                            <Fragment key={'link-group-' + current + '-' + index}>
+                                {current !== previous &&
+                                    <li key={'li-alpha-sort-' + current} className="li-alpha-sort">{current}</li>}
                                 <li key={'li-link-' + link.href}><Link {...link}/></li>
-                            </>
+                            </Fragment>
                         );
                     })}
                 </ul>
