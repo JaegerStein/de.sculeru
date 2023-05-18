@@ -1,9 +1,6 @@
 import React, {Dispatch, FunctionComponent, ReactNode, SetStateAction, useEffect, useState} from "react";
 /* COMPONENTS */
 import Link, {LinkProps} from "./Link";
-/* ICONS */
-import {ReactComponent as ByDateIcon} from "../../assets/images/calendar.svg";
-import {ReactComponent as AlphabeticallyIcon} from "../../assets/images/a-z.svg";
 /* UTILS */
 import {firstLetter} from "../utils/utils";
 import Session from "../utils/Session";
