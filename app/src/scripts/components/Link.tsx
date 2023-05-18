@@ -3,9 +3,10 @@ import React, {ReactNode} from "react";
 import {open} from "../app/App";
 import Session from "../utils/Session";
 
-interface LinkProps  {
+interface LinkProps {
     href: string
     category: Category,
+    timestamp?: number
     children?: ReactNode
 }
 
@@ -14,7 +15,7 @@ const Link: React.FC<LinkProps> = ({href, category, children}: LinkProps) => {
     const openEntry = (event: React.MouseEvent): void => {
         event.preventDefault();
         if (category === Category.TOOLS) {
-            const url = Session.entry(href)?.id ?? null;
+            const url: string | null = Session.entry(href)?.id ?? null;
             if (url) window.open(url, "_blank")?.focus();
         } else open(href);
     }

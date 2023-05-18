@@ -6,8 +6,7 @@ import {LinkProps} from "../components/Link";
 import '../../styles/left.css';
 import Categories from "../components/Categories";
 import LeftLinks from "../components/LeftLinks";
-
-const LEFT_LINKS_CONTAINER = 'left-links-container';
+import {IndexEntry} from "../utils/types";
 
 const registerHamMenu = (): void => {
     const ham: HTMLElement | null = el('ham');
@@ -36,15 +35,16 @@ const Left: React.FC = () => {
     const [title, setTitle]: [string, SetTitle] = React.useState<string>('');
     const [links, setLinks]: [LinkProps[], SetLinks] = React.useState<LinkProps[]>([]);
 
-    useEffect(() => {
+    useEffect((): void => {
         Session.category && loadCategoryLinks(Session.category);
         registerHamMenu();
     }, []);
 
-    function loadCategoryLinks(icon: Category) {
-        setLinks(Session.entries(icon).map(entry => ({
+    function loadCategoryLinks(icon: Category): void {
+        setLinks(Session.entries(icon).map((entry: IndexEntry) => ({
             href: entry.title,
             category: icon,
+            timestamp: entry.last,
             children: entry.title
         })));
         setTitle(CategoryTitleMap.get(icon)!);
@@ -53,10 +53,7 @@ const Left: React.FC = () => {
     return (
         <>
             <Categories onClick={loadCategoryLinks}/>
-            <div id={LEFT_LINKS_CONTAINER}>
-                <h3>{title}</h3>
-                <LeftLinks links={links}/>
-            </div>
+            <LeftLinks title={title} links={links}/>
         </>
     );
 }

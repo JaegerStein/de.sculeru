@@ -1,7 +1,9 @@
 import React, {FunctionComponent, ReactNode} from "react";
 import Link, {LinkProps} from "./Link";
 import {firstLetter} from "../utils/utils";
+import {Category} from "../utils/common";
 
+const LEFT_LINKS_CONTAINER = 'left-links-container';
 const LEFT_LINKS = 'left-links';
 
 function renderLinks(links: LinkProps[]): ReactNode[] {
@@ -19,8 +21,14 @@ function renderLinks(links: LinkProps[]): ReactNode[] {
     return render;
 }
 
-interface LeftLinksProps {links: LinkProps[]}
+interface LeftLinksProps {
+    title: string
+    links: LinkProps[],
+}
 
-const LeftLinks: FunctionComponent<LeftLinksProps> = ({links}: LeftLinksProps) =>
-    <ul id={LEFT_LINKS}>{renderLinks(links)}</ul>
+const LeftLinks: FunctionComponent<LeftLinksProps> = ({title, links}: LeftLinksProps) =>
+    <div id={LEFT_LINKS_CONTAINER}>
+        <h3>{title}</h3>
+        <ul id={LEFT_LINKS}>{renderLinks(links)}</ul>
+    </div>
 export default LeftLinks;
