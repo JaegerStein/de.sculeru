@@ -48,10 +48,39 @@
 #left-overlay nav #categories svg:hover path:not(.stroke-fill), #left-overlay nav #categories svg.selected path:not(.stroke-fill) {
   fill: ivory;
 }
-#left-overlay nav #left-links-container h3 {
+#left-overlay nav #left-links-container {
+  margin-top: 1rem;
+}
+#left-overlay nav #left-links-container #left-links-sorter {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+#left-overlay nav #left-links-container #left-links-sorter h3 {
   font-weight: normal;
   font-size: 1.5rem;
   line-height: 2rem;
+}
+#left-overlay nav #left-links-container #left-links-sorter .wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  padding-right: 1rem;
+}
+#left-overlay nav #left-links-container #left-links-sorter .wrapper button {
+  height: 2rem;
+  font-size: 1rem;
+  border-radius: 0;
+  border: none;
+  background: none;
+  transition: all 0.125s ease-in-out;
+}
+#left-overlay nav #left-links-container #left-links-sorter .wrapper button:hover, #left-overlay nav #left-links-container #left-links-sorter .wrapper button.selected {
+  cursor: pointer;
+  color: ivory;
+  text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+  border-bottom: 2px solid ivory;
 }
 #left-overlay nav #left-links-container ul {
   padding-left: 1rem;

@@ -1,9 +1,15 @@
 import React, {FunctionComponent, ReactNode} from "react";
+/* COMPONENTS */
 import Link, {LinkProps} from "./Link";
+/* ICONS */
+import {ReactComponent as ByDateIcon} from "../../assets/images/calendar.svg";
+import {ReactComponent as AlphabeticallyIcon} from "../../assets/images/a-z.svg";
+/* UTILS */
 import {firstLetter} from "../utils/utils";
-import {Category} from "../utils/common";
+
 
 const LEFT_LINKS_CONTAINER = 'left-links-container';
+const LEFT_LINKS_SORTER = 'left-links-sorter';
 const LEFT_LINKS = 'left-links';
 
 function renderLinks(links: LinkProps[]): ReactNode[] {
@@ -26,9 +32,20 @@ interface LeftLinksProps {
     links: LinkProps[],
 }
 
-const LeftLinks: FunctionComponent<LeftLinksProps> = ({title, links}: LeftLinksProps) =>
-    <div id={LEFT_LINKS_CONTAINER}>
-        <h3>{title}</h3>
-        <ul id={LEFT_LINKS}>{renderLinks(links)}</ul>
-    </div>
+const LeftLinks: FunctionComponent<LeftLinksProps> = ({title, links}: LeftLinksProps) => {
+
+    return (
+        <div id={LEFT_LINKS_CONTAINER}>
+            <div id={LEFT_LINKS_SORTER}>
+                <h3>{title}</h3>
+                <div className="wrapper">
+                    <button>A-Z</button>
+                    <button>Datum</button>
+                </div>
+            </div>
+            <ul id={LEFT_LINKS}>{renderLinks(links)}</ul>
+        </div>
+    );
+}
+
 export default LeftLinks;
