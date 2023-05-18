@@ -6,7 +6,7 @@ import Session from "../utils/Session";
 interface LinkProps {
     href: string
     category: Category,
-    timestamp?: number
+    timestamp: number
     children?: ReactNode
 }
 

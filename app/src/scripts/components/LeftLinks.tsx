@@ -17,11 +17,33 @@ const LEFT_LINKS = 'left-links';
 const ALPHA_SORT = 'alpha-sort';
 const DATE_SORT = 'date-sort';
 
-function renderLinks(links: LinkProps[]): ReactNode[] {
+function renderLinks(links: LinkProps[], sorter: string): ReactNode[] {
     const render: ReactNode[] = [];
     let previous = "";
 
-    links.forEach((link: LinkProps) => {
+    if (sorter === DATE_SORT) {
+        const copy: LinkProps[] = [...links];
+        copy.sort((a: LinkProps, b: LinkProps) => b.timestamp - a.timestamp);
+
+        copy.forEach((link: LinkProps): void => {
+            const currentTimestamp: number = link.timestamp * 1000;
+            const currentDate: Date = new Date(currentTimestamp);
+            currentDate.toLocaleString("de-DE");
+            const currentDay: string = currentDate.getDate().toString();
+            const currentMonth: string = currentDate.toLocaleString('default', {month: 'long'});
+            const currentYear: string = currentDate.getFullYear().toString();
+
+            const resolvedDate: string = currentYear !== new Date().getFullYear().toString()
+                ? `${currentYear} ${currentMonth} ${currentDay}`
+                : `${currentMonth} ${currentDay}`;
+
+            if (resolvedDate !== previous)
+                render.push(<li key={'li-date-sort-' + currentTimestamp} className="li-date-sort">{resolvedDate}</li>);
+
+            previous = resolvedDate;
+            render.push(<li key={'li-link-' + link.href}><Link {...link}/></li>);
+        });
+    } else links.forEach((link: LinkProps) => {
         const current: string = firstLetter(link.href);
         if (current !== previous)
             render.push(<li key={'li-alpha-sort-' + current} className="li-alpha-sort">{current}</li>);
@@ -60,7 +82,7 @@ const LeftLinks: FunctionComponent<LeftLinksProps> = ({title, links}: LeftLinksP
                     {renderButton("Zuletzt", DATE_SORT)}
                 </div>
             </div>
-            <ul id={LEFT_LINKS}>{renderLinks(links)}</ul>
+            <ul id={LEFT_LINKS}>{renderLinks(links, selectedSorter)}</ul>
         </div>
     );
 }
