@@ -81,6 +81,19 @@ export default abstract class Session {
         e.forEach(title => Session.openEntry(title));
     }
 
+    /* SORTER */
+    private static _sorter: string = 'alpha-sort';
+    public static get sorter(): string { return Session._sorter; }
+    public static set sorter(sorter: string) {
+        Session._sorter = sorter;
+        store.setItem('sorter', sorter);
+    }
+
+    private static loadSorter(): void {
+        const sorter: string | null = store.getItem('sorter');
+        Session._sorter = sorter || 'alpha-sort';
+    }
+
     /**
      * Initializes the session from the local storage at startup.
      */
@@ -88,5 +101,6 @@ export default abstract class Session {
         await Session.loadIndex();
         Session.loadOpenEntries();
         Session.activeCategory();
+        Session.loadSorter();
     }
 }
