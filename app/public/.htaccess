@@ -6,4 +6,4 @@ RewriteRule ^index.html$ / [L,R=301]
 RewriteCond %{HTTP_HOST} ^sculeru.de [NC]
 RewriteRule ^(.*)$ https://www.sculeru.de/$1 [R=301,L]
 
-RewriteRule ^voelker/?$ tools/races/Spielbare%20V%C3%B6lker.html [L]
+RewriteRule ^voelker/?$ tools/races/Voelker.html [L]
