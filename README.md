@@ -1,2 +1,34 @@
 # Siebenlande
-![Screenshot 2023-05-18 at 14-35-47 Siebenlande.png](Screenshot%202023-05-18%20at%2014-35-47%20Siebenlande.png)
+Repository of the site https://sculeru.de. Very simple react app intended to be a static webviewer of an Obsidian knowledgebase.
+
+![preview.png](preview.png)
+
+## Knowledgebase
+
+Open `/app/public/kb` as an [obsidian.md](https://obsidian.md) vault.
+
+### Update KB Index
+Necessary to tell the app which files are available.    
+```bash
+python indexer.py
+```
+
+## Installation
+
+```bash
+cd app
+npm install
+```
+All further commands are executed in the `app` directory.
+
+## Usage
+
+```bash
+npm start
+```
+
+## Build
+
+```bash
+npm run build
+```
