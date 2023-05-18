@@ -1,3 +1,4 @@
+![typescript](https://badges.aleen42.com/src/typescript.svg) ![react](https://badges.aleen42.com/src/react.svg)
 # Siebenlande
 Repository of the site https://sculeru.de. Very simple react app intended to be a static webviewer of an Obsidian knowledgebase.
 
