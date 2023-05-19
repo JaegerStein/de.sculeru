@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
+                "file": "Legende/Zeitrechnung.md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
+                "file": "Legende/Zeitrechnung.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
+                "file": "Legende/Zeitrechnung.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regeln/Charakter/Eigenschaften/Eigenschaften.md"
+                "file": "Legende/Zeitrechnung.md"
               }
             }
           }
@@ -156,14 +156,16 @@
   },
   "active": "6972c820715f168f",
   "lastOpenFiles": [
+    "Regeln/Maßeinheiten.md",
+    "Legende/Zeitrechnung.md",
+    "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
+    "Regeln/Rettungswürfe.md",
     "Journal/Charaktere/Peretin.md",
     "Journal/Charaktere/Streichelzoo/Fionnsgeul Tarbh.md",
-    "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
     "Regeln/Charakter/Attribute.md",
     "Regeln/Charakter/Fähigkeiten.md",
     "Regeln/Charakter/Kompetenz.md",
     "Regeln/Inspiration.md",
-    "Regeln/Rettungswürfe.md",
     "Regeln/Regeln.md",
     "Journal/Questen/Fäulnis in Malravien.md",
     "Journal/Charaktere/Streichelzoo",
@@ -182,8 +184,6 @@
     "Legende/Geografie/Reiche/Herzogtümer/Malravien-WOTAN.md",
     "Journal/Journal-WOTAN.md",
     "Journal/Journal.md",
-    "Regeln/Rast.md",
-    "Regeln/Maßeinheiten.md",
     "!attachments/zauberstufen.bmp",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",
