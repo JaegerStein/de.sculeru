@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "d42bb441d29aefbe",
+        "id": "cd96ed521f0be25a",
         "type": "tabs",
         "children": [
           {
-            "id": "6972c820715f168f",
+            "id": "aa98ddd0667dc757",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Legende/Zeitrechnung.md",
+                "file": "Legende/Geografie/Siebenlande.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,7 +77,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 232.50260543823242
+    "width": 232.50260543823242,
+    "collapsed": true
   },
   "right": {
     "id": "45b4f5648646facb",
@@ -93,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Legende/Zeitrechnung.md",
+                "file": "Legende/Geografie/Siebenlande.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Legende/Zeitrechnung.md",
+                "file": "Legende/Geografie/Siebenlande.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Legende/Zeitrechnung.md"
+                "file": "Legende/Geografie/Siebenlande.md"
               }
             }
           }
@@ -154,9 +155,14 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6972c820715f168f",
+  "active": "aa98ddd0667dc757",
   "lastOpenFiles": [
     "Regeln/Maßeinheiten.md",
+    "Legende/Geografie/Siebenlande.md",
+    "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
+    "Legende/Geografie/Reiche/Königreiche/Padrinal.md",
+    "Journal/Questen/Fäulnis in Malravien.md",
+    "Legende/Geografie/Reiche/Königreiche",
     "Legende/Zeitrechnung.md",
     "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
     "Regeln/Rettungswürfe.md",
@@ -167,11 +173,9 @@
     "Regeln/Charakter/Kompetenz.md",
     "Regeln/Inspiration.md",
     "Regeln/Regeln.md",
-    "Journal/Questen/Fäulnis in Malravien.md",
     "Journal/Charaktere/Streichelzoo",
     "Regeln/Kampf/Resistenz.md",
     "Regeln/Charakter/Zauber.md",
-    "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
     "Journal/Questkarte.canvas",
     "Regeln/Allgemeine Begriffe.md",
     "Regeln/Kampf/Schadensarten-WOTAN.md",
@@ -182,8 +186,6 @@
     "Regeln/Charakter/Eigenschaften/Eigenschaften-WOTAN.md",
     "Legende/Legende.md",
     "Legende/Geografie/Reiche/Herzogtümer/Malravien-WOTAN.md",
-    "Journal/Journal-WOTAN.md",
-    "Journal/Journal.md",
     "!attachments/zauberstufen.bmp",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",
@@ -193,7 +195,6 @@
     "!attachments/geografie/reiche/herzogtuemer",
     "!attachments/geografie/reiche",
     "!attachments/geografie",
-    "!attachments",
-    "Legende/Geografie/Reiche/Herzogtümer"
+    "!attachments"
   ]
 }
