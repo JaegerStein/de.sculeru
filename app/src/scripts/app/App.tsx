@@ -23,7 +23,7 @@ export const closeAll = (): void => {
 
 const openLocally = (shorthand: string): void => {
     const entry = makeEntry(shorthand);
-    setOpenEntries([entry, ...openEntries]);
+    setOpenEntries([...openEntries, entry]);
 }
 
 const makeEntry = (title: string): ReactElement => {
