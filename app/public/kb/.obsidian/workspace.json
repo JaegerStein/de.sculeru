@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "cd96ed521f0be25a",
+        "id": "ca2fb01391115932",
         "type": "tabs",
         "children": [
           {
-            "id": "aa98ddd0667dc757",
+            "id": "84b14a423cb8fadb",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Legende/Geografie/Siebenlande.md",
+                "file": "Regeln/Charakter/Ausdauer.md",
                 "mode": "source",
                 "source": false
               }
@@ -77,8 +77,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 232.50260543823242,
-    "collapsed": true
+    "width": 232.50260543823242
   },
   "right": {
     "id": "45b4f5648646facb",
@@ -94,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Legende/Geografie/Siebenlande.md",
+                "file": "Regeln/Charakter/Ausdauer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Legende/Geografie/Siebenlande.md",
+                "file": "Regeln/Charakter/Ausdauer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Legende/Geografie/Siebenlande.md"
+                "file": "Regeln/Charakter/Ausdauer.md"
               }
             }
           }
@@ -155,10 +154,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "aa98ddd0667dc757",
+  "active": "84b14a423cb8fadb",
   "lastOpenFiles": [
-    "Regeln/Maßeinheiten.md",
+    "Regeln/Charakter/Ausdauer.md",
     "Legende/Geografie/Siebenlande.md",
+    "Regeln/Maßeinheiten.md",
     "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
     "Legende/Geografie/Reiche/Königreiche/Padrinal.md",
     "Journal/Questen/Fäulnis in Malravien.md",
@@ -185,7 +185,6 @@
     "Regeln/Charakter/Attribute-WOTAN.md",
     "Regeln/Charakter/Eigenschaften/Eigenschaften-WOTAN.md",
     "Legende/Legende.md",
-    "Legende/Geografie/Reiche/Herzogtümer/Malravien-WOTAN.md",
     "!attachments/zauberstufen.bmp",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",
