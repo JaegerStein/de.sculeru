@@ -69,7 +69,8 @@ h1, h2 {
 }
 #right-overlay #right-top-spacer {
   width: 100%;
-  aspect-ratio: 2/1;
+  aspect-ratio: 3/2;
+  padding-right: 1rem;
 }
 
 #ham {

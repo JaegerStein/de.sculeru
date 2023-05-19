@@ -1,4 +1,4 @@
-# Übliche Eigenschaften
+# Häufige Eigenschaften
 ## Bedrohlich
 Statt deines [[Attribute|Charismawertes]] kannst du zum [[Fähigkeiten|Einschüchtern]] Stärke verwenden. 
 ## Beidhändigkeit
@@ -11,5 +11,3 @@ In einem Umkreis von 60 Fuß nimmst du jede Lichtstufe als Tageslicht wahr. Bis 
 ## Raubtiersinne
 ## Stählerner Magen
 ## Ziegenhufe
-
-Test
