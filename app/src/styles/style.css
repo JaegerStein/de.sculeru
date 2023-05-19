@@ -125,10 +125,12 @@ h1, h2 {
   }
   #ham {
     display: block;
-    transition: transform 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
   }
   #ham.open {
     transform: rotate(90deg);
+    left: calc(100vw - 2.5rem - 2.5rem);
+    filter: drop-shadow(0 0 1rem ivory);
   }
   #under-ham {
     display: block;

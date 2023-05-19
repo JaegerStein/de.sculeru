@@ -123,10 +123,12 @@ h1, h2 { font-weight: normal; }
 
   #ham {
     display: block;
-    transition: transform .25s ease-in-out;
+    transition: all .25s ease-in-out;
 
     &.open {
       transform: rotate(90deg);
+      left: calc(100vw - 2.5rem - 2.5rem);
+      filter: drop-shadow(0 0 1rem ivory);
     }
   }
 
