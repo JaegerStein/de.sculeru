@@ -1,13 +1,13 @@
 {
 	"nodes":[
-		{"type":"text","text":"?","id":"c8709f08f5704f45","x":290,"y":-136,"width":60,"height":60,"color":"2"},
 		{"type":"file","file":"Journal/Questen/Fäulnis in Malravien.md","id":"d53b42f321b98580","x":-220,"y":-217,"width":239,"height":105,"color":"1"},
 		{"type":"text","text":"Peretin ist in die Niedermark geflohen","id":"63a155ee706799c0","x":-580,"y":-147,"width":220,"height":71,"color":"6"},
 		{"type":"text","text":"Er versteckt sich in einem alten Grabmal in den Bergen von Malravien","id":"dea3f468124ad842","x":-900,"y":-61,"width":240,"height":101,"color":"6"},
-		{"id":"0f5cf9167216c405","x":-780,"y":170,"width":250,"height":60,"color":"3","type":"text","text":"Was macht Peretin in diesem Grabmal?"},
+		{"type":"text","text":"Was macht Peretin in diesem Grabmal?","id":"0f5cf9167216c405","x":-780,"y":170,"width":250,"height":60,"color":"3"},
 		{"type":"text","text":"Warum wurde Peretin Nekromant?","id":"1fbdfaf23c2cdc25","x":-370,"y":40,"width":210,"height":80,"color":"3"},
 		{"type":"text","text":"Wie wurde Peretin Nekromant?","id":"832d43eccbb06c26","x":-20,"y":40,"width":182,"height":80,"color":"3"},
-		{"type":"text","text":"?","id":"152cd496dd45cf2a","x":-130,"y":200,"width":60,"height":60,"color":"2"}
+		{"type":"text","text":"?","id":"152cd496dd45cf2a","x":-130,"y":200,"width":60,"height":60,"color":"2"},
+		{"type":"text","text":"?","id":"c8709f08f5704f45","x":240,"y":-121,"width":60,"height":60,"color":"2"}
 	],
 	"edges":[
 		{"id":"0a3b53d112207a7d","fromNode":"d53b42f321b98580","fromSide":"bottom","toNode":"832d43eccbb06c26","toSide":"top"},
