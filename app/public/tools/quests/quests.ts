@@ -69,6 +69,7 @@ function drawEdges(context: Context, data: Questmap): void {
                             fromSide: string, toSide: string): void {
         const [fromX, fromY] = fromCoords;
         const [toX, toY] = toCoords;
+
         function control(): [number, number, number, number] {
             const controlOffset = 50;
 
@@ -263,8 +264,10 @@ function draw(data: Questmap): void {
     function render(): void {
         if (needsRedraw) {
             context.clearRect(-window.innerWidth / 2, -window.innerHeight / 2, window.innerWidth * 2, window.innerHeight * 2);
+
             drawEdges(context, data);
             drawNodes(context, data.nodes);
+
             needsRedraw = false;
         }
         requestAnimationFrame(render);
