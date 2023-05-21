@@ -70,10 +70,42 @@ function drawNodes(context: Context, nodes: Node[]): void {
             context.fill();
         }
 
+        function drawText(): void {
+
+            function extractTitle(file: string): string {
+                const parts = file.split('/');
+                const name = parts[parts.length - 1];
+                return name.replace('.md', '');
+            }
+
+            const text = node.file ? extractTitle(node.file) : node.text!;
+
+            const maxFontSize = 128;
+            const minFontSize = 12;
+
+            let fontSize = maxFontSize;
+
+            while (fontSize > minFontSize) {
+                context.font = `${fontSize}px Arial`;
+                const textWidth = context.measureText(text).width;
+                const textHeight = fontSize;
+                if (textWidth < node.width && textHeight < node.height) break;
+                fontSize--;
+            }
+
+            context.fillStyle = 'ivory';
+            context.textAlign = 'center';
+            context.textBaseline = 'middle';
+
+
+            context.fillText(text, node.x + node.width / 2, node.y + node.height / 2);
+        }
+
         drawShadow();
         context.beginPath();
         drawRect();
         fillRect();
+        drawText();
         context.closePath();
     }
 
