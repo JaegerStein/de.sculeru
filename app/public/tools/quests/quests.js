@@ -39,7 +39,7 @@ function drawEdges(context, data) {
         const [fromX, fromY] = fromCoords;
         const [toX, toY] = toCoords;
         function control() {
-            const controlOffset = 66;
+            const controlOffset = 50;
             let controlX1 = fromX;
             let controlY1 = fromY;
             let controlX2 = toX;

@@ -70,7 +70,7 @@ function drawEdges(context: Context, data: Questmap): void {
         const [fromX, fromY] = fromCoords;
         const [toX, toY] = toCoords;
         function control(): [number, number, number, number] {
-            const controlOffset = 66;
+            const controlOffset = 50;
 
             let controlX1 = fromX;
             let controlY1 = fromY;
