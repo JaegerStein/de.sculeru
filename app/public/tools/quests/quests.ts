@@ -20,16 +20,16 @@ interface Questmap {
     nodes: Node[];
     edges: Edge[];
 }
-const color = (colorID: number | undefined): string => {
+const color = (colorID: number | undefined, alpha?: number): string => {
     const colorMap = {
-        1: '#ff6666',
-        2: '#ffa500',
-        3: '#ffff99',
-        4: '#99ff99',
-        5: '#99ffff',
-        6: '#9999ff',
+        1: '255 128 128',
+        2: '255 128 0',
+        3: '255 255 128',
+        4: '128 255 128',
+        5: '128 255 255',
+        6: '128 128 255',
     }
-    return colorMap[colorID as keyof typeof colorMap] || '#666';
+    return `rgba(${colorMap[colorID as keyof typeof colorMap] || '#666'} / ${alpha || 1})`;
 }
 type Canvas = HTMLCanvasElement;
 type Context = CanvasRenderingContext2D;
@@ -50,17 +50,37 @@ function setupCanvas(): [Canvas, Context] {
 }
 
 function drawNodes(context: Context, nodes: Node[]): void {
-    nodes.forEach((node: Node) => {
+    function drawNode(node: Node): void {
+        function drawShadow(): void {
+            context.shadowColor = 'rgba(0 0 0 / .5)';
+            context.shadowBlur = 8;
+            context.shadowOffsetX = 4;
+            context.shadowOffsetY = 4;
+        }
+
+        function drawRect(): void {
+            context.roundRect(node.x, node.y, node.width, node.height, 16);
+            context.lineWidth = 4;
+            context.strokeStyle = color(node.color);
+            context.stroke();
+        }
+
+        function fillRect(): void {
+            context.fillStyle = color(node.color, .5);
+            context.fill();
+        }
+
+        drawShadow();
         context.beginPath();
-        context.roundRect(node.x, node.y, node.width, node.height, 16);
-        context.lineWidth = 4;
-        context.strokeStyle = '#000';
-        context.stroke();
-
-        context.fillStyle = color(node.color);
-        context.fill();
-
+        drawRect();
+        fillRect();
         context.closePath();
+    }
+
+    nodes.forEach((node: Node) => {
+        context.save();
+        drawNode(node);
+        context.restore();
     });
 }
 

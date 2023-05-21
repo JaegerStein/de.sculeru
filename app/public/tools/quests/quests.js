@@ -1,14 +1,14 @@
 "use strict";
-const color = (colorID) => {
+const color = (colorID, alpha) => {
     const colorMap = {
-        1: '#ff6666',
-        2: '#ffa500',
-        3: '#ffff99',
-        4: '#99ff99',
-        5: '#99ffff',
-        6: '#9999ff',
+        1: '255 128 128',
+        2: '255 128 0',
+        3: '255 255 128',
+        4: '128 255 128',
+        5: '128 255 255',
+        6: '128 128 255',
     };
-    return colorMap[colorID] || '#666';
+    return `rgba(${colorMap[colorID] || '#666'} / ${alpha || 1})`;
 };
 const el = (id) => document.getElementById(id);
 function resizeCanvas(canvas) {
@@ -23,15 +23,33 @@ function setupCanvas() {
     return [canvas, context];
 }
 function drawNodes(context, nodes) {
-    nodes.forEach((node) => {
+    function drawNode(node) {
+        function drawShadow() {
+            context.shadowColor = 'rgba(0 0 0 / .5)';
+            context.shadowBlur = 8;
+            context.shadowOffsetX = 4;
+            context.shadowOffsetY = 4;
+        }
+        function drawRect() {
+            context.roundRect(node.x, node.y, node.width, node.height, 16);
+            context.lineWidth = 4;
+            context.strokeStyle = color(node.color);
+            context.stroke();
+        }
+        function fillRect() {
+            context.fillStyle = color(node.color, .5);
+            context.fill();
+        }
+        drawShadow();
         context.beginPath();
-        context.roundRect(node.x, node.y, node.width, node.height, 16);
-        context.lineWidth = 4;
-        context.strokeStyle = '#000';
-        context.stroke();
-        context.fillStyle = color(node.color);
-        context.fill();
+        drawRect();
+        fillRect();
         context.closePath();
+    }
+    nodes.forEach((node) => {
+        context.save();
+        drawNode(node);
+        context.restore();
     });
 }
 function draw(data) {
@@ -68,7 +86,7 @@ function draw(data) {
     }
     function render() {
         if (needsRedraw) {
-            context.clearRect(-canvas.width / 2, -canvas.height / 2, window.innerWidth * 2, window.innerHeight * 2);
+            context.clearRect(-window.innerWidth / 2, -window.innerHeight / 2, window.innerWidth * 2, window.innerHeight * 2);
             drawNodes(context, data.nodes);
             needsRedraw = false;
         }
