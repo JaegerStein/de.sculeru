@@ -49,6 +49,73 @@ function setupCanvas(): [Canvas, Context] {
     return [canvas, context];
 }
 
+function drawEdges(context: Context, data: Questmap): void {
+    function getSideCoords(node: Node, side: string): [number, number] {
+        const [x, y, width, height] = [node.x, node.y, node.width, node.height];
+
+        switch (side) {
+            // @formatter:off
+            case 'left': return [x, y + height / 2];
+            case 'right': return [x + width, y + height / 2];
+            case 'top': return [x + width / 2, y];
+            case 'bottom': return [x + width / 2, y + height];
+            default: return [x, y];
+            // @formatter:on
+        }
+    }
+
+    function drawCurvedEdge(context: Context,
+                            fromCoords: [number, number], toCoords: [number, number],
+                            fromSide: string, toSide: string): void {
+        const [fromX, fromY] = fromCoords;
+        const [toX, toY] = toCoords;
+        function control(): [number, number, number, number] {
+            const controlOffset = 66;
+
+            let controlX1 = fromX;
+            let controlY1 = fromY;
+            let controlX2 = toX;
+            let controlY2 = toY;
+
+            if (fromSide === 'left') controlX1 -= controlOffset;
+            else if (fromSide === 'right') controlX1 += controlOffset;
+            else if (fromSide === 'top') controlY1 -= controlOffset;
+            else if (fromSide === 'bottom') controlY1 += controlOffset;
+
+            if (toSide === 'left') controlX2 -= controlOffset;
+            else if (toSide === 'right') controlX2 += controlOffset;
+            else if (toSide === 'top') controlY2 -= controlOffset;
+            else if (toSide === 'bottom') controlY2 += controlOffset;
+
+            return [controlX1, controlY1, controlX2, controlY2];
+        }
+
+        const [controlX1, controlY1, controlX2, controlY2] = control();
+
+        context.beginPath();
+        context.moveTo(fromX, fromY);
+        context.bezierCurveTo(controlX1, controlY1, controlX2, controlY2, toX, toY);
+        context.lineWidth = 4;
+        context.strokeStyle = 'ivory';
+        context.stroke();
+        context.closePath();
+    }
+
+    const [nodes, edges] = [data.nodes, data.edges];
+
+    edges.forEach((edge: Edge) => {
+        const fromNode = nodes.find((node: Node) => node.id === edge.fromNode);
+        const toNode = nodes.find((node: Node) => node.id === edge.toNode);
+
+        if (!fromNode || !toNode) return;
+
+        const fromSideCoords = getSideCoords(fromNode, edge.fromSide);
+        const toSideCoords = getSideCoords(toNode, edge.toSide);
+
+        drawCurvedEdge(context, fromSideCoords, toSideCoords, edge.fromSide, edge.toSide);
+    });
+}
+
 function drawNodes(context: Context, nodes: Node[]): void {
     function drawNode(node: Node): void {
         function drawShadow(): void {
@@ -78,7 +145,34 @@ function drawNodes(context: Context, nodes: Node[]): void {
                 return name.replace('.md', '');
             }
 
+            function wrapText(word: string[], fontSize: number, maxWidth: number): string[] {
+
+                function measureTextWidth(text: string, fontSize: number): number {
+                    context.font = `${fontSize}px Arial`;
+                    return context.measureText(text).width;
+                }
+
+                const lines: string[] = [];
+                let currentLine = words[0] || '';
+
+                for (let i = 1; i < words.length; i++) {
+                    const word = words[i];
+                    const line = `${currentLine} ${word}`;
+                    const lineWidth = measureTextWidth(line, fontSize);
+
+                    if (lineWidth <= maxWidth) currentLine = line;
+                    else {
+                        lines.push(currentLine);
+                        currentLine = word;
+                    }
+                }
+
+                lines.push(currentLine);
+                return lines;
+            }
+
             const text = node.file ? extractTitle(node.file) : node.text!;
+            const words = text.split(' ');
 
             const maxFontSize = 128;
             const minFontSize = 12;
@@ -87,18 +181,27 @@ function drawNodes(context: Context, nodes: Node[]): void {
 
             while (fontSize > minFontSize) {
                 context.font = `${fontSize}px Arial`;
-                const textWidth = context.measureText(text).width;
-                const textHeight = fontSize;
-                if (textWidth < node.width && textHeight < node.height) break;
+                const lines = wrapText(words, fontSize, node.width);
+                const totalHeight = lines.length * fontSize;
+                if (totalHeight < node.height) break;
                 fontSize--;
             }
+            fontSize = Math.floor(fontSize * .8);
 
             context.fillStyle = 'ivory';
             context.textAlign = 'center';
             context.textBaseline = 'middle';
 
+            const lines = wrapText(words, fontSize, node.width);
+            const lineHeight = fontSize;
 
-            context.fillText(text, node.x + node.width / 2, node.y + node.height / 2);
+            const textHeight = lines.length * lineHeight;
+            const startY = node.y + (node.height - textHeight + fontSize) / 2;
+
+            lines.forEach((line, index) => {
+                const y = startY + index * lineHeight;
+                context.fillText(line, node.x + node.width / 2, y);
+            });
         }
 
         drawShadow();
@@ -160,6 +263,7 @@ function draw(data: Questmap): void {
     function render(): void {
         if (needsRedraw) {
             context.clearRect(-window.innerWidth / 2, -window.innerHeight / 2, window.innerWidth * 2, window.innerHeight * 2);
+            drawEdges(context, data);
             drawNodes(context, data.nodes);
             needsRedraw = false;
         }

@@ -7,7 +7,7 @@
 		{"type":"text","text":"Warum wurde Peretin Nekromant?","id":"1fbdfaf23c2cdc25","x":-370,"y":40,"width":210,"height":80,"color":"3"},
 		{"type":"text","text":"Wie wurde Peretin Nekromant?","id":"832d43eccbb06c26","x":-20,"y":40,"width":182,"height":80,"color":"3"},
 		{"type":"text","text":"?","id":"152cd496dd45cf2a","x":-130,"y":200,"width":60,"height":60,"color":"2"},
-		{"type":"text","text":"?","id":"c8709f08f5704f45","x":240,"y":-121,"width":60,"height":60,"color":"2"}
+		{"type":"text","text":"?","id":"c8709f08f5704f45","x":280,"y":-91,"width":60,"height":60,"color":"2"}
 	],
 	"edges":[
 		{"id":"0a3b53d112207a7d","fromNode":"d53b42f321b98580","fromSide":"bottom","toNode":"832d43eccbb06c26","toSide":"top"},
