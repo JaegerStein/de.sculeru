@@ -32,7 +32,7 @@ Bei längerfristiger, konstanter Anstrengung - etwa beim Armdrücken, Tragen sch
 
 ## 4. Konstitutionsfähigkeiten
 ### Widerstand
-**Widerstand** gibt einen Bonus auf Konstitutions-[[Rettungswürfe|Rettungswürfe]] und [[Resistenz|Schmerzresistenz]] im Kampf.
+**Widerstand** gibt einen Bonus auf Konstitutions-[[Rettungswurf|Rettungswurf]] und [[Resistenz|Schmerzresistenz]] im Kampf.
 
 ## 5. Wahrnehmungsfähigkeiten
 *__Lippenlesen__ ist jetzt ein Talent.*
