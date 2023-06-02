@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Journal/Questen/Fäulnis in Malravien.md",
+                "file": "Regeln/Charakter/Ausdauer.md",
                 "mode": "source",
                 "source": false
               }
@@ -117,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Journal/Questen/Fäulnis in Malravien.md",
+                "file": "Regeln/Charakter/Ausdauer.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -134,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Journal/Questen/Fäulnis in Malravien.md",
+                "file": "Regeln/Charakter/Ausdauer.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -157,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Journal/Questen/Fäulnis in Malravien.md"
+                "file": "Regeln/Charakter/Ausdauer.md"
               }
             }
           }
@@ -181,8 +181,6 @@
   "active": "8c12b7dc056e4663",
   "lastOpenFiles": [
     "Regeln/Kampf/Rüstung.md",
-    "Regeln/Charakter/Ausdauer.md",
-    "Regeln/Rettungswurf.md",
     "Regeln/Allgemeine Begriffe.md",
     "Regeln/Kampf/Schadensarten.md",
     "Regeln/Kampf/Resistenz.md",
@@ -209,6 +207,7 @@
     "Regeln/Kampf/Schadensarten-WOTAN.md",
     "Regeln/Kampf/Resistenzen-WOTAN.md",
     "Regeln/Charakter/Zauber-WOTAN.md",
+    "Regeln/Charakter/Attribute-WOTAN.md",
     "!attachments/zauberstufen.bmp",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",
