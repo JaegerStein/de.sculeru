@@ -4,16 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "ca2fb01391115932",
+        "id": "8f1382211060dfe9",
         "type": "tabs",
         "children": [
           {
-            "id": "84b14a423cb8fadb",
+            "id": "8c12b7dc056e4663",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Regeln/Charakter/Ausdauer.md",
+                "file": "Journal/Questen/Fäulnis in Malravien.md",
                 "mode": "source",
                 "source": false
               }
@@ -43,8 +43,7 @@
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -73,7 +72,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Schwierig",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -98,8 +97,7 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -119,7 +117,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regeln/Charakter/Ausdauer.md",
+                "file": "Journal/Questen/Fäulnis in Malravien.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -136,7 +134,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regeln/Charakter/Ausdauer.md",
+                "file": "Journal/Questen/Fäulnis in Malravien.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -159,7 +157,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Regeln/Charakter/Ausdauer.md"
+                "file": "Journal/Questen/Fäulnis in Malravien.md"
               }
             }
           }
@@ -180,9 +178,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "ef93ab5f04ad79e6",
+  "active": "8c12b7dc056e4663",
   "lastOpenFiles": [
     "Regeln/Kampf/Rüstung.md",
+    "Regeln/Charakter/Ausdauer.md",
+    "Regeln/Rettungswurf.md",
     "Regeln/Allgemeine Begriffe.md",
     "Regeln/Kampf/Schadensarten.md",
     "Regeln/Kampf/Resistenz.md",
@@ -191,7 +191,6 @@
     "Journal/Questen/Fäulnis in Malravien.md",
     "Journal/Journal.md",
     "Journal/Questkarte.canvas",
-    "Regeln/Charakter/Ausdauer.md",
     "Legende/Geografie/Siebenlande.md",
     "Regeln/Maßeinheiten.md",
     "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
@@ -199,6 +198,7 @@
     "Legende/Geografie/Reiche/Königreiche",
     "Legende/Zeitrechnung.md",
     "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
+    "Regeln/Rettungswürfe.md",
     "Journal/Charaktere/Peretin.md",
     "Journal/Charaktere/Streichelzoo/Fionnsgeul Tarbh.md",
     "Regeln/Charakter/Attribute.md",
@@ -209,7 +209,6 @@
     "Regeln/Kampf/Schadensarten-WOTAN.md",
     "Regeln/Kampf/Resistenzen-WOTAN.md",
     "Regeln/Charakter/Zauber-WOTAN.md",
-    "Regeln/Charakter/Attribute-WOTAN.md",
     "!attachments/zauberstufen.bmp",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",
