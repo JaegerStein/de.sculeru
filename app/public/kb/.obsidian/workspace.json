@@ -8,18 +8,6 @@
         "type": "tabs",
         "children": [
           {
-            "id": "8c12b7dc056e4663",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Regeln/Charakter/Ausdauer.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "bf78514d455300f3",
             "type": "leaf",
             "state": {
@@ -32,18 +20,19 @@
             }
           },
           {
-            "id": "31de4aa7dd655db3",
+            "id": "a64a5259177d6231",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Regeln/Kampf/Schadensarten.md",
+                "file": "Regeln/Charakter/Ausdauer.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -178,15 +167,16 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "8c12b7dc056e4663",
+  "active": "a64a5259177d6231",
   "lastOpenFiles": [
-    "Regeln/Kampf/Rüstung.md",
     "Regeln/Allgemeine Begriffe.md",
+    "Journal/Questen/Fäulnis in Malravien.md",
+    "Regeln/Kampf/Rüstung.md",
     "Regeln/Kampf/Schadensarten.md",
     "Regeln/Kampf/Resistenz.md",
+    "Regeln/Charakter/Ausdauer.md",
     "Regeln/Charakter/Zauber.md",
     "Regeln/Charakter/Kompetenz.md",
-    "Journal/Questen/Fäulnis in Malravien.md",
     "Journal/Journal.md",
     "Journal/Questkarte.canvas",
     "Legende/Geografie/Siebenlande.md",

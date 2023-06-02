@@ -30,9 +30,17 @@ Nimmt der Charakter Schaden in Höhe der Gesamtausdauer aus einer einzigen Quell
 
 # Verletzungen
 
-WIP Verletzungen passieren, wenn Spielercharaktere beim Verteidigen eine **1** werfen und dadurch Schaden kassieren. Verletzungen sinken die maximale Ausdauer, bis diese behandelt wurden.
+Verletzungen passieren, wenn Spielercharaktere beim Verteidigen eine **1** werfen und dadurch Schaden kassieren. Verletzungen senken temporär die maximale Ausdauer und müssen außerhalb des Kampfes behandelt werden, ansonsten können sie schlimmer werden.
+
+Immer, wenn Spielercharaktere beim Verteidigen eine **1** werfen, erleiden sie eine Verletzung in Höhe des erlittenen Schadens. Auch außerhalb eines Kampfes können Spielercharaktere im Ermessen des Spielleiters Verletzungen erleiden, wenn dies narrativ passend ist. Ein Charakter kann auch mehrere Wunden gleichzeitig haben, die separat behandelt werden müssen.
+
+Bei jeder [[Rast|Langen Rast]] können Verletzungen entweder schlimmer werden, ihren Status beibehalten, oder besser werden. Für jede Verletzung wird separat ein Zähigkeits-Rettungswurf geworfen, der 2 **SG** besitzt: Damit die Wunde sich um **+1** verbessert ist der **SG 10 + Wundstufe**; damit die Wunde gleich bleibt ist der **SG 10**. Besteht man diesen Rettungswurf nicht, verschlechtert sich die Wunde um **-1**.
+
+Versuche der Wundbehandlung, etwa durch *Heilkunde*, zählen als Bonus auf den Rettungswurf des Verletzten in Höhe des **Heilkunde-Wurfes über 10**. Bei erfolgreicher Wundbehandlung und gelungenem Rettungswurf errechnet sich der Grad der Wundheilung durch **1W4** statt einer bloßen **+1**. Auch hierfür muss für jede Wunde einzeln geworfen werden.
+
+Wurde eine Verletzung **3-mal** erfolgreich behandelt und hat sich währenddessen nicht verschlechtert, regeneriert sie ab sofort automatisch **1W4** pro Langer Rast, auch ohne Rettungswürfe.
 
 # Tod
 
 Ein Spielercharakter stirbt, wenn dessen Ausdauer auf den Negativwert der normalen Ausdauer sinkt, die maximale Ausdauer auf 0 sinkt, oder ein Attribut den Wert 0 annimmt.
-NSC sind sterben fast immer, sobald ihre Ausdauer auf 0 fällt.
+NSC sterben fast immer, sobald ihre Ausdauer auf 0 fällt.
