@@ -13,7 +13,7 @@ Jede Fähigkeit ist einem der 8 Attribute zugeordnet. Falls bei einem Wurf ein F
 Bei längerfristiger, konstanter Anstrengung - etwa beim Armdrücken, Tragen schwerer Lasten, oder bei Aufstemmen eines Tores - kommt **Kraftakt** zum Einsatz.
 
 ## 2. Athletikfähigkeiten
-*Hier waren früher auch noch __Reiten__ und __Schwimmen__, aber die machen als Fähigkeiten nicht viel Sinn, weil es nur selten einen Grund gibt, diese über __+1__ hinaus zu entwickeln. Stattdessen sind diese nun kostenlose [[Talent|Talente]], die man abhängig von der Hintergrundgeschichte eben beherrscht oder nicht. Z.B. ist es fragwürdig, ob ein zweieinhalb Meter große Minotaure reiten kann; auf was?*
+*Hier waren früher auch noch __Reiten__ und __Schwimmen__, aber die machen als Fähigkeiten nicht viel Sinn, weil es nur selten einen Grund gibt, diese über __+1__ hinaus zu entwickeln. Stattdessen sind diese nun kostenlose [[Talent|Talent]], die man abhängig von der Hintergrundgeschichte eben beherrscht oder nicht. Z.B. ist es fragwürdig, ob ein zweieinhalb Meter große Minotaure reiten kann; auf was?*
 ### Akrobatik
 **Akrobatik** hilft auf unwegsamen Gelände das Gleichgewicht zu halten, beim Überqueren von Hindernissen, sowie beim Springen, Abrollen, Radschlagen,  etc.
 ### Heimlichkeit
@@ -65,7 +65,7 @@ In **Heilkunde** geübte Charaktere kennen sich mit dem (un)menschlichen Körper
 ### Auftreten
 **Auftreten** beschreibt eine Vielzahl von künstlerischen Fähigkeiten, die für jeden guten Darsteller nötig sind. Diese sind: **Gesang**, **Komik**, **Redekunst**, **Schauspiel**, und **Tanzen**.
 ### Einschüchtern
-**Einschüchtern** lässt Feinde demoralisiert zurück, sichert die Fügsamkeit von zart Besaiteten, und überzeugt andere vom eigenen Standpunkt ohne deren Einverständnis. Rückständige Barbaren mit der Eloquenz eines Wildtieres können durch die [[Eigenschaften|Eigenschaften]] *Bedrohlich* oder ein entsprechendes Talent statt Charisma auch Stärke für diese Fähigkeit nutzen.
+**Einschüchtern** lässt Feinde demoralisiert zurück, sichert die Fügsamkeit von zart Besaiteten, und überzeugt andere vom eigenen Standpunkt ohne deren Einverständnis. Rückständige Barbaren mit der Eloquenz eines Wildtieres können durch die [[Eigenschaft|Eigenschaft]] *Bedrohlich* oder ein entsprechendes Talent statt Charisma auch Stärke für diese Fähigkeit nutzen.
 ### Mit Tieren Umgehen
 **Mit Tieren Umgehen** erleichtert es, verängstigte Pferde zu beruhigen, bissige Hunde zu besänftigen, und wilde Wölfe zu verschrecken. Diese Fähigkeit fungiert zudem als Bonus auf **alle Attributswürfe** von Tierbegleitern.
 ### Täuschen

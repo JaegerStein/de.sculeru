@@ -6,11 +6,18 @@ Um einen Gegner zu treffen, muss der Schütze einen unverteidigten Angriffswurf 
 
 Die nachfolgende Tabelle gibt die maximale (inklusive) Reichweite in [[Maßeinheiten|Fuß]] pro Waffenart für jeden Schwierigkeitsgrad an:
 
-|          | 10 | 15 | 20 |
-|:---------|:--:|:--:|:--:|
-|**Wurfwaffen**| 15'| 30'| 60'|
-|**Bogen**     | 30'| 60'|120'|
-|**Armbrust**  | 45'| 90'|180'|
+|          | 10 | 15 | 20 | 30 | 40 |
+|:---------|:--:|:--:|:--:|:--:|:--:|
+|**Wurfwaffen**| 15'| 30'| 60'|120'|240'|
+|**Bogen**     | 30'| 60'|120'|240'|480'|
+|**Armbrust**  | 45'| 90'|180'|360'|720'|
+
+*Mit 'ner Armbrust auf 216 Meter treffen, nicht schlecht...*
 
 ### Schadenspotenzial
-Das Schadenspotenzial eines Fernkampfangriff ist abhängig von den Schadenswürfeln des verwendeten Geschosses. Diese sind üblicherweise **W4**, **W6** oder **W8**. Die Anzahl der verwendeten Würfel ist abhängig vom Wurfergebnis des Fernkampfangriffs über dem SG
+Das Schadenspotenzial eines Fernkampfangriff ist abhängig von den Schadenswürfeln des verwendeten Geschosses. Diese sind üblicherweise **W4**, **W6** oder **W8**. Die Anzahl der verwendeten Würfel ist abhängig vom Wurfergebnis des Fernkampfangriffs über dem SG. Dabei werden immer ausreichend Würfel genutzt, um das Schadenspotenzial erreichen zu können (auch wenn dieses knapp überstiegen wird). Das Ergebnis der Schadenswürfel ist der letztendlich verursachte Schaden (vor Abzug etwaiger [[Rüstung|Rüstwerte]]).
+
+Ein Beispiel mit normalen Pfeilen, die **W4** verwenden:
+- *Das Wurfergebnis liegt __1__ über dem __SG__, der Schaden beträgt __1W4__*
+- Das Ergebnis liegt __4__ über dem __SG__, der Schaden ist immer noch __1W4__
+- *__5__ über __SG__, __2W4__, etc.
