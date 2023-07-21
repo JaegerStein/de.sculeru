@@ -17,6 +17,7 @@ Basiswert + Konstitutionsmod. x (0.1 x Basiswert)
 Einfach ausgedrückt: Für jeden Punkt in [[Attribute|Konstitution]] über **10** erhält man **10%** der Basisausdauer hinzu. Bei einer Konstitution von **20** erhält man **100%** zur Basisausdauer hinzu. Entsprechend verliert man Ausdauer bei Konstitutionswerten unter **10**. Wie üblich wird hierbei immer auf die nächste Ganzzahl abgerundet.
 
 Die Basisausdauer einer Kreatur wird vom Spielleiter festgelegt, beträgt für [[Größenkategorien|kleine]] Charaktere aber üblicherweise **15**, für mittelgroße **20**, und für große Charaktere **30**.
+
 # Kampfunfähigkeit
 Sobald die Ausdauer einer Kreatur auf **0** sinkt, können abhängig vom Kontext mehrere Dinge geschehen: Bei Nichtspielercharakteren (NSC) bedeutet dies für gewöhnlich, dass diese besiegt sind und sterben. Bei einer Tavernenschlägerei hingegen kann **0** Ausdauer schlichtweg  bedeuten, dass der Kontrahent ohnmächtig zu Boden geht. Im Übungskampf ist man besiegt, wenn einem die Puste ausgeht, was auch hier gleichbedeutend mit **0** Ausdauer ist.
 Trägt ein Gegner genug mentalen Schaden davon, kann dieser statt zu Boden zu gehen auch wahnsinnig werden und aus dem Kampf fliehen. Natürlich ist es jedem Charakter freigestellt, auch schon vor der unabwendbaren Niederlage zu fliehen.
@@ -29,7 +30,6 @@ Der Charakter muss insgesamt 3 attributslose Rettungswürfe mit einem [[Schwieri
 Nimmt der Charakter Schaden in Höhe der Gesamtausdauer aus einer einzigen Quelle gilt dieser augenblicklich als besiegt und kann nicht länger am Kampf teilnehmen.
 
 # Verletzungen
-
 Verletzungen passieren, wenn Spielercharaktere beim Verteidigen eine **1** werfen und dadurch Schaden kassieren. Verletzungen senken temporär die maximale Ausdauer und müssen außerhalb des Kampfes behandelt werden, ansonsten können sie schlimmer werden.
 
 Immer, wenn Spielercharaktere beim Verteidigen eine **1** werfen, erleiden sie eine Verletzung in Höhe des erlittenen Schadens. Auch außerhalb eines Kampfes können Spielercharaktere im Ermessen des Spielleiters Verletzungen erleiden, wenn dies narrativ passend ist. Ein Charakter kann auch mehrere Wunden gleichzeitig haben, die separat behandelt werden müssen.
@@ -41,6 +41,5 @@ Versuche der Wundbehandlung, etwa durch *Heilkunde*, zählen als Bonus auf den R
 Wurde eine Verletzung **3-mal** erfolgreich behandelt und hat sich währenddessen nicht verschlechtert, regeneriert sie ab sofort automatisch **1W4** pro Langer Rast, auch ohne Rettungswürfe.
 
 # Tod
-
 Ein Spielercharakter stirbt, wenn dessen Ausdauer auf den Negativwert der normalen Ausdauer sinkt, die maximale Ausdauer auf 0 sinkt, oder ein Attribut den Wert 0 annimmt.
 NSC sterben fast immer, sobald ihre Ausdauer auf 0 fällt.

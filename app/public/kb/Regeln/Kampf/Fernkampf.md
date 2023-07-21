@@ -1,16 +1,24 @@
-**Fernkampf** nutzt als [[Attribute|Attribut]] *Geschick* für Geschosswaffen (Bögen, Armbrüste, etc.) und *Athletik* für Wurfwaffen (Speere, Messer, Äxte, etc.).
+**Fernkampf** nutzt als [[Attribute|Attribut]]
+- *Geschick* für Geschosswaffen (Bögen, Armbrüste, etc.) und
+- *Athletik* für Wurfwaffen (Speere, Messer, Äxte, etc.)
 
-Der [[Schadensarten|Schadenstyp]] ist unabhängig davon und basiert auf der Art des Geschosses: Pfeile, Bolzen, etc. verursachen *Stichschaden*; Äxte, Wurfsterne und sonstige geworfene Klingenwaffen verursachen *Schnittschaden*; Steine, Metallkugeln und sonstige stumpfe Geschosse verursachen *Schmetterschaden*.
+*(Wer nur Steine gegen 'ne Wand schleudert oder so kann auch gerne Stärke verwenden)*
 
-Um einen Gegner zu treffen, muss der Schütze einen unverteidigten Angriffswurf mit festgelegtem **SG** bestehen, der abhängig von der Entfernung zum Ziel und der verwendeten Waffe ist.
+Der [[Schadensarten|Schadenstyp]] ist unabhängig davon und basiert auf der Art des Geschosses:
+- Pfeile, Bolzen, etc. verursachen *Stichschaden*;
+- Äxte, Wurfsterne und sonstige geworfene Klingenwaffen verursachen *Schnittschaden*;
+- Steine, Metallkugeln und sonstige stumpfe Geschosse verursachen *Schmetterschaden*.
+
+Um einen Gegner zu treffen, muss der Schütze einen unverteidigten Angriffswurf mit festgelegtem **[[Schwierigkeitsgrad|SG]]** bestehen, der abhängig von der Entfernung zum Ziel und der verwendeten Waffe ist.
 
 Die nachfolgende Tabelle gibt die maximale (inklusive) Reichweite in [[Maßeinheiten|Fuß]] pro Waffenart für jeden Schwierigkeitsgrad an:
 
-|          | 10 | 15 | 20 | 30 | 40 |
-|:---------|:--:|:--:|:--:|:--:|:--:|
-|**Wurfwaffen**| 15'| 30'| 60'|120'|240'|
+|          | 10 | 15 | 20 | 30 | 40 | _SG_ |
+|:---------|:--:|:--:|:--:|:--:|:--:|:--:|
+|**Wurf**      | 15'| 30'| 60'|120'|240'|
 |**Bogen**     | 30'| 60'|120'|240'|480'|
 |**Armbrust**  | 45'| 90'|180'|360'|720'|
+|**_Waffe_**| | |
 
 *Mit 'ner Armbrust auf 216 Meter treffen, nicht schlecht...*
 

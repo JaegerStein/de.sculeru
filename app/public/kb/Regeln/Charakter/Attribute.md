@@ -19,11 +19,11 @@ Charisma misst die Überzeugungskraft, Eloquenz und Führungsstärke eines Chara
 
 # Rechnen mit Attributen
 
-Der Bonus/Malus auf Attributswürfe ist linear und abhängig von der Differenz zur 10: Eine **11** in einem Attribut gibt einen Bonus von **_+1_**, eine **12** **_+2_**, etc. Eine **9** in einem Attribut gibt einen Malus von **_-1_**, eine **8** **_-2_**, etc. Das bestmögliche Ergebnis eines Attributswurfes ohne [Fähigkeiten](https://jaegerstein.github.io/#F%C3%A4higkeiten) ist **30** (Wurf **20** **_+10_** durch **20 _Attributswert_**).  
+Der Bonus/Malus auf Attributswürfe ist linear und abhängig von der Differenz zur 10: Eine **11** in einem Attribut gibt einen Bonus von **_+1_**, eine **12** **_+2_**, etc. Eine **9** in einem Attribut gibt einen Malus von **_-1_**, eine **8** **_-2_**, etc. Das bestmögliche Ergebnis eines Attributswurfes ohne [[Fähigkeiten]] ist **30** (Wurf **20** **_+10_** durch **20 _Attributswert_**).  
 Das schlechteste Ergebnis ist 1, selbst wenn ein Attribut den Wurf unter **1** verschlechtern würde. Übrige Minuspunkte übertragen sich nicht auf Boni aus anderen Quellen, etwa von Fähigkeiten. Attributswerte werden bei dieser Rechnung priorisiert, alles andere folgt danach.
 
 Ein Beispiel:  
-_Ein Charakter mit einem Attributswert von 5 und einem Fähigkeiteswert von 5 wirft eine 3. Durch das Attribut erhält er auf den Wurf einen Malus von -5. Die geworfene 3 wird auf 1 reduziert, der übrige -3 Malus verfällt. Durch den Fähigkeitswert erhält der Charakter +5 auf das bestehende Wurfergebniss. Das Endergebnis des Wurfes ist 6._
+_Ein Charakter mit einem Attributswert von 5 und einem Fähigkeitswert von 5 wirft eine 3. Durch das Attribut erhält er auf den Wurf einen Malus von -5. Die geworfene 3 wird auf 1 reduziert, der übrige -3 Malus verfällt. Durch den Fähigkeitswert erhält der Charakter +5 auf das bestehende Wurfergebnis. Das Endergebnis des Wurfes ist 6._
 
 # Attributskosten
 

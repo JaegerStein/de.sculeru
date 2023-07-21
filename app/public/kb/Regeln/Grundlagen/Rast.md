@@ -1,12 +1,12 @@
-Nach einem kräftezehrenden Kampf, am Ende eines langen Tages, oder vor einer großen Schlacht, können Charaktere sich nach Belieben dazu entscheiden zu rasten, um so ihre [Ausdauer](https://jaegerstein.github.io/#Ausdauer) zu regenerieren, von unliebsamen [Statusveränderungen](https://jaegerstein.github.io/#Statuseffekte) befreit zu werden, oder ihre Zauberplätze wieder aufzufüllen. Ein Charakter, der nicht mindestens **1 Ausdauerpunkt** übrig hat, kann nicht rasten und muss zuerst gerettet werden.
+Nach einem kräftezehrenden Kampf, am Ende eines langen Tages, oder vor einer großen Schlacht, können Charaktere sich nach Belieben dazu entscheiden zu rasten, um so ihre [[Ausdauer]] zu regenerieren, von unliebsamen [[Statuseffekt|Statusveränderungen]] befreit zu werden, oder ihre Zauberplätze wieder aufzufüllen. Ein Charakter, der nicht mindestens **1 Ausdauerpunkt** übrig hat, kann nicht rasten und muss zuerst gerettet werden.
 
 Rasten gibt es in zwei Varianten:
 
 ## Kurze Rast
 
-Eine Kurze Rast ist eine kleinere Verschnaufpause von etwa einer Stunde Dauer, die Charaktere nutzen können, um Verpflegung zu sich zu nehmen, leichte Wunden zu versorgen, oder andere einfache Aufgaben zu verrichten, die keine Anstregung erfordern.
+Eine Kurze Rast ist eine kleinere Verschnaufpause von etwa einer Stunde Dauer, die Charaktere nutzen können, um Verpflegung zu sich zu nehmen, leichte Wunden zu versorgen, oder andere einfache Aufgaben zu verrichten, die keine Anstrengung erfordern.
 
-Am Ende der Kurzen Rast regneriert der Charakter **2d6 + Konstitutions-Modifikator** Ausdauerpunkte.
+Am Ende der Kurzen Rast regeneriert der Charakter **2W6 + Konstitutions-Modifikator** Ausdauerpunkte.
 
 Ein Charakter kann nur zwei mal pro Tag eine Kurze Rast einlegen, um so Ausdauer zurückzugewinnen.
 

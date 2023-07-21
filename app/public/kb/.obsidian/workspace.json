@@ -4,19 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "2da99d57d3541b48",
+        "id": "6b5fa2489a3a426a",
         "type": "tabs",
         "children": [
           {
-            "id": "7b76f577887d21e5",
+            "id": "97979e375f945cf3",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Regeln/Kampf/Nahkampf.md",
-                "mode": "source",
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -77,7 +73,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 232.50260543823242
+    "width": 378.5
   },
   "right": {
     "id": "45b4f5648646facb",
@@ -93,7 +89,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Regeln/Kampf/Nahkampf.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +105,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Regeln/Kampf/Nahkampf.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +117,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -132,17 +126,15 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "Regeln/Kampf/Nahkampf.md"
-              }
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -154,46 +146,47 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "7b76f577887d21e5",
+  "active": "97979e375f945cf3",
   "lastOpenFiles": [
-    "!attachments/flank2.png",
-    "!attachments/flank1.png",
-    "!attachments/zauberstufen.bmp",
-    "!attachments/z5oo970s.bmp",
+    "Regeln/Kampf/Resistenz.md",
+    "Regeln/Kampf/Schadensarten.md",
+    "Regeln/Grundlagen/Allgemeine Begriffe.md",
+    "Regeln/Kampf/Rüstung.md",
+    "Regeln/Charakter/Ausdauer.md",
+    "Regeln/Kampf/Fernkampf.md",
+    "Regeln/Kampf/Schadensdurchdringung.md",
+    "Regeln/Grundlagen/Maßeinheiten.md",
     "Regeln/Kampf/Nahkampf.md",
-    "Regeln/Grundlagen/Inspiration.md",
+    "Regeln/Charakter/Eigenschaften/Eigenschaft.md",
+    "Regeln/Charakter/Talent.md",
     "Regeln/Grundlagen/Rettungswurf.md",
-    "Regeln/Regeln.md",
+    "Regeln/Kampf/Kampf.md",
+    "Regeln/Charakter/Statuseffekt.md",
+    "Regeln/Grundlagen/Vor- & Nachteil.md",
+    "Regeln/Charakter/Zauber.md",
     "Regeln/Charakter/Attribute.md",
     "Regeln/Grundlagen/Rast.md",
-    "Regeln/Charakter/Statuseffekt.md",
-    "Regeln/Grundlagen/Allgemeine Begriffe.md",
-    "Regeln/Charakter/Talent.md",
-    "Regeln/Charakter/Eigenschaften/Eigenschaft.md",
-    "Regeln/Kampf/Schadensdurchdringung.md",
+    "Regeln/Grundlagen/Schwierigkeitsgrad.md",
+    "Regeln/Charakter/Fähigkeiten.md",
+    "Regeln/Regeln.md",
+    "!attachments/zauberstufen.bmp",
+    "!attachments/malravien.jpg",
+    "!attachments/flank2.png",
+    "!attachments/flank1.png",
+    "!attachments/z5oo970s.bmp",
+    "Regeln/Grundlagen/Inspiration.md",
     "Regeln/Grundlagen",
-    "Regeln/Kampf/Fernkampf.md",
-    "Regeln/Charakter/Ausdauer.md",
     "Journal/Questen/Fäulnis in Malravien.md",
-    "Regeln/Kampf/Rüstung.md",
-    "Regeln/Kampf/Schadensarten.md",
-    "Regeln/Kampf/Resistenz.md",
-    "Regeln/Charakter/Zauber.md",
     "Regeln/Charakter/Kompetenz.md",
     "Journal/Journal.md",
     "Journal/Questkarte.canvas",
     "Legende/Geografie/Siebenlande.md",
-    "Regeln/Grundlagen/Maßeinheiten.md",
-    "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
-    "Legende/Geografie/Reiche/Königreiche/Padrinal.md",
     "Legende/Geografie/Reiche/Königreiche",
-    "Legende/Zeitrechnung.md",
     "Journal/Charaktere/Streichelzoo",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",
     "Regeln/Charakter",
     "Regeln/Kampf",
-    "!attachments/malravien.jpg",
     "!attachments/geografie/reiche/herzogtuemer",
     "!attachments/geografie/reiche",
     "!attachments/geografie"

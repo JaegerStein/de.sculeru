@@ -1,4 +1,4 @@
-Statuseffekte (oder Zustand) verändern die Fähigkeiten einer Kreatur auf unterschiedliche Weise und können durch [Zauber](https://jaegerstein.github.io/#Magie), [Talente](https://jaegerstein.github.io/#Talente), [Eigenschaften](https://jaegerstein.github.io/#Eigenschaften), bestimmte Attacken oder andere Effekte entstehen. Die meisten Statuseffekte, wie z.B. _blind_, sind Beeinträchtigungen, aber einige wenige, wie z.B. _unsichtbar_, können von Vorteil sein.
+Statuseffekte (oder Zustand) verändern die Fähigkeiten einer Kreatur auf unterschiedliche Weise und können durch [[Zauber]], [[Talent|Talente]], [[Eigenschaft|Eigenschaften]], bestimmte Attacken oder andere Effekte entstehen. Die meisten Statuseffekte, wie z.B. _blind_, sind Beeinträchtigungen, aber einige wenige, wie z.B. _unsichtbar_, können von Vorteil sein.
 
 Ein Zustand hält entweder so lange an, bis er aufgehoben wird (der Statuseffekt _liegend_ wird beispielsweise durch Aufstehen aufgehoben) oder für die festgelegte Dauer des Effektes. Abhängig vom Zustand kann diese Dauer auch unbegrenzt sein und dieser muss somit aktiv aufgehoben werden.
 
@@ -10,8 +10,8 @@ Die folgenden Definitionen geben an, was mit einer Kreatur geschieht, während s
 
 ## Blind
 
-Die Kreatur verliert die Fähigkeit zu sehen und versagt automatisch bei jedem [Wahrnehmungswurf](https://jaegerstein.github.io/#Attribute), der Sicht erfordert.  
-Die Kreatur hat zudem [Nachteil](https://jaegerstein.github.io/#Vorteil%20%26%20Nachteil) im [Kampf](https://jaegerstein.github.io/#Kampf), während Gegner im Kampf gegen diese Kreatur Vorteil haben. Der [Schwierigkeitsgrad](https://jaegerstein.github.io/#Schwierigkeitsgrade) für [Fernkampfangriffe](https://jaegerstein.github.io/#Fernkampf) steigt zudem um **_+10_**.
+Die Kreatur verliert die Fähigkeit zu sehen und versagt automatisch bei jedem [[Attribute|Wahrnehmungswurf]], der Sicht erfordert.  
+Die Kreatur hat zudem [[Vor- & Nachteil|Nachteil]] im [[Kampf]], während Gegner im Kampf gegen diese Kreatur Vorteil haben. Der [[Schwierigkeitsgrad]] für [[Fernkampf|Fernkampfangriffe]] steigt zudem um **_+10_**.
 
 ## Betört
 
@@ -24,7 +24,7 @@ Die Kreatur verliert die Fähigkeit zu hören und versagt automatisch bei Wahrne
 
 ## Erschöpft
 
-_Siehe auch **Schlaf** unter [Rast](https://jaegerstein.github.io/#Rast), WIP_
+_Siehe auch **Schlaf** unter [[Rast]], WIP_
 
 ## Verängstigt
 
