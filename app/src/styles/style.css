@@ -64,15 +64,6 @@ h1, h2 {
   z-index: 10;
 }
 
-#right-overlay {
-  padding-right: 1rem;
-}
-#right-overlay #right-top-spacer {
-  width: 100%;
-  aspect-ratio: 3/2;
-  padding-right: 1rem;
-}
-
 #ham {
   position: fixed;
   width: 2.5rem;

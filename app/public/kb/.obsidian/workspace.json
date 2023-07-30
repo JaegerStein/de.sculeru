@@ -13,8 +13,11 @@
             "state": {
               "type": "empty",
               "state": {}
+              "type": "empty",
+              "state": {}
             }
           }
+        ]
         ]
       }
     ],
@@ -44,7 +47,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Schwierig",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -69,12 +72,11 @@
               "state": {}
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 232.50260543823242
+    "width": 378.5
   },
   "right": {
     "id": "45b4f5648646facb",
@@ -118,7 +120,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": true
+                "useHierarchy": false
               }
             }
           },
@@ -128,14 +130,15 @@
             "state": {
               "type": "outline",
               "state": {}
+              "state": {}
             }
           }
-        ]
+        ],
+        "currentTab": 3
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -162,31 +165,30 @@
     "Journal/Charaktere/Peretin.md",
     "Journal/Charaktere/Streichelzoo/Fionnsgeul Tarbh.md",
     "Regeln/Charakter/Attribute.md",
+    "Regeln/Grundlagen/Rast.md",
+    "Regeln/Grundlagen/Schwierigkeitsgrad.md",
     "Regeln/Charakter/Fähigkeiten.md",
-    "Regeln/Charakter/Kompetenz.md",
-    "Regeln/Inspiration.md",
     "Regeln/Regeln.md",
-    "Journal/Charaktere/Streichelzoo",
-    "Regeln/Kampf/Resistenz.md",
-    "Regeln/Charakter/Zauber.md",
-    "Journal/Questkarte.canvas",
-    "Regeln/Allgemeine Begriffe.md",
-    "Regeln/Kampf/Schadensarten-WOTAN.md",
-    "Regeln/Kampf/Schadensarten.md",
-    "Regeln/Kampf/Resistenzen-WOTAN.md",
-    "Regeln/Charakter/Zauber-WOTAN.md",
-    "Regeln/Charakter/Attribute-WOTAN.md",
-    "Regeln/Charakter/Eigenschaften/Eigenschaften-WOTAN.md",
-    "Legende/Legende.md",
     "!attachments/zauberstufen.bmp",
+    "!attachments/malravien.jpg",
+    "!attachments/flank2.png",
+    "!attachments/flank1.png",
+    "!attachments/z5oo970s.bmp",
+    "Regeln/Grundlagen/Inspiration.md",
+    "Regeln/Grundlagen",
+    "Journal/Questen/Fäulnis in Malravien.md",
+    "Regeln/Charakter/Kompetenz.md",
+    "Journal/Journal.md",
+    "Journal/Questkarte.canvas",
+    "Legende/Geografie/Siebenlande.md",
+    "Legende/Geografie/Reiche/Königreiche",
+    "Journal/Charaktere/Streichelzoo",
     "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
     "Regeln/Charakter/Eigenschaften",
     "Regeln/Charakter",
     "Regeln/Kampf",
-    "!attachments/malravien.jpg",
     "!attachments/geografie/reiche/herzogtuemer",
     "!attachments/geografie/reiche",
-    "!attachments/geografie",
-    "!attachments"
+    "!attachments/geografie"
   ]
 }

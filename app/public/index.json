@@ -30,7 +30,7 @@
   {
     "id": "kb/Journal/Journal.md",
     "title": "Journal",
-    "last": 1684163195,
+    "last": 1685736001,
     "category": "journal",
     "type": "markdown"
   },
@@ -51,29 +51,8 @@
   {
     "id": "kb/Journal/Questen/F\u00e4ulnis in Malravien.md",
     "title": "F\u00e4ulnis in Malravien",
-    "last": 1684251555,
+    "last": 1685737557,
     "category": "journal",
-    "type": "markdown"
-  },
-  {
-    "id": "kb/Regeln/Allgemeine Begriffe.md",
-    "title": "Allgemeine Begriffe",
-    "last": 1684251555,
-    "category": "rules",
-    "type": "markdown"
-  },
-  {
-    "id": "kb/Regeln/Inspiration.md",
-    "title": "Inspiration",
-    "last": 1684251555,
-    "category": "rules",
-    "type": "markdown"
-  },
-  {
-    "id": "kb/Regeln/Ma\u00dfeinheiten.md",
-    "title": "Ma\u00dfeinheiten",
-    "last": 1684516145,
-    "category": "rules",
     "type": "markdown"
   },
   {
@@ -84,65 +63,135 @@
     "type": "markdown"
   },
   {
-    "id": "kb/Regeln/Rettungsw\u00fcrfe.md",
-    "title": "Rettungsw\u00fcrfe",
-    "last": 1684251555,
-    "category": "rules",
-    "type": "markdown"
-  },
-  {
     "id": "kb/Regeln/Charakter/Attribute.md",
     "title": "Attribute",
-    "last": 1684163195,
+    "last": 1685805492,
     "category": "rules",
     "type": "markdown"
   },
   {
     "id": "kb/Regeln/Charakter/Ausdauer.md",
     "title": "Ausdauer",
-    "last": 1684610426,
+    "last": 1685805092,
     "category": "rules",
     "type": "markdown"
   },
   {
     "id": "kb/Regeln/Charakter/F\u00e4higkeiten.md",
     "title": "F\u00e4higkeiten",
-    "last": 1684251555,
+    "last": 1685805092,
     "category": "rules",
     "type": "markdown"
   },
   {
     "id": "kb/Regeln/Charakter/Kompetenz.md",
     "title": "Kompetenz",
-    "last": 1684251555,
+    "last": 1685736142,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Charakter/Statuseffekt.md",
+    "title": "Statuseffekt",
+    "last": 1685805419,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Charakter/Talent.md",
+    "title": "Talent",
+    "last": 1685805196,
     "category": "rules",
     "type": "markdown"
   },
   {
     "id": "kb/Regeln/Charakter/Zauber.md",
     "title": "Zauber",
-    "last": 1684163195,
+    "last": 1685736164,
     "category": "rules",
     "type": "markdown"
   },
   {
-    "id": "kb/Regeln/Charakter/Eigenschaften/Eigenschaften.md",
-    "title": "Eigenschaften",
+    "id": "kb/Regeln/Charakter/Eigenschaften/Eigenschaft.md",
+    "title": "Eigenschaft",
+    "last": 1685804994,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Grundlagen/Allgemeine Begriffe.md",
+    "title": "Allgemeine Begriffe",
+    "last": 1685805396,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Grundlagen/Inspiration.md",
+    "title": "Inspiration",
+    "last": 1685803924,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Grundlagen/Ma\u00dfeinheiten.md",
+    "title": "Ma\u00dfeinheiten",
     "last": 1684516145,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Grundlagen/Rast.md",
+    "title": "Rast",
+    "last": 1685805344,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Grundlagen/Rettungswurf.md",
+    "title": "Rettungswurf",
+    "last": 1685805291,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Kampf/Fernkampf.md",
+    "title": "Fernkampf",
+    "last": 1685803769,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Kampf/Nahkampf.md",
+    "title": "Nahkampf",
+    "last": 1685805752,
     "category": "rules",
     "type": "markdown"
   },
   {
     "id": "kb/Regeln/Kampf/Resistenz.md",
     "title": "Resistenz",
-    "last": 1684251555,
+    "last": 1685805092,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Kampf/R\u00fcstung.md",
+    "title": "R\u00fcstung",
+    "last": 1685805092,
     "category": "rules",
     "type": "markdown"
   },
   {
     "id": "kb/Regeln/Kampf/Schadensarten.md",
     "title": "Schadensarten",
-    "last": 1684163195,
+    "last": 1685736209,
+    "category": "rules",
+    "type": "markdown"
+  },
+  {
+    "id": "kb/Regeln/Kampf/Schadensdurchdringung.md",
+    "title": "Schadensdurchdringung",
+    "last": 1685804365,
     "category": "rules",
     "type": "markdown"
   },

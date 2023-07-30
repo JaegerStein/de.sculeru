@@ -16,3 +16,15 @@ Intelligenz bestimmt die Lernfähigkeit und das logische Denkvermögen eines Cha
 Weisheit gibt das allgemeine Wissen eines Charakters über diverse Fähigkeiten an, die nicht zwangsläufig vom Muskelgedächtnis abhängig sind. Weisheit beeinflusst etwa die Qualität von handwerklichen Leistungen und bestimmt die Willenskraft.
 ## Charisma
 Charisma misst die Überzeugungskraft, Eloquenz und Führungsstärke eines Charakters. Charisma verändert nicht die körperliche Attraktivität, sehr wohl jedoch die Fähigkeit mit Worten zu betören.
+
+# Rechnen mit Attributen
+
+Der Bonus/Malus auf Attributswürfe ist linear und abhängig von der Differenz zur 10: Eine **11** in einem Attribut gibt einen Bonus von **_+1_**, eine **12** **_+2_**, etc. Eine **9** in einem Attribut gibt einen Malus von **_-1_**, eine **8** **_-2_**, etc. Das bestmögliche Ergebnis eines Attributswurfes ohne [[Fähigkeiten]] ist **30** (Wurf **20** **_+10_** durch **20 _Attributswert_**).  
+Das schlechteste Ergebnis ist 1, selbst wenn ein Attribut den Wurf unter **1** verschlechtern würde. Übrige Minuspunkte übertragen sich nicht auf Boni aus anderen Quellen, etwa von Fähigkeiten. Attributswerte werden bei dieser Rechnung priorisiert, alles andere folgt danach.
+
+Ein Beispiel:  
+_Ein Charakter mit einem Attributswert von 5 und einem Fähigkeitswert von 5 wirft eine 3. Durch das Attribut erhält er auf den Wurf einen Malus von -5. Die geworfene 3 wird auf 1 reduziert, der übrige -3 Malus verfällt. Durch den Fähigkeitswert erhält der Charakter +5 auf das bestehende Wurfergebnis. Das Endergebnis des Wurfes ist 6._
+
+# Attributskosten
+
+Attribute zu steigern kostet Charakterpunkte, die ausschließlich vom DM vergeben werden. Jeder Wert kostet Charakterpunkte abhängig von seiner Entfernung zum Grundwert **10**. Ein Attribut von **10** auf **11** zu erhöhen kostet **_1_** Punkt, von **11** auf **12** **_2_**, etc. Ein Attribut von **8** auf **9** zu erhöhen kostet **_2_** Punkte, von **9** auf **10** **_1_**, etc. Wer einen Wert von z.B. von **10** auf **15** erhöhen will darf **_1+2+3+4+5=15_** Punkte ausgeben.

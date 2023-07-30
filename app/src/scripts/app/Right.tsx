@@ -4,9 +4,10 @@ import '../../styles/right.css';
 
 const Right: React.FC = () => {
     return (
-        <>
+        <div id="right-overlay-top">
             <button type='button' onClick={closeAll}>Alle schließen</button>
-        </>
+            <span>Version 23-06-03</span>
+        </div>
     );
 };
 
