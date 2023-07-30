@@ -1,38 +1,35 @@
 {
   "main": {
-    "id": "fce5dbb48420aea6",
+    "id": "440476d66e0ea1d5",
     "type": "split",
     "children": [
       {
-        "id": "208d6fc075131ac3",
+        "id": "1a1f476e6fb641cb",
         "type": "tabs",
         "children": [
           {
-            "id": "70d1f11259360aef",
+            "id": "d90c08f7625bb2df",
             "type": "leaf",
             "state": {
               "type": "empty",
               "state": {}
-              "type": "empty",
-              "state": {}
             }
           }
-        ]
         ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "e07f5d525e09edaa",
+    "id": "f3b752cbc6bf7a1d",
     "type": "split",
     "children": [
       {
-        "id": "1544f48ab9bb4946",
+        "id": "74e19e01b7c19215",
         "type": "tabs",
         "children": [
           {
-            "id": "c5e05df0cdfedc21",
+            "id": "562d192b7398ea17",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -42,7 +39,7 @@
             }
           },
           {
-            "id": "bc46588fddeb06cf",
+            "id": "2aa352f01e72f9dd",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -57,15 +54,7 @@
             }
           },
           {
-            "id": "ec39c0f299de1293",
-            "type": "leaf",
-            "state": {
-              "type": "starred",
-              "state": {}
-            }
-          },
-          {
-            "id": "bb7dad0bb261307b",
+            "id": "fdada68e13994984",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -76,18 +65,18 @@
       }
     ],
     "direction": "horizontal",
-    "width": 378.5
+    "width": 300
   },
   "right": {
-    "id": "45b4f5648646facb",
+    "id": "2c221334becbce0b",
     "type": "split",
     "children": [
       {
-        "id": "7c1accc47f70f39c",
+        "id": "03d6aee5e78ffe4a",
         "type": "tabs",
         "children": [
           {
-            "id": "79cfacd6e96721c1",
+            "id": "f26a62db0f480f2b",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -103,7 +92,7 @@
             }
           },
           {
-            "id": "6f7c32de5e2b9225",
+            "id": "1dd1bf925c3dc735",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -114,31 +103,30 @@
             }
           },
           {
-            "id": "8270e16c6fa4b8b4",
+            "id": "c2b68dfbb4ddedf2",
             "type": "leaf",
             "state": {
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false
+                "useHierarchy": true
               }
             }
           },
           {
-            "id": "650fc6f7e1ec6ebe",
+            "id": "9cf6c8ee5abf767a",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {}
-              "state": {}
             }
           }
-        ],
-        "currentTab": 3
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -150,45 +138,6 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "70d1f11259360aef",
-  "lastOpenFiles": [
-    "Regeln/Charakter/Ausdauer.md",
-    "Regeln/Rettungswurf.md",
-    "Legende/Geografie/Siebenlande.md",
-    "Regeln/Maßeinheiten.md",
-    "Legende/Geografie/Reiche/Herzogtümer/Malravien.md",
-    "Legende/Geografie/Reiche/Königreiche/Padrinal.md",
-    "Journal/Questen/Fäulnis in Malravien.md",
-    "Legende/Geografie/Reiche/Königreiche",
-    "Legende/Zeitrechnung.md",
-    "Regeln/Charakter/Eigenschaften/Eigenschaften.md",
-    "Journal/Charaktere/Peretin.md",
-    "Journal/Charaktere/Streichelzoo/Fionnsgeul Tarbh.md",
-    "Regeln/Charakter/Attribute.md",
-    "Regeln/Grundlagen/Rast.md",
-    "Regeln/Grundlagen/Schwierigkeitsgrad.md",
-    "Regeln/Charakter/Fähigkeiten.md",
-    "Regeln/Regeln.md",
-    "!attachments/zauberstufen.bmp",
-    "!attachments/malravien.jpg",
-    "!attachments/flank2.png",
-    "!attachments/flank1.png",
-    "!attachments/z5oo970s.bmp",
-    "Regeln/Grundlagen/Inspiration.md",
-    "Regeln/Grundlagen",
-    "Journal/Questen/Fäulnis in Malravien.md",
-    "Regeln/Charakter/Kompetenz.md",
-    "Journal/Journal.md",
-    "Journal/Questkarte.canvas",
-    "Legende/Geografie/Siebenlande.md",
-    "Legende/Geografie/Reiche/Königreiche",
-    "Journal/Charaktere/Streichelzoo",
-    "Regeln/Charakter/Eigenschaften/Volkseigenschaften",
-    "Regeln/Charakter/Eigenschaften",
-    "Regeln/Charakter",
-    "Regeln/Kampf",
-    "!attachments/geografie/reiche/herzogtuemer",
-    "!attachments/geografie/reiche",
-    "!attachments/geografie"
-  ]
+  "active": "d90c08f7625bb2df",
+  "lastOpenFiles": []
 }
