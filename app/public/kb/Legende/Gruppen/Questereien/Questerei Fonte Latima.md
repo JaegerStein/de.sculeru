@@ -1,0 +1,3 @@
+#Questerei
+
+Die [[Questerei]] **Fonte Latima** war gegen Ende des [[Viertes Zeitalter|vergangenen Zeitalters]] die einzige, obgleich recht unbekannte Questerei der Stadt [[Studemont]] im Osten [[Padrinal|Padrinals]], finanziert vom damaligen Markgrafen [[Graf Stevano|Stevano von Latima]]. Der Angriff [[Matarvuld|Matarvulds]] ließ das Gildenhaus zerstört zurück, die Mitglieder verschollen. Heute erinnert sich niemand mehr an die Abenteurer Fonte Latimas.
