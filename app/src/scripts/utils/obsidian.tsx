@@ -3,7 +3,33 @@ import Session from "./Session";
 import {IndexEntry} from "./types";
 import {A} from "./utils";
 
+function IdHash(text: string): string {
+    let h: number = 0;
+    const l: number = text.length;
+    for (let i = 0; i < l; i++) h = (h << 5) - h + text.charCodeAt(i) | 0;
+    return (h >>> 0).toString(36);
+}
 
+class HeadingRenderer extends marked.Renderer {
+    heading(text: string, level: number, raw: string): string {
+        const id = IdHash(raw);
+        return `<h${level} id="${id}">${text}</h${level}>`;
+    }
+}
+
+marked.use({breaks: true, headerIds: false, mangle: false});
+marked.setOptions({renderer: new HeadingRenderer()});
+
+function removeFrontmatter(text: string): string {
+    const regex = /---\n(.*\n)*---\n/;
+    return text.replace(regex, '');
+}
+
+/**
+ * Resolves embedded images in the given text into HTML-Images using the !attachment folder
+ * @param text The text to format
+ * @returns The given text with embedded images formatted as HTML images
+ */
 function resolveEmbeddedImage(text: string): string {
     const regex = /!\[\[(.*?)]]/g;
     const regexWithWidth = /!\[\[(.*?)\|(.*?)]]/g;
@@ -20,6 +46,19 @@ function resolveEmbeddedImage(text: string): string {
     return format;
 }
 
+// still broken TODO
+function formatObsidianTags(text: string): string {
+    let replace: string = text;
+    const tags: RegExpMatchArray | null = replace.match(/(?<!\S)#\w+/g);
+    if (!tags) return text;
+    for (let tag of tags) {
+        const tagData: string = tag.replace('#', '');
+        const tagText = tagData.replace(/_/g, ' ');
+        replace = replace.replace(tag, `<span class="tag" data-tag="${tagData}">${tagText}</span>`);
+    }
+    return replace;
+}
+
 /**
  * Formats obsidian links in the given text into HTML-Links
  * @param text The text to format
@@ -28,7 +67,7 @@ function resolveEmbeddedImage(text: string): string {
 function formatObsidianLinks(text: string): string {
     let formatted: string = text;
 
-    const regex = /\[\[([a-zA-ZäöüÄÖÜß\s]+)\|?([a-zA-ZäöüÄÖÜß\s]*)]]/g;
+    const regex = /\[\[([a-zA-ZäöüÄÖÜß0-9\s]+)\|?([a-zA-ZäöüÄÖÜß0-9\s]*)]]/g;
 
     let match: RegExpExecArray | null = regex.exec(text);
     while (match) {
@@ -53,5 +92,8 @@ function formatObsidianLinks(text: string): string {
  * @param md The obsidian Markdown string
  * @returns The obsidian Markdown formatted into an HTML string
  */
-const markdownToHTML = (md: string): string => formatObsidianLinks(marked.parse(md));
+const markdownToHTML = (md: string): string => {
+    const out: string = formatObsidianTags(formatObsidianLinks(marked.parse(md)));
+    return out ? out : "<p>Dieser Eintrag enthält bisher noch keinen Text.</p>";
+}
 export default markdownToHTML;

@@ -1,6 +1,6 @@
 {
   "name": "7lan.de",
-  "version": "v230603",
+  "version": "v230801",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

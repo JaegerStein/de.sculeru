@@ -6,7 +6,7 @@ const Right: React.FC = () => {
     return (
         <div id="right-overlay-top">
             <button type='button' onClick={closeAll}>Alle schließen</button>
-            <span>Version 23-06-03</span>
+            <span>Version 23-08-01</span>
         </div>
     );
 };
