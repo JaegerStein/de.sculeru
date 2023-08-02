@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Journal/Journal.md",
+                "file": "Journal/Episoden/Episode 0 - Prolog.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Journal/Journal.md",
+                "file": "Journal/Episoden/Episode 0 - Prolog.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Journal/Journal.md",
+                "file": "Journal/Episoden/Episode 0 - Prolog.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Journal/Journal.md"
+                "file": "Journal/Episoden/Episode 0 - Prolog.md"
               }
             }
           }
@@ -147,10 +147,10 @@
   "active": "d90c08f7625bb2df",
   "lastOpenFiles": [
     "Journal/Questen/Fäulnis in Malravien.md",
+    "Journal/Journal.md",
     "Journal/Episoden/Episode 0 - Prolog.md",
     "Journal/Episoden/Episode 1 - Eine Neue Zeit.md",
     "Journal/Charaktere/Streichelzoo/Telemaccio.md",
-    "Journal/Journal.md",
     "!attachments/malravien.jpg",
     "Legende/Gruppen/Questereien/Questerei Fonte Latima.md",
     "Legende/Geografie/Reiche/Grafschaften",
