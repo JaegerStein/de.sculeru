@@ -63,7 +63,7 @@ function formatObsidianTags(text: string): string {
 function formatObsidianLinks(text: string): string {
     let formatted: string = text;
 
-    const regex = /\[\[([a-zA-ZäöüÄÖÜß0-9\s]+)\|?([a-zA-ZäöüÄÖÜß0-9\s]*)]]/g;
+    const regex = /\[\[(?:(?!\|).)*?\|?(.*?)]]/g;
 
     let match: RegExpExecArray | null = regex.exec(text);
     while (match) {
