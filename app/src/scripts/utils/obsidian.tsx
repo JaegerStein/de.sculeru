@@ -1,18 +1,14 @@
 import {marked} from "marked";
 import Session from "./Session";
 import {IndexEntry} from "./types";
-import {A} from "./utils";
+import {A, hashId} from "./utils";
 
-function IdHash(text: string): string {
-    let h: number = 0;
-    const l: number = text.length;
-    for (let i = 0; i < l; i++) h = (h << 5) - h + text.charCodeAt(i) | 0;
-    return (h >>> 0).toString(36);
-}
-
+/**
+ * A custom renderer for the marked.js library that adds IDs to headings
+ */
 class HeadingRenderer extends marked.Renderer {
     heading(text: string, level: number, raw: string): string {
-        const id = IdHash(raw);
+        const id = hashId(raw);
         return `<h${level} id="${id}">${text}</h${level}>`;
     }
 }

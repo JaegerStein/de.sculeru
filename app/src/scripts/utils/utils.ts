@@ -33,3 +33,16 @@ export {loadJSON, loadText}
 
 const firstLetter = (str: string): string => str.charAt(0).toUpperCase();
 export {firstLetter}
+
+/**
+ * Generates a hash from the given string
+ * @param text The string to hash
+ * @returns The hash of the given string as an alphanumeric string
+ */
+function hashId(text: string): string {
+    let h = 0;
+    for (let i = 0; i < text.length; i++)
+        h = (h << 5) - h + text.charCodeAt(i) | 0;
+    return (h >>> 0).toString(36);
+}
+export {hashId}
