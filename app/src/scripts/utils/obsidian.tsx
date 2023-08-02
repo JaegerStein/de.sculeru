@@ -63,7 +63,7 @@ function formatObsidianLinks(text: string): string {
     let formatted: string = text;
 
     // do not touch, it works now!
-    const regex = /\[\[([^|\[\]]+)(?:\|([^[\]]+))?]]/g;
+    const regex = /\[\[([^|\]]+)(?:\|([^[\]]+))?]]/g;
 
     let match: RegExpExecArray | null = regex.exec(text);
     while (match) {
