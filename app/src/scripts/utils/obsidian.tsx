@@ -42,10 +42,9 @@ function resolveEmbeddedImage(text: string): string {
     return format;
 }
 
-// still broken TODO
 function formatObsidianTags(text: string): string {
     let replace: string = text;
-    const tags: RegExpMatchArray | null = replace.match(/(?<!#)#\w+/g);
+    const tags: RegExpMatchArray | null = replace.match(/(?<![#&])#\w+/g);
     if (!tags) return text;
     for (let tag of tags) {
         const tagData: string = tag.replace('#', '');
