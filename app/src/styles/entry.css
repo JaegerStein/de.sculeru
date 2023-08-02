@@ -7,13 +7,19 @@
 }
 .entry .entry-header {
   width: 100%;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 .entry .entry-header h1 {
   font-size: 2.5rem;
   line-height: 2.5rem;
   font-weight: lighter;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .entry .entry-header .entry-close {
+  min-width: 2.5rem;
+  min-height: 2.5rem;
   width: 2.5rem;
   height: 2.5rem;
 }
@@ -33,6 +39,22 @@
 }
 .entry .entry-content {
   overflow: auto;
+}
+.entry .entry-content .tag {
+  display: inline-block;
+  border-radius: 999px;
+  letter-spacing: 0.05rem;
+  background-color: #005498;
+  color: ivory;
+  padding: 0.1rem 0.5rem;
+  font-size: 0.9em;
+  box-shadow: 0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.5);
+  position: relative;
+  transition: all 0.25s ease-in-out;
+}
+.entry .entry-content .tag:hover {
+  background-color: ivory;
+  color: #003865;
 }
 .entry .entry-content h1, .entry .entry-content h2, .entry .entry-content h3, .entry .entry-content h4, .entry .entry-content h5, .entry .entry-content h6 {
   font-weight: normal;
